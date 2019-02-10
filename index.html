@@ -1,0 +1,688 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Web Programming intro @ FastTrackIT</title>
+    
+    <meta name="description" content="introduction to html, css and js" />
+    <meta name="author" content="Matei Nicolae" />
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+    <!--<link href="css/impress-demo.css" rel="stylesheet" />-->
+    <link href="css/impress-demo-min.css" rel="stylesheet" />
+
+	<link type="text/css" rel="stylesheet" href="js/syntaxhighlighter_3.0.83/styles/shCoreDefault.css"/>
+	
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+	<link type="text/css" rel="stylesheet" href="css/print.css" media="print"/>
+	
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+</head>
+
+<body class="impress-not-supported pagination pdf-available">
+
+<!--<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>-->
+
+<div id="impress">
+
+	<!-- ===================================================================  -->
+    <div id="start" class="step slide" data-x="-2000" data-y="-1500">
+		<h2 class="js"><a href="http://www.fasttrackit.org/" target="_blank">FastTrackIT</a></h2>
+        <p class="align-r"><a href="http://automationclass.fasttrackit.ninja/1-web.html" target="_blank">http://automationclass.fasttrackit.ninja/1-web.html</a></p>
+		<h1 class="html block middle-h">
+			Intro in <a href="#html-intro">HTML</a>, <a href="#include-css">CSS</a>, <a href="#js">JS</a>
+		</h1>
+		<h2 class="keyword align-r">by <a href="https://www.linkedin.com/in/nicolaematei" target="_blank">Matei Nicolae</a></h2>
+		<a class="align-r small hidden print-only" href="https://www.linkedin.com/in/nicolaematei" target="_blank">https://www.linkedin.com/in/nicolaematei</a>
+    </div>
+
+	<!-- ===================================================================  -->
+    <div id="lego-intro" class="step slide" data-x="0" data-y="-1500">
+        <h1>Have you played with <strong>LEGO</strong>?</h1>
+		<img src="images/lego/lego-wallpaper-small.jpg"/>
+    </div>
+	
+	<!-- ===================================================================  -->
+    <div class="step slide" data-x="1000" data-y="-2000">
+        <p>What do we need to make them look like this?</p>
+		<img src="images/lego/lego-examples.jpg"/>
+    </div>
+
+	<!-- ===================================================================  -->
+    <div id="title" class="step" data-x="0" data-y="0" data-scale="5">
+        <p>Features, Tips, and Techniques you Must Know about:</p>
+        <h1 class="html">HTML, CSS, JS</h1>
+    </div>
+
+    <!-- ===================================================================  -->
+	<div id="html-intro" class="step slide" data-x="-10000" data-y="-3000" data-scale="0.5">
+		<h1>What is HTML?</h1>
+        <p>HTML is a <strong>markup</strong> language for <strong>describing</strong> web documents (web pages).</p>
+        <ul>
+            <li>HTML stands for <strong>H</strong>yper <strong>T</strong>ext <strong>M</strong>arkup <strong>L</strong>anguage</li>
+            <li>A markup language is a set of <strong>markup tags</strong></li>
+            <li>HTML documents are described by <strong>HTML tags</strong></li>
+            <li>Each HTML tag <strong>describes</strong> different document content</li>
+        </ul>
+        <p class="align-r line-space">Read more about <a href="http://www.w3schools.com/html/html_intro.asp" target="_blank">HTML</a></p>
+	</div>
+
+    <!-- ===================================================================  -->
+    <div id="css-intro" class="step slide" data-x="-9550" data-y="-3150" data-scale="0.5">
+		<h1>What is CSS?</h1>
+        <ul>
+            <li><strong>CSS</strong> stands for <strong>C</strong>ascading <strong>S</strong>tyle <strong>S</strong>heets</li>
+            <li>CSS defines <strong>how HTML elements are to be displayed</strong></li>
+            <li>Styles were added to HTML 4.0 <strong>to solve a problem</strong></li>
+            <li>CSS saves a lot of work</li>
+            <li>External Style Sheets are stored in <strong>CSS files</strong></li>
+        </ul>
+        <p class="align-r line-space">Read more about <a href="http://www.w3schools.com/css/css_intro.asp" target="_blank">CSS</a></p>
+	</div>
+
+    <!-- ===================================================================  -->
+    <div id="js-intro" class="step slide" data-x="-9100" data-y="-3300" data-scale="0.5">
+        <h1>What is JS?</h1>
+        <ul>
+            <li><strong>JavaScript</strong> is the most popular <strong>programming language</strong> in the world.</li>
+        </ul>
+        <p class="align-r line-space">Read more about <a href="http://www.w3schools.com/js/js_intro.asp" target="_blank">JS</a></p>
+    </div>
+
+    <!-- ===================================================================  -->
+    <div id="no-more-theory" class="step" data-x="-8750" data-y="-3000" data-scale="0.5" data-rotate="180">
+        <h1>Better let's create our first html document ;)</h1>
+        <p>and see <strong>how</strong> and <strong>why</strong> we need this theory!</p>
+        <p>Then you will search for theory when you feel you need it, not when I tell you.</p>
+    </div>
+
+    <!-- ===================================================================  -->
+    <div id="practice-start" class="step slide" data-x="-9000" data-y="-2650" data-scale="0.7" data-rotate="180">
+        <h1 class="practice">Create a new empty file</h1>
+        <ol>
+            <li>name it <strong>index.html</strong></li>
+            <li>Edit it with <strong>notepad++</strong></li>
+            <li><strong>Write</strong> some info inside <em>(only text)</em></li>
+            <li><strong>Save</strong> the file</li>
+            <li>Double click on file name <em>(run it)</em></li>
+            <li>It should open it in your default browser. <em>Hope is not IE ;)</em></li>
+        </ol>
+    </div>
+
+    <!-- ===================================================================  -->
+    <div id="need-of-tags" class="step slide" data-x="-9200" data-y="-2650" data-scale="0.7" data-rotate="180">
+        <h1>Now let's organize our info</h1>
+        <p>Let's assume we need to expose our info like a document <em>(MS Word / Open Office)</em></p>
+        <p>So we need some:</p>
+        <ul>
+            <li>spaces &nbsp; &nbsp; &nbsp; &nbsp; - or enters</li>
+            <li><u>underlines</u></li>
+            <li><strong>bold</strong></li>
+            <li><em>italic</em></li>
+            <li><u><strong><em>mix format</em></strong></u></li>
+            <li>tables</li>
+            <li>titles</li>
+        </ul>
+        <p class="align-r"><a href="http://www.w3schools.com/tags/default.asp" target="_blank">more stuff</a></p>
+    </div>
+
+    <!-- ===================================================================  -->
+	<div id="tags" class="step highlighter-08" data-x="-9000" data-y="0" data-scale="1">
+		<h1>The need of html TAGS</h1>
+        <p class="line-space">It is time to read more about <a href="http://www.w3schools.com/html/html_intro.asp" target="_blank">HTML</a>, and understand some items from of html structure</p>
+        <h2>Tag example</h2>
+        <pre class="brush: xml;">
+    &lt;tagname>
+        content
+    &lt;/tagname>
+        </pre>
+		or no content tags:
+		<pre class="brush: xml;">
+    &lt;tagname/>
+        </pre>
+        <h2>Types of tags</h2>
+        <ul>
+            <li>visible elements</li>
+            <li>layout elements (not visible by default)</li>
+        </ul>
+        <p class="align-r line-space">Read more about <a href="http://www.w3schools.com/tags/default.asp" target="_blank">tags</a></p>
+	</div>
+
+    <!-- ===================================================================  -->
+    <div id="layout-tags" class="step highlighter-08" data-x="-8000" data-y="-400" data-scale="1">
+        <h1>1) The most used layout tags</h1>
+<pre class="brush: xml;">
+    &lt;h1>Headings 1, 2, ... 6&lt;/h1>
+    &lt;p>Paragraphs&lt;/p>
+    &lt;strong>Strong/Bold&lt;/strong>
+    &lt;ul>
+        &lt;li>unordered list item1&lt;/li>
+        &lt;li>unordered list item2&lt;/li>
+    &lt;/ul>
+    &lt;table>
+        &lt;tr>
+            &lt;td>table cell inside row&lt;/td>
+        &lt;/tr>
+    &lt;/table>
+
+    &lt;div>section *&lt;/div>
+    &lt;span>section *&lt;/span>
+</pre>
+        <div class="practice">Organize your document with this tags</div>
+    </div>
+    
+    <!-- ===================================================================  -->
+    <div id="visible-tags" class="step" data-x="-8000" data-y="400" data-scale="1">
+        <h1>2) The most used visible tags</h1>
+<pre class="brush: xml;">
+    &lt;img src="logo.jpg" width="200"/>
+    &lt;a href="http://fasttrackit.org">link&lt;/a>
+    &lt;form action="http://fasttrackit.org"
+        method="post">
+        &lt;label for="user-email">Email&lt;/label>
+        &lt;input type="email" required
+            id="user-email" name="email"/>
+        &lt;button type="submit" name="submit">
+            Subscribe
+        &lt;/button>
+    &lt;/form>
+</pre>
+        <div class="live-example">
+            <img width="200" src="http://fasttrackit.org/wp-content/uploads/2014/10/Fastrackit_01.jpeg"/>
+            <a href="http://fasttrackit.org">link</a>
+            <form action="http://fasttrackit.org" method="post" target="_blank">
+                <label for="user-email">Email</label>
+                <input type="email" id="user-email" name="email" required/>
+                <button type="submit" name="submit">Subscribe</button>
+            </form>
+        </div>
+    </div>
+	
+	<!-- ===================================================================  -->
+	<div id="nested-elements" class="step" data-x="-7000" data-y="0" data-scale="1">
+		<h2>Nested Elements</h2>
+        <pre class="brush: xml">
+        &lt;p>
+            You can have images inside a link 
+				and all that inside a paragraph
+            &lt;a href="http://fasttrackit.org">
+                &lt;img src="logo.jpg"/>
+            &lt;/a>
+        &lt;/p>
+        </pre>
+        <div class="live-example">
+            <p>
+                You can have images inside a link and all that inside a paragraph
+                <a href="http://fasttrackit.org">
+                    <img src="http://fasttrackit.org/wp-content/uploads/2014/10/Fastrackit_01.jpeg"/>
+                </a>
+            </p>
+        </div>
+	</div>
+
+    <!-- ===================================================================  -->
+    <div id="html5-inputs" class="step highlighter-08" data-x="-6000" data-y="0" data-scale="1">
+        <h2>Form example</h2>
+
+		<pre class="brush: xml; highlight: [5, 6, 7]">
+        &lt;form action="" method="get">
+            &lt;label for="email">Email:&lt;/label>
+            &lt;input
+                name="email"
+                type="email"
+                placeholder="email@sdl.com"
+                required="required"
+                />
+
+            &lt;button type="submit">Submit&lt;/button>
+        &lt;/form>
+        </pre>
+        <form action="" method="get">
+            <label for="email">Email:</label>
+            <input id="email" name="email" type="email"
+                   placeholder="email@sdl.com"
+                   required="required"
+                    />
+            <button type="submit">Submit Form</button>
+        </form>
+
+        <p>
+            HTML5 New Input Types: <br/>
+            color, date, datetime, datetime-local, email, month, number, range, search, tel, time, url, week
+        </p>
+    </div>
+
+    <!-- ===================================================================  -->
+    <div id="header-footer" class="step highlighter-08" data-x="-6000" data-y="1500" data-scale="2">
+        <h2>The Semantic Header and Footer</h2>
+        <pre class="brush: xml;">
+        &lt;div id="header">
+            ...
+        &lt;/div>
+
+        &lt;div id="footer">
+            ...
+        &lt;/div>
+        </pre>
+        <p>Because divs, by nature, have no semantic structure &#8212;</p>
+        <pre class="brush: xml;">
+        &lt;header>
+            ...
+        &lt;/header>
+
+        &lt;footer>
+            ...
+        &lt;/footer>
+        </pre>
+    </div>
+
+    <!-- ===================================================================  -->
+    <div id="audio" class="step" data-x="-8000" data-y="3500" data-rotate="90" data-scale="2">
+        <h1>Audio Support</h1>
+        <pre class="brush: xml;">
+        &lt;audio autoplay="autoplay"
+                controls="controls">
+            &lt;source src="file.ogg" />
+            &lt;source src="file.mp3" />
+            <a href="file.mp3">Download.</a>
+        &lt;/audio>
+        </pre>
+        <audio todo-autoplay="autoplay" controls="controls">
+            <source src="file.ogg" />
+            <source src="file.mp3" />
+            <a href="file.mp3">Download file.</a>
+        </audio>
+    </div>
+
+
+    <!-- ===================================================================  -->
+    <div id="video" class="step" data-x="-8000" data-y="6000" data-rotate="-90" data-scale="2">
+        <h1>Video Support</h1>
+        <pre class="brush: xml;">
+        &lt;video controls preload>
+          &lt;source src="video.ogv"/>
+          &lt;source src="video.mp4"/>
+          &lt;p> Your browser is old.
+            &lt;a href="video.mp4">Download.&lt;/a>
+          &lt;/p>
+        &lt;/video>
+        </pre>
+        <video id="my-record-video" controls width="500">
+            <source src="youtube.com/e2bdcbab-2504-45be-93d1-f1ccb109bd9e" />
+            <p>Your browser is old. <a href="video.mov">Download this video instead.</a> </p>
+        </video>
+    </div>
+
+	<!-- ===================================================================  -->
+	<div id="attributes" class="step" data-x="-5000" data-y="0" data-scale="1">
+		<h2>Attributes</h2>
+        <p>On visible tags we've seen <strong>more info after tag name</strong>, they are called attributes, and look like this:</p>
+        <pre class="brush: xml; highlight: [2, 3, 4, 5]">
+        &lt;p
+            id="unique-id"
+            class="css-class"
+            style="color: red; text-align: right"
+            title="info on mouse over"
+        >
+            paragraph with attributes
+        &lt;/p>
+        </pre>
+        <div class="live-example">
+            <p id="unique-id" class="css-class" style="color: red; text-align: right" title="info on mouse over">paragraph with attributes</p>
+        </div>
+	</div>
+
+    <!-- ===================================================================  -->
+    <div id="attributes-details" class="step highlighter-08" data-x="-5000" data-y="0" data-scale="0.2">
+        <h1>More style attributes</h1>
+        <pre class="brush: css">
+            text-align: right;
+            font-weight: bold;
+            margin: 5px 6px 7px 8px;
+            padding: 10px;
+            width: 400px;
+            height: 60px;
+
+            border: 4px solid red;
+            background-color: yellow;
+            color: blue;
+        </pre>
+        <div class="live-example">
+            <p style="
+                text-align: right;
+                font-weight: bold;
+                margin: 5px 6px 7px 8px;
+                padding: 10px;
+                width: 400px;
+                height: 60px;
+                border: 2px solid red;
+                background-color: yellow;
+                color: blue;
+            ">
+                paragraph with style
+            </p>
+        </div>
+        <div class="line-space practice">Apply some style on your elements</div>
+    </div>
+
+	<!-- ===================================================================  -->
+	<div id="add-standards" class="step highlighter-08" data-x="-4000" data-y="0" data-scale="1">
+		<h1 class="practice">Making a standard document</h1>
+        <h2>Add next code to beginning of document</h2>
+        <pre class="brush: xml">
+            &lt;!DOCTYPE html>
+            &lt;html>
+            &lt;head>
+                &lt;title>Page Title&lt;/title>
+            &lt;/head>
+            &lt;body>
+        </pre>
+		
+		
+		<h2>Add next code at the end of document</h2>
+        <pre class="brush: xml">
+        &lt;/body>
+        &lt;/html>
+        </pre>
+        <p>Look at <a href="http://www.w3schools.com/html/html_intro.asp" target="_blank">HTML Page Structure</a></p>
+	</div>
+
+    <!-- ===================================================================  -->
+    <div id="include-css" class="step" data-x="-3000" data-y="0" data-scale="1">
+        <h1>Is time to improve our document</h1>
+        <h2 class="practice">Create a new empty file</h2>
+        <ol>
+            <li>name it <strong>style.css</strong></li>
+            <li>include it in <strong>index.html</strong> file <strong>after title tag</strong>
+                <pre class="brush: xml; first-line: 5">
+                &lt;link type="text/css" rel="stylesheet"
+                    href="style.css"/>
+                </pre>
+            </li>
+        </ol>
+        <p>Understand css syntax.</p>
+
+        <pre class="brush: css; highlight: [1]">
+            /* selector     {   styles      }  */
+            p               { color: red;   }
+            #home-elem-id   { color: blue;  }
+            .favorite-class { color: green; }
+        </pre>
+        <h2 class="practice">Move all style attributes to css file</h2>
+    </div>
+
+    <!-- ===================================================================  -->
+    <div id="menu-bar-html" class="step" data-x="1000" data-y="0" data-scale="0.8">
+        <h2>Css Layout: Menu using list with links</h2>
+        <pre class="brush: xml">
+            &lt;ul id="top-menu-bar">
+                &lt;li><a href="#">HOME</a>&lt;/li>
+                &lt;li><a href="#">Projects</a>&lt;/li>
+                &lt;li><a href="#">About</a>&lt;/li>
+                &lt;li><a href="#">Contact</a>&lt;/li>
+            &lt;/ul>
+        </pre>
+        <div class="live-example">
+            <ul id="top-menu-bar1">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ===================================================================  -->
+    <div id="menu-bar-css" class="step highlighter-07" data-x="2000" data-y="0" data-scale="0.8">
+        <h2>Css Layout: Menu using list with links</h2>
+        <pre class="brush: css">
+            #top-menu-bar {
+                text-align: center;
+                background-color:#334455;
+				color:#fff;
+            }
+            #top-menu-bar li {
+                display:inline; margin:0;
+				padding:0;
+            }
+            #top-menu-bar a {
+                text-decoration: none;
+                padding: 0 15px 0 15px;
+				color: #fff;
+            }
+            #top-menu-bar a:visited {color: #fff;}
+            #top-menu-bar a:hover {
+                color: #334455; background: #fff;
+            }
+        </pre>
+        <div class="live-example">
+            <ul id="top-menu-bar">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ===================================================================  -->
+    <div id="html5-effects" class="step" data-x="850" data-y="3000" data-rotate="90" data-scale="5">
+        <p>Are you wonder if this nice effects are a result of html5?<br/>
+    </div>
+	
+	<!-- ===================================================================  -->
+	<div id="no-html-effects" class="step" data-x="850" data-y="3200" data-z="-3000" data-rotate="300" data-scale="1">
+        <h2>well.... NO ;)</h2>
+    </div>
+	
+	<!-- ===================================================================  -->
+	<div id="impress-js" class="step" data-x="0" data-y="3000" data-z="-3000" data-scale="1">
+        <p>js just <a href="http://bartaz.github.com/impress.js/#/bored">impress.js</a> <br/>
+        - Based on the <strong>power of <span class="css">CSS3</span> transforms and transitions</strong> in modern browsers.</p>
+    </div>
+
+	<!-- ===================================================================  -->
+    <div id="big" class="step" data-x="3500" data-y="2100" data-rotate="180" data-scale="6">
+        <p>of course <b>lot</b> of <span class="thoughts js">JavaScript</span></p>
+    </div>
+	
+	<!-- ===================================================================  -->
+    <div id="js" class="step slide" data-x="2825" data-y="2325" data-z="-3000" data-rotate="300" data-scale="1">
+        <h1>DHTML intro</h1>
+        <p>What we did until now was static html and css</p>
+        <p>DHTML stands for <strong>D</strong>ynamic HTML, and is made with JavaScript</p>
+        <h2>Web:</h2>
+        <ul>
+            <li>Site</li>
+            <li>Application</li>
+        </ul>
+    </div>
+
+    <!-- ===================================================================  -->
+    <div id="web-applications-examples" class="step slide" data-x="4000" data-y="-850" data-rotate="270" data-scale="3">
+        <h1>Web Application examples</h1>
+        <h2>Applications you use?</h2>
+        <ul>
+            <li>emails</li>
+        </ul>
+        <h2>Libraries & Frameworks</h2>
+        <ul>
+            <li><a href="https://jquery.com/" target="_blank">JQuery</a></li>
+            <li><a href="http://jqueryui.com/demos/" target="_blank">JQuery UI demos</a></li>
+            <li><a href="http://getbootstrap.com/" target="_blank">Bootstrap</a></li>
+			<li><a href="http://knockoutjs.com/" target="_blank">Knockout</a></li>
+			<li><a href="https://angularjs.org/" target="_blank">Angular</a></li>
+			<li><a href="http://reactjs.net/" target="_blank">React</a></li>
+            <li><a href="http://examples.sencha.com/extjs/6.0.1/examples/" target="_blank">Sencha ExtJs Examples</a></li>
+            <li><a href="https://cdn.sencha.com/touch/sencha-touch-2.4.1/examples/" target="_blank">Sencha Touch Examples</a></li>
+            <li><a href="http://en.wikipedia.org/wiki/Comparison_of_JavaScript_frameworks">other JavaScript frameworks</a></li>
+        </ul>
+    </div>
+
+	<!-- ===================================================================  -->
+    <div id="one-more-thing" class="step" data-x="6000" data-y="4000" data-scale="2">
+        <p>one more thing...</p>
+    </div>
+
+	<!-- ===================================================================  -->
+    <div id="its-in-3d" class="step" data-x="6200" data-y="4300" data-z="-100" data-rotate-x="-40" data-rotate-y="10" data-scale="2">
+        <h1><span class="have browser">HTML</span> <span class="you">is not</span> a <span class="noticed html">programming</span> <span class="its">language</span>!</h1>
+        <br/>
+		<em><span class="footnote">But you can do a lot of things combining it with <br/>
+            <span class="browser">CSS</span> and <span class="browser">JS</span></span></em>
+    </div>
+
+    <!-- ===================================================================  -->
+    <div id="script-tag" class="step" data-x="-6000" data-y="5200" data-scale="1">
+        <h1>Script Tag</h1>
+        <p class="practice">At the end of the body <br/>(before &lt;/body>), add next tag:</p>
+        <pre class="brush: xml">
+            &lt;script>
+                // add your code here
+                console.info("page loaded");
+            &lt;/script>
+        </pre>
+        <p>Now refresh your page and press F12 (on chrome or firefox), then go to Console tab and see the result.</p>
+    </div>
+    
+    <!-- ===================================================================  -->
+    <div id="js-variables" class="step" data-x="-6000" data-y="6000" data-scale="1">
+        <h1>Learning Pure JS (variables)</h1>
+        <pre class="brush: js">
+            var employed = false;     // boolean
+            var age = 24;             // number
+            var name = 'First Last';  // string
+            // object (array)
+            var skills = ['html', 'css', 'js'];
+            // object (json)
+            var person = {
+                employed: true,       // boolean
+                age: 29               // number
+            };
+            // object (DOM, other)
+            var el = document.getElementById('el');
+        </pre>
+        <p class="align-r line-space practice">Read more about <a href="http://www.w3schools.com/js/js_variables.asp" target="_blank">JavaScript Variables</a></p>
+    </div>
+
+    <!-- ===================================================================  -->
+    <div id="js-json" class="step" data-x="-6000" data-y="6500" data-scale="0.3">
+        <h1>JSON Objects</h1>
+        <pre class="brush: js">
+            var person = {
+                employed: true,
+                age: 29,
+                name: 'First Last',
+                skills: ['html', 'css', 'js']
+            };
+            console.debug(person);
+            console.info(person.name);
+            console.debug(person.age);
+            console.debug(person.employed);
+        </pre>
+        <p>In this case person object is storing all info about one person (like packaging).</p>
+        <p class="align-r line-space">Read more about <a href="http://www.w3schools.com/js/js_json.asp" target="_blank">JSON</a></p>
+    </div>
+
+    <div id="js-functions" class="step" data-x="-5000" data-y="6000" data-scale="1">
+        <h1>Functions</h1>
+        <pre class="brush: js">
+            // declaration
+            function getInfo(name) {
+                var msg = "Hello " + name + ", " +
+                    "welcome at FastTrackIT.";
+                return msg;
+            }
+            // store result of call to function
+            var info = getInfo("Matei");
+            console.info(info);
+        </pre>
+        <p class="align-r line-space practice">Read more about <a href="http://www.w3schools.com/js/js_functions.asp" target="_blank">functions</a></p>
+    </div>
+
+    <div id="js-src" class="step" data-x="-4000" data-y="6000" data-scale="1">
+        <h1>Is time to improve our document</h1>
+        <h2 class="practice">Create a new empty file</h2>
+        <ol>
+            <li>name it <strong>functions.js</strong></li>
+            <li>include it in <strong>index.html</strong>
+                <pre class="brush: xml; first-line: 5">
+                    &lt;script src="functions.js"
+                        type="text/javascript">
+                    &lt;/script>
+                </pre>
+            </li>
+            <li>move all your code from preview script tag into functions.js</li>
+        </ol>
+        <br/>
+        <p style="font-style: italic;">Don't forget HTML is a markup language for describing web documents (web pages), so keep all it's info clear and organized.</p>
+        <p style="font-style: italic;">In JS you can write code as you wish, so how you organize your code, will make the difference!</p>
+    </div>
+
+    <div id="dom-access" class="step highlighter-08" data-x="-3000" data-y="5500" data-scale="1">
+        <h1>Document Object Model</h1>
+        <h2>HTML DOM Methods</h2>
+        <pre class="brush: js">
+            // var element = ... (get elements)
+            var motto, favorite, links;
+            motto    = document.getElementById('motto');
+            favorite = document.getElementsByClassName("favorit");
+            links    = document.getElementsByTagName("a");
+            
+            motto.innerHTML = "Hello World!";
+            favorite[0].style.display = 'none';
+            links[0].onclick = function () {
+                console.info('click on link', this);
+            };
+        </pre>
+        <p class="align-r line-space practice">Read more about <a href="http://www.w3schools.com/js/js_htmldom.asp" target="_blank">DOM</a></p>
+    </div>
+
+	<!-- ===================================================================  -->
+    <div id="overview" class="step" data-x="-1000" data-y="2000" data-scale="15">
+		<h1 class="big-text html">Practice</h1>
+		<h2 class="align-r">& Homework</h2>
+		<br>
+		<p>Play & Try to understand project: <a href="https://github.com/nmatei/web-programming-tutorial" target="_blank">https://github.com/nmatei/web-programming-tutorial</a></p>
+		<p>Create <a href="https://github.com/" target="_blank">https://github.com/</a> account</p>
+		<br>
+    </div>
+
+    <!-- ===================================================================  -->
+</div>
+
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+
+<script type="text/javascript" src="js/syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+<script type="text/javascript" src="js/syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="js/syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script>
+<script type="text/javascript" src="js/syntaxhighlighter_3.0.83/scripts/shBrushCss.js"></script>
+<script type="text/javascript">
+	SyntaxHighlighter.all();
+</script>
+
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+</script>
+
+<!--<script src="js/impress.js"></script>-->
+<script src="js/impress-min.js"></script>
+<script src="js/presentation.js"></script>
+
+</body>
+</html>
+
+<!-- 
+	REFS: 
+    http://net.tutsplus.com/tutorials/html-css-techniques/25-html5-features-tips-and-techniques-you-must-know/
+-->

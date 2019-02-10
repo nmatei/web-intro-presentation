@@ -1,0 +1,66 @@
+/**
+ * Use custom margins to make one slide per page:
+ *   top: 0.15"
+ *   bottom: 0.18"
+ */
+
+.step {
+    display: block;
+
+    width: 900px;
+    height: 700px;
+    padding: 40px 60px;
+
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, .3);
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+
+    color: rgb(102, 102, 102);
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
+
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: -1px;
+}
+
+body {
+    -webkit-print-color-adjust: exact;
+}
+
+.print-only {
+	display: block;
+}
+
+.step:first-child {
+	/*margin-top: 15px;*/
+	/*margin-top: 0px;*/
+}
+.step {
+	margin: 0 auto;
+    /*margin: 14px auto 18px auto;*/
+}
+.impress-not-supported .step {
+
+}
+
+.impress-not-supported .step {
+	box-shadow: none;
+}
+
+.syntaxhighlighter {
+	border: 1px solid rgba(0, 0, 0, .3);
+	border-radius: 3px;
+}
+
+.css, .js, .html, .key , .browser{
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	-o-box-shadow: none;
+}
+
+.navigation-actions {
+	display: none;
+}
