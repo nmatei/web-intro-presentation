@@ -15,10 +15,10 @@ Short Web Presentation for students that want to learn basics of HTML/CSS/JS
 	- click on sidebar number
 	
 - Transitions mode:
-	- [Animation](index.html) (default)
-	- [Up/Down](index.html?anim=slide-up) Slides
-	- [Right/Left](index.html?anim=slide-left) Slides
-	- [Fade](index.html?anim=fade)
+	- [Animation](https://nmatei.github.io/web-intro-presentation/index.html) (default)
+	- [Up/Down](https://nmatei.github.io/web-intro-presentation/index.html?anim=slide-up) Slides
+	- [Right/Left](https://nmatei.github.io/web-intro-presentation/index.html?anim=slide-left) Slides
+	- [Fade](https://nmatei.github.io/web-intro-presentation/index.html?anim=fade)
 
 ## Print presentation (or save as PDF)
 
