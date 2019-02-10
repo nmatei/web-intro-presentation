@@ -6,15 +6,9 @@ Short Web Presentation for students that want to learn basics of HTML/CSS/JS
 
 [Presentation](https://nmatei.github.io/web-intro-presentation/index.html)
 
-## Print presentation
+## Print presentation (or save as PDF)
 
-- comment impress().init() from [*.htm](index.html) file
-```js
-//impress().init();
-```
-- ctrl+p from chrome
-- set custom margins to make sure all slides are on each page.
+- CTRL+P - Print Mode: use print as PDF in Chrome (margins: 0.15in 0 0.18in 0) - (to make sure all slides are on each page)
 
 ## TODO's
-- try to disable impress while printing
-- custom margins
+- auto set custom margins
