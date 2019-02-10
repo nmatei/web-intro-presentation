@@ -14,7 +14,7 @@ Short Web Presentation for students that want to learn basics of HTML/CSS/JS
 	- page down/up keys
 	- click on sidebar number
 	
-4 Transitions mode:
+- Transitions mode:
 	- [Animation](index.html) (default)
 	- [Up/Down](index.html?anim=slide-up) Slides
 	- [Right/Left](index.html?anim=slide-left) Slides
