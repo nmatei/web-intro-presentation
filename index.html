@@ -386,7 +386,7 @@
 		
 		
 		<h2>Add next code at the end of document</h2>
-        <pre class="brush: xml">
+        <pre class="brush: xml; first-line: 98">
         &lt;/body>
         &lt;/html>
         </pre>
@@ -394,15 +394,14 @@
 	</div>
 
     <!-- ===================================================================  -->
-    <div id="include-css" class="step" data-x="-3000" data-y="0" data-scale="1">
+    <div id="include-css" class="step highlighter-07" data-x="-3000" data-y="0" data-scale="1">
         <h1>Is time to improve our document</h1>
         <h2 class="practice">Create a new empty file</h2>
         <ol>
             <li>name it <strong>style.css</strong></li>
             <li>include it in <strong>index.html</strong> file <strong>after title tag</strong>
                 <pre class="brush: xml; first-line: 5">
-                &lt;link type="text/css" rel="stylesheet"
-                    href="style.css"/>
+                &lt;link type="text/css" rel="stylesheet" href="style.css"/>
                 </pre>
             </li>
         </ol>
@@ -441,15 +440,15 @@
     <!-- ===================================================================  -->
     <div id="menu-bar-css" class="step highlighter-07" data-x="2000" data-y="0" data-scale="0.8">
         <h2>Css Layout: Menu using list with links</h2>
-        <pre class="brush: css">
+        <pre class="brush: css; highlight: [7,11]">
             #top-menu-bar {
                 text-align: center;
                 background-color:#334455;
 				color:#fff;
             }
             #top-menu-bar li {
-                display:inline; margin:0;
-				padding:0;
+                display:inline;
+                margin:0; padding:0;
             }
             #top-menu-bar a {
                 text-decoration: none;
@@ -468,6 +467,129 @@
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
+        </div>
+    </div>
+
+    <!-- ===================================================================  -->
+    <div id="flexbox-html" class="step highlighter-07 flexbox-demo" data-x="2000" data-y="-600" data-scale="0.5">
+        <h2>FlexBox Layout HTML</h2>
+        <pre class="brush: xml">
+            &lt;header>
+                Header
+            &lt;/header>
+            &lt;section id="content">
+                &lt;div id="side-menu">
+                    &lt;section>Menu 1&lt;/section>
+                    &lt;section>Menu 2&lt;/section>
+                &lt;/div>
+                &lt;div id="main">Main Content&lt;/div>
+            &lt;/section>
+            &lt;footer>
+                Footer
+            &lt;/footer>
+        </pre>
+        <div class="live-example">
+            <header>
+                Header
+            </header>
+            <section id="content">
+                <div id="side-menu">
+                    <section>
+                        Menu 1
+                    </section>
+                    <section>
+                        Menu 2
+                    </section>
+                </div>
+                <div id="main">
+                    Main Content
+                </div>
+            </section>
+            <footer>
+                Footer
+            </footer>
+        </div>
+        <p class="align-r line-space practice">A Complete Guide to <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">Flexbox</a></p>
+    </div>
+
+    <!-- ===================================================================  -->
+    <div id="flexbox-css-borders" class="step highlighter-07 flexbox-demo" data-x="2000" data-y="-1000" data-scale="0.4">
+        <h2>FlexBox Layout CSS (adding borders)</h2>
+        <pre class="brush: css">
+            header, footer {
+                padding: 4px; margin: 2px;
+                border: 2px solid blue;
+            }
+            #content div, #side-menu section {
+                padding: 4px; margin: 2px;
+                border: 2px solid red;
+            }
+            #side-menu section {
+                border: 2px solid green;
+            }          
+        </pre>
+        <div class="live-example flexbox-on-1">
+            <header>
+                Header
+            </header>
+            <section id="content">
+                <div id="side-menu">
+                    <section>
+                        Menu 1
+                    </section>
+                    <section>
+                        Menu 2
+                    </section>
+                </div>
+                <div id="main">
+                    Main Content
+                </div>
+            </section>
+            <footer>
+                Footer
+            </footer>
+        </div>
+    </div>
+
+    <!-- ===================================================================  -->
+    <div id="flexbox-css-layout" class="step highlighter-07 flexbox-demo" data-x="2000" data-y="-1300" data-scale="0.3">
+        <h2>FlexBox Layout CSS (adding layout)</h2>
+        <pre class="brush: css; highlight: [3,8,10,11]">
+            body {
+                margin: 0; min-height: 100%;
+                display: flex; flex-direction: column;
+            }
+            header, body > section  { flex: 1; }
+            #content {
+                flex: 4;
+                display: flex; flex-direction: row;
+            }
+            #side-menu { flex: 1; }
+            #main { flex: 3; }
+            #footer {
+                max-height: 20px;
+            }                       
+        </pre>
+        <div class="live-example body">
+            <header>
+                Header
+            </header>
+            <section id="content">
+                <div id="side-menu">
+                    <section>
+                        Menu 1
+                    </section>
+                    <section>
+                        Menu 2
+                    </section>
+                </div>
+                <div id="main">
+                    Main Content
+                </div>
+            </section>
+            <footer>
+                Footer
+            </footer>
         </div>
     </div>
 

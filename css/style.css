@@ -340,3 +340,47 @@ h1.html {
     font-size: 0.6em;
     color: gray;
 }
+
+
+/* custom css for pages */
+.flexbox-demo header, .flexbox-demo section, .flexbox-demo footer {
+    font-size: 16px;
+}
+
+#flexbox-css-borders header, #flexbox-css-borders footer,
+#flexbox-css-layout header, #flexbox-css-layout footer {
+    padding: 4px;
+    margin: 2px;
+    border: 2px solid blue;
+}
+#flexbox-css-borders #content div, #flexbox-css-borders #side-menu section,
+#flexbox-css-layout #content div, #flexbox-css-layout #side-menu section {
+    padding: 4px;
+    margin: 2px;
+    border: 2px solid red;
+}
+#flexbox-css-borders #side-menu section,
+#flexbox-css-layout #side-menu section {
+    border: 2px solid green;
+}
+
+#flexbox-css-layout.body {
+    margin: 0; min-height: 100%;
+    display: flex; flex-direction: column;
+}
+#flexbox-css-layout header, #flexbox-css-layout.body > section  {
+    flex: 1;
+}
+#flexbox-css-layout #content {
+    flex: 4;
+    display: flex; flex-direction: row;
+}
+#flexbox-css-layout #side-menu {
+    flex: 1;
+}
+#flexbox-css-layout #main {
+    flex: 3;
+}
+#flexbox-css-layout #footer {
+    max-height: 20px;
+} 
