@@ -26,3 +26,4 @@ Short Web Presentation for students that want to learn basics of HTML/CSS/JS
 
 ## TODO's
 - auto set custom margins
+- add page with fiew examples Es5 vs Es6
