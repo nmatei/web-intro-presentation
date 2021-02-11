@@ -72,7 +72,8 @@
             <p>HTML is a <strong>markup</strong> language for <strong>describing</strong> web documents (web pages).</p>
             <ul>
                 <li>HTML stands for <strong>H</strong>yper <strong>T</strong>ext <strong>M</strong>arkup
-                    <strong>L</strong>anguage</li>
+                    <strong>L</strong>anguage
+                </li>
                 <li>A markup language is a set of <strong>markup tags</strong></li>
                 <li>HTML documents are described by <strong>HTML tags</strong></li>
                 <li>Each HTML tag <strong>describes</strong> different document content</li>
@@ -86,7 +87,8 @@
             <h1>What is CSS?</h1>
             <ul>
                 <li><strong>CSS</strong> stands for <strong>C</strong>ascading <strong>S</strong>tyle
-                    <strong>S</strong>heets</li>
+                    <strong>S</strong>heets
+                </li>
                 <li>CSS defines <strong>how HTML elements are to be displayed</strong></li>
                 <li>Styles were added to HTML 4.0 <strong>to solve a problem</strong></li>
                 <li>CSS saves a lot of work</li>
@@ -815,9 +817,49 @@
             </pre>
         </div>
 
-        <div id="es5-to-es6" class="step toc-el" data-x="-1000" data-y="6500" data-scale="1">
-            <h1>Important Es5 vs Es6</h1>
-            <p>... TODO ...</p>
+        <div id="es5-to-es6" class="step toc-el highlighter-06" data-x="-1000" data-y="6500" data-scale="1">
+            <h1>Basic Es5 vs Es6</h1>
+            <pre class="brush: js">
+                // var => const & let
+                var name = "Nicolae Matei";
+                const firstName = "Nicolae";
+                let lastName = "Matei";
+
+                // arrow functions
+                function getName() {
+                    return firstName + " " + lastName;
+                }
+                const getUserName = () => {
+                    return firstName + " " + lastName;
+                }
+                const greetings = (name) => {
+                    return 'hello ' + name;
+                }
+            </pre>
+
+            <p class="align-r line-space">Read more about <a
+                    href="https://medium.com/recraftrelic/es5-vs-es6-with-example-code-9901fa0136fc" target="_blank">ES5
+                    vs ES6</a></p>
+        </div>
+
+        <div id="es5-to-es6-arrow-fn" class="step highlighter-06" data-x="0" data-y="6500" data-scale="1">
+            <h1>Basic info about arrow functions</h1>
+            <pre class="brush: js">
+                const noParam = () => {
+                    return "This fn has no parameters";
+                }
+                const greetings1 = (name) => {
+                    return 'one parameter ' + name;
+                }
+                const greetings2 = name => {
+                    return 'if one parameter you can omit ()' + name;
+                }
+                const simplifiedReturn = () => 'if no {} => value is returned';
+            </pre>
+
+            <p class="align-r line-space">Read more about <a
+                    href="https://medium.com/recraftrelic/es5-vs-es6-with-example-code-9901fa0136fc" target="_blank">ES5
+                    vs ES6</a></p>
         </div>
 
         <!-- ===================================================================  -->
