@@ -936,6 +936,18 @@
         </div>
 
         <!-- ===================================================================  -->
+        <div id="most-used-shortcuts" class="step toc-el" data-x="2000" data-y="8500" data-scale="0.5">
+            <h1>Shortcuts</h1>
+            <ul>
+                <li><strong>CTRL + C | X | V</strong> => Copy | Cut | Paste</li>
+                <li><strong>CTRL + Left/Right</strong> => Move one word</li>
+                <li><strong>Shift + Top/Right/Bottom/Left</strong> => Select text</li>
+                <li><strong>CTRL + Shift + Left/Right</strong> => Move faster and Select</li>
+                <li><strong>Shift + Click</strong> => Select from preview cursor to target</li>
+            </ul>
+        </div>
+
+        <!-- ===================================================================  -->
         <div id="overview" class="step" data-x="-1000" data-y="2000" data-scale="15">
             <h1 class="big-text html">Practice</h1>
             <h2 class="align-r">& Homework</h2>
@@ -971,40 +983,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-sh.min.js"
         integrity="sha512-e1lzPcRUUhfM9oRrV0pgJs+rAJMA1OGXUYSxlX2UZwaO/GvqlL5ZUKwE2lNf5I/Wq6S6ua0U4GWaRrC2J9AXIw=="
         crossorigin="anonymous"></script>
-
-    <script type="text/javascript">
-
-        const typeMatch = {
-            js: "ace/mode/javascript",
-            html: "ace/mode/html",
-            css: "ace/mode/css",
-            shell: "ace/mode/sh"
-        };
-
-        const codeEls = Array.from(document.querySelectorAll(".step pre"));
-        codeEls.forEach(el => {
-            const type = el.getAttribute("data-type") || "html";
-            const editor = ace.edit(el);
-            const beautify = ace.require("ace/ext/beautify");
-            const session = editor.getSession();
-            editor.setReadOnly(true);
-
-            //editor.setTheme("ace/theme/monokai");
-            session.setMode(typeMatch[type]);
-            beautify.beautify(session);
-
-            editor.setOptions({
-                maxLines: Infinity
-            });
-        });
-
-    </script>
-
-    <script>
-        if ("ontouchstart" in document.documentElement) {
-            document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
-        }
-    </script>
 
     <!--<script src="js/impress.js"></script>-->
     <script src="js/impress-min.js"></script>

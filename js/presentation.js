@@ -1,4 +1,10 @@
 var Presentation = (function () {
+  initEditors();
+
+  if ("ontouchstart" in document.documentElement) {
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+  }
+
   var params = window.location.search
     .substring(1)
     .split("&")
@@ -14,6 +20,32 @@ var Presentation = (function () {
     }
   };
 })();
+
+function initEditors() {
+  const typeMatch = {
+    js: "ace/mode/javascript",
+    html: "ace/mode/html",
+    css: "ace/mode/css",
+    shell: "ace/mode/sh"
+  };
+
+  const codeEls = Array.from(document.querySelectorAll(".step pre"));
+  codeEls.forEach(el => {
+    const type = el.getAttribute("data-type") || "html";
+    const editor = ace.edit(el);
+    const beautify = ace.require("ace/ext/beautify");
+    const session = editor.getSession();
+    editor.setReadOnly(true);
+
+    //editor.setTheme("ace/theme/monokai");
+    session.setMode(typeMatch[type]);
+    beautify.beautify(session);
+
+    editor.setOptions({
+      maxLines: Infinity
+    });
+  });
+}
 
 (function () {
   var disabledLinks = document.getElementsByClassName("disabled-link");
