@@ -16,8 +16,6 @@
     <!--<link href="css/impress-demo.css" rel="stylesheet" />-->
     <link href="css/impress-demo-min.css" rel="stylesheet" />
 
-    <link type="text/css" rel="stylesheet" href="js/syntaxhighlighter_3.0.83/styles/shCoreDefault.css" />
-
     <link type="text/css" rel="stylesheet" href="css/style.css" />
     <link type="text/css" rel="stylesheet" href="css/print.css" media="print" />
 
@@ -46,6 +44,14 @@
                     Nicolae</a></h2>
             <a class="align-r small hidden print-only" href="https://www.linkedin.com/in/nicolaematei"
                 target="_blank">https://www.linkedin.com/in/nicolaematei</a>
+        </div>
+
+        <!-- ===================================================================  -->
+        <div id="toc" class="step" data-x="-2000" data-y="-5000" data-scale="5">
+            <h1>Table of contents</h1>
+            <ol>
+
+            </ol>
         </div>
 
         <!-- ===================================================================  -->
@@ -147,18 +153,18 @@
         </div>
 
         <!-- ===================================================================  -->
-        <div id="tags" class="step highlighter-08" data-x="-9000" data-y="0" data-scale="1">
+        <div id="tags" class="step" data-x="-9000" data-y="0" data-scale="1">
             <h1>The need of html TAGS</h1>
             <p class="line-space">It is time to read more about <a href="http://www.w3schools.com/html/html_intro.asp"
                     target="_blank">HTML</a>, and understand some items from of html structure</p>
             <h2>Tag example</h2>
-            <pre class="brush: xml;">
+            <pre data-type="html">
     &lt;tagname>
         content
     &lt;/tagname>
         </pre>
             or no content tags:
-            <pre class="brush: xml;">
+            <pre data-type="html">
     &lt;tagname/>
         </pre>
             <h2>Types of tags</h2>
@@ -171,9 +177,9 @@
         </div>
 
         <!-- ===================================================================  -->
-        <div id="layout-tags" class="step highlighter-08" data-x="-8000" data-y="-400" data-scale="1">
+        <div id="layout-tags" class="step" data-x="-8000" data-y="-400" data-scale="1">
             <h1>1) The most used layout tags</h1>
-            <pre class="brush: xml;">
+            <pre data-type="html">
     &lt;h1>Headings 1, 2, ... 6&lt;/h1>
     &lt;p>Paragraphs&lt;/p>
     &lt;strong>Strong/Bold&lt;/strong>
@@ -194,16 +200,14 @@
         </div>
 
         <!-- ===================================================================  -->
-        <div id="visible-tags" class="step highlighter-07" data-x="-8000" data-y="400" data-scale="1">
+        <div id="visible-tags" class="step" data-x="-8000" data-y="400" data-scale="1">
             <h1>2) The most used visible tags</h1>
-            <pre class="brush: xml;">
+            <pre data-type="html" style="font-size: 20px;">
     &lt;img src="images/fastrackit-logo-small.png" width="150"/>
     &lt;a href="http://fasttrackit.org">link&lt;/a>
-    &lt;form action="http://fasttrackit.org"
-        method="post">
+    &lt;form action="http://fasttrackit.org" method="post">
         &lt;label for="user-email">Email&lt;/label>
-        &lt;input type="email" required
-            id="user-email" name="email"/>
+        &lt;input type="email" required id="user-email" name="email"/>
         &lt;button type="submit" name="submit">
             Subscribe
         &lt;/button>
@@ -221,9 +225,9 @@
         </div>
 
         <!-- ===================================================================  -->
-        <div id="nested-elements" class="step highlighter-08" data-x="-7000" data-y="0" data-scale="1">
+        <div id="nested-elements" class="step" data-x="-7000" data-y="0" data-scale="1">
             <h2>Nested Elements</h2>
-            <pre class="brush: xml">
+            <pre data-type="html" style="font-size: 24px;">
         &lt;p>
             You can have images inside a link 
 				and all that inside a paragraph
@@ -243,19 +247,17 @@
         </div>
 
         <!-- ===================================================================  -->
-        <div id="html5-inputs" class="step highlighter-08" data-x="-6000" data-y="0" data-scale="1">
+        <div id="html5-inputs" class="step" data-x="-6000" data-y="0" data-scale="1">
             <h2>Form example</h2>
-
-            <pre class="brush: xml; highlight: [5, 6, 7]">
+            <!-- TODO  highlight: [5, 6, 7] -->
+            <pre data-type="html">
         &lt;form action="" method="get">
             &lt;label for="userEmail">Email:&lt;/label>
-            &lt;input
-                id="userEmail"
-                name="email"
-                type="email"
-                placeholder="contact@fasttrackit.org"
-                required="required"
-                />
+            &lt;input id="userEmail" required="required"
+                        name="email"
+                        type="email"
+                        placeholder="contact@fasttrackit.org"
+                    />
 
             &lt;button type="submit">Submit&lt;/button>
         &lt;/form>
@@ -273,9 +275,9 @@
         </div>
 
         <!-- ===================================================================  -->
-        <div id="header-footer" class="step highlighter-08" data-x="-6000" data-y="1500" data-scale="2">
+        <div id="header-footer" class="step" data-x="-6000" data-y="1500" data-scale="2">
             <h2>The Semantic Header and Footer</h2>
-            <pre class="brush: xml;">
+            <pre data-type="html">
         &lt;div id="header">
             ...
         &lt;/div>
@@ -285,7 +287,7 @@
         &lt;/div>
         </pre>
             <p>Because divs, by nature, have no semantic structure &#8212;</p>
-            <pre class="brush: xml;">
+            <pre data-type="html">
         &lt;header>
             ...
         &lt;/header>
@@ -299,9 +301,8 @@
         <!-- ===================================================================  -->
         <div id="audio" class="step" data-x="-8000" data-y="3500" data-rotate="90" data-scale="2">
             <h1>Audio Support</h1>
-            <pre class="brush: xml;">
-        &lt;audio autoplay="autoplay"
-                controls="controls">
+            <pre data-type="html">
+        &lt;audio autoplay="autoplay" controls="controls">
             &lt;source src="file.ogg" />
             &lt;source src="file.mp3" />
             <a href="file.mp3">Download.</a>
@@ -318,7 +319,7 @@
         <!-- ===================================================================  -->
         <div id="video" class="step" data-x="-8000" data-y="6000" data-rotate="-90" data-scale="2">
             <h1>Video Support</h1>
-            <pre class="brush: xml;">
+            <pre data-type="html">
         &lt;video controls preload>
           &lt;source src="video.ogv"/>
           &lt;source src="video.mp4"/>
@@ -338,7 +339,8 @@
             <h2>Attributes</h2>
             <p>On visible tags we've seen <strong>more info after tag name</strong>, they are called attributes, and
                 look like this:</p>
-            <pre class="brush: xml; highlight: [2, 3, 4, 5]">
+            <!-- TOOD highlight: [2, 3, 4, 5] -->
+            <pre data-type="html">
         &lt;p
             id="unique-id"
             class="css-class"
@@ -355,19 +357,21 @@
         </div>
 
         <!-- ===================================================================  -->
-        <div id="attributes-details" class="step highlighter-08" data-x="-5000" data-y="0" data-scale="0.2">
+        <div id="attributes-details" class="step" data-x="-5000" data-y="0" data-scale="0.2">
             <h1>More style attributes</h1>
-            <pre class="brush: css">
-            text-align: right;
-            font-weight: bold;
-            margin: 5px 6px 7px 8px;
-            padding: 10px;
-            width: 400px;
-            height: 60px;
+            <pre data-type="css">
+            p {
+                text-align: right;
+                font-weight: bold;
+                margin: 5px 6px 7px 8px;
+                padding: 10px;
+                width: 400px;
+                height: 60px;
 
-            border: 4px solid red;
-            background-color: yellow;
-            color: blue;
+                border: 4px solid red;
+                background-color: yellow;
+                color: blue;
+            }
         </pre>
             <div class="live-example">
                 <p style="
@@ -388,21 +392,21 @@
         </div>
 
         <!-- ===================================================================  -->
-        <div id="add-standards" class="step highlighter-08" data-x="-4000" data-y="0" data-scale="1">
+        <div id="add-standards" class="step" data-x="-4000" data-y="0" data-scale="1">
             <h1 class="practice">Making a standard document</h1>
-            <h2>Add next code to beginning of document</h2>
-            <pre class="brush: xml">
+            <h2>Copy following content in your html file</h2>
+            <pre data-type="html">
             &lt;!DOCTYPE html>
             &lt;html>
             &lt;head>
                 &lt;title>Page Title&lt;/title>
             &lt;/head>
             &lt;body>
-        </pre>
+        
+            --- START ---
+            Move all content you wrote here.
+            ---- END ----
 
-
-            <h2>Add next code at the end of document</h2>
-            <pre class="brush: xml; first-line: 98">
         &lt;/body>
         &lt;/html>
         </pre>
@@ -411,20 +415,21 @@
         </div>
 
         <!-- ===================================================================  -->
-        <div id="include-css" class="step toc-el highlighter-07" data-x="-3000" data-y="0" data-scale="1">
+        <div id="include-css" class="step toc-el" data-x="-3000" data-y="0" data-scale="1">
             <h1>Is time to improve our document</h1>
             <h2 class="practice">Create a new empty file</h2>
             <ol>
                 <li>name it <strong>style.css</strong></li>
                 <li>include it in <strong>index.html</strong> file <strong>after title tag</strong>
-                    <pre class="brush: xml; first-line: 5">
+                    <!-- TODO  first-line: 5 -->
+                    <pre data-type="html" style="font-size: 21px">
                 &lt;link type="text/css" rel="stylesheet" href="style.css"/>
                 </pre>
                 </li>
             </ol>
             <p>Understand css syntax.</p>
-
-            <pre class="brush: css; highlight: [1]">
+            <!-- TODO  highlight: [1] -->
+            <pre data-type="css">
             /* selector     {   styles      }  */
             p               { color: red;   }
             #home-elem-id   { color: blue;  }
@@ -436,7 +441,7 @@
         <!-- ===================================================================  -->
         <div id="menu-bar-html" class="step toc-el" data-x="1000" data-y="0" data-scale="0.8">
             <h1>Css Layout: Menu using list with links</h1>
-            <pre class="brush: xml">
+            <pre data-type="html">
             &lt;ul id="top-menu-bar">
                 &lt;li><a href="#">HOME</a>&lt;/li>
                 &lt;li><a href="#">Projects</a>&lt;/li>
@@ -455,9 +460,10 @@
         </div>
 
         <!-- ===================================================================  -->
-        <div id="menu-bar-css" class="step highlighter-07" data-x="2000" data-y="0" data-scale="0.8">
+        <div id="menu-bar-css" class="step" data-x="2000" data-y="0" data-scale="0.8">
             <h2>Css Layout: Menu using list with links</h2>
-            <pre class="brush: css; highlight: [7,11]">
+            <!-- TODO highlight: [7,11] -->
+            <pre data-type="css">
             #top-menu-bar {
                 text-align: center;
                 background-color:#334455;
@@ -488,10 +494,9 @@
         </div>
 
         <!-- ===================================================================  -->
-        <div id="flexbox-html" class="step toc-el highlighter-07 flexbox-demo" data-x="2000" data-y="-600"
-            data-scale="0.5">
+        <div id="flexbox-html" class="step toc-el flexbox-demo" data-x="2000" data-y="-600" data-scale="0.5">
             <h1>FlexBox Layout HTML</h1>
-            <pre class="brush: xml">
+            <pre data-type="html" style="font-size: 22px">
             &lt;header>
                 Header
             &lt;/header>
@@ -532,10 +537,9 @@
         </div>
 
         <!-- ===================================================================  -->
-        <div id="flexbox-css-borders" class="step highlighter-07 flexbox-demo" data-x="2000" data-y="-1000"
-            data-scale="0.4">
+        <div id="flexbox-css-borders" class="step flexbox-demo" data-x="2000" data-y="-1000" data-scale="0.4">
             <h2>FlexBox Layout CSS (adding borders)</h2>
-            <pre class="brush: css">
+            <pre data-type="css">
             header, footer {
                 padding: 4px; margin: 2px;
                 border: 2px solid blue;
@@ -572,10 +576,10 @@
         </div>
 
         <!-- ===================================================================  -->
-        <div id="flexbox-css-layout" class="step highlighter-07 flexbox-demo" data-x="2000" data-y="-1300"
-            data-scale="0.3">
+        <div id="flexbox-css-layout" class="step flexbox-demo" data-x="2000" data-y="-1300" data-scale="0.3">
             <h2>FlexBox Layout CSS (adding layout)</h2>
-            <pre class="brush: css; highlight: [4,9,11,12]">
+            <!-- TODO highlight: [4,9,11,12] -->
+            <pre data-type="css" style="font-size: 20px">
             html { height: 100%; }
             body {
                 margin: 0; min-height: 100%;
@@ -691,7 +695,7 @@
         <div id="script-tag" class="step" data-x="-6000" data-y="5200" data-scale="1">
             <h1>Script Tag</h1>
             <p class="practice">At the end of the body <br />(before &lt;/body>), add next tag:</p>
-            <pre class="brush: xml">
+            <pre data-type="html">
             &lt;script>
                 // add your code here
                 console.info("page loaded");
@@ -704,19 +708,23 @@
         <!-- ===================================================================  -->
         <div id="js-variables" class="step toc-el" data-x="-6000" data-y="6000" data-scale="1">
             <h1>Learning Pure JS (variables)</h1>
-            <pre class="brush: js">
+            <pre data-type="js">
             var employed = false;     // boolean
             var age = 24;             // number
             var name = 'First Last';  // string
+
             // object (array)
             var skills = ['html', 'css', 'js'];
             // object (json)
             var person = {
-                employed: true,       // boolean
-                age: 29               // number
+                employed: true,
+                age: 29
             };
             // object (DOM, other)
             var el = document.getElementById('el');
+
+            console.info(typeof name);
+            console.info(typeof skills);
         </pre>
             <p class="align-r line-space practice">Read more about <a
                     href="http://www.w3schools.com/js/js_variables.asp" target="_blank">JavaScript Variables</a></p>
@@ -725,13 +733,16 @@
         <!-- ===================================================================  -->
         <div id="js-json" class="step" data-x="-6000" data-y="6500" data-scale="0.3">
             <h1>JSON Objects</h1>
-            <pre class="brush: js">
+            <pre data-type="js">
             var person = {
                 employed: true,
                 age: 29,
                 name: 'First Last',
-                skills: ['html', 'css', 'js']
+                skills: [
+                    'html', 'css', 'js'
+                ]
             };
+
             console.debug(person);
             console.info(person.name);
             console.debug(person.age);
@@ -744,15 +755,18 @@
 
         <div id="js-functions" class="step" data-x="-5000" data-y="6000" data-scale="1">
             <h1>Functions</h1>
-            <pre class="brush: js">
+            <pre data-type="js">
             // declaration
             function getInfo(name) {
                 var msg = "Hello " + name + ", " +
                     "welcome at FastTrackIT.";
                 return msg;
             }
-            // store result of call to function
+
+            // call getInfo and store result in variable
             var info = getInfo("Matei");
+
+            // print variable value in console
             console.info(info);
         </pre>
             <p class="align-r line-space practice">Read more about <a
@@ -765,7 +779,8 @@
             <ol>
                 <li>name it <strong>functions.js</strong></li>
                 <li>include it in <strong>index.html</strong>
-                    <pre class="brush: xml; first-line: 5">
+                    <!-- TODO first-line: 5 -->
+                    <pre data-type="html">
                     &lt;script src="functions.js"
                         type="text/javascript">
                     &lt;/script>
@@ -780,30 +795,38 @@
                 make the difference!</p>
         </div>
 
-        <div id="dom-access" class="step highlighter-08" data-x="-3000" data-y="5500" data-scale="1">
+        <div id="dom-access" class="step" data-x="-3000" data-y="5500" data-scale="1">
             <h1>Document Object Model</h1>
             <h2>HTML DOM Methods</h2>
-            <pre class="brush: js">
+            <pre data-type="js" style="font-size: 25px;">
             // var element = ... (get elements)
             var motto, favorite, links;
             motto    = document.getElementById('motto');
             favorite = document.getElementsByClassName("favorit");
             links    = document.getElementsByTagName("a");
             
+            // change element html
             motto.innerHTML = "Hello World!";
+
+            // change element style
             favorite[0].style.display = 'none';
+
+            // adding events
             links[0].onclick = function () {
-                console.info('click on link', this);
+                console.info('click on first link', this);
             };
+            links[1].addEventListener("click", function(){
+                console.info('click on second link', this);
+            });
         </pre>
             <p class="align-r line-space practice">Read more about <a href="http://www.w3schools.com/js/js_htmldom.asp"
                     target="_blank">DOM</a></p>
         </div>
 
         <!-- ===================================================================  -->
-        <div id="git" class="step toc-el highlighter-06" data-x="-2000" data-y="6500" data-scale="1">
+        <div id="git" class="step toc-el" data-x="-2000" data-y="6500" data-scale="1">
             <h1>Git most used commands</h1>
-            <pre class="brush: shell">
+            <pre data-type="shell" style="font-size: 21px;">
                 # one time
                 git clone https://github.com/nmatei/web-programming-tutorial.git
 
@@ -817,48 +840,46 @@
             </pre>
         </div>
 
-        <div id="es5-to-es6" class="step toc-el highlighter-06" data-x="-1000" data-y="6500" data-scale="1">
+        <!-- ===================================================================  -->
+        <div id="es5-to-es6" class="step toc-el" data-x="-1000" data-y="6500" data-scale="1">
             <h1>Basic Es5 vs Es6</h1>
-            <pre class="brush: js">
+            <pre data-type="js">
                 // var => const & let
                 var name = "Nicolae Matei";
                 const firstName = "Nicolae";
                 let lastName = "Matei";
 
-                // arrow functions
-                function getName() {
+                // arrow functions: () => {}
+                function getFullName() {
                     return firstName + " " + lastName;
                 }
                 const getUserName = () => {
                     return firstName + " " + lastName;
-                }
+                };
                 const greetings = (name) => {
                     return 'hello ' + name;
-                }
+                };
             </pre>
-
-            <p class="align-r line-space">Read more about <a
-                    href="https://medium.com/recraftrelic/es5-vs-es6-with-example-code-9901fa0136fc" target="_blank">ES5
-                    vs ES6</a></p>
         </div>
 
-        <div id="es5-to-es6-arrow-fn" class="step highlighter-06" data-x="0" data-y="6500" data-scale="1">
+        <div id="es5-to-es6-arrow-fn" class="step" data-x="0" data-y="6500" data-scale="1">
             <h1>Basic info about arrow functions</h1>
-            <pre class="brush: js">
+            <pre data-type="js">
                 const noParam = () => {
                     return "This fn has no parameters";
-                }
-                const greetings1 = (name) => {
+                };
+                const oneParam = (name) => {
                     return 'one parameter ' + name;
-                }
-                const greetings2 = name => {
-                    return 'if one parameter you can omit ()' + name;
-                }
+                };
+                const oneParamSimplified = name => {
+                    return 'for one param can omit ()' + name;
+                };
                 const moreParams = (firstName, lastName) => {
-                    return '() are required for more parameters" + 
+                    return "required () for more params" + 
                         firstName + " " + lastName;
-                }
-                const simplifiedReturn = () => 'if no {} => value is returned';
+                };
+                const simplifiedReturn = () => 'returned';
+
             </pre>
 
             <p class="align-r line-space">Read more about <a
@@ -866,12 +887,52 @@
                     vs ES6</a></p>
         </div>
 
-        <!-- ===================================================================  -->
-        <div id="toc" class="step" data-x="-2000" data-y="-5000" data-scale="5">
-            <h1>Table of contents</h1>
-            <ol>
+        <div id="es5-to-es6-arrow-fn-foreach" class="step" data-x="1000" data-y="6500" data-scale="1">
+            <h1>array forEach examples</h1>
 
-            </ol>
+            <pre data-type="js" style="font-size: 22px;">
+                const vehicles = [
+                    "car", "truck", "van", "bus", "bike"
+                ];
+                
+                vehicles.forEach(function(vehicle) {
+                    console.info(vehicle);
+                });
+
+                vehicles.forEach(vehicle => {
+                    console.info(vehicle);
+                });
+                vehicles.forEach((vehicle, index) => {
+                    console.info(index, vehicle);
+                });
+            </pre>
+        </div>
+
+        <div id="es5-to-es6-arrow-fn-map" class="step" data-x="1000" data-y="7300" data-scale="1">
+            <h1>array map examples</h1>
+
+            <pre data-type="js" style="font-size: 22px;">
+                const vehicles = [
+                    "car", "truck", "van", "bus", "bike"
+                ];
+                
+                const upperCaseVehicles1 = vehicles.map(function(vehicle) {
+                    return vehicle.toUpperCase();
+                });
+
+                const upperCaseVehicles2 = vehicles.map(vehicle => 
+                    vehicle.toUpperCase()
+                );
+                const upperCaseVehicles3 = vehicles.map(vehicle => 
+                    vehicle.toUpperCase()
+                );
+                // ["CAR", "TRUCK", "VAN", "BUS", "BIKE"]
+
+                const upperCaseVehicles4 = vehicles.map((vehicle, index) => 
+                    index + ". " + vehicle.toUpperCase()
+                );
+                // ["0. CAR", "1. TRUCK", "2. VAN", "3. BUS", "4. BIKE"]
+            </pre>
         </div>
 
         <!-- ===================================================================  -->
@@ -892,13 +953,51 @@
         <p>Use a spacebar or arrow keys to navigate</p>
     </div>
 
-    <script type="text/javascript" src="js/syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
-    <script type="text/javascript" src="js/syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
-    <script type="text/javascript" src="js/syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script>
-    <script type="text/javascript" src="js/syntaxhighlighter_3.0.83/scripts/shBrushCss.js"></script>
-    <script type="text/javascript" src="js/syntaxhighlighter_3.0.83/scripts/shBrushBash.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"
+        integrity="sha512-GZ1RIgZaSc8rnco/8CXfRdCpDxRCphenIiZ2ztLy3XQfCbQUSCuk8IudvNHxkRA3oUg6q0qejgN/qqyG1duv5Q=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-beautify.min.js"
+        integrity="sha512-QfDSPBb1bUxUj/XQP0UNmQLsHy5LMKOzk9IAuUYGJebOFrfYi5csZsrUaPbgrsppiKY3kPv+zGe/kaS6yUcmHg=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-javascript.min.js"
+        integrity="sha512-ZxMbXDxB0Whct+zt+DeW/RZaBv33N5D7myNFtBGiqpDSFRLxn2CNp6An0A1zUAJU/+bl8CMVrwxwnFcpFi3yTQ=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-html.min.js"
+        integrity="sha512-qyse7v2aBOxbbQxKhaDcI+XKKBDL3CPR5xsipXPUX3GwzE6lcteLkFsTS7emYQcDtTqY/nsq99FztWBXzmfFAA=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-css.min.js"
+        integrity="sha512-OO15QRsOOnspJ9FhjdJbbR9Sz12ZuxmXWuJBvOjHOHWY8pLqaunG9paVeoO4glkxyJJyQsM166QeA7uLkIdbyA=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-sh.min.js"
+        integrity="sha512-e1lzPcRUUhfM9oRrV0pgJs+rAJMA1OGXUYSxlX2UZwaO/GvqlL5ZUKwE2lNf5I/Wq6S6ua0U4GWaRrC2J9AXIw=="
+        crossorigin="anonymous"></script>
+
     <script type="text/javascript">
-        SyntaxHighlighter.all();
+
+        const typeMatch = {
+            js: "ace/mode/javascript",
+            html: "ace/mode/html",
+            css: "ace/mode/css",
+            shell: "ace/mode/sh"
+        };
+
+        const codeEls = Array.from(document.querySelectorAll(".step pre"));
+        codeEls.forEach(el => {
+            const type = el.getAttribute("data-type") || "html";
+            const editor = ace.edit(el);
+            const beautify = ace.require("ace/ext/beautify");
+            const session = editor.getSession();
+            editor.setReadOnly(true);
+
+            //editor.setTheme("ace/theme/monokai");
+            session.setMode(typeMatch[type]);
+            beautify.beautify(session);
+
+            editor.setOptions({
+                maxLines: Infinity
+            });
+        });
+
     </script>
 
     <script>
@@ -914,8 +1013,3 @@
 </body>
 
 </html>
-
-<!-- 
-	REFS: 
-    http://net.tutsplus.com/tutorials/html-css-techniques/25-html5-features-tips-and-techniques-you-must-know/
--->

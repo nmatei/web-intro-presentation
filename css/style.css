@@ -199,46 +199,9 @@ h1.html {
   line-height: 140px;
 }
 
-.syntaxhighlighter {
+.step pre {
+  font-size: 28px;
   margin: 0.5em 0 0.5em 0 !important;
-}
-
-.impress-not-supported .syntaxhighlighter {
-  font-size: 0.9em !important;
-}
-.impress-not-supported .highlighter-09 .syntaxhighlighter {
-  font-size: 0.8em !important;
-}
-.impress-not-supported .highlighter-08 .syntaxhighlighter {
-  font-size: 0.7em !important;
-}
-.impress-not-supported .highlighter-07 .syntaxhighlighter {
-  font-size: 0.6em !important;
-}
-.impress-not-supported .highlighter-06 .syntaxhighlighter {
-  font-size: 0.5em !important;
-}
-.impress-not-supported .highlighter-05 .syntaxhighlighter {
-  font-size: 0.4em !important;
-}
-
-.highlighter-09 .syntaxhighlighter {
-  font-size: 0.9em !important;
-}
-.highlighter-08 .syntaxhighlighter {
-  font-size: 0.8em !important;
-}
-.highlighter-07 .syntaxhighlighter {
-  font-size: 0.7em !important;
-}
-.highlighter-06 .syntaxhighlighter {
-  font-size: 0.6em !important;
-}
-.highlighter-05 .syntaxhighlighter {
-  font-size: 0.5em !important;
-}
-.highlighter-04 .syntaxhighlighter {
-  font-size: 0.45em !important;
 }
 
 #top-menu-bar {
