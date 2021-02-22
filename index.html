@@ -843,23 +843,35 @@
         <!-- ===================================================================  -->
         <div id="es5-to-es6" class="step toc-el" data-x="-1000" data-y="6500" data-scale="1">
             <h1>Basic Es5 vs Es6</h1>
-            <pre data-type="js">
+            <pre data-type="js" style="font-size: 20px;">
                 // var => const & let
                 var name = "Nicolae Matei";
                 const firstName = "Nicolae";
                 let lastName = "Matei";
 
-                // arrow functions: () => {}
-                function getFullName() {
+                // from functions to arrow functions
+                function hoistedFunction() {
                     return firstName + " " + lastName;
                 }
+                var functionVariable = function() {
+                    return firstName + " " + lastName;
+                }
+
+                // arrow functions: () => {}
                 const getUserName = () => {
                     return firstName + " " + lastName;
                 };
                 const greetings = (name) => {
                     return 'hello ' + name;
                 };
+
+                // anonymous functions
+                function () {}
+                () => {}
             </pre>
+            <p class="align-r line-space">Read more about <a
+                    href="https://riptutorial.com/javascript/example/716/functions-as-a-variable"
+                    target="_blank">functions-as-a-variable</a></p>
         </div>
 
         <div id="es5-to-es6-arrow-fn" class="step" data-x="0" data-y="6500" data-scale="1">
