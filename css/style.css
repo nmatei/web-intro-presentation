@@ -362,3 +362,13 @@ h1.html {
 #flexbox-css-layout #footer {
   max-height: 20px;
 }
+
+.icon {
+  color: #0076b8;
+  font-style: normal;
+}
+.select {
+  color: white;
+  background-color: #0076b8;
+  padding: 2px 6px;
+}
