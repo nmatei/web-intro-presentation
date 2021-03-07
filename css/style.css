@@ -372,3 +372,14 @@ h1.html {
   background-color: #0076b8;
   padding: 2px 6px;
 }
+
+.blink_me {
+  animation: blinker 2.4s linear infinite;
+  /* font-weight: bold; */
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
