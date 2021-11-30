@@ -178,16 +178,6 @@ h1.html {
   padding: 10px 10px 50px 10px;
   display: inline-block;
 }
-.pre-wrap .syntaxhighlighter .line {
-  white-space: pre-wrap !important;
-}
-
-.syntaxhighlighter pre,
-.syntaxhighlighter code,
-.syntaxhighlighter div {
-  line-height: 1.3em !important;
-}
-
 .small {
   font-size: 0.7em;
 }
@@ -310,7 +300,19 @@ h1.html {
   color: gray;
 }
 
-/* custom css for pages */
+.pagination .no-pagination.step:after {
+  display: none;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+}
+.cards > * {
+  flex: 1
+}
+
+  /* custom css for pages */
 .flexbox-demo header,
 .flexbox-demo section,
 .flexbox-demo footer {

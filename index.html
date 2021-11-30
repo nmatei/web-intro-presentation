@@ -60,13 +60,15 @@
         <!-- ===================================================================  -->
         <div id="lego-intro" class="step slide" data-x="0" data-y="-1500">
             <h1>Have you played with <strong>LEGO</strong>?</h1>
-            <img src="images/lego/lego-wallpaper-small.jpg" />
+            <div
+              style="background: url(images/lego/lego-wallpaper-small.jpg); width: 640px; height: 400px;">
+            </div>
         </div>
 
         <!-- ===================================================================  -->
         <div class="step slide" data-x="1000" data-y="-2000">
             <p>What do we need to make them look like this?</p>
-            <img src="images/lego/lego-examples.jpg" />
+            <div style="background: url(images/lego/lego-examples.jpg); width: 638px; height: 600px;"></div>
         </div>
 
         <!-- ===================================================================  -->
@@ -161,13 +163,13 @@
             <p class="line-space">It is time to read more about <a href="http://www.w3schools.com/html/html_intro.asp"
                     target="_blank">HTML</a>, and understand some items from of html structure</p>
             <h2>Tag example</h2>
-            <pre data-type="html">
+            <pre data-type="html" style="font-size: 22px">
     &lt;tagname>
         content
     &lt;/tagname>
         </pre>
             or no content tags:
-            <pre data-type="html">
+            <pre data-type="html" style="font-size: 22px">
     &lt;tagname/>
         </pre>
             <h2>Types of tags</h2>
@@ -182,7 +184,7 @@
         <!-- ===================================================================  -->
         <div id="layout-tags" class="step" data-x="-8000" data-y="-400" data-scale="1">
             <h1>1) The most used layout tags</h1>
-            <pre data-type="html">
+            <pre data-type="html" style="font-size: 20px">
     &lt;h1>Headings 1, 2, ... 6&lt;/h1>
     &lt;p>Paragraphs&lt;/p>
     &lt;strong>Strong/Bold&lt;/strong>
@@ -280,25 +282,33 @@
         <!-- ===================================================================  -->
         <div id="header-footer" class="step" data-x="-6000" data-y="1500" data-scale="2">
             <h2>The Semantic Header and Footer</h2>
-            <pre data-type="html">
-        &lt;div id="header">
-            ...
-        &lt;/div>
-
-        &lt;div id="footer">
-            ...
-        &lt;/div>
-        </pre>
             <p>Because divs, by nature, have no semantic structure &#8212;</p>
-            <pre data-type="html">
-        &lt;header>
-            ...
-        &lt;/header>
+            <div class="cards">
+                <div>
+                    <pre data-type="html">
+                        &lt;div id="header">
+                            ...
+                        &lt;/div>
 
-        &lt;footer>
-            ...
-        &lt;/footer>
-        </pre>
+                        &lt;div id="footer">
+                            ...
+                        &lt;/div>
+                    </pre>
+                </div>
+                <div>
+                    <pre data-type="html">
+                        &lt;header>
+                            ...
+                        &lt;/header>
+
+                        &lt;footer>
+                            ...
+                        &lt;/footer>
+                    </pre>
+                </div>
+            </div>
+
+
         </div>
 
         <!-- ===================================================================  -->
@@ -432,7 +442,7 @@
             </ol>
             <p>Understand css syntax.</p>
             <!-- TODO  highlight: [1] -->
-            <pre data-type="css">
+            <pre data-type="css" style="font-size: 21px">
             /* selector     {   styles      }  */
             p               { color: red;   }
             #home-elem-id   { color: blue;  }
@@ -466,7 +476,7 @@
         <div id="menu-bar-css" class="step" data-x="2000" data-y="0" data-scale="0.8">
             <h2>Css Layout: Menu using list with links</h2>
             <!-- TODO highlight: [7,11] -->
-            <pre data-type="css">
+            <pre data-type="css" style="font-size: 20px;">
             #top-menu-bar {
                 text-align: center;
                 background-color:#334455;
@@ -497,7 +507,7 @@
         </div>
 
         <!-- ===================================================================  -->
-        <div id="flexbox-html" class="step toc-el flexbox-demo" data-x="2000" data-y="-600" data-scale="0.5">
+        <div id="flexbox-html" class="step toc-el no-pagination flexbox-demo" data-x="2000" data-y="-600" data-scale="0.5">
             <h1>FlexBox Layout HTML</h1>
             <pre data-type="html" style="font-size: 22px">
             &lt;header>
@@ -542,7 +552,7 @@
         <!-- ===================================================================  -->
         <div id="flexbox-css-borders" class="step flexbox-demo" data-x="2000" data-y="-1000" data-scale="0.4">
             <h2>FlexBox Layout CSS (adding borders)</h2>
-            <pre data-type="css">
+            <pre data-type="css" style="font-size: 22px;">
             header, footer {
                 padding: 4px; margin: 2px;
                 border: 2px solid blue;
@@ -582,23 +592,33 @@
         <div id="flexbox-css-layout" class="step flexbox-demo" data-x="2000" data-y="-1300" data-scale="0.3">
             <h2>FlexBox Layout CSS (adding layout)</h2>
             <!-- TODO highlight: [4,9,11,12] -->
-            <pre data-type="css" style="font-size: 20px">
-            html { height: 100%; }
-            body {
-                margin: 0; min-height: 100%;
-                display: flex; flex-direction: column;
-            }
-            header, body > section  { flex: 1; }
-            #content {
-                flex: 4;
-                display: flex; flex-direction: row;
-            }
-            #side-menu { flex: 1; }
-            #main { flex: 3; }
-            #footer {
-                max-height: 20px;
-            }                       
-        </pre>
+            <div class="cards">
+                <div>
+                    <pre data-type="css" style="font-size: 22px">
+                        html { height: 100%; }
+                        body {
+                            margin: 0; min-height: 100%;
+                            display: flex; flex-direction: column;
+                        }
+                        header, body > section  { flex: 1; }
+
+                        /* continue... */
+                    </pre>
+                </div>
+                <div>
+                    <pre data-type="css" style="font-size: 22px" data-firstLineNumber="10">
+                        #content {
+                            flex: 4;
+                            display: flex; flex-direction: row;
+                        }
+                        #side-menu { flex: 1; }
+                        #main { flex: 3; }
+                        #footer {
+                            max-height: 20px;
+                        }
+                    </pre>
+                </div>
+            </div>
             <div class="live-example body">
                 <header>
                     Header
@@ -736,7 +756,7 @@
         <!-- ===================================================================  -->
         <div id="js-json" class="step" data-x="-6000" data-y="6500" data-scale="0.3">
             <h1>JSON Objects</h1>
-            <pre data-type="js">
+            <pre data-type="js" style="font-size: 22px">
             var person = {
                 employed: true,
                 age: 29,
@@ -799,8 +819,7 @@
         </div>
 
         <div id="dom-access" class="step" data-x="-3000" data-y="5500" data-scale="1">
-            <h1>Document Object Model</h1>
-            <h2>HTML DOM Methods</h2>
+            <h1>Document Object Model (DOM)</h1>
             <pre data-type="js" style="font-size: 25px;">
             // var element = ... (get elements)
             var motto, favorite, links;
@@ -924,7 +943,7 @@
         </div>
 
         <div id="es5-to-es6-arrow-fn-map" class="step" data-x="1000" data-y="7300" data-scale="1">
-            <h1>array map examples</h1>
+            <h1>Array map examples</h1>
 
             <pre data-type="js" style="font-size: 22px;">
                 const vehicles = [
@@ -1004,24 +1023,24 @@
         <p>Use a spacebar or arrow keys to navigate</p>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"
-        integrity="sha512-GZ1RIgZaSc8rnco/8CXfRdCpDxRCphenIiZ2ztLy3XQfCbQUSCuk8IudvNHxkRA3oUg6q0qejgN/qqyG1duv5Q=="
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-beautify.min.js"
-        integrity="sha512-QfDSPBb1bUxUj/XQP0UNmQLsHy5LMKOzk9IAuUYGJebOFrfYi5csZsrUaPbgrsppiKY3kPv+zGe/kaS6yUcmHg=="
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-javascript.min.js"
-        integrity="sha512-ZxMbXDxB0Whct+zt+DeW/RZaBv33N5D7myNFtBGiqpDSFRLxn2CNp6An0A1zUAJU/+bl8CMVrwxwnFcpFi3yTQ=="
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-html.min.js"
-        integrity="sha512-qyse7v2aBOxbbQxKhaDcI+XKKBDL3CPR5xsipXPUX3GwzE6lcteLkFsTS7emYQcDtTqY/nsq99FztWBXzmfFAA=="
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-css.min.js"
-        integrity="sha512-OO15QRsOOnspJ9FhjdJbbR9Sz12ZuxmXWuJBvOjHOHWY8pLqaunG9paVeoO4glkxyJJyQsM166QeA7uLkIdbyA=="
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-sh.min.js"
-        integrity="sha512-e1lzPcRUUhfM9oRrV0pgJs+rAJMA1OGXUYSxlX2UZwaO/GvqlL5ZUKwE2lNf5I/Wq6S6ua0U4GWaRrC2J9AXIw=="
-        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/ace.js"
+        integrity="sha512-OMjy8oWtPbx9rJmoprdaQdS2rRovgTetHjiBf7RL7LvRSouoMLks5aIcgqHb6vGEAduuPdBTDCoztxLR+nv45g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/ext-beautify.min.js"
+        integrity="sha512-sIVPU3/0VPG2jJdl6NTqe8QF9vTE3Y/LAFiH2YPj8iCz5fdWkhOYA26QR6nZVjI3OWCMtbH/BX8YwZddZi8mhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-javascript.min.js"
+        integrity="sha512-37ta5K4KVYs+MEmIg2xnZxJrdiQmBSKt+JInvyPrq9uz7aF67lMJT/t91EYoYj520jEcGlih41kCce7BRTmE3Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-html.min.js"
+        integrity="sha512-vSQkVhmiIt31RHmh8b65o0ap3yoL08VJ6MeuiCGo+92JDdSSWAEWoWELEf3WBk4e2tz/0CvnTe87Y2rFrNjcbg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-css.min.js"
+        integrity="sha512-9kFCBhC+SjlU9Mk4n65VZ3yID5cdcql9y/MrrRsDLyD2Dce+diCd+NITdkjHVBaLK6USc1YCZ5cXVPMC8CdJBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-sh.min.js"
+        integrity="sha512-DCGTxVcs3p6DPSs/NfnxuKE1ej/9KfCdFDfy1qhyriBteSxKkrMja1A0Q+pN2tuvUekTZun1RU2LRM1qybC/VQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!--<script src="js/impress.js"></script>-->
     <script src="js/impress-min.js"></script>

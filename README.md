@@ -19,11 +19,12 @@ Short Web Presentation for students that want to learn basics of HTML/CSS/JS
   - [Right/Left](https://nmatei.github.io/web-intro-presentation/index.html?anim=slide-left) Slides
   - [Fade](https://nmatei.github.io/web-intro-presentation/index.html?anim=fade)
 
-## Print presentation (or save as PDF)
+## Print presentation (Save as PDF)
 
-- CTRL+P - Print Mode: use print as PDF in Chrome (margins: 0.15in 0 0.18in 0) - (to make sure all slides are on each page)
+- [x] Change to [Up/Down](https://nmatei.github.io/web-intro-presentation/index.html?anim=slide-up) Slides 
+- [x] CTRL+P - Print Mode: use **Save as PDF** in Chrome (margins: none)
+  - (Make sure all slides are on each page)
 
 ## TODO's
 
-- update syntaxhighlighter_3.0.83 to latest
 - auto set custom margins

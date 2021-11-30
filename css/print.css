@@ -5,28 +5,41 @@
  */
 
 .step {
-    display: block;
+    display: block !important;
 
-    width: 900px;
-    height: 700px;
-    padding: 40px 60px;
+    /* A4 Size */
+    width: 29.7cm;
+    min-height: 21cm;
 
-    background-color: white;
-    border: 1px solid rgba(0, 0, 0, .3);
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
-
-    color: rgb(102, 102, 102);
-    text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
-
-    font-family: 'Open Sans', Arial, sans-serif;
-    font-size: 30px;
-    line-height: 36px;
-    letter-spacing: -1px;
+	margin: 0;
+	padding: 40px 60px;
+	/*padding: 30px;*/
+	border: 0;
+	box-shadow: none;
+	page-break-after: always;
+	border-radius: 0;
+}
+.step.active {
+	border: 0;
+	border-radius: 0;
+	box-shadow: none;
 }
 
 body {
     -webkit-print-color-adjust: exact;
+    margin: 0;
+    padding: 0;
+}
+body:before {
+	display: none;
+}
+* {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+@page {
+	size: A4 landscape;
+	margin: 0;
 }
 
 .print-only {
@@ -47,11 +60,6 @@ body {
 
 .impress-not-supported .step {
 	box-shadow: none;
-}
-
-.syntaxhighlighter {
-	border: 1px solid rgba(0, 0, 0, .3);
-	border-radius: 3px;
 }
 
 .css, .js, .html, .key , .browser{

@@ -73,7 +73,8 @@ function initEditors() {
           dataY = 0;
 
         if (animation === "slide-up") {
-          dataY = (700 + 100) * i;
+          var margins = 8;
+          dataY = (700 + 100 - margins) * i;
         } else if (animation === "slide-left") {
           dataX = 1000 * i;
         } else {
