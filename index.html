@@ -20,13 +20,14 @@
         crossorigin="anonymous" />
 
     <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link type="text/css" rel="stylesheet" href="css/html-custom-pages.css" />
     <link type="text/css" rel="stylesheet" href="css/print.css" media="print" />
 
     <link rel="shortcut icon" href="favicon.png" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 </head>
 
-<body class="impress-not-supported pagination pdf-available">
+<body class="impress-not-supported pagination x-pdf-available">
 
     <!--<div class="fallback-message">
     <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
@@ -122,7 +123,7 @@
 
         <!-- ===================================================================  -->
         <div id="no-more-theory" class="step" data-x="-8750" data-y="-3000" data-scale="0.5" data-rotate="180">
-            <h1>Better let's create our first html document ;)</h1>
+            <h1>Better let's create our first html <span class="emoji">😉</span> </h1>
             <p>and see <strong>how</strong> and <strong>why</strong> we need this theory!</p>
             <p>Then you will search for theory when you feel you need it, not when I tell you.</p>
         </div>
@@ -170,12 +171,12 @@
         </pre>
             or no content tags:
             <pre data-type="html" style="font-size: 22px">
-    &lt;tagname/>
+    &lt;img />
         </pre>
             <h2>Types of tags</h2>
             <ul>
-                <li>visible elements</li>
                 <li>layout elements (not visible by default)</li>
+                <li>visible elements</li>
             </ul>
             <p class="align-r line-space">Read more about <a href="http://www.w3schools.com/tags/default.asp"
                     target="_blank">tags</a></p>
@@ -267,11 +268,13 @@
             &lt;button type="submit">Submit&lt;/button>
         &lt;/form>
         </pre>
-            <form action="" method="get">
-                <label for="email">Email:</label>
-                <input id="email" name="email" type="email" placeholder="contact@fasttrackit.org" required="required" />
-                <button type="submit">Submit Form</button>
-            </form>
+            <div class="live-example">
+                <form action="" method="get">
+                    <label for="email">Email:</label>
+                    <input id="email" name="email" type="email" placeholder="contact@fasttrackit.org" required="required" />
+                    <button type="submit">Submit Form</button>
+                </form>
+            </div>
 
             <p>
                 HTML5 New Input Types: <br />
@@ -314,16 +317,16 @@
         <!-- ===================================================================  -->
         <div id="audio" class="step" data-x="-8000" data-y="3500" data-rotate="90" data-scale="2">
             <h1>Audio Support</h1>
-            <pre data-type="html">
-        &lt;audio autoplay="autoplay" controls="controls">
-            &lt;source src="file.ogg" />
-            &lt;source src="file.mp3" />
-            <a href="file.mp3">Download.</a>
-        &lt;/audio>
-        </pre>
+            <pre data-type="html" style="font-size: 22px">
+                &lt;audio autoplay="autoplay" controls="controls">
+                    &lt;source src="resources/file.ogg" />
+                    &lt;source src="resources/file.mp3" />
+                    <a href="file.mp3">Download.</a>
+                &lt;/audio>
+            </pre>
             <audio todo-autoplay="autoplay" controls="controls">
-                <source src="file.ogg" />
-                <source src="file.mp3" />
+                <source src="resources/file.ogg" />
+                <source src="resources/file.mp3" />
                 <a href="file.mp3">Download file.</a>
             </audio>
         </div>
@@ -332,17 +335,17 @@
         <!-- ===================================================================  -->
         <div id="video" class="step" data-x="-8000" data-y="6000" data-rotate="-90" data-scale="2">
             <h1>Video Support</h1>
-            <pre data-type="html">
-        &lt;video controls preload>
-          &lt;source src="video.ogv"/>
-          &lt;source src="video.mp4"/>
-          &lt;p> Your browser is old.
-            &lt;a href="video.mp4">Download.&lt;/a>
-          &lt;/p>
-        &lt;/video>
-        </pre>
+            <pre data-type="html" style="font-size: 22px">
+                &lt;video controls preload>
+                  &lt;source src="resources/video.ogv"/>
+                  &lt;source src="resources/video.mp4"/>
+                  &lt;p> Your browser is old.
+                    &lt;a href="resources/video.mp4">Download.&lt;/a>
+                  &lt;/p>
+                &lt;/video>
+            </pre>
             <video id="my-record-video" controls width="500">
-                <source src="youtube.com/e2bdcbab-2504-45be-93d1-f1ccb109bd9e" />
+                <source src="resources/video.mp4" />
                 <p>Your browser is old. <a href="video.mov">Download this video instead.</a> </p>
             </video>
         </div>
@@ -433,7 +436,7 @@
             <h2 class="practice">Create a new empty file</h2>
             <ol>
                 <li>name it <strong>style.css</strong></li>
-                <li>include it in <strong>index.html</strong> file <strong>after title tag</strong>
+                <li>include it in your <strong>*.html</strong> file <strong>after title tag</strong>
                     <!-- TODO  first-line: 5 -->
                     <pre data-type="html" style="font-size: 21px">
                 &lt;link type="text/css" rel="stylesheet" href="style.css"/>
@@ -477,25 +480,25 @@
             <h2>Css Layout: Menu using list with links</h2>
             <!-- TODO highlight: [7,11] -->
             <pre data-type="css" style="font-size: 20px;">
-            #top-menu-bar {
-                text-align: center;
-                background-color:#334455;
-				color:#fff;
-            }
-            #top-menu-bar li {
-                display:inline;
-                margin:0; padding:0;
-            }
-            #top-menu-bar a {
-                text-decoration: none;
-                padding: 0 15px 0 15px;
-				color: #fff;
-            }
-            #top-menu-bar a:visited {color: #fff;}
-            #top-menu-bar a:hover {
-                color: #334455; background: #fff;
-            }
-        </pre>
+                #top-menu-bar {
+                    text-align: center;
+                    background-color:#334455;
+                    color:#fff;
+                }
+                #top-menu-bar li {
+                    display:inline;
+                    margin:0; padding:0;
+                }
+                #top-menu-bar a {
+                    text-decoration: none;
+                    padding: 0 15px 0 15px;
+                    color: #fff;
+                }
+                #top-menu-bar a:visited {color: #fff;}
+                #top-menu-bar a:hover {
+                    color: #334455; background: #fff;
+                }
+            </pre>
             <div class="live-example">
                 <ul id="top-menu-bar">
                     <li><a href="#">HOME</a></li>
@@ -507,29 +510,29 @@
         </div>
 
         <!-- ===================================================================  -->
-        <div id="flexbox-html" class="step toc-el no-pagination flexbox-demo" data-x="2000" data-y="-600" data-scale="0.5">
+        <div id="flexbox-html" class="step toc-el no-pagination layouts-demo" data-x="2000" data-y="-600" data-scale="0.5">
             <h1>FlexBox Layout HTML</h1>
-            <pre data-type="html" style="font-size: 22px">
-            &lt;header>
-                Header
-            &lt;/header>
-            &lt;section id="content">
-                &lt;div id="side-menu">
-                    &lt;section>Menu 1&lt;/section>
-                    &lt;section>Menu 2&lt;/section>
-                &lt;/div>
-                &lt;div id="main">Main Content&lt;/div>
-            &lt;/section>
-            &lt;footer>
-                Footer
-            &lt;/footer>
-        </pre>
+            <pre data-type="html" style="font-size: 20px">
+                &lt;header>
+                    Header
+                &lt;/header>
+                &lt;section id="content">
+                    &lt;div id="side-menu">
+                        &lt;section>Menu 1&lt;/section>
+                        &lt;section>Menu 2&lt;/section>
+                    &lt;/div>
+                    &lt;div id="main">Main Content&lt;/div>
+                &lt;/section>
+                &lt;footer>
+                    Footer
+                &lt;/footer>
+            </pre>
             <div class="live-example">
                 <header>
                     Header
                 </header>
-                <section id="content">
-                    <div id="side-menu">
+                <section _id="content">
+                    <div _id="side-menu">
                         <section>
                             Menu 1
                         </section>
@@ -537,7 +540,7 @@
                             Menu 2
                         </section>
                     </div>
-                    <div id="main">
+                    <div _id="main">
                         Main Content
                     </div>
                 </section>
@@ -550,27 +553,30 @@
         </div>
 
         <!-- ===================================================================  -->
-        <div id="flexbox-css-borders" class="step flexbox-demo" data-x="2000" data-y="-1000" data-scale="0.4">
+        <div id="flexbox-css-borders" class="step layouts-demo" data-x="2000" data-y="-1000" data-scale="0.4">
             <h2>FlexBox Layout CSS (adding borders)</h2>
             <pre data-type="css" style="font-size: 22px;">
-            header, footer {
-                padding: 4px; margin: 2px;
-                border: 2px solid blue;
-            }
-            #content div, #side-menu section {
-                padding: 4px; margin: 2px;
-                border: 2px solid red;
-            }
-            #side-menu section {
-                border: 2px solid green;
-            }          
-        </pre>
-            <div class="live-example flexbox-on-1">
+                header, footer, #content {
+                    padding: 4px;
+                    margin: 2px;
+                    border: 5px solid #2196F3;
+                    background-color: #d3eafd;
+                }
+                #content div, #side-menu section {
+                    padding: 4px;
+                    margin: 2px;
+                    border: 2px solid red;
+                }
+                #side-menu section {
+                    border: 2px solid green;
+                }
+            </pre>
+            <div class="live-example body">
                 <header>
                     Header
                 </header>
-                <section id="content">
-                    <div id="side-menu">
+                <section data-id="content" class="id-content">
+                    <div data-id="side-menu" class="id-side-menu">
                         <section>
                             Menu 1
                         </section>
@@ -578,7 +584,7 @@
                             Menu 2
                         </section>
                     </div>
-                    <div id="main">
+                    <div data-id="main" class="id-main">
                         Main Content
                     </div>
                 </section>
@@ -589,12 +595,12 @@
         </div>
 
         <!-- ===================================================================  -->
-        <div id="flexbox-css-layout" class="step flexbox-demo" data-x="2000" data-y="-1300" data-scale="0.3">
+        <div id="flexbox-css-layout" class="step layouts-demo" data-x="2000" data-y="-1300" data-scale="0.3">
             <h2>FlexBox Layout CSS (adding layout)</h2>
             <!-- TODO highlight: [4,9,11,12] -->
             <div class="cards">
                 <div>
-                    <pre data-type="css" style="font-size: 22px">
+                    <pre data-type="css" style="font-size: 20px">
                         html { height: 100%; }
                         body {
                             margin: 0; min-height: 100%;
@@ -606,15 +612,15 @@
                     </pre>
                 </div>
                 <div>
-                    <pre data-type="css" style="font-size: 22px" data-firstLineNumber="10">
+                    <pre data-type="css" style="font-size: 20px">
                         #content {
                             flex: 4;
                             display: flex; flex-direction: row;
                         }
                         #side-menu { flex: 1; }
-                        #main { flex: 3; }
+                        #main { flex: 2; }
                         #footer {
-                            max-height: 20px;
+                            max-height: 24px;
                         }
                     </pre>
                 </div>
@@ -623,8 +629,8 @@
                 <header>
                     Header
                 </header>
-                <section id="content">
-                    <div id="side-menu">
+                <section data-id="content" class="id-content">
+                    <div data-id="side-menu" class="id-side-menu">
                         <section>
                             Menu 1
                         </section>
@@ -632,13 +638,153 @@
                             Menu 2
                         </section>
                     </div>
-                    <div id="main">
+                    <div data-id="main" class="id-main">
                         Main Content
                     </div>
                 </section>
                 <footer>
                     Footer
                 </footer>
+            </div>
+        </div>
+
+        <!-- ===================================================================  -->
+        <div id="grid-css-html" class="step toc-el layouts-demo" data-x="2500" data-y="-1300" data-scale="0.3">
+            <h1>Grid CSS Layout</h1>
+            <pre data-type="html" style="font-size: 20px">
+                &lt;div class="grid-container">
+                    &lt;header>Header&lt;/header>
+                    &lt;div class="item2">Menu1&lt;/div>
+                    &lt;div class="item3">Menu2&lt;/div>
+                    &lt;div class="item4">Main&lt;/div>
+                    &lt;footer>Footer&lt;/footer>
+                &lt;/div>
+            </pre>
+            <div class="live-example body">
+                <div class="grid-container">
+                    <header>Header</header>
+                    <div class="item2">Menu1</div>
+                    <div class="item3">Menu2</div>
+                    <div class="item4">Main</div>
+                    <footer>Footer</footer>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===================================================================  -->
+        <div id="grid-css-layout" class="step layouts-demo" data-x="2500" data-y="-1000" data-scale="0.4">
+            <h2>Grid CSS Layout</h2>
+            <h3>display: <a href="https://www.w3schools.com/css/css_grid.asp" target="_blank">grid</a>; <a href="https://www.w3schools.com/cssref/pr_grid-template-areas.asp">grid-template-areas</a>: '...'</h3>
+            <div class="live-example body">
+                <div class="grid-container">
+                    <header>Header</header>
+                    <div class="item2">
+                        Menu1
+                        <pre data-type="css" style="font-size: 16px">
+                            html { height: 100%; }
+                            body {
+                                margin: 0;
+                                min-height: 100%;
+                            }
+                        </pre>
+                    </div>
+                    <div class="item3">
+                        Menu2
+                        <pre data-type="css" style="font-size: 16px">
+                            header {
+                                grid-area: header;
+                            }
+                            .item2 {
+                                grid-area: menu1;
+                            }
+                            .item3 {
+                                grid-area: menu2;
+                            }
+                            .item4 {
+                                grid-area: main;
+                            }
+                            footer {
+                                grid-area: footer;
+                            }
+                        </pre>
+                    </div>
+                    <div class="item4">
+                        Main
+                        <pre data-type="css" style="font-size: 16px">
+                            .grid-container {
+                                min-height: 100%;
+                                display: grid;
+                                grid-template-areas:
+                                    'header header header header'
+                                    'menu1  main   main   main'
+                                    'menu2  main   main   main'
+                                    'footer footer footer footer';
+                                grid-gap: 10px;
+                                background-color: #2196F3;
+
+                                grid-template-rows: auto auto 1fr auto;
+                                height: calc(100vh);
+                            }
+                            .grid-container > * {
+                                background-color: #d3eafd;
+                                text-align: center;
+                                padding: 20px 0;
+                                font-size: 30px;
+                            }
+                        </pre>
+                    </div>
+                    <footer>Footer</footer>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===================================================================  -->
+        <div id="grid-css-cards" class="step layouts-demo" data-x="2500" data-y="-600" data-scale="0.5">
+            <h2>Grid CSS Layout (Cards)</h2>
+            <div class="cards">
+                <div>
+                    <pre data-type="html" style="font-size: 16px">
+                        &lt;div class="cards-wrap">
+                            &lt;div>*.html&lt;/div>
+                            &lt;div>*.css&lt;/div>
+                            &lt;div>3&lt;/div>
+                            &lt;div>4&lt;/div>
+                            &lt;div>5&lt;/div>
+                            &lt;div>6&lt;/div>
+                        &lt;/div>
+                    </pre>
+                </div>
+                <div style="flex: 2">
+                    <pre data-type="css" style="font-size: 16px">
+                            .cards-wrap {
+                                display: grid;
+                                grid-template-columns: auto auto auto;
+                                grid-gap: 10px;
+                                background-color: #2196F3;
+                                padding: 10px;
+                            }
+                            @media (max-width: 1024px) {
+                                .cards-wrap {
+                                    grid-template-columns: auto auto;
+                                }
+                            }
+                            @media (max-width: 800px) {
+                                .cards-wrap {
+                                    grid-template-columns: auto;
+                                }
+                            }
+                        </pre>
+                </div>
+            </div>
+            <div class="live-example">
+                <div class="cards-wrap">
+                    <div>*.html</div>
+                    <div>*.css</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                </div>
             </div>
         </div>
 

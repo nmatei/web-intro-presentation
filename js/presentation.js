@@ -64,35 +64,33 @@ function initEditors() {
     pages = document.getElementsByClassName("step"),
     length = pages.length;
 
-  if (!isPrintMode) {
-    if (animation) {
-      // use simple animations
-      for (var i = 0; i < length; i++) {
-        var page = pages[i],
-          dataX = 0,
-          dataY = 0;
+  if (animation) {
+    // use simple animations
+    for (var i = 0; i < length; i++) {
+      var page = pages[i],
+        dataX = 0,
+        dataY = 0;
 
-        if (animation === "slide-up") {
-          var margins = 8;
-          dataY = (700 + 100 - margins) * i;
-        } else if (animation === "slide-left") {
-          dataX = 1000 * i;
-        } else {
-          document.body.classList.add("anim-fade");
-        }
-
-        page.setAttribute("data-x", dataX);
-        page.setAttribute("data-y", dataY);
-
-        page.setAttribute("data-scale", "1");
-        page.setAttribute("data-rotate", "0");
-        page.setAttribute("data-z", "0");
-        page.setAttribute("data-rotate-x", "0");
-        page.setAttribute("data-rotate-y", "0");
+      if (animation === "slide-up") {
+        var margins = 8;
+        dataY = (700 + 100 - margins) * i;
+      } else if (animation === "slide-left") {
+        dataX = 1000 * i;
+      } else {
+        document.body.classList.add("anim-fade");
       }
+
+      page.setAttribute("data-x", dataX);
+      page.setAttribute("data-y", dataY);
+
+      page.setAttribute("data-scale", "1");
+      page.setAttribute("data-rotate", "0");
+      page.setAttribute("data-z", "0");
+      page.setAttribute("data-rotate-x", "0");
+      page.setAttribute("data-rotate-y", "0");
     }
-    impress().init();
   }
+  impress().init();
 
   var actions = document.createElement("div"),
     toc = document.createElement("div"),
@@ -102,14 +100,8 @@ function initEditors() {
   actions.className = "enable-events navigation-actions";
   animElements.className = "views";
 
-  animElementsItems.push(
-    '<a href="?print" class="btn' +
-      (isPrintMode ? " present" : "") +
-      '" title="Print Mode: use print as PDF in Chrome (margins: 0.15in 0 0.18in 0)">',
-    '<i class="fa fa-print" aria-hidden="true"></i>',
-    "</a>"
-  );
-  if (document.body.classList.contains("pdf-available")) {
+  var pdfAvailable = document.body.classList.contains("pdf-available");
+  if (pdfAvailable) {
     var pdfPath = window.location.pathname.split("/");
     pdfPath = pdfPath[pdfPath.length - 1];
     pdfPath = pdfPath.replace(".html", ".pdf");
@@ -126,8 +118,8 @@ function initEditors() {
     // '<a class="btn" title="About Me" href="https://www.linkedin.com/in/nicolaematei" target="_blank">',
     // 	'<i class="fa fa-info-circle" aria-hidden="true"></i>',
     // '</a>',
-    "<hr>",
-    '<a href="?" title="Animations Slides" class="btn' + (animation || isPrintMode ? "" : " present") + '">',
+    pdfAvailable ? "<hr>" : "",
+    '<a href="?" title="Animations Slides" class="btn' + (animation || " present") + '">',
     '<i class="fa fa-object-group" aria-hidden="true"></i>',
     "</a>",
     '<a href="?anim=slide-up" title="Slide Up/Down" class="btn' + (animation === "slide-up" ? " present" : "") + '">',
@@ -155,11 +147,6 @@ function initEditors() {
     page.setAttribute("data-current-page", i + 1);
     page.setAttribute("data-total-pages", length);
 
-    if (isPrintMode && !page.id) {
-      //console.warn('page does not contain an ID', page);
-      page.id = "step-" + (i + 1);
-    }
-
     tocContent.push(
       '<a id="toc-' +
         page.id +
@@ -172,10 +159,6 @@ function initEditors() {
         (i + 1) +
         "</a>"
     );
-
-    if (isPrintMode && page.className.indexOf("slide") === -1) {
-      page.className += " slide";
-    }
   }
 
   // TOC
@@ -183,7 +166,6 @@ function initEditors() {
   toc.innerHTML = tocContent.join("");
   actions.appendChild(toc);
 
-  // TODO TOC Page
   const tocPages = [...document.querySelectorAll("div.step.toc-el")].map(p => ({
     id: p.id,
     text: p.querySelector("h1").innerText
@@ -193,14 +175,6 @@ function initEditors() {
     .join("");
 
   document.body.appendChild(actions);
-
-  if (isPrintMode) {
-    // TODO use throttle (defer)
-    // window.addEventListener('scroll', function() {
-    // 	console.debug('onscroll', window.pageYOffset);
-    // 	console.debug('page 2', pages[1].offsetTop);
-    // }, false);
-  }
 
   document.addEventListener(
     "impress:stepenter",
