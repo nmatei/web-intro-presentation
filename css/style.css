@@ -28,11 +28,13 @@ h1 {
   line-height: 1em;
   margin-bottom: 15px;
   font-weight: bold;
+  color: #045ea5;
 }
 h2 {
   font-size: 1.2em;
   margin-bottom: 10px;
   font-weight: bold;
+  color: #2196F3;
 }
 ul {
   list-style: square inside;
@@ -62,7 +64,9 @@ a.disabled-link:hover {
 .hidden {
   display: none;
 }
-
+.bold {
+   font-weight: bold;
+}
 .align-r {
   text-align: right;
 }

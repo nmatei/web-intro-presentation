@@ -52,7 +52,6 @@
     display: flex;
     flex-direction: column;
 }
-#flexbox-css-layout header,
 #flexbox-css-layout.body > section {
     flex: 1;
 }
@@ -68,7 +67,7 @@
     flex: 2;
 }
 #flexbox-css-layout footer {
-    max-height: 24px;
+    min-height: 24px;
 }
 /* ==== page ==== */
 #grid-css-layout .body {

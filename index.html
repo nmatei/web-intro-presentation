@@ -39,8 +39,8 @@
         <!-- ===================================================================  -->
         <div id="start" class="step slide toc-el" data-x="-2000" data-y="-1500">
             <h2 class="js"><a href="http://www.fasttrackit.org/" target="_blank">FastTrackIT</a></h2>
-            <p class="align-r"><a href="https://nmatei.github.io/web-intro-presentation/index.html"
-                    target="_blank">https://nmatei.github.io/web-intro-presentation/index.html</a></p>
+            <p class="align-r"><a href="https://nmatei.github.io/web-intro-presentation"
+                    target="_blank">https://nmatei.github.io/web-intro-presentation</a></p>
             <h1 class="html block middle-h">
                 Intro in <a href="#html-intro">HTML</a>, <a href="#include-css">CSS</a>, <a href="#js">JS</a>
             </h1>
@@ -51,7 +51,7 @@
         </div>
 
         <!-- ===================================================================  -->
-        <div id="toc" class="step" data-x="-2000" data-y="-5000" data-scale="5">
+        <div id="toc" class="step" data-x="-2000" data-y="-5000" data-scale="3">
             <h1>Table of contents</h1>
             <ol>
 
@@ -432,7 +432,7 @@
 
         <!-- ===================================================================  -->
         <div id="include-css" class="step toc-el" data-x="-3000" data-y="0" data-scale="1">
-            <h1>Is time to improve our document</h1>
+            <h1>Understand basic CSS syntax</h1>
             <h2 class="practice">Create a new empty file</h2>
             <ol>
                 <li>name it <strong>style.css</strong></li>
@@ -443,7 +443,7 @@
                 </pre>
                 </li>
             </ol>
-            <p>Understand css syntax.</p>
+            <p class="bold">selecting elements and style them</p>
             <!-- TODO  highlight: [1] -->
             <pre data-type="css" style="font-size: 21px">
             /* selector     {   styles      }  */
@@ -606,7 +606,7 @@
                             margin: 0; min-height: 100%;
                             display: flex; flex-direction: column;
                         }
-                        header, body > section  { flex: 1; }
+                        body > section  { flex: 1; }
 
                         /* continue... */
                     </pre>
@@ -620,7 +620,7 @@
                         #side-menu { flex: 1; }
                         #main { flex: 2; }
                         #footer {
-                            max-height: 24px;
+                            min-height: 24px;
                         }
                     </pre>
                 </div>
@@ -715,10 +715,10 @@
                                 min-height: 100%;
                                 display: grid;
                                 grid-template-areas:
-                                    'header header header header'
-                                    'menu1  main   main   main'
-                                    'menu2  main   main   main'
-                                    'footer footer footer footer';
+                                    'header header header'
+                                    'menu1  main   main'
+                                    'menu2  main   main'
+                                    'footer footer footer';
                                 grid-gap: 10px;
                                 background-color: #2196F3;
 
@@ -741,6 +741,7 @@
         <!-- ===================================================================  -->
         <div id="grid-css-cards" class="step layouts-demo" data-x="2500" data-y="-600" data-scale="0.5">
             <h2>Grid CSS Layout (Cards)</h2>
+            <p>Resize screen to cross width limits (800px, 1024px)</p>
             <div class="cards">
                 <div>
                     <pre data-type="html" style="font-size: 16px">
@@ -801,7 +802,7 @@
 
         <!-- ===================================================================  -->
         <div id="impress-js" class="step" data-x="0" data-y="3000" data-z="-3000" data-scale="1">
-            <p>js just <a href="http://bartaz.github.com/impress.js/#/bored">impress.js</a> <br />
+            <p>js just <a href="https://impress.js.org/" target="_blank">impress.js</a> <br />
                 - Based on the <strong>power of <span class="css">CSS3</span> transforms and transitions</strong> in
                 modern browsers.</p>
         </div>
@@ -827,9 +828,11 @@
         <div id="web-applications-examples" class="step slide" data-x="4000" data-y="-850" data-rotate="270"
             data-scale="3">
             <h1>Web Application examples</h1>
-            <h2>Applications you use?</h2>
+            <h2>Applications you use</h2>
             <ul>
                 <li>emails</li>
+                <li>dropbox</li>
+                <li>...</li>
             </ul>
             <h2>Libraries & Frameworks</h2>
             <ul>
@@ -876,68 +879,71 @@
 
         <!-- ===================================================================  -->
         <div id="js-variables" class="step toc-el" data-x="-6000" data-y="6000" data-scale="1">
-            <h1>Learning Pure JS (variables)</h1>
-            <pre data-type="js">
-            var employed = false;     // boolean
-            var age = 24;             // number
-            var name = 'First Last';  // string
+            <h1>Learning Pure JS</h1>
+            <h2>Variables</h2>
+            <pre data-type="js" style="font-size: 22px">
+                var employed = false;     // boolean
+                var age = 24;             // number
+                var name = 'First Last';  // string
 
-            // object (array)
-            var skills = ['html', 'css', 'js'];
-            // object (json)
-            var person = {
-                employed: true,
-                age: 29
-            };
-            // object (DOM, other)
-            var el = document.getElementById('el');
+                // object (array)
+                var skills = ['html', 'css', 'js'];
+                // object (json)
+                var person = {
+                    employed: true,
+                    age: 29
+                };
+                // object (DOM, other)
+                var el = document.getElementById('el');
 
-            console.info(typeof name);
-            console.info(typeof skills);
-        </pre>
+                console.info(typeof name); // string
+                console.info(typeof skills); // object
+                console.info(typeof person); // object
+                console.info(typeof document.getElementById); // function
+            </pre>
             <p class="align-r line-space practice">Read more about <a
                     href="http://www.w3schools.com/js/js_variables.asp" target="_blank">JavaScript Variables</a></p>
         </div>
 
         <!-- ===================================================================  -->
         <div id="js-json" class="step" data-x="-6000" data-y="6500" data-scale="0.3">
-            <h1>JSON Objects</h1>
+            <h2>JSON Objects</h2>
             <pre data-type="js" style="font-size: 22px">
-            var person = {
-                employed: true,
-                age: 29,
-                name: 'First Last',
-                skills: [
-                    'html', 'css', 'js'
-                ]
-            };
+                var person = {
+                    employed: true,
+                    age: 29,
+                    name: 'First Last',
+                    skills: [
+                        'html', 'css', 'js'
+                    ]
+                };
 
-            console.debug(person);
-            console.info(person.name);
-            console.debug(person.age);
-            console.debug(person.employed);
-        </pre>
+                console.debug(person);
+                console.info(person.name);
+                console.debug(person.age);
+                console.debug(person.employed);
+            </pre>
             <p>In this case person object is storing all info about one person (like packaging).</p>
             <p class="align-r line-space">Read more about <a href="http://www.w3schools.com/js/js_json.asp"
                     target="_blank">JSON</a></p>
         </div>
 
         <div id="js-functions" class="step" data-x="-5000" data-y="6000" data-scale="1">
-            <h1>Functions</h1>
+            <h2>Functions</h2>
             <pre data-type="js">
-            // declaration
-            function getInfo(name) {
-                var msg = "Hello " + name + ", " +
-                    "welcome at FastTrackIT.";
-                return msg;
-            }
+                // declaration
+                function getInfo(name) {
+                    var msg = "Hello " + name + ", " +
+                        "welcome at FastTrackIT.";
+                    return msg;
+                }
 
-            // call getInfo and store result in variable
-            var info = getInfo("Matei");
+                // call getInfo and store result in variable
+                var info = getInfo("Matei");
 
-            // print variable value in console
-            console.info(info);
-        </pre>
+                // print variable value in console
+                console.info(info);
+            </pre>
             <p class="align-r line-space practice">Read more about <a
                     href="http://www.w3schools.com/js/js_functions.asp" target="_blank">functions</a></p>
         </div>
@@ -965,28 +971,31 @@
         </div>
 
         <div id="dom-access" class="step" data-x="-3000" data-y="5500" data-scale="1">
-            <h1>Document Object Model (DOM)</h1>
-            <pre data-type="js" style="font-size: 25px;">
-            // var element = ... (get elements)
-            var motto, favorite, links;
-            motto    = document.getElementById('motto');
-            favorite = document.getElementsByClassName("favorit");
-            links    = document.getElementsByTagName("a");
-            
-            // change element html
-            motto.innerHTML = "Hello World!";
+            <h2>Document Object Model (DOM)</h2>
+            <pre data-type="js" style="font-size: 22px;">
+                // var element = ... (get elements)
+                var motto, favorite, links;
+                motto    = document.getElementById('motto');
+                favorite = document.getElementsByClassName("favorit");
+                links    = document.getElementsByTagName("a");
+            </pre>
+            <h2>DHTML (the fun part... like Lego Technic)</h2>
+            <pre data-type="js" style="font-size: 22px;">
+                // change element html
+                motto.innerHTML = "Hello World!";
 
-            // change element style
-            favorite[0].style.display = 'none';
+                // change element style
+                favorite[0].style.display = 'none';
 
-            // adding events
-            links[0].onclick = function () {
-                console.info('click on first link', this);
-            };
-            links[1].addEventListener("click", function(){
-                console.info('click on second link', this);
-            });
-        </pre>
+                // adding events
+                links[0].onclick = function () {
+                    console.info('click on first link', this);
+                };
+                links[1].addEventListener("click", function(){
+                    console.info('click on second link', this);
+                });
+            </pre>
+
             <p class="align-r line-space practice">Read more about <a href="http://www.w3schools.com/js/js_htmldom.asp"
                     target="_blank">DOM</a></p>
         </div>
@@ -1015,7 +1024,8 @@
                 // var => const & let
                 var name = "Nicolae Matei";
                 const firstName = "Nicolae";
-                let lastName = "Matei";
+                const lastName = "Matei";
+                let age = 18;
 
                 // from functions to arrow functions
                 function hoistedFunction() {
@@ -1043,7 +1053,7 @@
         </div>
 
         <div id="es5-to-es6-arrow-fn" class="step" data-x="0" data-y="6500" data-scale="1">
-            <h1>Basic info about arrow functions</h1>
+            <h2>Arrow functions =></h2>
             <pre data-type="js">
                 const noParam = () => {
                     return "This fn has no parameters";
@@ -1068,13 +1078,19 @@
         </div>
 
         <div id="es5-to-es6-arrow-fn-foreach" class="step" data-x="1000" data-y="6500" data-scale="1">
-            <h1>array forEach examples</h1>
+            <h2>Array forEach Helper</h2>
 
             <pre data-type="js" style="font-size: 22px;">
                 const vehicles = [
                     "car", "truck", "van", "bus", "bike"
                 ];
-                
+
+                // for loop
+                for(var i = 0; i < vehicles.length; i++) {
+                    console.info(i, vehicles[i]);
+                }
+
+                // forEach helper
                 vehicles.forEach(function(vehicle) {
                     console.info(vehicle);
                 });
@@ -1089,7 +1105,7 @@
         </div>
 
         <div id="es5-to-es6-arrow-fn-map" class="step" data-x="1000" data-y="7300" data-scale="1">
-            <h1>Array map examples</h1>
+            <h2>Array map Helper</h2>
 
             <pre data-type="js" style="font-size: 22px;">
                 const vehicles = [
@@ -1100,10 +1116,10 @@
                     return vehicle.toUpperCase();
                 });
 
-                const upperCaseVehicles2 = vehicles.map(vehicle => 
-                    vehicle.toUpperCase()
-                );
-                const upperCaseVehicles3 = vehicles.map(vehicle => 
+                const upperCaseVehicles2 = vehicles.map((vehicle) => {
+                    return vehicle.toUpperCase()
+                });
+                const upperCaseVehicles3 = vehicles.map(vehicle =>
                     vehicle.toUpperCase()
                 );
                 // ["CAR", "TRUCK", "VAN", "BUS", "BIKE"]
@@ -1141,7 +1157,7 @@
                 </li>
             </ul>
 
-            <h2>IDE (VS Code) common shortcuts</h2>
+            <h2>IDE (VSCode) common shortcuts</h2>
             <ul>
                 <li><strong>STRL + Space</strong> => <i class="fa fa-magic icon" aria-hidden="true"></i> Auto complete
                 </li>
