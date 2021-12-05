@@ -28,16 +28,10 @@
 </head>
 
 <body class="impress-not-supported pagination x-pdf-available">
-
-    <!--<div class="fallback-message">
-    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
-    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
-</div>-->
-
     <div id="impress">
 
         <!-- ===================================================================  -->
-        <div id="start" class="step slide toc-el" data-x="-2000" data-y="-1500">
+        <div id="start" class="step slide" data-x="-2000" data-y="-1500">
             <h2 class="js"><a href="http://www.fasttrackit.org/" target="_blank">FastTrackIT</a></h2>
             <p class="align-r"><a href="https://nmatei.github.io/web-intro-presentation"
                     target="_blank">https://nmatei.github.io/web-intro-presentation</a></p>
@@ -67,7 +61,7 @@
         </div>
 
         <!-- ===================================================================  -->
-        <div class="step slide" data-x="1000" data-y="-2000">
+        <div id="lego-arranged" class="step slide" data-x="1000" data-y="-2000">
             <p>What do we need to make them look like this?</p>
             <div style="background: url(images/lego/lego-examples.jpg); width: 606px; height: 570px;"></div>
         </div>
@@ -80,7 +74,7 @@
 
         <!-- ===================================================================  -->
         <div id="html-intro" class="step slide toc-el" data-x="-10000" data-y="-3000" data-scale="0.5">
-            <h1>What is HTML?</h1>
+            <h1><i class="fa fa-html5"></i> What is HTML?</h1>
             <p>HTML is a <strong>markup</strong> language for <strong>describing</strong> web documents (web pages).</p>
             <ul>
                 <li>HTML stands for <strong>H</strong>yper <strong>T</strong>ext <strong>M</strong>arkup
@@ -96,7 +90,7 @@
 
         <!-- ===================================================================  -->
         <div id="css-intro" class="step slide toc-el" data-x="-9550" data-y="-3150" data-scale="0.5">
-            <h1>What is CSS?</h1>
+            <h1><i class="fa fa-css3"></i> What is CSS?</h1>
             <ul>
                 <li><strong>CSS</strong> stands for <strong>C</strong>ascading <strong>S</strong>tyle
                     <strong>S</strong>heets
@@ -112,7 +106,7 @@
 
         <!-- ===================================================================  -->
         <div id="js-intro" class="step slide toc-el" data-x="-9100" data-y="-3300" data-scale="0.5">
-            <h1>What is JS?</h1>
+            <h1><i class="fa fa-file-code-o"></i> What is JS?</h1>
             <ul>
                 <li><strong>JavaScript</strong> is the most popular <strong>programming language</strong> in the world.
                 </li>
@@ -122,8 +116,8 @@
         </div>
 
         <!-- ===================================================================  -->
-        <div id="no-more-theory" class="step" data-x="-8750" data-y="-3000" data-scale="0.5" data-rotate="180">
-            <h1>Better let's create our first html <span class="emoji">😉</span> </h1>
+        <div id="no-more-theory" class="step toc-el" data-x="-8750" data-y="-3000" data-scale="0.5" data-rotate="180">
+            <h1>Better let's create our first HTML <span class="emoji">😉</span> </h1>
             <p>and see <strong>how</strong> and <strong>why</strong> we need this theory!</p>
             <p>Then you will search for theory when you feel you need it, not when I tell you.</p>
         </div>
@@ -432,7 +426,7 @@
 
         <!-- ===================================================================  -->
         <div id="include-css" class="step toc-el" data-x="-3000" data-y="0" data-scale="1">
-            <h1>Understand basic CSS syntax</h1>
+            <h1><i class="fa fa-css3"></i> Understand basic CSS syntax</h1>
             <h2 class="practice">Create a new empty file</h2>
             <ol>
                 <li>name it <strong>style.css</strong></li>
@@ -879,7 +873,7 @@
 
         <!-- ===================================================================  -->
         <div id="js-variables" class="step toc-el" data-x="-6000" data-y="6000" data-scale="1">
-            <h1>Learning Pure JS</h1>
+            <h1><i class="fa fa-file-code-o"></i> Learning Pure JS</h1>
             <h2>Variables</h2>
             <pre data-type="js" style="font-size: 22px">
                 var employed = false;     // boolean
@@ -928,6 +922,7 @@
                     target="_blank">JSON</a></p>
         </div>
 
+        <!-- ===================================================================  -->
         <div id="js-functions" class="step" data-x="-5000" data-y="6000" data-scale="1">
             <h2>Functions</h2>
             <pre data-type="js">
@@ -948,20 +943,21 @@
                     href="http://www.w3schools.com/js/js_functions.asp" target="_blank">functions</a></p>
         </div>
 
+        <!-- ===================================================================  -->
         <div id="js-src" class="step" data-x="-4000" data-y="6000" data-scale="1">
             <h1>Is time to improve our document</h1>
             <h2 class="practice">Create a new empty file</h2>
             <ol>
-                <li>name it <strong>functions.js</strong></li>
+                <li>name it <strong>index.js</strong></li>
                 <li>include it in <strong>index.html</strong>
                     <!-- TODO first-line: 5 -->
                     <pre data-type="html">
-                    &lt;script src="functions.js"
+                    &lt;script src="index.js"
                         type="text/javascript">
                     &lt;/script>
                 </pre>
                 </li>
-                <li>move all your code from preview script tag into functions.js</li>
+                <li>move all your code from preview script tag into <strong>index.js</strong></li>
             </ol>
             <br />
             <p style="font-style: italic;">Don't forget HTML is a markup language for describing web documents (web
@@ -970,6 +966,7 @@
                 make the difference!</p>
         </div>
 
+        <!-- ===================================================================  -->
         <div id="dom-access" class="step" data-x="-3000" data-y="5500" data-scale="1">
             <h2>Document Object Model (DOM)</h2>
             <pre data-type="js" style="font-size: 22px;">
@@ -979,10 +976,10 @@
                 favorite = document.getElementsByClassName("favorit");
                 links    = document.getElementsByTagName("a");
             </pre>
-            <h2>DHTML (the fun part... like Lego Technic)</h2>
+            <h2>DHTML (the fun part)</h2>
             <pre data-type="js" style="font-size: 22px;">
                 // change element html
-                motto.innerHTML = "Hello World!";
+                motto.innerHTML = 'Hello &lt;strong>World&lt;/strong>!';
 
                 // change element style
                 favorite[0].style.display = 'none';
@@ -1002,7 +999,7 @@
 
         <!-- ===================================================================  -->
         <div id="git" class="step toc-el" data-x="-2000" data-y="6500" data-scale="1">
-            <h1>Git most used commands</h1>
+            <h1><i class="fa fa-git-square"></i> Git most used commands</h1>
             <pre data-type="shell" style="font-size: 21px;">
                 # one time
                 git clone https://github.com/nmatei/web-programming-tutorial.git
@@ -1019,7 +1016,7 @@
 
         <!-- ===================================================================  -->
         <div id="es5-to-es6" class="step toc-el" data-x="-1000" data-y="6500" data-scale="1">
-            <h1>Basic Es5 vs Es6</h1>
+            <h1><i class="fa fa-file-code-o"></i> Basic Es5 vs Es6</h1>
             <pre data-type="js" style="font-size: 20px;">
                 // var => const & let
                 var name = "Nicolae Matei";
@@ -1052,6 +1049,7 @@
                     target="_blank">functions-as-a-variable</a></p>
         </div>
 
+        <!-- ===================================================================  -->
         <div id="es5-to-es6-arrow-fn" class="step" data-x="0" data-y="6500" data-scale="1">
             <h2>Arrow functions =></h2>
             <pre data-type="js">
@@ -1077,6 +1075,7 @@
                     vs ES6</a></p>
         </div>
 
+        <!-- ===================================================================  -->
         <div id="es5-to-es6-arrow-fn-foreach" class="step" data-x="1000" data-y="6500" data-scale="1">
             <h2>Array forEach Helper</h2>
 
@@ -1104,6 +1103,7 @@
             </pre>
         </div>
 
+        <!-- ===================================================================  -->
         <div id="es5-to-es6-arrow-fn-map" class="step" data-x="1000" data-y="7300" data-scale="1">
             <h2>Array map Helper</h2>
 

@@ -1,5 +1,17 @@
 /* ==== page ==== */
 
+#lego-intro {
+    background-image: url("../images/lego/lego-pile-1081687477.jpg");
+    background-position: bottom center;
+    background-repeat: no-repeat;
+}
+
+#title {
+    padding: 40px 60px;
+}
+
+/* ==== page ==== */
+
 #top-menu-bar {
     background-color: #334455;
     color: #ffffff;
