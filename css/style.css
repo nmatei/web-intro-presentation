@@ -8,19 +8,15 @@ body:before {
   background-image: url("../images/fastrackit-logo-small.png");
   background-position: bottom 5px left 5px;
   background-repeat: no-repeat;
-  /*
-	-webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -o-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    transform: rotate(90deg);
-	*/
 }
 
 .slide {
   background-image: url("../images/fastrackit-logo-small.png");
   background-position: bottom 5px left 5px;
   background-repeat: no-repeat;
+}
+.slide.no-logo {
+  background-image: none;
 }
 
 h1 {
@@ -79,6 +75,12 @@ a.disabled-link:hover {
 .line-space {
   margin: 15px 0;
 }
+.footnote {
+  position: absolute;
+  bottom: 35px;
+  right: 50px;
+  font-size: .7em;
+}
 .live-example {
   padding: 5px;
   border: 1px dotted #c57209;
@@ -114,16 +116,6 @@ a.disabled-link:hover {
 }
 .middle-2 {
   margin: 100px 0 50px 0;
-}
-
-#title {
-  padding: 40px 60px;
-}
-
-#lego-intro {
-  background-image: url("../images/lego/lego-pile-1081687477.jpg");
-  background-position: bottom center;
-  background-repeat: no-repeat;
 }
 
 .step.active {
@@ -233,6 +225,23 @@ h1.html {
 #toc ol {
   font-size: 0.9em;
 }
+#toc li {
+  margin-bottom: 2px;
+}
+#toc a {
+  text-decoration: none;
+  display: block;
+  padding: 0 0.5em;
+}
+#toc a:after {
+  content: attr(data-page);
+  position: absolute;
+  right: 50px;
+  padding: 10px;
+  font-size: 0.6em;
+  color: gray;
+}
+
 .navigation-actions {
   width: 65px;
   padding: 10px;
@@ -291,6 +300,26 @@ h1.html {
 
 .pagination .no-pagination.step:after {
   display: none;
+}
+
+.folder {
+  border: 2px solid #2196F3;
+  background: #f5f5f5;
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.fa-ul {
+  margin-left: 1.5em;
+}
+.fa-ul > li {
+  padding-top: 5px;
+}
+.git-add li {
+  color: #036a07;
+}
+.git-add li.gitignore {
+  color: gray;
 }
 
 .cards {

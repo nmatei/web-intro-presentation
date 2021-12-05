@@ -10,21 +10,26 @@ Intro Presentation to Web Development for students that want to learn basics of 
 
 ### Navigation
 
-- left/right arrows
-- up/down arrows
-- page down/up keys
-- click on sidebar number
+- left/right/up/down arrows, page down/up keys
+- click on sidebar pages
 
 ### Transitions mode
 
-- [x] [Animation](https://nmatei.github.io/web-intro-presentation/) (default run slides as arranged)
+- [x] [Animations](https://nmatei.github.io/web-intro-presentation/) (default)
 - [x] [Slide Up/Down](https://nmatei.github.io/web-intro-presentation/?anim=slide-up)
 - [x] [Slide Right/Left](https://nmatei.github.io/web-intro-presentation/?anim=slide-left)
 - [x] [Fade](https://nmatei.github.io/web-intro-presentation/?anim=fade)
-- [ ] Circle * -- todo arrange all slides in circle like clock -- *
+- [ ] Circle (Arrange all slides in circle like a clock)
+- [ ] Slide Headings (every h1 -> down, every h2 -> right)
+- [ ] Book Style (Simulate 2 pages and move left - right)
 
 ## Save as PDF
 
 - [x] Change Transitions mode to [Up/Down](https://nmatei.github.io/web-intro-presentation/?anim=slide-up#/start) Slides 
 - [x] **CTRL+P** and select **Save as PDF** (Margins: None)
   - (Make sure all slides are on each page)
+
+## Thanks
+
+- [https://impress.js.org](https://impress.js.org)
+- [https://fontawesome.com/v4.7/icons](https://fontawesome.com/v4.7/icons)

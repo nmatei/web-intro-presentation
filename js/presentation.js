@@ -142,11 +142,13 @@ function initEditors() {
 
   // pagination
   var tocContent = [];
+  var pagesNr = {};
   for (var i = 0; i < length; i++) {
     var page = pages[i];
     page.setAttribute("data-current-page", i + 1);
     page.setAttribute("data-total-pages", length);
 
+    pagesNr[page.id] = i + 1;
     tocContent.push(
       '<a id="toc-' +
         page.id +
@@ -168,10 +170,11 @@ function initEditors() {
 
   const tocPages = [...document.querySelectorAll("div.step.toc-el")].map(p => ({
     id: p.id,
-    text: p.querySelector("h1").innerText
+    text: p.querySelector("h1").innerHTML,
+    pageNr: pagesNr[p.id]
   }));
   document.querySelector("#toc ol").innerHTML = tocPages
-    .map(page => `<li><a href="#${page.id}">${page.text}</a></li>`)
+    .map(page => `<li><a href="#${page.id}" data-page="${page.pageNr}">${page.text}</a></li>`)
     .join("");
 
   document.body.appendChild(actions);
