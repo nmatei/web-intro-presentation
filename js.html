@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>JS intro @ FastTrackIT</title>
+
+    <meta name="description" content="continue with js concepts, npm and webpack" />
+    <meta name="author" content="Matei Nicolae" />
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic"
+        rel="stylesheet" />
+    <!--<link href="css/impress-demo.css" rel="stylesheet" />-->
+    <link href="css/impress-demo-min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+        crossorigin="anonymous" />
+
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link type="text/css" rel="stylesheet" href="css/print.css" media="print" />
+
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+</head>
+
+<body class="impress-not-supported pagination">
+    <div id="impress">
+
+        <!-- ===================================================================  -->
+        <div id="start" class="step slide" data-x="-2000" data-y="-1500">
+            <h2 class="js"><a href="http://www.fasttrackit.org/" target="_blank">FastTrackIT</a></h2>
+            <p class="align-r"><a href="https://nmatei.github.io/web-intro-presentation/js.html"
+                    target="_blank">https://nmatei.github.io/web-intro-presentation/js.html</a></p>
+            <h1 class="html block middle-h">
+                More concepts about <a href="#toc">JS</a>
+            </h1>
+            <h2 class="keyword align-r">by <a href="https://www.linkedin.com/in/nicolaematei" target="_blank">Matei
+                    Nicolae</a></h2>
+            <a class="align-r small hidden print-only" href="https://www.linkedin.com/in/nicolaematei"
+                target="_blank">https://www.linkedin.com/in/nicolaematei</a>
+        </div>
+
+        <!-- ===================================================================  -->
+        <div id="toc" class="step" data-x="-1000" data-y="-5000" data-scale="3">
+            <h1>Table of contents</h1>
+            <ol>
+
+            </ol>
+        </div>
+
+        <!-- ===================================================================  -->
+        <div id="initial-folder-structure" class="step slide toc-el" data-x="-500" data-y="-1500">
+            <h1><i class="fa fa-folder-open-o"></i> Initial Folder Structure</h1>
+            <!-- https://fontawesome.com/v5.15/how-to-use/on-the-web/styling/icons-in-a-list -->
+            <div class="folder">
+                <ol class="fa-ul">
+                    <li><span class="fa-li"><i class="fa fa-folder-open"></i></span>src
+                        <ol class="fa-ul">
+                            <li><span class="fa-li"><i class="fa fa-html5"></i></span>index.html</li>
+                            <li><span class="fa-li"><i class="fa fa-file-code-o"></i></span>index.js</li>
+                            <li><span class="fa-li"><i class="fa fa-css3"></i></span>style.css</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            <br>
+            <h2>Scope</h2>
+            <ol class="fa-ul">
+                <li><span class="fa-li"><i class="fa fa-square-o"></i></span> Save on GIT (Version Control System)</li>
+                <li><span class="fa-li"><i class="fa fa-square-o"></i></span> Multiple contributors</li>
+                <li><span class="fa-li"><i class="fa fa-square-o"></i></span> Format code in the same way (less git conflicts)</li>
+                <li><span class="fa-li"><i class="fa fa-square-o"></i></span> Use shared code from others</li>
+                <li><span class="fa-li"><i class="fa fa-square-o"></i></span> Hot reload app then you change code</li>
+                <li><span class="fa-li"><i class="fa fa-square-o"></i></span> Minimise & Obfuscate your code</li>
+            </ol>
+        </div>
+
+        <!-- ===================================================================  -->
+        <div id="prettier-init" class="step slide toc-el" data-x="1000" data-y="-1500">
+            <h1><i class="fa fa-align-left"></i> Initialize project to use Prettier</h1>
+
+            <p>We want to format code in the same way:</p>
+            <pre data-type="shell" style="font-size: 24px;">
+                # create .prettierrc file
+                touch .prettierrc
+            </pre>
+
+            <p>Add following json inside <strong>.prettierrc</strong></p>
+            <pre data-type="js" style="font-size: 24px;">
+                {
+                    "trailingComma": "none",
+                    "semi": true,
+                    "tabWidth": 2,
+                    "singleQuote": false,
+                    "printWidth": 120,
+                    "arrowParens": "avoid"
+                }
+            </pre>
+
+            <br>
+            <h2>VSCode Settings</h2>
+            <ul>
+                <li>Default Formatter / Prettier</li>
+                <li>Formatting / Format on Save</li>
+            </ul>
+        </div>
+
+        <!-- ===================================================================  -->
+        <div id="git-init" class="step slide toc-el" data-x="2500" data-y="-1500">
+            <h1><i class="fa fa-git-square"></i> Initialize project to use GIT</h1>
+            <p>inside root folder run:</p>
+            <pre data-type="shell" style="font-size: 22px;">
+                git init
+
+                # create .gitignore file
+                touch .gitignore
+
+                # exclude some files from git
+                echo /.vscode >> .gitignore
+                echo /node_modules >> .gitignore
+                echo /dist >> .gitignore
+
+                # checking files to be committed
+                git status
+
+                # now you can add commit & push files ;)
+            </pre>
+        </div>
+
+        <!-- ===================================================================  -->
+        <div id="npm-init" class="step slide toc-el" data-x="4000" data-y="-1500">
+            <h1><i class="fa fa-cubes"></i> Initialize project to use NPM</h1>
+            <p>inside root folder run</p>
+            <pre data-type="shell" style="font-size: 22px;">
+                npm init -y
+            </pre>
+
+            <br>
+            <h2>Good parts</h2>
+            <ol class="fa-ul git-add">
+                <li><span class="fa-li"><i class="fa fa-check-square-o"></i></span> Many 😀</li>
+            </ol>
+
+            <br>
+            <h2 style="color: red">Risks</h2>
+            <ol class="fa-ul">
+                <li><span class="fa-li"><i class="fa fa-check-square-o"></i></span> There are about <strong>Infinity</strong> possible <strong>security</strong> risks 🔐</li>
+                <li><span class="fa-li"><i class="fa fa-check-square-o"></i></span> Yesterday worked... 😓</li>
+            </ol>
+
+            <p class="footnote">Read more about
+                <a href="https://docs.npmjs.com/cli/v6/commands/npm-init" target="_blank">npm</a>
+            </p>
+        </div>
+
+        <!-- ===================================================================  -->
+        <div id="webpack-init" class="step slide toc-el" data-x="5500" data-y="-1500">
+            <h1><i class="fa fa-building-o"></i> Initialize project to use Webpack</h1>
+            <h2>Scope</h2>
+            <ol class="fa-ul">
+                <li><span class="fa-li"><i class="fa fa-check-square-o"></i></span> <strong>Hot reload</strong> app then you change code</li>
+                <li><span class="fa-li"><i class="fa fa-check-square-o"></i></span> <strong>Minimise</strong> & <strong>Obfuscate</strong> your code</li>
+                <li><span class="fa-li"><i class="fa fa-check-square-o"></i></span> build app using <a href="https://www.jenkins.io/" target="_blank">Jenkins</a> to prepare for <a href="https://webpack.js.org/guides/production/" target="_blank">Production</a></li>
+            </ol>
+            <br>
+            <h2>Installing required npm packages</h2>
+            <pre data-type="shell" style="font-size: 24px;">
+                npm i -D webpack webpack-cli
+                npm i -D webpack-dev-server
+                npm i -D html-webpack-plugin
+
+                # create webpack.config.js file
+                touch webpack.config.js
+            </pre>
+            <br>
+            <p class="practice">Edit <strong>webpack.config.js</strong> and add content from next slide</p>
+
+            <p class="footnote">
+                Read more about
+                <a href="https://webpack.js.org/guides/development/#using-webpack-dev-server" target="_blank">webpack-dev-server</a>
+                and
+                <a href="https://webpack.js.org/guides/production/" target="_blank">webpack for production</a>
+            </p>
+        </div>
+
+        <!-- ===================================================================  -->
+        <div id="webpack-config" class="step slide no-logo" data-x="5500" data-y="-800" data-scale="0.5">
+            <h2><i class="fa fa-file-code-o"></i> webpack.config.js</h2>
+
+            <pre data-type="js" style="font-size: 18px;">
+                const path = require("path");
+                const HtmlWebpackPlugin = require("html-webpack-plugin");
+
+                module.exports = env => {
+                  const isProduction = !!env.WEBPACK_BUILD;
+                  return {
+                    mode: isProduction ? "production" : "development",
+                    entry: ["./src/index.js"],
+                    devtool: isProduction ? false : "inline-source-map",
+                    devServer: {
+                      static: ["dist", "src"],
+                      watchFiles: ["src/**/*.*"]
+                    },
+                    plugins: [
+                      new HtmlWebpackPlugin({
+                        template: "./src/index.html"
+                      })
+                    ],
+                    output: {
+                      filename: "main.js",
+                      path: path.resolve(__dirname, "dist"),
+                      publicPath: "/"
+                    }
+                  };
+                };
+            </pre>
+        </div>
+
+        <!-- ===================================================================  -->
+        <div id="webpack-scripts" class="step slide" data-x="5500" data-y="-300" data-scale="0.5">
+            <h2>Configure npm scripts</h2>
+            <p>Add following scripts inside <strong>package.json</strong></p>
+            <pre data-type="js" style="font-size: 24px;">
+                {
+                    "scripts": {
+                        "clear": "npm run clean && rimraf node_modules",
+                        "clean": "rimraf dist",
+                        "build": "webpack --mode production",
+                        "start": "webpack serve --open"
+                    }
+                }
+            </pre>
+
+            <h2>Running scripts using npm or yarn</h2>
+            <pre data-type="shell" style="font-size: 24px;">
+                npm start
+                npm run build
+
+                yarn start
+                yarn build
+            </pre>
+
+            <p class="footnote">
+                Extra: <a href="https://medium.com/geekculture/set-up-webpack-5-for-basic-javascript-projects-8bded066d282" target="_blank">Set up Webpack 5 for Basic Javascript Projects</a>
+                <br>
+                Adding <a href="https://webpack.js.org/guides/typescript/" target="_blank">TypeScript</a> to webpack
+            </p>
+        </div>
+
+        <!-- ===================================================================  -->
+        <div id="webpack-folder-structure" class="step slide toc-el" data-x="7000" data-y="-1500">
+            <h1><i class="fa fa-folder-open-o"></i> Folder Structure</h1>
+            <div class="folder">
+                <ol class="fa-ul git-add">
+                    <li class="gitignore"><span class="fa-li"><i class="fa fa-folder"></i></span>dist</li>
+                    <li class="gitignore"><span class="fa-li"><i class="fa fa-folder"></i></span>node_modules</li>
+                    <li><span class="fa-li"><i class="fa fa-folder-open-o"></i></span>src
+                        <ol class="fa-ul">
+                            <li><span class="fa-li"><i class="fa fa-html5"></i></span>index.html</li>
+                            <li><span class="fa-li"><i class="fa fa-file-code-o"></i></span>index.js</li>
+                            <li><span class="fa-li"><i class="fa fa-css3"></i></span>style.css</li>
+                        </ol>
+                    </li>
+                    <li><span class="fa-li"><i class="fa fa-code-fork"></i></span>.gitignore</li>
+                    <li><span class="fa-li"><i class="fa fa-file-o"></i></span>.prettierrc</li>
+                    <li><span class="fa-li"><i class="fa fa-file-o"></i></span>package.json</li>
+                    <li><span class="fa-li"><i class="fa fa-file-code-o"></i></span>webpack.config.js</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- ===================================================================  -->
+    </div>
+
+    <div class="hint">
+        <p>Use a spacebar or arrow keys to navigate</p>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/ace.js"
+        integrity="sha512-OMjy8oWtPbx9rJmoprdaQdS2rRovgTetHjiBf7RL7LvRSouoMLks5aIcgqHb6vGEAduuPdBTDCoztxLR+nv45g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/ext-beautify.min.js"
+        integrity="sha512-sIVPU3/0VPG2jJdl6NTqe8QF9vTE3Y/LAFiH2YPj8iCz5fdWkhOYA26QR6nZVjI3OWCMtbH/BX8YwZddZi8mhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-javascript.min.js"
+        integrity="sha512-37ta5K4KVYs+MEmIg2xnZxJrdiQmBSKt+JInvyPrq9uz7aF67lMJT/t91EYoYj520jEcGlih41kCce7BRTmE3Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-html.min.js"
+        integrity="sha512-vSQkVhmiIt31RHmh8b65o0ap3yoL08VJ6MeuiCGo+92JDdSSWAEWoWELEf3WBk4e2tz/0CvnTe87Y2rFrNjcbg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-css.min.js"
+        integrity="sha512-9kFCBhC+SjlU9Mk4n65VZ3yID5cdcql9y/MrrRsDLyD2Dce+diCd+NITdkjHVBaLK6USc1YCZ5cXVPMC8CdJBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-sh.min.js"
+        integrity="sha512-DCGTxVcs3p6DPSs/NfnxuKE1ej/9KfCdFDfy1qhyriBteSxKkrMja1A0Q+pN2tuvUekTZun1RU2LRM1qybC/VQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!--<script src="js/impress.js"></script>-->
+    <script src="js/impress-min.js"></script>
+    <script src="js/presentation.js"></script>
+
+</body>
+
+</html>
