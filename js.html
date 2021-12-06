@@ -187,7 +187,7 @@
         </div>
 
         <!-- ===================================================================  -->
-        <div id="webpack-config" class="step slide no-logo" data-x="5500" data-y="-800" data-scale="0.5">
+        <div id="webpack-config" class="step slide no-logo" data-x="5500" data-y="-900" data-scale="0.5">
             <h2><i class="fa fa-file-code-o"></i> webpack.config.js</h2>
 
             <pre data-type="js" style="font-size: 18px;">
@@ -220,7 +220,7 @@
         </div>
 
         <!-- ===================================================================  -->
-        <div id="webpack-scripts" class="step slide" data-x="5500" data-y="-300" data-scale="0.5">
+        <div id="webpack-scripts" class="step slide" data-x="5500" data-y="-400" data-scale="0.5">
             <h2>Configure npm scripts</h2>
             <p>Add following scripts inside <strong>package.json</strong></p>
             <pre data-type="js" style="font-size: 24px;">
@@ -270,6 +270,165 @@
                     <li><span class="fa-li"><i class="fa fa-file-code-o"></i></span>webpack.config.js</li>
                 </ol>
             </div>
+        </div>
+
+        <!-- ===================================================================  -->
+        <div id="fundamentals" class="step slide toc-el" data-x="-2000" data-y="500">
+            <h1>String vs String Templates</h1>
+
+            <br>
+            <!-- TODO improve tab formatting in string template -->
+            <pre data-type="js" style="font-size: 24px;">
+                var message = 'single quote';
+                let name = "Double Quote";
+                const helloText = "Don't you like it?";
+                const replay = 'I like "Bible", is the best Book';
+
+                const firstName = "Nicolae";
+                const lastName = "Matei";
+                const fullName = firstName + " " + lastName;
+
+                // string template
+                //  (easy concatenate, +code execution inside)
+                const row = `&lt;tr>
+                        &lt;td>${name}&lt;/td>
+                        &lt;td>${helloText}&lt;/td>
+                        &lt;td>${new Date().toLocaleString()}&lt;/td>
+                    &lt;/tr>`;
+            </pre>
+        </div>
+
+        <!-- ===================================================================  -->
+        <div id="ternary-operator" class="step slide toc-el" data-x="-500" data-y="500">
+            <h1>Conditional (ternary) operator</h1>
+            <br>
+            <pre data-type="js" style="font-size: 24px;">
+                const condition = true; // false
+                condition ? exprIfTrue : exprIfFalse
+            </pre>
+            <br>
+            <p>- What value can <strong>condition</strong> to have to execute <strong>exprIfTrue</strong>?</p>
+            <!-- TODO create inline "test" for answers -->
+            <p class="footnote">
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator" target="_blank">read more</a>
+            </p>
+        </div>
+
+        <!-- ===================================================================  -->
+        <div id="true-vs-false" class="step slide" data-x="-500" data-y="1100" data-scale="0.5">
+            <h2><a>true</a> vs <a>false</a></h2>
+            <br>
+            <p class="line-space practice">
+                Practice in <strong>Console</strong> all this cases:
+            </p>
+            <pre data-type="js" style="font-size: 24px;">
+                !!false;
+                !0;
+                !true;
+                !false;
+                !"";
+                !undefined;
+                !null;
+
+                !!"yes";
+                !"no";
+                // plus other combinations
+            </pre>
+            <br>
+            <h2 class="practice">Test yourself using next <a href="https://nmatei.github.io/simple-quiz-app/public/?domain=js&level=5" target="_blank">JS Quiz</a></h2>
+        </div>
+
+        <!-- ===================================================================  -->
+        <div id="array-helpers" class="step slide toc-el" data-x="1000" data-y="500">
+            <h1>Array Helpers</h1>
+            <br>
+            <pre data-type="js" style="font-size: 24px;">
+                const teams = ['a', 'b', 'c'];
+
+                // for loop
+                for (var i = 0; i < teams.length; i++) {
+                    console.info(i, teams[i]);
+                }
+
+                // forEach helper
+                teams.forEach(function(team) {
+                    console.log(i, team);
+                });
+
+                // map, filter, find, every, some
+
+                // reduce
+            </pre>
+
+            <div class="line-space practice">Try them all!</div>
+        </div>
+
+        <!-- ===================================================================  -->
+        <div id="pure-functions" class="step slide toc-el" data-x="2500" data-y="500">
+            <h1>Pure functions</h1>
+
+            <ol class="fa-ul git-add">
+                <li><span class="fa-li"><i class="fa fa-check-square-o"></i></span> Same inputs <strong>always</strong> return <strong>same outputs</strong></li>
+                <li><span class="fa-li"><i class="fa fa-check-square-o"></i></span> No <strong>side-effects</strong></li>
+            </ol>
+
+            <br>
+            <pre data-type="js" style="font-size: 22px">
+                function getInfo(name) {
+                    var msg = `Hello ${name}, welcome at FastTrackIT.`;
+                    return msg;
+                }
+            </pre>
+            <br>
+        </div>
+
+        <!-- ===================================================================  -->
+        <div id="spread-and-destructuring" class="step slide" data-x="2500" data-y="1100" data-scale="0.5">
+            <h2>Spread & Destructuring</h2>
+            <ol class="fa-ul">
+                <li><span class="fa-li"><i class="fa fa-check-square-o"></i></span> Avoid object mutations</li>
+                <li><span class="fa-li"><i class="fa fa-check-square-o"></i></span> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax" target="_blank">Spread syntax</a></li>
+                <li><span class="fa-li"><i class="fa fa-check-square-o"></i></span> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment" target="_blank">Destructuring assignment</a></li>
+                <li><span class="fa-li"><i class="fa fa-check-square-o"></i></span> <a href="https://www.freecodecamp.org/news/javascript-object-destructuring-spread-operator-rest-parameter/" target="_blank">+Rest Parameter</a></li>
+            </ol>
+
+            <br>
+            <p class="footnote">
+                For example <a href="https://www.w3schools.com/react/react_es6_spread.asp" target="_blank">w3schools/react_es6_spread</a> is not a "react" syntax
+                <br>
+                (even is presented under React), is pure js
+            </p>
+        </div>
+
+        <!-- ===================================================================  -->
+        <div id="fetch" class="step slide toc-el" data-x="4000" data-y="500">
+            <h1>Fetch and Promises</h1>
+            <p>Fetch response ( GET / POST / PUT / DELETE) are Promises</p>
+            <br>
+            <pre data-type="js" style="font-size: 22px">
+                const request = fetch("http://localhost:3000/teams-json", {
+                  method: "GET",
+                  headers: {
+                    "Content-Type": "application/json"
+                  }
+                });
+
+                console.info(typeof request, request); // object, Promise
+            </pre>
+        </div>
+
+        <!-- ===================================================================  -->
+        <div id="promises" class="step _slide" data-x="4000" data-y="1100" data-scale="0.5">
+            <h2>Promises</h2>
+
+            <p class="practice">live coding...</p>
+        </div>
+
+        <!-- ===================================================================  -->
+        <div id="async-await" class="step _slide" data-x="4000" data-y="1600" data-scale="0.5">
+            <h2>async & await</h2>
+
+            <p class="practice">live coding...</p>
         </div>
 
         <!-- ===================================================================  -->

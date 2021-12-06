@@ -80,6 +80,7 @@ a.disabled-link:hover {
   bottom: 35px;
   right: 50px;
   font-size: .7em;
+  padding-left: 40px;
 }
 .live-example {
   padding: 5px;
