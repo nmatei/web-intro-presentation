@@ -333,10 +333,12 @@
             <br>
             <pre data-type="js" style="font-size: 24px;">
                 const condition = true; // false
-                condition ? exprIfTrue : exprIfFalse
+                condition ? exprIfTrue : exprIfFalse;
+
+                const name = showFullName ? `${firstName} ${lastName}` : firstName;
             </pre>
             <br>
-            <p>- What value can <strong>condition</strong> to have to execute <strong>exprIfTrue</strong>?</p>
+            <p class="practice">- What value can <strong>condition</strong> to have to execute <strong>exprIfTrue</strong>?</p>
             <!-- TODO create inline "test" for answers -->
             <p class="footnote">
                 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator" target="_blank">read more</a>
@@ -364,7 +366,7 @@
                 // plus other combinations
             </pre>
             <br>
-            <h2 class="practice">Test yourself using next <a href="https://nmatei.github.io/simple-quiz-app/public/?domain=js&level=5" target="_blank">JS Quiz</a></h2>
+            <h2 class="practice">Test yourself => <a href="https://nmatei.github.io/simple-quiz-app/public/?domain=js&level=5" target="_blank">JS Quiz</a></h2>
         </div>
 
         <!-- ===================================================================  -->
@@ -432,17 +434,28 @@
         <!-- ===================================================================  -->
         <div id="fetch" class="step slide toc-el" data-x="4000" data-y="500">
             <h1>Fetch and Promises</h1>
-            <p>Fetch response ( GET / POST / PUT / DELETE) are Promises</p>
+            <p>Fetch response ( GET / POST / PUT / DELETE ) are Promises</p>
             <br>
-            <pre data-type="js" style="font-size: 22px">
+            <pre data-type="js" style="font-size: 20px">
+                // step by step request using fetch
                 const request = fetch("http://localhost:3000/teams-json", {
                   method: "GET",
                   headers: {
                     "Content-Type": "application/json"
                   }
                 });
+                console.info(typeof request, request);
+                // object, Promise{&lt;pending>}
 
-                console.info(typeof request, request); // object, Promise
+                const response = request.then(function (response) {
+                  return response.json();
+                });
+                console.info(typeof response, response);
+
+                const promise = response.then(function(teams) {
+                    console.info('teams', teams);
+                });
+                console.info(typeof promise, promise);
             </pre>
         </div>
 
