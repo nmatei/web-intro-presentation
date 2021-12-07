@@ -274,6 +274,29 @@
         </div>
 
         <!-- ===================================================================  -->
+        <div id="remove-script-from-html" class="step slide no-logo" data-x="7000" data-y="-900" data-scale="0.5">
+            <h2><i class="fa fa-html5"></i> src/index.html</h2>
+            <br>
+            <p class="practice">As webpack now adds <strong>dist/main.js</strong> script to dist/index.html, we have to remove our initial script to not have it executed 2 times</p>
+            <br>
+            <pre data-type="html" style="font-size: 22px;">
+                &lt;!doctype html>
+                &lt;html lang="en">
+                    &lt;head>
+                        &lt;!-- ... -->
+                        &lt;!-- dist/index.html has -->
+                        &lt;script defer src="/main.js">&lt;/script>
+                    &lt;/head>
+                    &lt;body>
+                        &lt;!-- ... -->
+                        &lt;!-- remove/comment index.js from index.html -->
+                        &lt;!-- &lt;script src="index.js">&lt;/script> -->
+                    &lt;/body>
+                &lt;/html>
+            </pre>
+        </div>
+
+        <!-- ===================================================================  -->
         <div id="fundamentals" class="step slide toc-el" data-x="-2000" data-y="500">
             <h1>String vs String Templates</h1>
 
