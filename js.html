@@ -168,7 +168,7 @@
             <br>
             <h2>Installing required npm packages</h2>
             <pre data-type="shell" style="font-size: 24px;">
-                npm i -D webpack webpack-cli
+                npm install --save-dev webpack webpack-cli
                 npm i -D webpack-dev-server
                 npm i -D html-webpack-plugin
 
@@ -223,7 +223,7 @@
         <div id="webpack-scripts" class="step slide" data-x="5500" data-y="-400" data-scale="0.5">
             <h2>Configure npm scripts</h2>
             <p>Add following scripts inside <strong>package.json</strong></p>
-            <pre data-type="js" style="font-size: 24px;">
+            <pre data-type="js" style="font-size: 22px;">
                 {
                     "scripts": {
                         "clear": "npm run clean && rimraf node_modules",
@@ -235,7 +235,7 @@
             </pre>
 
             <h2>Running scripts using npm or yarn</h2>
-            <pre data-type="shell" style="font-size: 24px;">
+            <pre data-type="shell" style="font-size: 22px;">
                 npm start
                 npm run build
 
@@ -431,9 +431,70 @@
         </div>
 
         <!-- ===================================================================  -->
+        <div id="spread" class="step slide" data-x="2520" data-y="1140" data-scale="0.5">
+            <h2>Spread syntax (...)</h2>
+            <br>
+            <pre data-type="js" style="font-size: 20px">
+                const grades = [9, 8, 10, 9];
+
+                Math.max(...grades); // max works with multi parameters
+                Math.max.apply(this, grades); // vs using fn.apply
+
+                // create new array and don't mutate old one
+                const newGrades = [...grades, 10];
+            </pre>
+            <h2>object literals</h2>
+            <pre data-type="js" style="font-size: 20px">
+                const person = {
+                    firstName: 'Nicolae',
+                    lastName: 'Matei',
+                    age: 24
+                };
+
+                const anonymous = {
+                    ...person,
+                    lastName: '😎'
+                }
+            </pre>
+        </div>
+
+        <!-- ===================================================================  -->
+        <div id="destructuring" class="step slide" data-x="2540" data-y="1180" data-scale="0.5">
+            <h2>Destructuring assignment</h2>
+            <pre data-type="js" style="font-size: 16px">
+                function destructoringParam({ firstName }){
+                  console.info('before', firstName);
+                  firstName = 'changed';
+                  console.warn('after', firstName);
+                }
+
+                const person = {
+                    firstName: 'Nicolae',
+                    lastName: 'Matei',
+                    age: 24
+                };
+
+                // destructoring
+                const { lastName } = person;
+
+                destructoringParam(person);
+
+                console.info('firstName', person.firstName);
+
+                const {age, ...rest} = person;
+            </pre>
+
+            <p class="footnote">
+                <a href="https://flaviocopes.com/how-to-rename-object-destructuring/" target="_blank">rename-object-destructuring</a>
+            </p>
+        </div>
+
+        <!-- ===================================================================  -->
         <div id="fetch" class="step slide toc-el" data-x="4000" data-y="500">
             <h1>Fetch and Promises</h1>
-            <p>Fetch response ( GET / POST / PUT / DELETE ) are Promises</p>
+            <p>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" target="_blank">Fetch</a> responses ( GET/POST/PUT/DELETE ) are
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank">Promises</a></p>
             <br>
             <pre data-type="js" style="font-size: 20px">
                 // step by step request using fetch
@@ -459,25 +520,89 @@
         </div>
 
         <!-- ===================================================================  -->
-        <div id="promises" class="step _slide" data-x="4000" data-y="1100" data-scale="0.5">
+        <div id="promises" class="step slide" data-x="4000" data-y="1100" data-scale="0.5">
             <h2>Promises</h2>
+            <pre data-type="js" style="font-size: 18px">
+                var promise = new Promise((resolve, reject) => {
+                  const status = true; //execute();
+                  status ? resolve("🟢") : reject("🔴");
+                });
+                promise
+                  .then(status => {
+                    console.info("👌", status);
+                  })
+                  .catch(reason => {
+                    console.warn("👎", reason);
+                  });
 
-            <p class="practice">live coding...</p>
+                function sleep(ms) {
+                  return new Promise(resolve => {
+                    setTimeout(() => resolve(), ms);
+                  });
+                }
+
+                (() => {
+                  sleep(2000).then(() => {
+                    console.warn("ready to do %o", "next job");
+                  });
+                  console.warn("executed before sleep.then is done");
+                })();
+            </pre>
         </div>
 
         <!-- ===================================================================  -->
-        <div id="async-await" class="step _slide" data-x="4000" data-y="1600" data-scale="0.5">
+        <div id="async-await" class="step slide" data-x="4000" data-y="1600" data-scale="0.5">
             <h2>async & await</h2>
 
-            <p class="practice">live coding...</p>
+            <pre data-type="js" style="font-size: 20px">
+                function sleep(ms) {
+                  return new Promise(resolve => {
+                    setTimeout(() => resolve(), ms);
+                  });
+                }
+
+                // functions must be "async"
+                // to be able to use "await"
+                (async () => {
+                  await sleep(2000);
+                  console.info("this code is bloked by %o", "await sleep");
+                })();
+
+            </pre>
         </div>
 
         <!-- ===================================================================  -->
         <div id="import-export" class="step slide toc-el" data-x="5500" data-y="500">
             <h1>Imports & Exports</h1>
-            <p class="practice">live coding...</p>
-            <br>
-            <p>Default and named exports</p>
+            <h2>Named Exports</h2>
+            <pre data-type="js" style="font-size: 18px">
+                export function debounce(fn, delay) {
+                  var timer = null;
+                  return function () {
+                    var context = this,
+                      args = arguments;
+                    clearTimeout(timer);
+                    timer = setTimeout(function () {
+                      fn.apply(context, args);
+                    }, delay);
+                  };
+                }
+            </pre>
+
+            <pre data-type="js" style="font-size: 18px">
+                import { debounce } from "./utilities";
+
+                document.querySelector("#search").addEventListener(
+                    "input",
+                    debounce(e => {
+                      console.info("input changed", e.target.value);
+                    }, 400)
+                );
+            </pre>
+
+            <p class="footnote">
+                👆 <strong>vs</strong> lodash <a href="https://github.com/lodash/lodash/blob/4.8.0-npm/debounce.js" target="_blank">debounce</a>
+            </p>
         </div>
 
         <!-- ===================================================================  -->
