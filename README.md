@@ -4,7 +4,7 @@ Intro Presentation to Web Development for students that want to learn basics of 
 
 ## Live preview
 
-[Presentation](https://nmatei.github.io/web-intro-presentation/)
+Web Intro [Presentation](https://nmatei.github.io/web-intro-presentation/)
 
 ## Usage
 
