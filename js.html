@@ -433,24 +433,28 @@
         <!-- ===================================================================  -->
         <div id="spread" class="step slide" data-x="2520" data-y="1140" data-scale="0.5">
             <h2>Spread syntax (...)</h2>
-            <br>
-            <pre data-type="js" style="font-size: 20px">
-                const grades = [9, 8, 10, 9];
+            <pre data-type="js" style="font-size: 18px">
+                // Invoking a JavaScript Function
+                Math.max(8, 9, 10);
+                Math.max.call(this, 8, 9, 10);
+                Math.max.apply(this, [8, 9, 10]);
 
+                const grades = [9, 8, 10, 9];
                 Math.max(...grades); // max works with multi parameters
-                Math.max.apply(this, grades); // vs using fn.apply
+                Math.max.call(this, ...grades);
+                Math.max.apply(this, grades);
 
                 // create new array and don't mutate old one
                 const newGrades = [...grades, 10];
             </pre>
-            <h2>object literals</h2>
-            <pre data-type="js" style="font-size: 20px">
+            <br>
+            <h2>Object literals</h2>
+            <pre data-type="js" style="font-size: 18px">
                 const person = {
                     firstName: 'Nicolae',
                     lastName: 'Matei',
                     age: 24
                 };
-
                 const anonymous = {
                     ...person,
                     lastName: '😎'
@@ -461,32 +465,60 @@
         <!-- ===================================================================  -->
         <div id="destructuring" class="step slide" data-x="2540" data-y="1180" data-scale="0.5">
             <h2>Destructuring assignment</h2>
-            <pre data-type="js" style="font-size: 16px">
-                function destructoringParam({ firstName }){
-                  console.info('before', firstName);
-                  firstName = 'changed';
-                  console.warn('after', firstName);
-                }
-
+            <pre data-type="js" style="font-size: 20px">
                 const person = {
                     firstName: 'Nicolae',
                     lastName: 'Matei',
                     age: 24
                 };
 
-                // destructoring
-                const { lastName } = person;
+                // const firstName = person.firstName;
+                // const lastName = person.lastName;
+                const { firstName, lastName } = person;
 
-                destructoringParam(person);
+                // parameter Destructuring
+                function printInfo({ firstName }){
+                  console.info('before', firstName);
+                  firstName = 'changed'; // you can safety change it
+                  console.warn('after', firstName);
+                }
 
+                printInfo(person);
                 console.info('firstName', person.firstName);
-
-                const {age, ...rest} = person;
             </pre>
 
             <p class="footnote">
                 <a href="https://flaviocopes.com/how-to-rename-object-destructuring/" target="_blank">rename-object-destructuring</a>
             </p>
+        </div>
+
+        <!-- ===================================================================  -->
+        <div id="rest-parameter" class="step slide" data-x="2560" data-y="1220" data-scale="0.5">
+            <h2>Rest parameter</h2>
+            <pre data-type="js" style="font-size: 20px">
+                const anonymous1 = {
+                    ...person // copy first level props
+                };
+                delete anonymous1.age; // remove some properties
+                delete anonymous1.lastName;
+
+                const {
+                    age,
+                    lastName,
+                    ...anonymous // create new obj and exclude some props
+                } = person;
+
+                // both (anonymous1 and anonymous) will be:
+                // { firstName: "Nicolae" }
+            </pre>
+            <br>
+            <h2>Array ...rest parameter</h2>
+            <pre data-type="js" style="font-size: 20px">
+                const grades = [6, 7, 10, 8, 9];
+                const [a, b, ...rest] = grades;
+                // a = 6; b = 7;
+                // rest = [10, 8, 9];
+            </pre>
         </div>
 
         <!-- ===================================================================  -->
