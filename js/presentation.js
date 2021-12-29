@@ -21,9 +21,13 @@ var Presentation = (function () {
   };
 })();
 
+/**
+ * https://ace.c9.io/#nav=api&api=edit_session
+ */
 function initEditors() {
   const typeMatch = {
     js: "ace/mode/javascript",
+    jsx: "ace/mode/jsx",
     html: "ace/mode/html",
     css: "ace/mode/css",
     shell: "ace/mode/sh"
@@ -32,13 +36,19 @@ function initEditors() {
   const codeEls = Array.from(document.querySelectorAll(".step pre"));
   codeEls.forEach(el => {
     const type = el.getAttribute("data-type") || "html";
+    let highlight = (el.getAttribute("data-highlight") || "");
     const editor = ace.edit(el);
     const beautify = ace.require("ace/ext/beautify");
     const session = editor.getSession();
     editor.setReadOnly(true);
 
     //editor.setTheme("ace/theme/monokai");
+    session.setTabSize(2);
     session.setMode(typeMatch[type]);
+    if (highlight) {
+      highlight = highlight.split(/\s*,\s*/i);
+      highlight.forEach(line => session.highlightLines(line-1));
+    }
     beautify.beautify(session);
 
     editor.setOptions({

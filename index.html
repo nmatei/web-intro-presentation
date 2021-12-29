@@ -249,8 +249,7 @@
         <!-- ===================================================================  -->
         <div id="html5-inputs" class="step" data-x="-6000" data-y="0" data-scale="1">
             <h2>Form example</h2>
-            <!-- TODO  highlight: [5, 6, 7] -->
-            <pre data-type="html">
+            <pre data-type="html" data-highlight="4,5,6">
         &lt;form action="" method="get">
             &lt;label for="userEmail">Email:&lt;/label>
             &lt;input id="userEmail" required="required"
@@ -349,8 +348,7 @@
             <h2>Attributes</h2>
             <p>On visible tags we've seen <strong>more info after tag name</strong>, they are called attributes, and
                 look like this:</p>
-            <!-- TOOD highlight: [2, 3, 4, 5] -->
-            <pre data-type="html">
+            <pre data-type="html" data-highlight="2,3,4,5">
         &lt;p
             id="unique-id"
             class="css-class"
@@ -438,8 +436,7 @@
                 </li>
             </ol>
             <p class="bold">selecting elements and style them</p>
-            <!-- TODO  highlight: [1] -->
-            <pre data-type="css" style="font-size: 21px">
+            <pre data-type="css" data-highlight="1" style="font-size: 21px">
             /* selector     {   styles      }  */
             p               { color: red;   }
             #home-elem-id   { color: blue;  }
@@ -472,8 +469,7 @@
         <!-- ===================================================================  -->
         <div id="menu-bar-css" class="step" data-x="2000" data-y="0" data-scale="0.8">
             <h2>Css Layout: Menu using list with links</h2>
-            <!-- TODO highlight: [7,11] -->
-            <pre data-type="css" style="font-size: 20px;">
+            <pre data-type="css" data-highlight="7, 12" style="font-size: 20px;">
                 #top-menu-bar {
                     text-align: center;
                     background-color:#334455;
@@ -481,7 +477,8 @@
                 }
                 #top-menu-bar li {
                     display:inline;
-                    margin:0; padding:0;
+                    margin:0;
+                    padding:0;
                 }
                 #top-menu-bar a {
                     text-decoration: none;
@@ -591,14 +588,17 @@
         <!-- ===================================================================  -->
         <div id="flexbox-css-layout" class="step layouts-demo" data-x="2000" data-y="-1300" data-scale="0.3">
             <h2>FlexBox Layout CSS (adding layout)</h2>
-            <!-- TODO highlight: [4,9,11,12] -->
             <div class="cards">
                 <div>
-                    <pre data-type="css" style="font-size: 20px">
-                        html { height: 100%; }
+                    <pre data-type="css" data-highlight="7, 8" style="font-size: 20px">
+                        html {
+                            height: 100%;
+                        }
                         body {
-                            margin: 0; min-height: 100%;
-                            display: flex; flex-direction: column;
+                            margin: 0;
+                            min-height: 100%;
+                            display: flex;
+                            flex-direction: column;
                         }
                         body > section  { flex: 1; }
 
@@ -606,10 +606,11 @@
                     </pre>
                 </div>
                 <div>
-                    <pre data-type="css" style="font-size: 20px">
+                    <pre data-type="css" data-highlight="3, 4" style="font-size: 20px">
                         #content {
                             flex: 4;
-                            display: flex; flex-direction: row;
+                            display: flex;
+                            flex-direction: row;
                         }
                         #side-menu { flex: 1; }
                         #main { flex: 2; }
