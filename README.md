@@ -23,6 +23,8 @@ Web Intro [Presentation](https://nmatei.github.io/web-intro-presentation/)
 - [ ] Slide Headings (every h1 -> down, every h2 -> right)
 - [ ] Book Style (Simulate 2 pages and move left - right)
 
+- [ ] Store transition mode in localstorage and remove link param
+
 ## Save as PDF
 
 - [x] Change Transitions mode to [Up/Down](https://nmatei.github.io/web-intro-presentation/?anim=slide-up#/start) Slides 
