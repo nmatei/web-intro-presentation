@@ -178,9 +178,18 @@ function initEditors() {
   toc.innerHTML = tocContent.join("");
   actions.appendChild(toc);
 
+  function getSlideTitle(page) {
+    let pageEl = page.querySelector("h1");
+    if (!pageEl) {
+      console.warn('h1 not present. fallback to h2', page);
+      pageEl = page.querySelector("h2");
+    }
+    return pageEl.innerHTML;
+  }
+
   const tocPages = [...document.querySelectorAll("div.step.toc-el")].map(p => ({
     id: p.id,
-    text: p.querySelector("h1").innerHTML,
+    text: getSlideTitle(p),
     pageNr: pagesNr[p.id]
   }));
   document.querySelector("#toc ol").innerHTML = tocPages

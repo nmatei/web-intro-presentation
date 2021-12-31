@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>JS intro @ FastTrackIT</title>
+
+    <meta name="description" content="continue with js concepts, npm and webpack" />
+    <meta name="author" content="Matei Nicolae" />
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic"
+        rel="stylesheet" />
+    <!--<link href="css/impress-demo.css" rel="stylesheet" />-->
+    <link href="css/impress-demo-min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+        crossorigin="anonymous" />
+
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link type="text/css" rel="stylesheet" href="css/print.css" media="print" />
+
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+</head>
+
+<body class="impress-not-supported pagination">
+    <div id="impress">
+
+        <!-- ===================================================================  -->
+        <div id="start" class="step slide" data-x="-2000" data-y="-1500">
+            <h2 class="js"><a href="http://www.fasttrackit.org/" target="_blank">FastTrackIT</a></h2>
+            <p class="align-r"><a href="https://nmatei.github.io/web-intro-presentation/react.html"
+                    target="_blank">https://nmatei.github.io/web-intro-presentation/react.html</a></p>
+            <h1 class="html block middle-h">
+                Concepts about <a href="#toc">React JS</a>
+            </h1>
+            <h2 class="keyword align-r">by <a href="https://www.linkedin.com/in/nicolaematei" target="_blank">Matei
+                    Nicolae</a></h2>
+            <a class="align-r small hidden print-only" href="https://www.linkedin.com/in/nicolaematei"
+                target="_blank">https://www.linkedin.com/in/nicolaematei</a>
+        </div>
+
+        <!-- ===================================================================  -->
+        <div id="toc" class="step" data-x="-1000" data-y="-5000" data-scale="3">
+            <h1>Table of contents</h1>
+            <ol>
+
+            </ol>
+        </div>
+
+        <!-- ===================================================================  -->
+        <div id="quick-start" class="step slide toc-el" data-x="-500" data-y="-1500">
+            <h1><i class="fa fa-folder-open-o"></i> Getting Started</h1>
+
+            <h2>Create <a href="https://reactjs.org/docs/hello-world.html" target="_blank">React</a> APP</h2>
+            <p>- We will use <a href="https://www.typescriptlang.org/" target="_blank">TypeScript</a> template for this project</p>
+            <pre data-type="shell" style="font-size: 22px;">
+                # using - npx
+                npx create-react-app teams-networking --template typescript
+                # OR
+                # using - yarn
+                yarn create react-app teams-networking --template typescript
+
+                # navigate inside your project
+                cd teams-networking
+
+                npm start
+            </pre>
+
+            <br>
+            <h2>Initialize project to use <a href="js.html#/prettier-init" target="_blank">Prettier</a></h2>
+            <br>
+            <p class="footnote">
+                <a href="https://create-react-app.dev/docs/getting-started" target="_blank">Create React App</a>
+            </p>
+        </div>
+
+        <!-- ===================================================================  -->
+        <div id="env-config" class="step slide" data-x="-500" data-y="-900" data-scale="0.5">
+            <h2><i class="fa fa-file-code-o"></i> .env</h2>
+            <br>
+            <p>Change app port from (default is 3000)</p>
+            <pre data-type="shell" style="font-size: 22px;">
+                # create .env file
+                touch .env
+
+                echo "PORT=8080" >> .env
+                # npm start
+            </pre>
+        </div>
+
+        <!-- ===================================================================  -->
+        <div id="jsx" class="step slide toc-el" data-x="1000" data-y="-1500">
+            <h1><i class="fa fa-file-code-o"></i> JSX</h1>
+            <br>
+            <ol class="fa-ul">
+                <li><span class="fa-li"><i class="fa fa-square-o"></i></span>
+                    <pre data-type="js" style="font-size: 20px">
+                        const element = &lt;h1>Hello, {name}. Wellcome!&lt;/h1>;
+                    </pre>
+                </li>
+                <li><span class="fa-li"><i class="fa fa-square-o"></i></span> neither a string nor HTML</li>
+                <li><span class="fa-li"><i class="fa fa-square-o"></i></span> <strong>{name}</strong> does not need <strong>$</strong> in front of it</li>
+                <li><span class="fa-li"><i class="fa fa-square-o"></i></span> inside <strong>{ ... }</strong> you can use <strong>plain js</strong></li>
+                <li><span class="fa-li"><i class="fa fa-square-o"></i></span> You can create <strong>functions</strong> to <strong>return</strong> such <strong>elements</strong></li>
+                <li>
+                    <span class="fa-li"><i class="fa fa-square-o"></i></span> JSX produces React "elements"
+                    <pre data-type="js" style="font-size: 20px">
+                        React.createElement("h1", null, "Hello, ", name, ". Wellcome!");
+                    </pre>
+                </li>
+            </ol>
+            <p class="footnote">
+                <a href="https://reactjs.org/docs/introducing-jsx.html" target="_blank">Introducing JSX</a>
+            </p>
+        </div>
+
+        <!-- ===================================================================  -->
+        <div id="ts" class="step slide toc-el" data-x="2500" data-y="-1500">
+            <h1>TypeScript</h1>
+            <br>
+            <p class="footnote">
+                What is <a href="https://www.typescriptlang.org/" target="_blank">TypeScript</a>?
+            </p>
+        </div>
+
+        <!-- ===================================================================  -->
+        <div id="tsconfig" class="step slide" data-x="2500" data-y="-900" data-scale="0.5">
+            <h1><i class="fa fa-file-code-o"></i> tsconfig.json</h1>
+
+            <p>You can add more configs to make ts less restrictive</p>
+            <pre data-type="js" style="font-size: 22px;">
+                {
+                    "compilerOptions": {
+                        "noImplicitAny": false,
+                        "noUnusedLocals": false
+                    }
+                }
+            </pre>
+            <p class="footnote">
+                What is a <a href="https://www.typescriptlang.org/docs/handbook/tsconfig-json.html" target="_blank">tsconfig.json</a>
+            </p>
+        </div>
+
+        <!-- ===================================================================  -->
+    </div>
+
+    <div class="hint">
+        <p>Use a spacebar or arrow keys to navigate</p>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/ace.js"
+        integrity="sha512-OMjy8oWtPbx9rJmoprdaQdS2rRovgTetHjiBf7RL7LvRSouoMLks5aIcgqHb6vGEAduuPdBTDCoztxLR+nv45g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/ext-beautify.min.js"
+        integrity="sha512-sIVPU3/0VPG2jJdl6NTqe8QF9vTE3Y/LAFiH2YPj8iCz5fdWkhOYA26QR6nZVjI3OWCMtbH/BX8YwZddZi8mhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-javascript.min.js"
+        integrity="sha512-37ta5K4KVYs+MEmIg2xnZxJrdiQmBSKt+JInvyPrq9uz7aF67lMJT/t91EYoYj520jEcGlih41kCce7BRTmE3Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-jsx.min.js"
+        integrity="sha512-2J1idhYVYWtz0C+mPnl5K0Y//JjKMwUI3xCw7QJeY1eYSv3QjE2uDw6yFJKoFd0O7OHhcWLaL/lYElhO4+5DqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-html.min.js"
+        integrity="sha512-vSQkVhmiIt31RHmh8b65o0ap3yoL08VJ6MeuiCGo+92JDdSSWAEWoWELEf3WBk4e2tz/0CvnTe87Y2rFrNjcbg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-css.min.js"
+        integrity="sha512-9kFCBhC+SjlU9Mk4n65VZ3yID5cdcql9y/MrrRsDLyD2Dce+diCd+NITdkjHVBaLK6USc1YCZ5cXVPMC8CdJBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-sh.min.js"
+        integrity="sha512-DCGTxVcs3p6DPSs/NfnxuKE1ej/9KfCdFDfy1qhyriBteSxKkrMja1A0Q+pN2tuvUekTZun1RU2LRM1qybC/VQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!--<script src="js/impress.js"></script>-->
+    <script src="js/impress-min.js"></script>
+    <script src="js/presentation.js"></script>
+
+</body>
+
+</html>
