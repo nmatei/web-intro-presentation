@@ -27,6 +27,7 @@ var Presentation = (function () {
 function initEditors() {
   const typeMatch = {
     js: "ace/mode/javascript",
+    ts: "ace/mode/typescript",
     jsx: "ace/mode/jsx",
     html: "ace/mode/html",
     css: "ace/mode/css",

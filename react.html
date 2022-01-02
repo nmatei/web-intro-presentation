@@ -99,7 +99,7 @@
             <ol class="fa-ul">
                 <li><span class="fa-li"><i class="fa fa-square-o"></i></span>
                     <pre data-type="js" style="font-size: 20px">
-                        const element = &lt;h1>Hello, {name}. Wellcome!&lt;/h1>;
+                        const element = &lt;h1>Hello, {name}. Welcome!&lt;/h1>;
                     </pre>
                 </li>
                 <li><span class="fa-li"><i class="fa fa-square-o"></i></span> neither a string nor HTML</li>
@@ -107,9 +107,9 @@
                 <li><span class="fa-li"><i class="fa fa-square-o"></i></span> inside <strong>{ ... }</strong> you can use <strong>plain js</strong></li>
                 <li><span class="fa-li"><i class="fa fa-square-o"></i></span> You can create <strong>functions</strong> to <strong>return</strong> such <strong>elements</strong></li>
                 <li>
-                    <span class="fa-li"><i class="fa fa-square-o"></i></span> JSX produces React "elements"
+                    <span class="fa-li"><i class="fa fa-square-o"></i></span> JSX produces <strong>React elements</strong>
                     <pre data-type="js" style="font-size: 20px">
-                        React.createElement("h1", null, "Hello, ", name, ". Wellcome!");
+                        React.createElement("h1", null, "Hello, ", name, ". Welcome!");
                     </pre>
                 </li>
             </ol>
@@ -121,7 +121,28 @@
         <!-- ===================================================================  -->
         <div id="ts" class="step slide toc-el" data-x="2500" data-y="-1500">
             <h1>TypeScript</h1>
-            <br>
+            <h2>Types could be inherited based on value</h2>
+            <pre data-type="ts" data-highlight="2, 14, 18" style="font-size: 20px">
+                let firstName = "yes";
+                firstName = false;
+                // Error: Type 'boolean' is not assignable to type 'string'
+
+                function getConfig() {
+                  return {
+                    name: "config",
+                    x: 123,
+                    ready: true
+                  };
+                }
+
+                const config = getConfig();
+                console.info(config.nume);
+                // Error: Property 'nume' does not exist on type
+                //   '{ name: string; x: number; ready: boolean; }'
+
+                config.ready = "not ready";
+                // Error: Type 'string' is not assignable to type 'boolean'
+            </pre>
             <p class="footnote">
                 What is <a href="https://www.typescriptlang.org/" target="_blank">TypeScript</a>?
             </p>
@@ -129,7 +150,7 @@
 
         <!-- ===================================================================  -->
         <div id="tsconfig" class="step slide" data-x="2500" data-y="-900" data-scale="0.5">
-            <h1><i class="fa fa-file-code-o"></i> tsconfig.json</h1>
+            <h2><i class="fa fa-file-code-o"></i> tsconfig.json</h2>
 
             <p>You can add more configs to make ts less restrictive</p>
             <pre data-type="js" style="font-size: 22px;">
@@ -140,8 +161,50 @@
                     }
                 }
             </pre>
+            <p>check documentation to see all options</p>
+
             <p class="footnote">
                 What is a <a href="https://www.typescriptlang.org/docs/handbook/tsconfig-json.html" target="_blank">tsconfig.json</a>
+            </p>
+        </div>
+
+        <!-- ===================================================================  -->
+        <div id="ts-types" class="step slide" data-x="2500" data-y="-400" data-scale="0.5">
+            <h2>Types</h2>
+
+            <pre data-type="ts" data-highlight="3, 10" style="font-size: 16px">
+                let color: string;
+                color = "green"
+                color = false;
+                // Type 'boolean' is not assignable to type 'string'
+
+                // Types as Sets
+                let status: string | number;
+                status = 'OK';
+                status = 200;
+                status = true;
+                // Type 'boolean' is not assignable to type 'string | number'
+
+                // TYPE
+                type Status = string | number;
+                let responseStatus: Status;
+
+                type Config = {
+                    name: string;
+                    x: number;
+                    ready: boolean;
+                }
+
+                function getConfig(): Config {
+                    //return {name: '', x: 0, ready: false}
+                }
+
+                let config: Config;
+                config = getConfig();
+            </pre>
+
+            <p class="footnote">
+                <a href="https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes-oop.html#types-as-sets" target="_blank">Types as Sets</a>
             </p>
         </div>
 
@@ -160,6 +223,9 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-javascript.min.js"
         integrity="sha512-37ta5K4KVYs+MEmIg2xnZxJrdiQmBSKt+JInvyPrq9uz7aF67lMJT/t91EYoYj520jEcGlih41kCce7BRTmE3Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-typescript.min.js"
+        integrity="sha512-B9R7h1wpTRLAJ1XxBrTcs4+StXQTcPcI4mt1q1XIM8HkX9hajuzDGKhfcqV0NZ4TElUE10mPCEHgJqq45RP/Ow=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-jsx.min.js"
         integrity="sha512-2J1idhYVYWtz0C+mPnl5K0Y//JjKMwUI3xCw7QJeY1eYSv3QjE2uDw6yFJKoFd0O7OHhcWLaL/lYElhO4+5DqQ=="
