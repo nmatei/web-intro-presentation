@@ -90,6 +90,10 @@
                 echo "PORT=8080" >> .env
                 # npm start
             </pre>
+
+            <p class="footnote">
+                * Custom <a href="https://nodejs.dev/learn/how-to-read-environment-variables-from-nodejs">environment variables</a>.
+            </p>
         </div>
 
         <!-- ===================================================================  -->
@@ -122,9 +126,9 @@
         <div id="react-render" class="step slide" data-x="1000" data-y="-900" data-scale="0.5">
             <h2>Render React elements</h2>
             <pre data-type="js" data-highlight="1, 16" style="font-size: 20px">
-                const element = &lt;h1>Hello&lt;/h1>; // not recognized in browsers
+                const element = &lt;h1>Hello&lt;/h1>; // not a valid expression in browsers!
 
-                // => transpiled to:
+                // so => transpiled to:
                 const element1 = React.createElement("h1", null, "Hello");
                 // result => a json object
                 const element2 = {
@@ -151,7 +155,7 @@
 
         <!-- ===================================================================  -->
         <div id="ts" class="step slide toc-el" data-x="2500" data-y="-1500">
-            <h1>TypeScript intro</h1>
+            <h1>Basic TypeScript intro</h1>
             <h2>Types could be inherited based on value</h2>
             <pre data-type="ts" data-highlight="2, 14, 18" style="font-size: 20px">
                 let firstName = "yes";
@@ -203,34 +207,29 @@
         <div id="ts-types" class="step slide" data-x="2500" data-y="-400" data-scale="0.5">
             <h2>Types</h2>
 
-            <pre data-type="ts" data-highlight="3, 10, 24" style="font-size: 16px">
+            <pre data-type="ts" data-highlight="3, 8, 19, 20, 21" style="font-size: 18px">
                 let color: string;
                 color = "green"
-                color = false;
-                // Type 'boolean' is not assignable to type 'string'
+                color = false; // Type 'boolean' is not assignable to type 'string'
 
-                // Types as Sets
-                let status: string | number;
+                let status: string | number; // Types as Sets
                 status = 'OK';
                 status = 200;
-                status = true;
-                // Type 'boolean' is not assignable to type 'string | number'
+                status = true; // Type 'boolean' is not assignable to type 'string | number'
 
-                // TYPE
-                type Status = string | number;
+                type Status = string | number; // custom TYPE
                 let responseStatus: Status;
-
                 type Config = {
                     name: string;
                     x: number;
-                    ready: boolean;
+                    ready?: boolean; // optional prop
                 }
 
                 function getConfig(): Config {
-                    //return { name: '', x: 0, ready: false }
-                    // Must return a value OR Property 'x' is missing
+                    return {
+                        name: 'Space'
+                    } // Must return a value OR Property 'x' is missing
                 }
-
                 const conf: Config = getConfig();
                 const config = getConfig(); // if getConfig has return type
             </pre>
@@ -245,49 +244,63 @@
             <h1>React Components</h1>
             <p>We can create our UI custom components then reuse them.
                 Seems that we create html tags that have our logic inside.</p>
-            <pre data-type="js" style="font-size: 22px;">
-                function LocalTime() {
-                  return (
-                    &lt;div>      It is {new Date().toLocaleTimeString()}.
-                  &lt;/div>);
-                }
+            <pre data-type="jsx" style="font-size: 20px;">
+function LocalTime() {
+  return (
+    &lt;div>
+      It is {new Date().toLocaleTimeString()}.
+    &lt;/div>
+  );
+}
 
-                // then use it as a simple html tag
-                const element = (
-                    &lt;div>&lt;LocalTime />&lt;/div>
-                );
-            </pre>
+// then use it as a simple html tag
+const element = (
+  &lt;div>
+    &lt;LocalTime />
+  &lt;/div>
+);</pre>
+            <p class="practice">
+                Now try to split your app into smaller parts: <br>
+                <strong>MainMenu</strong>, <strong>Header</strong>, <strong>SideMenu</strong>
+            </p>
         </div>
 
         <!-- ===================================================================  -->
         <div id="components-and-props" class="step slide" data-x="4000" data-y="-900" data-scale="0.5">
             <h2>Components and Props</h2>
 
-            <pre data-type="js" data-highlight="3, 9" style="font-size: 22px;">
-                // function components
-                function Welcome(props) {
-                  return &lt;h1>Hello, {props.name}&lt;/h1>;
-                }
+            <h3>function components</h3>
+            <pre data-type="jsx" data-highlight="2, 6" style="font-size: 20px;">
+function Welcome(props) {
+  return &lt;h1>Hello, {props.name}&lt;/h1>;
+}
+// or using arrow fn (implicit return & destructoring)
+const Welcome = ({name}) => (
+  &lt;h1>Hello, {name}&lt;/h1>
+)</pre>
+            <h3>ES6 class components</h3>
+            <pre data-type="jsx" data-highlight="3, 7" style="font-size: 20px;">
+class Welcome extends React.Component {
+  render() {
+    return &lt;h1>Hello, {this.props.name}&lt;/h1>;
+  }
+}
 
-                // vs ES6 class components
-                class Welcome extends React.Component {
-                  render() {
-                    return &lt;h1>Hello, {this.props.name}&lt;/h1>;
-                  }
-                }
+const element = &lt;Welcome name="David" />; // usage for any of them
 
-                // usage:
-                const element = &lt;Welcome name="David" />;
-                ReactDOM.render(
-                  element,
-                  document.getElementById('root')
-                );
-            </pre>
-
-
+ReactDOM.render(
+  element,
+  document.getElementById('root')
+);</pre>
             <p class="footnote">
-                <a href="https://reactjs.org/docs/components-and-props.html" target="_blank">Components and Props</a>
+                * <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes" target="_blank">ES6 Classes</a><br>
+                * <a href="https://reactjs.org/docs/components-and-props.html" target="_blank">Components and Props</a>
             </p>
+        </div>
+
+        <!-- ===================================================================  -->
+        <div id="next" class="step slide" data-x="4000" data-y="-400" data-scale="0.5">
+            <h2>...</h2>
         </div>
 
         <!-- ===================================================================  -->

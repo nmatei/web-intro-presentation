@@ -37,7 +37,7 @@ function initEditors() {
   const codeEls = Array.from(document.querySelectorAll(".step pre"));
   codeEls.forEach(el => {
     const type = el.getAttribute("data-type") || "html";
-    let highlight = (el.getAttribute("data-highlight") || "");
+    const highlight = (el.getAttribute("data-highlight") || "");
     const editor = ace.edit(el);
     const beautify = ace.require("ace/ext/beautify");
     const session = editor.getSession();
@@ -47,10 +47,16 @@ function initEditors() {
     session.setTabSize(2);
     session.setMode(typeMatch[type]);
     if (highlight) {
-      highlight = highlight.split(/\s*,\s*/i);
-      highlight.forEach(line => session.highlightLines(line-1));
+      const highlightLines = highlight.split(/\s*,\s*/i);
+      highlightLines.forEach(line => session.highlightLines(line-1));
     }
-    beautify.beautify(session);
+
+    if (type === "jsx") {
+      // console.warn('not used beautify for jsx yet', editor);
+      // TODO at least remove "left" intend
+    } else {
+      beautify.beautify(session);
+    }
 
     editor.setOptions({
       maxLines: Infinity
