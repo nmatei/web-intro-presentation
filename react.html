@@ -92,7 +92,7 @@
             </pre>
 
             <p class="footnote">
-                * Custom <a href="https://nodejs.dev/learn/how-to-read-environment-variables-from-nodejs">environment variables</a>.
+                * Custom <a href="https://nodejs.dev/learn/how-to-read-environment-variables-from-nodejs" target="_blank">environment variables</a>.
             </p>
         </div>
 
@@ -301,7 +301,33 @@ ReactDOM.render(
         </div>
 
         <!-- ===================================================================  -->
-        <div id="form-utilities" class="step slide" data-x="4000" data-y="-400" data-scale="0.5">
+        <div id="react-component" class="step slide" data-x="4000" data-y="-400" data-scale="0.5">
+            <h1>React.Component & TypeScript</h1>
+
+            <pre data-type="jsx" style="font-size: 20px;">
+type Props = {
+    name: string;
+}
+type State = {
+    loading: boolean
+}
+class Welcome extends React.Component &lt;Props, State> {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loading: true
+    }
+  }
+  render() {
+    return &lt;h1>Hello, {this.props.name}&lt;/h1>;
+  }
+}
+// usage
+&lt;Welcome name="David" /></pre>
+        </div>
+
+        <!-- ===================================================================  -->
+        <div id="utilities" class="step slide toc-el" data-x="5500" data-y="-1500">
             <h2>Utilities</h2>
 
             <p>
@@ -310,7 +336,7 @@ ReactDOM.render(
             <p class="practice">
                 Lets use 'array.reduce' to create our json for submit
             </p>
-            
+
             <br>
             <h2>Redux</h2>
             <p>
