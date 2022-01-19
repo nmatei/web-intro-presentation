@@ -101,7 +101,7 @@
             <h1><i class="fa fa-file-code-o"></i> JSX</h1>
             <br>
             <ol class="fa-ul">
-                <li><span class="fa-li"><i class="fa fa-square-o"></i></span>
+                <li><span class="fa-li"><i class="fa fa-check-square-o"></i></span>
                     <pre data-type="js" style="font-size: 20px">
                         const element = &lt;h1>Hello, {name}. Welcome!&lt;/h1>;
                     </pre>
@@ -319,7 +319,8 @@ class Welcome extends React.Component &lt;Props, State> {
     }
   }
   render() {
-    return &lt;h1>Hello, {this.props.name}&lt;/h1>;
+    const cls = this.state.loading ? "loading-mask" : "";
+    return &lt;h1 className={cls}>Hello, {this.props.name}&lt;/h1>;
   }
 }
 // usage
@@ -327,8 +328,41 @@ class Welcome extends React.Component &lt;Props, State> {
         </div>
 
         <!-- ===================================================================  -->
-        <div id="utilities" class="step slide toc-el" data-x="5500" data-y="-1500">
-            <h2>Utilities</h2>
+        <div id="ts-generics" class="step slide toc-el" data-x="5500" data-y="-1500">
+            <h1>TypeScript generics</h1>
+            <h2>*keyof</h2>
+            <pre data-type="ts" data-highlight="23, 24" style="font-size: 16px">
+export type Team = {
+  members: string;
+  name: string;
+  amount?: number;
+  id?: string;
+};
+type Store&lt;T = any> = {
+  find&lt;K extends keyof T>(fieldName: K, value: T[K]): T;
+};
+
+// const store = getStore(); // ... new CustomStore()
+const store: Store&lt;Team> = {
+  find(fieldName, value) {
+    return {
+      name:"y",
+      members:"we"
+    };
+  }
+};
+
+store.find("id", "12345");
+store.find("amount", 20220);
+store.find("not-found", "value");
+//   Argument of type '"not-found"' is not assignable to...
+            </pre>
+            <p class="footnote"><a href="https://www.typescriptlang.org/docs/handbook/2/generics.html" target="_blank">Generics</a></p>
+        </div>
+
+        <!-- ===================================================================  -->
+        <div id="utilities" class="step slide toc-el" data-x="7000" data-y="-1500">
+            <h1>Read more</h1>
 
             <p>
                 <a href="https://www.designcise.com/web/tutorial/how-to-access-form-control-elements-in-the-onsubmit-event-handler-in-react" target="_blank">Form onsubmit getValues</a>
@@ -339,9 +373,15 @@ class Welcome extends React.Component &lt;Props, State> {
 
             <br>
             <h2>Redux</h2>
-            <p>
-                <a href="https://egghead.io/courses/fundamentals-of-redux-course-from-dan-abramov-bd5cc867" target="_blank">Fundamentals of Redux Course from Dan Abramov</a>
-            </p>
+
+            <ol class="fa-ul">
+                <li><span class="fa-li"><i class="fa fa-check-square-o"></i></span>
+                    <a href="https://egghead.io/courses/fundamentals-of-redux-course-from-dan-abramov-bd5cc867" target="_blank">Fundamentals of Redux - Course</a>
+                </li>
+                <li><span class="fa-li"><i class="fa fa-square-o"></i></span>
+                    <a href="https://redux.js.org/faq/general#when-should-i-use-redux" target="_blank">When should I use Redux?</a>
+                </li>
+            </ol>
         </div>
 
         <!-- ===================================================================  -->

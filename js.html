@@ -373,7 +373,7 @@
         <div id="array-helpers" class="step slide toc-el" data-x="1000" data-y="500">
             <h1>Array Helpers</h1>
             <br>
-            <pre data-type="js" style="font-size: 24px;">
+            <pre data-type="js" style="font-size: 20px;">
                 const teams = ['a', 'b', 'c'];
 
                 // for loop
@@ -386,9 +386,12 @@
                     console.log(i, team);
                 });
 
-                // map, filter, find, every, some
+                // map, filter, find, every, some, flatMap
 
                 // reduce
+
+                [[1, 2], [3, 4]].flatMap(t => t);
+                [{m: [1, 2]}, {m: [3, 4]}].flatMap(t => t.m);
             </pre>
 
             <div class="line-space practice">Try them all!</div>
