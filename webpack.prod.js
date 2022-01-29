@@ -115,7 +115,10 @@ module.exports = env => {
       // path: path.resolve(__dirname, ""),
       filename: "js/[name].js",
       path: path.resolve(__dirname, "docs"),
-      publicPath: ""
+      publicPath: "",
+      environment: {
+        arrowFunction: false
+      }
     }
   };
 };
