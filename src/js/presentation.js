@@ -1,3 +1,9 @@
+require("../../libs/impress");
+import "../../libs/css/impress-demo-min.css";
+
+import "../css/style.css";
+import "../css/print.css";
+
 var Presentation = (function () {
   initEditors();
 
@@ -75,7 +81,7 @@ function initEditors() {
 })();
 
 // print actions
-(function () {
+export function start() {
   var isPrintMode = Presentation.getParam("print") !== undefined,
     animation = Presentation.getParam("anim"),
     pages = document.getElementsByClassName("step"),
@@ -244,4 +250,4 @@ function initEditors() {
     },
     true
   );
-})();
+}
