@@ -24,6 +24,7 @@ Web Intro [Presentation](https://nmatei.github.io/web-intro-presentation/)
 - [ ] Book Style (Simulate 2 pages and move left - right)
 
 - [ ] Store transition mode in localstorage and remove link param
+- [ ] When browser does not support impress (animations) (convert them all to "slide" style)
 
 ## Save as PDF
 

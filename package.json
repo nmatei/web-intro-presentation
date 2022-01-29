@@ -1,0 +1,30 @@
+{
+  "name": "web-intro-presentation",
+  "version": "2.0.0",
+  "description": "Intro Presentation to Web Development for students that want to learn basics of HTML/CSS/JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clear": "npm run clean && rimraf node_modules",
+    "clean": "rimraf dist",
+    "build": "webpack --mode production",
+    "start": "webpack serve --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nmatei/web-intro-presentation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nmatei/web-intro-presentation/issues"
+  },
+  "homepage": "https://github.com/nmatei/web-intro-presentation#readme",
+  "devDependencies": {
+    "html-webpack-plugin": "^5.5.0",
+    "webpack": "^5.67.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.3"
+  }
+}

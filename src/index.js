@@ -37,7 +37,7 @@ function initEditors() {
   const codeEls = Array.from(document.querySelectorAll(".step pre"));
   codeEls.forEach(el => {
     const type = el.getAttribute("data-type") || "html";
-    const highlight = (el.getAttribute("data-highlight") || "");
+    const highlight = el.getAttribute("data-highlight") || "";
     const editor = ace.edit(el);
     const beautify = ace.require("ace/ext/beautify");
     const session = editor.getSession();
@@ -48,7 +48,7 @@ function initEditors() {
     session.setMode(typeMatch[type]);
     if (highlight) {
       const highlightLines = highlight.split(/\s*,\s*/i);
-      highlightLines.forEach(line => session.highlightLines(line-1));
+      highlightLines.forEach(line => session.highlightLines(line - 1));
     }
 
     if (type === "jsx") {
@@ -188,7 +188,7 @@ function initEditors() {
   function getSlideTitle(page) {
     let pageEl = page.querySelector("h1");
     if (!pageEl) {
-      console.warn('h1 not present. fallback to h2', page);
+      console.warn("h1 not present. fallback to h2", page);
       pageEl = page.querySelector("h2");
     }
     return pageEl.innerHTML;
