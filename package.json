@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "clear": "npm run clean && rimraf node_modules",
     "clean": "rimraf docs",
-    "build": "npm run clean && webpack --config webpack.prod.js --mode production && npm run copy-resources",
+    "build": "npm run clean && webpack --config webpack.prod.js --mode production && npm run copy-resources && git add docs/*",
     "copy-resources": "Xcopy /E /C /I \"src/images\" \"docs/images\"",
     "start": "webpack serve --open --config webpack.dev.js"
   },
