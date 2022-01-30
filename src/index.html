@@ -17,11 +17,21 @@
         integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
         crossorigin="anonymous" />
 
-    <link rel="shortcut icon" href="../favicon.png" />
-    <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+    <link rel="shortcut icon" href="images/favicon.png" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+    <style>
+        html { height: 100%; }
+        body.body-loading {
+            min-height: 100%; overflow: hidden; position: static;
+            background: #d7d7d7 url(images/favicon.png) center 50% no-repeat;
+        }
+        body.body-loading > * {
+            display: none;
+        }
+    </style>
 </head>
 
-<body class="impress-not-supported pagination x-pdf-available">
+<body class="impress-not-supported pagination x-pdf-available body-loading">
     <div id="impress">
 
         <!-- ===================================================================  -->
@@ -111,7 +121,7 @@
 
         <!-- ===================================================================  -->
         <div id="no-more-theory" class="step toc-el" data-x="-8750" data-y="-3000" data-scale="0.5" data-rotate="180">
-            <h1>Better let's create our first HTML <span class="emoji">😉</span> </h1>
+            <h1>Better let's create our HTML <span class="emoji">😉</span> </h1>
             <p>and see <strong>how</strong> and <strong>why</strong> we need this theory!</p>
             <p>Then you will search for theory when you feel you need it, not when I tell you.</p>
         </div>
@@ -806,9 +816,9 @@
 
         <!-- ===================================================================  -->
         <div id="js" class="step slide" data-x="2825" data-y="2325" data-z="-3000" data-rotate="300" data-scale="1">
-            <h1>DHTML intro</h1>
+            <h1>DHTML?</h1>
             <p>What we did until now was static html and css</p>
-            <p>DHTML stands for <strong>D</strong>ynamic HTML, and is made with JavaScript</p>
+            <p>DHTML stands for <span class="noticed html"><strong>D</strong>ynamic</span> HTML, and is made with JavaScript</p>
             <h2>Web:</h2>
             <ul>
                 <li>Site</li>
@@ -851,8 +861,8 @@
             <h1><span class="have browser">HTML</span> <span class="you">is not</span> a <span
                     class="noticed html">programming</span> <span class="its">language</span>!</h1>
             <br />
-            <em><span class="footnote">But you can do a lot of things combining it with <br />
-                    <span class="browser">CSS</span> and <span class="browser">JS</span></span></em>
+            <em>But you can do a lot of things combining it with <br />
+                    <span class="browser">CSS</span> and <span class="browser">JS</span></em>
         </div>
 
         <!-- ===================================================================  -->
@@ -942,6 +952,22 @@
         </div>
 
         <!-- ===================================================================  -->
+        <div id="js-json-fn" class="step" data-x="-5000" data-y="6500" data-scale="0.3">
+            <h2>JSON Objects can have functions inside</h2>
+            <pre data-type="js" style="font-size: 22px">
+                var person = {
+                    age: 29,
+                    name: 'Nick',
+                    play: function() {
+                        console.info("I'm playing. My name is ", this.name);
+                    }
+                };
+
+                person.play();
+            </pre>
+        </div>
+
+        <!-- ===================================================================  -->
         <div id="js-src" class="step" data-x="-4000" data-y="6000" data-scale="1">
             <h1>Is time to improve our document</h1>
             <h2 class="practice">Create a new empty file</h2>
@@ -965,24 +991,23 @@
         </div>
 
         <!-- ===================================================================  -->
-        <div id="dom-access" class="step" data-x="-3000" data-y="5500" data-scale="1">
+        <div id="dom-access" class="step slide toc-el" data-x="-3000" data-y="5500" data-scale="1">
+            <h1>😎 DHTML</h1>
             <h2>Document Object Model (DOM)</h2>
             <pre data-type="js" style="font-size: 22px;">
-                // var element = ... (get elements)
-                var motto, favorite, links;
-                motto    = document.getElementById('motto');
-                favorite = document.getElementsByClassName("favorit");
-                links    = document.getElementsByTagName("a");
+                var motto    = document.getElementById('motto');
+                var favorite = document.getElementsByClassName("favorit");
+                var links    = document.getElementsByTagName("a");
             </pre>
             <h2>DHTML (the fun part)</h2>
             <pre data-type="js" style="font-size: 22px;">
-                // change element html
+                // 1. change element content
                 motto.innerHTML = 'Hello &lt;strong>World&lt;/strong>!';
 
-                // change element style
+                // 2. change element style
                 favorite[0].style.display = 'none';
 
-                // adding events
+                // 3. adding events
                 links[0].onclick = function () {
                     console.info('click on first link', this);
                 };

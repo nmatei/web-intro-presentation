@@ -4,28 +4,17 @@ import "../../libs/css/impress-demo-min.css";
 import "../css/style.css";
 import "../css/print.css";
 
-var Presentation = (function () {
-  initEditors();
-
-  if ("ontouchstart" in document.documentElement) {
-    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
-  }
-
-  var params = window.location.search
+function getParam(name) {
+  const params = window.location.search
     .substring(1)
     .split("&")
     .reduce(function (prev, curr, i, arr) {
-      var p = curr.split("=");
-      prev[decodeURIComponent(p[0])] = p[1] ? decodeURIComponent(p[1]) : "";
+      const parts = curr.split("=");
+      prev[decodeURIComponent(parts[0])] = parts[1] ? decodeURIComponent(parts[1]) : "";
       return prev;
     }, {});
-
-  return {
-    getParam: function (name) {
-      return params[name];
-    }
-  };
-})();
+  return params[name];
+}
 
 /**
  * https://ace.c9.io/#nav=api&api=edit_session
@@ -70,7 +59,7 @@ function initEditors() {
   });
 }
 
-(function () {
+function disableLinks() {
   var disabledLinks = document.getElementsByClassName("disabled-link");
   for (var i = 0; i < disabledLinks.length; i++) {
     var link = disabledLinks[i];
@@ -78,12 +67,20 @@ function initEditors() {
       return false;
     };
   }
-})();
+}
 
 // print actions
 export function start() {
-  var isPrintMode = Presentation.getParam("print") !== undefined,
-    animation = Presentation.getParam("anim"),
+  initEditors();
+
+  if ("ontouchstart" in document.documentElement) {
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+  }
+
+  document.querySelector("body").classList.remove("body-loading");
+
+  var isPrintMode = getParam("print") !== undefined,
+    animation = getParam("anim"),
     pages = document.getElementsByClassName("step"),
     length = pages.length;
 
@@ -138,9 +135,6 @@ export function start() {
   }
 
   animElementsItems.push(
-    // '<a class="btn" title="About Me" href="https://www.linkedin.com/in/nicolaematei" target="_blank">',
-    // 	'<i class="fa fa-info-circle" aria-hidden="true"></i>',
-    // '</a>',
     pdfAvailable ? "<hr>" : "",
     '<a href="?" title="Animations Slides" class="btn' + (animation || " present") + '">',
     '<i class="fa fa-object-group" aria-hidden="true"></i>',
@@ -164,8 +158,8 @@ export function start() {
   actions.appendChild(animElements);
 
   // pagination
-  var tocContent = [];
-  var pagesNr = {};
+  const tocContent = [];
+  const pagesNr = {};
   for (var i = 0; i < length; i++) {
     var page = pages[i];
     page.setAttribute("data-current-page", i + 1);
@@ -200,7 +194,8 @@ export function start() {
     return pageEl.innerHTML;
   }
 
-  const tocPages = [...document.querySelectorAll("div.step.toc-el")].map(p => ({
+  const slides = Array.from(document.querySelectorAll("div.step.toc-el"));
+  const tocPages = slides.map(p => ({
     id: p.id,
     text: getSlideTitle(p),
     pageNr: pagesNr[p.id]
@@ -250,4 +245,6 @@ export function start() {
     },
     true
   );
+
+  disableLinks();
 }

@@ -13,24 +13,32 @@
     <link
         href="https://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic"
         rel="stylesheet" />
-    <!--<link href="css/impress-demo.css" rel="stylesheet" />-->
-    <link href="../libs/css/impress-demo-min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
         crossorigin="anonymous" />
 
-    <link rel="shortcut icon" href="../favicon.png" />
-    <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+    <link rel="shortcut icon" href="images/favicon.png" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+    <style>
+        html { height: 100%; }
+        body.body-loading {
+            min-height: 100%; overflow: hidden; position: static;
+            background: #d7d7d7 url(images/favicon.png) center 50% no-repeat;
+        }
+        body.body-loading > * {
+            display: none;
+        }
+    </style>
 </head>
 
-<body class="impress-not-supported pagination">
+<body class="impress-not-supported pagination body-loading">
     <div id="impress">
 
         <!-- ===================================================================  -->
         <div id="start" class="step slide" data-x="-2000" data-y="-1500">
             <h2 class="js"><a href="http://www.fasttrackit.org/" target="_blank">FastTrackIT</a></h2>
-            <p class="align-r"><a href="https://nmatei.github.io/web-intro-presentation/js.html"
-                    target="_blank">https://nmatei.github.io/web-intro-presentation/js.html</a></p>
+            <p class="align-r"><a href="https://nmatei.github.io/web-intro-presentation/js"
+                    target="_blank">https://nmatei.github.io/web-intro-presentation/js</a></p>
             <h1 class="html block middle-h">
                 More concepts about <a href="#toc">JS</a>
             </h1>
@@ -401,6 +409,7 @@
             <ol class="fa-ul git-add">
                 <li><span class="fa-li"><i class="fa fa-check-square-o"></i></span> Same inputs <strong>always</strong> return <strong>same outputs</strong></li>
                 <li><span class="fa-li"><i class="fa fa-check-square-o"></i></span> No <strong>side-effects</strong></li>
+                <li><span class="fa-li"><i class="fa fa-check-square-o"></i></span> Easy to <strong>test</strong></li>
             </ol>
 
             <br>

@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=1024" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <title>JS intro @ FastTrackIT</title>
+    <title>React intro @ FastTrackIT</title>
 
     <meta name="description" content="continue with js concepts, npm and webpack" />
     <meta name="author" content="Matei Nicolae" />
@@ -17,18 +17,28 @@
         integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
         crossorigin="anonymous" />
 
-    <link rel="shortcut icon" href="../favicon.png" />
-    <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+    <link rel="shortcut icon" href="images/favicon.png" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+    <style>
+        html { height: 100%; }
+        body.body-loading {
+            min-height: 100%; overflow: hidden; position: static;
+            background: #d7d7d7 url(images/favicon.png) center 50% no-repeat;
+        }
+        body.body-loading > * {
+            display: none;
+        }
+    </style>
 </head>
 
-<body class="impress-not-supported pagination">
+<body class="impress-not-supported pagination body-loading">
     <div id="impress">
 
         <!-- ===================================================================  -->
         <div id="start" class="step slide" data-x="-2000" data-y="-1500">
             <h2 class="js"><a href="http://www.fasttrackit.org/" target="_blank">FastTrackIT</a></h2>
-            <p class="align-r"><a href="https://nmatei.github.io/web-intro-presentation/react.html"
-                    target="_blank">https://nmatei.github.io/web-intro-presentation/react.html</a></p>
+            <p class="align-r"><a href="https://nmatei.github.io/web-intro-presentation/react"
+                    target="_blank">https://nmatei.github.io/web-intro-presentation/react</a></p>
             <h1 class="html block middle-h">
                 Concepts about <a href="#toc">React JS</a>
             </h1>
