@@ -1,7 +1,6 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=1024" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -11,245 +10,276 @@
     <meta name="author" content="Matei Nicolae" />
 
     <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-        integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
-        crossorigin="anonymous" />
+      href="https://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+      crossorigin="anonymous"
+    />
 
     <link rel="shortcut icon" href="images/favicon.png" />
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
     <style>
-        html { height: 100%; }
-        body.body-loading {
-            min-height: 100%; overflow: hidden; position: static;
-            background: #d7d7d7 url(images/favicon.png) center 50% no-repeat;
-        }
-        body.body-loading > * {
-            display: none;
-        }
+      html {
+        height: 100%;
+      }
+      body.body-loading {
+        min-height: 100%;
+        overflow: hidden;
+        position: static;
+        background: #d7d7d7 url(images/favicon.png) center 50% no-repeat;
+      }
+      body.body-loading > * {
+        display: none;
+      }
     </style>
-</head>
+  </head>
 
-<body class="impress-not-supported pagination body-loading">
+  <body class="impress-not-supported pagination body-loading">
     <div id="impress">
+      <!-- ===================================================================  -->
+      <div id="start" class="step slide" data-x="-2000" data-y="-1500">
+        <h2 class="js"><a href="http://www.fasttrackit.org/" target="_blank">FastTrackIT</a></h2>
+        <p class="align-r">
+          <a href="https://nmatei.github.io/web-intro-presentation/react" target="_blank"
+            >https://nmatei.github.io/web-intro-presentation/react</a
+          >
+        </p>
+        <h1 class="html block middle-h">Concepts about <a href="#toc">React JS</a></h1>
+        <h2 class="keyword align-r">
+          by <a href="https://www.linkedin.com/in/nicolaematei" target="_blank">Matei Nicolae</a>
+        </h2>
+        <a class="align-r small hidden print-only" href="https://www.linkedin.com/in/nicolaematei" target="_blank">
+          https://www.linkedin.com/in/nicolaematei
+        </a>
+      </div>
 
-        <!-- ===================================================================  -->
-        <div id="start" class="step slide" data-x="-2000" data-y="-1500">
-            <h2 class="js"><a href="http://www.fasttrackit.org/" target="_blank">FastTrackIT</a></h2>
-            <p class="align-r"><a href="https://nmatei.github.io/web-intro-presentation/react"
-                    target="_blank">https://nmatei.github.io/web-intro-presentation/react</a></p>
-            <h1 class="html block middle-h">
-                Concepts about <a href="#toc">React JS</a>
-            </h1>
-            <h2 class="keyword align-r">by <a href="https://www.linkedin.com/in/nicolaematei" target="_blank">Matei
-                    Nicolae</a></h2>
-            <a class="align-r small hidden print-only" href="https://www.linkedin.com/in/nicolaematei"
-                target="_blank">https://www.linkedin.com/in/nicolaematei</a>
-        </div>
+      <!-- ===================================================================  -->
+      <div id="toc" class="step" data-x="-1000" data-y="-5000" data-scale="3">
+        <h1>Table of contents</h1>
+        <ol></ol>
+      </div>
 
-        <!-- ===================================================================  -->
-        <div id="toc" class="step" data-x="-1000" data-y="-5000" data-scale="3">
-            <h1>Table of contents</h1>
-            <ol>
+      <!-- ===================================================================  -->
+      <div id="quick-start" class="step slide toc-el" data-x="-500" data-y="-1500">
+        <h1><i class="fa fa-folder-open-o"></i> Getting Started</h1>
 
-            </ol>
-        </div>
+        <h2>Create <a href="https://reactjs.org/docs/hello-world.html" target="_blank">React</a> APP</h2>
+        <p>
+          - We will use <a href="https://www.typescriptlang.org/" target="_blank">TypeScript</a> template for this
+          project
+        </p>
+        <pre data-type="shell" style="font-size: 22px">
+          # using - npx
+          npx create-react-app teams-networking --template typescript
+          # OR
+          # using - yarn
+          yarn create react-app teams-networking --template typescript
 
-        <!-- ===================================================================  -->
-        <div id="quick-start" class="step slide toc-el" data-x="-500" data-y="-1500">
-            <h1><i class="fa fa-folder-open-o"></i> Getting Started</h1>
+          # navigate inside your project
+          cd teams-networking
 
-            <h2>Create <a href="https://reactjs.org/docs/hello-world.html" target="_blank">React</a> APP</h2>
-            <p>- We will use <a href="https://www.typescriptlang.org/" target="_blank">TypeScript</a> template for this project</p>
-            <pre data-type="shell" style="font-size: 22px;">
-                # using - npx
-                npx create-react-app teams-networking --template typescript
-                # OR
-                # using - yarn
-                yarn create react-app teams-networking --template typescript
+          npm start
+        </pre>
 
-                # navigate inside your project
-                cd teams-networking
+        <br />
+        <h2>Initialize project to use <a href="js.html#/prettier-init" target="_blank">Prettier</a></h2>
+        <br />
+        <p class="footnote">
+          <a href="https://create-react-app.dev/docs/getting-started" target="_blank">Create React App</a>
+        </p>
+      </div>
 
-                npm start
+      <!-- ===================================================================  -->
+      <div id="env-config" class="step slide" data-x="-500" data-y="-900" data-scale="0.5">
+        <h2><i class="fa fa-file-code-o"></i> .env</h2>
+        <br />
+        <p>Change app port from (default is 3000)</p>
+        <pre data-type="shell" style="font-size: 22px">
+          # create .env file
+          touch .env
+
+          echo "PORT=8080" >> .env
+          # npm start
+        </pre>
+
+        <p class="footnote">
+          * Custom
+          <a href="https://nodejs.dev/learn/how-to-read-environment-variables-from-nodejs" target="_blank"
+            >environment variables</a
+          >.
+        </p>
+      </div>
+
+      <!-- ===================================================================  -->
+      <div id="jsx" class="step slide toc-el" data-x="1000" data-y="-1500">
+        <h1><i class="fa fa-file-code-o"></i> JSX</h1>
+        <br />
+        <ol class="fa-ul">
+          <li>
+            <span class="fa-li"><i class="fa fa-check-square-o"></i></span>
+            <pre data-type="js" style="font-size: 20px">
+              const element = &lt;h1>Hello, {name}. Welcome!&lt;/h1>;
             </pre>
-
-            <br>
-            <h2>Initialize project to use <a href="js.html#/prettier-init" target="_blank">Prettier</a></h2>
-            <br>
-            <p class="footnote">
-                <a href="https://create-react-app.dev/docs/getting-started" target="_blank">Create React App</a>
-            </p>
-        </div>
-
-        <!-- ===================================================================  -->
-        <div id="env-config" class="step slide" data-x="-500" data-y="-900" data-scale="0.5">
-            <h2><i class="fa fa-file-code-o"></i> .env</h2>
-            <br>
-            <p>Change app port from (default is 3000)</p>
-            <pre data-type="shell" style="font-size: 22px;">
-                # create .env file
-                touch .env
-
-                echo "PORT=8080" >> .env
-                # npm start
+          </li>
+          <li>
+            <span class="fa-li"><i class="fa fa-square-o"></i></span> neither a string nor HTML
+          </li>
+          <li>
+            <span class="fa-li"><i class="fa fa-square-o"></i></span> <strong>{name}</strong> does not need
+            <strong>$</strong> in front of it
+          </li>
+          <li>
+            <span class="fa-li"><i class="fa fa-square-o"></i></span> inside <strong>{ ... }</strong> you can use
+            <strong>plain js</strong>
+          </li>
+          <li>
+            <span class="fa-li"><i class="fa fa-square-o"></i></span> You can create <strong>functions</strong> to
+            <strong>return</strong> such <strong>elements</strong>
+          </li>
+          <li>
+            <span class="fa-li"><i class="fa fa-square-o"></i></span> JSX produces <strong>React elements</strong>
+            <pre data-type="js" style="font-size: 20px">
+              React.createElement("h1", null, "Hello, ", name, ". Welcome!");
             </pre>
+          </li>
+        </ol>
+        <p class="footnote">
+          <a href="https://reactjs.org/docs/introducing-jsx.html" target="_blank">Introducing JSX</a>
+        </p>
+      </div>
 
-            <p class="footnote">
-                * Custom <a href="https://nodejs.dev/learn/how-to-read-environment-variables-from-nodejs" target="_blank">environment variables</a>.
-            </p>
-        </div>
+      <!-- ===================================================================  -->
+      <div id="react-render" class="step slide" data-x="1000" data-y="-900" data-scale="0.5">
+        <h2>Render React elements</h2>
+        <pre data-type="js" data-highlight="1, 16" style="font-size: 20px">
+          const element = &lt;h1>Hello&lt;/h1>; // not a valid expression in browsers!
 
-        <!-- ===================================================================  -->
-        <div id="jsx" class="step slide toc-el" data-x="1000" data-y="-1500">
-            <h1><i class="fa fa-file-code-o"></i> JSX</h1>
-            <br>
-            <ol class="fa-ul">
-                <li><span class="fa-li"><i class="fa fa-check-square-o"></i></span>
-                    <pre data-type="js" style="font-size: 20px">
-                        const element = &lt;h1>Hello, {name}. Welcome!&lt;/h1>;
-                    </pre>
-                </li>
-                <li><span class="fa-li"><i class="fa fa-square-o"></i></span> neither a string nor HTML</li>
-                <li><span class="fa-li"><i class="fa fa-square-o"></i></span> <strong>{name}</strong> does not need <strong>$</strong> in front of it</li>
-                <li><span class="fa-li"><i class="fa fa-square-o"></i></span> inside <strong>{ ... }</strong> you can use <strong>plain js</strong></li>
-                <li><span class="fa-li"><i class="fa fa-square-o"></i></span> You can create <strong>functions</strong> to <strong>return</strong> such <strong>elements</strong></li>
-                <li>
-                    <span class="fa-li"><i class="fa fa-square-o"></i></span> JSX produces <strong>React elements</strong>
-                    <pre data-type="js" style="font-size: 20px">
-                        React.createElement("h1", null, "Hello, ", name, ". Welcome!");
-                    </pre>
-                </li>
-            </ol>
-            <p class="footnote">
-                <a href="https://reactjs.org/docs/introducing-jsx.html" target="_blank">Introducing JSX</a>
-            </p>
-        </div>
+          // so => transpiled to:
+          const element1 = React.createElement("h1", null, "Hello");
+          // result => a json object
+          const element2 = {
+            type: "h1",
+            key: null,
+            props: {
+              children: "Hello"
+            }
+            //... few more props
+          }
 
-        <!-- ===================================================================  -->
-        <div id="react-render" class="step slide" data-x="1000" data-y="-900" data-scale="0.5">
-            <h2>Render React elements</h2>
-            <pre data-type="js" data-highlight="1, 16" style="font-size: 20px">
-                const element = &lt;h1>Hello&lt;/h1>; // not a valid expression in browsers!
+          // then render it
+          ReactDOM.render(element, document.getElementById("root"));
 
-                // so => transpiled to:
-                const element1 = React.createElement("h1", null, "Hello");
-                // result => a json object
-                const element2 = {
-                    type: "h1",
-                    key: null,
-                    props: {
-                        children: "Hello"
-                    }
-                    //... few more props
-                }
+          // vs
+          document.getElementById("root").innerHTML = "&lt;h1>Hello&lt;/h1>";
+        </pre>
 
-                // then render it
-                ReactDOM.render(element, document.getElementById("root"));
+        <p class="practice">
+          Try
+          <a href="https://reactjs.org/docs/rendering-elements.html#updating-the-rendered-element" target="_blank"
+            >ticking clock</a
+          >
+          example. <br />Check how React Only Updates What’s Necessary.
+        </p>
+      </div>
 
-                // vs
-                document.getElementById("root").innerHTML = "&lt;h1>Hello&lt;/h1>";
-            </pre>
+      <!-- ===================================================================  -->
+      <div id="ts" class="step slide toc-el" data-x="2500" data-y="-1500">
+        <h1>Basic TypeScript intro</h1>
+        <h2>Types could be inherited based on value</h2>
+        <pre data-type="ts" data-highlight="2, 14, 18" style="font-size: 20px">
+          let firstName = "yes";
+          firstName = false;
+          // Error: Type 'boolean' is not assignable to type 'string'
 
-            <p class="practice">
-                Try <a href="https://reactjs.org/docs/rendering-elements.html#updating-the-rendered-element" target="_blank">ticking clock</a> example.
-                <br>Check how React Only Updates What’s Necessary.
-            </p>
-        </div>
+          function getConfig() {
+            return {
+              name: "config",
+              x: 123,
+              ready: true
+            };
+          }
 
-        <!-- ===================================================================  -->
-        <div id="ts" class="step slide toc-el" data-x="2500" data-y="-1500">
-            <h1>Basic TypeScript intro</h1>
-            <h2>Types could be inherited based on value</h2>
-            <pre data-type="ts" data-highlight="2, 14, 18" style="font-size: 20px">
-                let firstName = "yes";
-                firstName = false;
-                // Error: Type 'boolean' is not assignable to type 'string'
+          const config = getConfig();
+          console.info(config.nume);
+          // Error: Property 'nume' does not exist on type
+          //   '{ name: string; x: number; ready: boolean; }'
 
-                function getConfig() {
-                  return {
-                    name: "config",
-                    x: 123,
-                    ready: true
-                  };
-                }
+          config.ready = "not ready";
+          // Error: Type 'string' is not assignable to type 'boolean'
+        </pre>
+        <p class="footnote">What is <a href="https://www.typescriptlang.org/" target="_blank">TypeScript</a>?</p>
+      </div>
 
-                const config = getConfig();
-                console.info(config.nume);
-                // Error: Property 'nume' does not exist on type
-                //   '{ name: string; x: number; ready: boolean; }'
+      <!-- ===================================================================  -->
+      <div id="tsconfig" class="step slide" data-x="2500" data-y="-900" data-scale="0.5">
+        <h2><i class="fa fa-file-code-o"></i> tsconfig.json</h2>
 
-                config.ready = "not ready";
-                // Error: Type 'string' is not assignable to type 'boolean'
-            </pre>
-            <p class="footnote">
-                What is <a href="https://www.typescriptlang.org/" target="_blank">TypeScript</a>?
-            </p>
-        </div>
+        <p>You can add more configs to make ts less restrictive</p>
+        <pre data-type="js" style="font-size: 22px">
+          {
+            "compilerOptions": {
+              "noImplicitAny": false,
+              "noUnusedLocals": false
+            }
+          }
+        </pre>
+        <p>check documentation to see all options</p>
 
-        <!-- ===================================================================  -->
-        <div id="tsconfig" class="step slide" data-x="2500" data-y="-900" data-scale="0.5">
-            <h2><i class="fa fa-file-code-o"></i> tsconfig.json</h2>
+        <p class="footnote">
+          What is a
+          <a href="https://www.typescriptlang.org/docs/handbook/tsconfig-json.html" target="_blank">tsconfig.json</a>
+        </p>
+      </div>
 
-            <p>You can add more configs to make ts less restrictive</p>
-            <pre data-type="js" style="font-size: 22px;">
-                {
-                    "compilerOptions": {
-                        "noImplicitAny": false,
-                        "noUnusedLocals": false
-                    }
-                }
-            </pre>
-            <p>check documentation to see all options</p>
+      <!-- ===================================================================  -->
+      <div id="ts-types" class="step slide" data-x="2500" data-y="-400" data-scale="0.5">
+        <h2>Types</h2>
 
-            <p class="footnote">
-                What is a <a href="https://www.typescriptlang.org/docs/handbook/tsconfig-json.html" target="_blank">tsconfig.json</a>
-            </p>
-        </div>
+        <pre data-type="ts" data-highlight="3, 8, 19, 20, 21" style="font-size: 18px">
+          let color: string;
+          color = "green"
+          color = false; // Type 'boolean' is not assignable to type 'string'
 
-        <!-- ===================================================================  -->
-        <div id="ts-types" class="step slide" data-x="2500" data-y="-400" data-scale="0.5">
-            <h2>Types</h2>
+          let status: string | number; // Types as Sets
+          status = 'OK';
+          status = 200;
+          status = true; // Type 'boolean' is not assignable to type 'string | number'
 
-            <pre data-type="ts" data-highlight="3, 8, 19, 20, 21" style="font-size: 18px">
-                let color: string;
-                color = "green"
-                color = false; // Type 'boolean' is not assignable to type 'string'
+          type Status = string | number; // custom TYPE
+          let responseStatus: Status;
+          type Config = {
+            name: string;
+            x: number;
+            ready?: boolean; // optional prop
+          }
 
-                let status: string | number; // Types as Sets
-                status = 'OK';
-                status = 200;
-                status = true; // Type 'boolean' is not assignable to type 'string | number'
+          function getConfig(): Config {
+            return {
+              name: 'Space'
+            } // Must return a value OR Property 'x' is missing
+          }
+          const conf: Config = getConfig();
+          const config = getConfig(); // if getConfig has return type
+        </pre>
 
-                type Status = string | number; // custom TYPE
-                let responseStatus: Status;
-                type Config = {
-                    name: string;
-                    x: number;
-                    ready?: boolean; // optional prop
-                }
+        <p class="footnote">
+          <a
+            href="https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes-oop.html#types-as-sets"
+            target="_blank"
+            >Types as Sets</a
+          >
+        </p>
+      </div>
 
-                function getConfig(): Config {
-                    return {
-                        name: 'Space'
-                    } // Must return a value OR Property 'x' is missing
-                }
-                const conf: Config = getConfig();
-                const config = getConfig(); // if getConfig has return type
-            </pre>
-
-            <p class="footnote">
-                <a href="https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes-oop.html#types-as-sets" target="_blank">Types as Sets</a>
-            </p>
-        </div>
-
-        <!-- ===================================================================  -->
-        <div id="react-components" class="step slide toc-el" data-x="4000" data-y="-1500">
-            <h1>React Components</h1>
-            <p>Create custom UI components then reuse them.
-                Seems that we create html tags that have our logic inside.</p>
-            <pre data-type="jsx" style="font-size: 20px;">
+      <!-- ===================================================================  -->
+      <div id="react-components" class="step slide toc-el" data-x="4000" data-y="-1500">
+        <h1>React Components</h1>
+        <p>Create custom UI components then reuse them. Seems that we create html tags that have our logic inside.</p>
+        <pre data-type="jsx" style="font-size: 20px">
 function LocalTime() {
   return (
     &lt;div>
@@ -263,30 +293,32 @@ const element = (
   &lt;div>
     &lt;LocalTime />
   &lt;/div>
-);</pre>
-            <p class="practice">
-                Now try to split your app into smaller parts: <br>
-                <strong>AppHeader</strong>, <strong>MainMenu</strong>, <strong>SideMenu</strong>,
-                <strong>AppFooter</strong>, <strong>ContentWrapper</strong>,
-                <strong>TeamsTable</strong>
-            </p>
-        </div>
+);
+        </pre>
+        <p class="practice">
+          Now try to split your app into smaller parts: <br />
+          <strong>AppHeader</strong>, <strong>MainMenu</strong>, <strong>SideMenu</strong>, <strong>AppFooter</strong>,
+          <strong>ContentWrapper</strong>,
+          <strong>TeamsTable</strong>
+        </p>
+      </div>
 
-        <!-- ===================================================================  -->
-        <div id="components-and-props" class="step slide" data-x="4000" data-y="-900" data-scale="0.5">
-            <h2>Components and Props</h2>
+      <!-- ===================================================================  -->
+      <div id="components-and-props" class="step slide" data-x="4000" data-y="-900" data-scale="0.5">
+        <h2>Components and Props</h2>
 
-            <h3>function components</h3>
-            <pre data-type="jsx" data-highlight="2, 6" style="font-size: 20px;">
+        <h3>function components</h3>
+        <pre data-type="jsx" data-highlight="2, 6" style="font-size: 20px">
 function Welcome(props) {
   return &lt;h1>Hello, {props.name}&lt;/h1>;
 }
 // or using arrow fn (implicit return & destructoring)
 const Welcome = ({name}) => (
   &lt;h1>Hello, {name}&lt;/h1>
-)</pre>
-            <h3>ES6 class components</h3>
-            <pre data-type="jsx" data-highlight="3, 7" style="font-size: 20px;">
+)</pre
+        >
+        <h3>ES6 class components</h3>
+        <pre data-type="jsx" data-highlight="3, 7" style="font-size: 20px">
 class Welcome extends React.Component {
   render() {
     return &lt;h1>Hello, {this.props.name}&lt;/h1>;
@@ -298,18 +330,22 @@ const element = &lt;Welcome name="David" />; // usage for any of them
 ReactDOM.render(
   element,
   document.getElementById('root')
-);</pre>
-            <p class="footnote">
-                * <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes" target="_blank">ES6 Classes</a><br>
-                * <a href="https://reactjs.org/docs/components-and-props.html" target="_blank">Components and Props</a>
-            </p>
-        </div>
+);</pre
+        >
+        <p class="footnote">
+          *
+          <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes" target="_blank"
+            >ES6 Classes</a
+          ><br />
+          * <a href="https://reactjs.org/docs/components-and-props.html" target="_blank">Components and Props</a>
+        </p>
+      </div>
 
-        <!-- ===================================================================  -->
-        <div id="react-component" class="step slide" data-x="4000" data-y="-400" data-scale="0.5">
-            <h1>React.Component & TypeScript</h1>
+      <!-- ===================================================================  -->
+      <div id="react-component" class="step slide" data-x="4000" data-y="-400" data-scale="0.5">
+        <h1>React.Component & TypeScript</h1>
 
-            <pre data-type="jsx" style="font-size: 20px;">
+        <pre data-type="jsx" style="font-size: 20px">
 type Props = {
     name: string;
 }
@@ -329,14 +365,15 @@ class Welcome extends React.Component &lt;Props, State> {
   }
 }
 // usage
-&lt;Welcome name="David" /></pre>
-        </div>
+&lt;Welcome name="David" /></pre
+        >
+      </div>
 
-        <!-- ===================================================================  -->
-        <div id="ts-generics" class="step slide toc-el" data-x="5500" data-y="-1500">
-            <h1>TypeScript generics</h1>
-            <h2>*keyof</h2>
-            <pre data-type="ts" data-highlight="23, 24" style="font-size: 16px">
+      <!-- ===================================================================  -->
+      <div id="ts-generics" class="step slide toc-el" data-x="5500" data-y="-1500">
+        <h1>TypeScript generics</h1>
+        <h2>*keyof</h2>
+        <pre data-type="ts" data-highlight="23, 24" style="font-size: 16px">
 export type Team = {
   members: string;
   name: string;
@@ -361,66 +398,99 @@ store.find("id", "12345");
 store.find("amount", 20220);
 store.find("not-found", "value");
 //   Argument of type '"not-found"' is not assignable to...
-            </pre>
-            <p class="footnote"><a href="https://www.typescriptlang.org/docs/handbook/2/generics.html" target="_blank">Generics</a></p>
-        </div>
+            </pre
+        >
+        <p class="footnote">
+          <a href="https://www.typescriptlang.org/docs/handbook/2/generics.html" target="_blank">Generics</a>
+        </p>
+      </div>
 
-        <!-- ===================================================================  -->
-        <div id="utilities" class="step slide toc-el" data-x="7000" data-y="-1500">
-            <h1>Read more</h1>
+      <!-- ===================================================================  -->
+      <div id="utilities" class="step slide toc-el" data-x="7000" data-y="-1500">
+        <h1>Read more</h1>
 
-            <p>
-                <a href="https://www.designcise.com/web/tutorial/how-to-access-form-control-elements-in-the-onsubmit-event-handler-in-react" target="_blank">Form onsubmit getValues</a>
-            </p>
-            <p class="practice">
-                Lets use 'array.reduce' to create our json for submit
-            </p>
+        <p>
+          <a
+            href="https://www.designcise.com/web/tutorial/how-to-access-form-control-elements-in-the-onsubmit-event-handler-in-react"
+            target="_blank"
+            >Form onsubmit getValues</a
+          >
+        </p>
+        <p class="practice">Lets use 'array.reduce' to create our json for submit</p>
 
-            <br>
-            <h2>Redux</h2>
+        <br />
+        <h2>Redux</h2>
 
-            <ol class="fa-ul">
-                <li><span class="fa-li"><i class="fa fa-check-square-o"></i></span>
-                    <a href="https://egghead.io/courses/fundamentals-of-redux-course-from-dan-abramov-bd5cc867" target="_blank">Fundamentals of Redux - Course</a>
-                </li>
-                <li><span class="fa-li"><i class="fa fa-square-o"></i></span>
-                    <a href="https://redux.js.org/faq/general#when-should-i-use-redux" target="_blank">When should I use Redux?</a>
-                </li>
-            </ol>
-        </div>
+        <ol class="fa-ul">
+          <li>
+            <span class="fa-li"><i class="fa fa-check-square-o"></i></span>
+            <a href="https://egghead.io/courses/fundamentals-of-redux-course-from-dan-abramov-bd5cc867" target="_blank"
+              >Fundamentals of Redux - Course</a
+            >
+          </li>
+          <li>
+            <span class="fa-li"><i class="fa fa-square-o"></i></span>
+            <a href="https://redux.js.org/faq/general#when-should-i-use-redux" target="_blank"
+              >When should I use Redux?</a
+            >
+          </li>
+        </ol>
+      </div>
 
-        <!-- ===================================================================  -->
+      <!-- ===================================================================  -->
     </div>
 
     <div class="hint">
-        <p>Use a spacebar or arrow keys to navigate</p>
+      <p>Use a spacebar or arrow keys to navigate</p>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/ace.js"
-        integrity="sha512-OMjy8oWtPbx9rJmoprdaQdS2rRovgTetHjiBf7RL7LvRSouoMLks5aIcgqHb6vGEAduuPdBTDCoztxLR+nv45g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/ext-beautify.min.js"
-        integrity="sha512-sIVPU3/0VPG2jJdl6NTqe8QF9vTE3Y/LAFiH2YPj8iCz5fdWkhOYA26QR6nZVjI3OWCMtbH/BX8YwZddZi8mhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-javascript.min.js"
-        integrity="sha512-37ta5K4KVYs+MEmIg2xnZxJrdiQmBSKt+JInvyPrq9uz7aF67lMJT/t91EYoYj520jEcGlih41kCce7BRTmE3Q=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-typescript.min.js"
-        integrity="sha512-B9R7h1wpTRLAJ1XxBrTcs4+StXQTcPcI4mt1q1XIM8HkX9hajuzDGKhfcqV0NZ4TElUE10mPCEHgJqq45RP/Ow=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-jsx.min.js"
-        integrity="sha512-2J1idhYVYWtz0C+mPnl5K0Y//JjKMwUI3xCw7QJeY1eYSv3QjE2uDw6yFJKoFd0O7OHhcWLaL/lYElhO4+5DqQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-html.min.js"
-        integrity="sha512-vSQkVhmiIt31RHmh8b65o0ap3yoL08VJ6MeuiCGo+92JDdSSWAEWoWELEf3WBk4e2tz/0CvnTe87Y2rFrNjcbg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-css.min.js"
-        integrity="sha512-9kFCBhC+SjlU9Mk4n65VZ3yID5cdcql9y/MrrRsDLyD2Dce+diCd+NITdkjHVBaLK6USc1YCZ5cXVPMC8CdJBA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-sh.min.js"
-        integrity="sha512-DCGTxVcs3p6DPSs/NfnxuKE1ej/9KfCdFDfy1qhyriBteSxKkrMja1A0Q+pN2tuvUekTZun1RU2LRM1qybC/VQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-</body>
-
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/ace.js"
+      integrity="sha512-OMjy8oWtPbx9rJmoprdaQdS2rRovgTetHjiBf7RL7LvRSouoMLks5aIcgqHb6vGEAduuPdBTDCoztxLR+nv45g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/ext-beautify.min.js"
+      integrity="sha512-sIVPU3/0VPG2jJdl6NTqe8QF9vTE3Y/LAFiH2YPj8iCz5fdWkhOYA26QR6nZVjI3OWCMtbH/BX8YwZddZi8mhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-javascript.min.js"
+      integrity="sha512-37ta5K4KVYs+MEmIg2xnZxJrdiQmBSKt+JInvyPrq9uz7aF67lMJT/t91EYoYj520jEcGlih41kCce7BRTmE3Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-typescript.min.js"
+      integrity="sha512-B9R7h1wpTRLAJ1XxBrTcs4+StXQTcPcI4mt1q1XIM8HkX9hajuzDGKhfcqV0NZ4TElUE10mPCEHgJqq45RP/Ow=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-jsx.min.js"
+      integrity="sha512-2J1idhYVYWtz0C+mPnl5K0Y//JjKMwUI3xCw7QJeY1eYSv3QjE2uDw6yFJKoFd0O7OHhcWLaL/lYElhO4+5DqQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-html.min.js"
+      integrity="sha512-vSQkVhmiIt31RHmh8b65o0ap3yoL08VJ6MeuiCGo+92JDdSSWAEWoWELEf3WBk4e2tz/0CvnTe87Y2rFrNjcbg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-css.min.js"
+      integrity="sha512-9kFCBhC+SjlU9Mk4n65VZ3yID5cdcql9y/MrrRsDLyD2Dce+diCd+NITdkjHVBaLK6USc1YCZ5cXVPMC8CdJBA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-sh.min.js"
+      integrity="sha512-DCGTxVcs3p6DPSs/NfnxuKE1ej/9KfCdFDfy1qhyriBteSxKkrMja1A0Q+pN2tuvUekTZun1RU2LRM1qybC/VQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </body>
 </html>

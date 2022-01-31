@@ -72,6 +72,7 @@ function disableLinks() {
 // print actions
 export function start() {
   initEditors();
+  disableLinks();
 
   if ("ontouchstart" in document.documentElement) {
     document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
@@ -110,6 +111,7 @@ export function start() {
       page.setAttribute("data-rotate-y", "0");
     }
   }
+
   impress().init();
 
   var actions = document.createElement("div"),
@@ -245,6 +247,4 @@ export function start() {
     },
     true
   );
-
-  disableLinks();
 }
