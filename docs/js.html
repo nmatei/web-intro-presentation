@@ -9,7 +9,7 @@
       }
       body.body-loading > * {
         display: none;
-      }</style><script defer="defer" src="js/commons.js"></script><script defer="defer" src="js/js.js"></script><link href="css/styles.css" rel="stylesheet"></head><body class="impress-not-supported pagination body-loading"><div id="impress"><div id="start" class="step slide" data-x="-2000" data-y="-1500"><h2 class="js"><a href="http://www.fasttrackit.org/" target="_blank">FastTrackIT</a></h2><p class="align-r"><a href="https://nmatei.github.io/web-intro-presentation/js" target="_blank">https://nmatei.github.io/web-intro-presentation/js</a></p><h1 class="html block middle-h">More concepts about <a href="#toc">JS</a></h1><h2 class="keyword align-r">by <a href="https://www.linkedin.com/in/nicolaematei" target="_blank">Matei Nicolae</a></h2><a class="align-r small hidden print-only" href="https://www.linkedin.com/in/nicolaematei" target="_blank">https://www.linkedin.com/in/nicolaematei</a></div><div id="toc" class="step" data-x="-1000" data-y="-5000" data-scale="3"><h1>Table of contents</h1><ol></ol></div><div id="initial-folder-structure" class="step slide toc-el" data-x="-500" data-y="-1500"><h1><i class="fa fa-folder-open-o"></i> Initial Folder Structure</h1><div class="folder"><ol class="fa-ul"><li><span class="fa-li"><i class="fa fa-folder-open"></i></span>src<ol class="fa-ul"><li><span class="fa-li"><i class="fa fa-html5"></i></span>index.html</li><li><span class="fa-li"><i class="fa fa-file-code-o"></i></span>index.js</li><li><span class="fa-li"><i class="fa fa-css3"></i></span>style.css</li></ol></li></ol></div><br/><h2>Scope</h2><ol class="fa-ul"><li><span class="fa-li"><i class="fa fa-square-o"></i></span> Save on GIT (Version Control System)</li><li><span class="fa-li"><i class="fa fa-square-o"></i></span> Multiple contributors</li><li><span class="fa-li"><i class="fa fa-square-o"></i></span> Format code in the same way (less git conflicts)</li><li><span class="fa-li"><i class="fa fa-square-o"></i></span> Use shared code from others</li><li><span class="fa-li"><i class="fa fa-square-o"></i></span> Hot reload app then you change code</li><li><span class="fa-li"><i class="fa fa-square-o"></i></span> Minimise & Obfuscate your code</li></ol></div><div id="prettier-init" class="step slide toc-el" data-x="1000" data-y="-1500"><h1><i class="fa fa-align-left"></i> Initialize project to use Prettier</h1><p>We want to format code in the same way:</p><pre data-type="shell" style="font-size: 24px">
+      }</style><script defer="defer" src="js/commons.js"></script><script defer="defer" src="js/js.js"></script><link href="css/styles.css" rel="stylesheet"></head><body class="impress-not-supported pagination body-loading"><div id="impress"><div id="start" class="step slide" data-x="-2000" data-y="-1500"><h2 class="js"><a href="https://www.fasttrackit.org/" target="_blank">FastTrackIT</a></h2><p class="align-r"><a href="https://nmatei.github.io/web-intro-presentation/js" target="_blank">https://nmatei.github.io/web-intro-presentation/js</a></p><h1 class="html block middle-h">More concepts about <a href="#toc">JS</a></h1><h2 class="keyword align-r">by <a href="https://www.linkedin.com/in/nicolaematei" target="_blank">Matei Nicolae</a></h2><a class="align-r small hidden print-only" href="https://www.linkedin.com/in/nicolaematei" target="_blank">https://www.linkedin.com/in/nicolaematei</a></div><div id="toc" class="step" data-x="-1000" data-y="-5000" data-scale="3"><h1>Table of contents</h1><ol></ol></div><div id="initial-folder-structure" class="step slide toc-el" data-x="-500" data-y="-1500"><h1><i class="fa fa-folder-open-o"></i> Initial Folder Structure</h1><div class="folder"><ol class="fa-ul"><li><span class="fa-li"><i class="fa fa-folder-open"></i></span>src<ol class="fa-ul"><li><span class="fa-li"><i class="fa fa-html5"></i></span>index.html</li><li><span class="fa-li"><i class="fa fa-file-code-o"></i></span>index.js</li><li><span class="fa-li"><i class="fa fa-css3"></i></span>style.css</li></ol></li></ol></div><br/><h2>Scope</h2><ol class="fa-ul"><li><span class="fa-li"><i class="fa fa-square-o"></i></span> Save on GIT (Version Control System)</li><li><span class="fa-li"><i class="fa fa-square-o"></i></span> Multiple contributors</li><li><span class="fa-li"><i class="fa fa-square-o"></i></span> Format code in the same way (less git conflicts)</li><li><span class="fa-li"><i class="fa fa-square-o"></i></span> Use shared code from others</li><li><span class="fa-li"><i class="fa fa-square-o"></i></span> Hot reload app then you change code</li><li><span class="fa-li"><i class="fa fa-square-o"></i></span> Minimise & Obfuscate your code</li></ol></div><div id="prettier-init" class="step slide toc-el" data-x="1000" data-y="-1500"><h1><i class="fa fa-align-left"></i> Initialize project to use Prettier</h1><p>We want to format code in the same way:</p><pre data-type="shell" style="font-size: 24px">
           # create .prettierrc file
           touch .prettierrc
         </pre><p>Add following json inside <strong>.prettierrc</strong></p><pre data-type="js" style="font-size: 24px">
@@ -36,7 +36,7 @@
           git status
 
           # now you can add commit & push files ;)
-        </pre></div><div id="npm-init" class="step slide toc-el" data-x="4000" data-y="-1500"><h1><i class="fa fa-cubes"></i> Initialize project to use NPM</h1><p>inside root folder run</p><pre data-type="shell" style="font-size: 22px">
+        </pre></div><div id="npm-init" class="step slide toc-el" data-x="4000" data-y="-1500"><h1><i class="fa fa-cubes"></i> Initialize project to use NPM</h1><p>inside root folder run</p><pre data-type="shell" class="fs-22">
           npm init -y
         </pre><br/><h2>Good parts</h2><ol class="fa-ul git-add"><li><span class="fa-li"><i class="fa fa-check-square-o"></i></span> Many 😀</li></ol><br/><h2 style="color: red">Risks</h2><ol class="fa-ul"><li><span class="fa-li"><i class="fa fa-check-square-o"></i></span> There are about <strong>Infinity</strong> possible <strong>security</strong> risks 🔐</li><li><span class="fa-li"><i class="fa fa-check-square-o"></i></span> Yesterday worked... 😓</li></ol><p class="footnote">Read more about <a href="https://docs.npmjs.com/cli/v6/commands/npm-init" target="_blank">npm</a></p></div><div id="webpack-init" class="step slide toc-el" data-x="5500" data-y="-1500"><h1><i class="fa fa-building-o"></i> Initialize project to use Webpack</h1><h2>Scope</h2><ol class="fa-ul"><li><span class="fa-li"><i class="fa fa-check-square-o"></i></span> <strong>Hot reload</strong> app then you change code</li><li><span class="fa-li"><i class="fa fa-check-square-o"></i></span> <strong>Minimise</strong> & <strong>Obfuscate</strong> your code</li><li><span class="fa-li"><i class="fa fa-check-square-o"></i></span> build app using <a href="https://www.jenkins.io/" target="_blank">Jenkins</a> to prepare for <a href="https://webpack.js.org/guides/production/" target="_blank">Production</a></li></ol><br/><h2>Installing required npm packages</h2><pre data-type="shell" style="font-size: 24px">
           npm install --save-dev webpack webpack-cli
@@ -71,7 +71,7 @@
               }
             };
           };
-        </pre></div><div id="webpack-scripts" class="step slide" data-x="5500" data-y="-400" data-scale="0.5"><h2>Configure npm scripts</h2><p>Add following scripts inside <strong>package.json</strong></p><pre data-type="js" style="font-size: 22px">
+        </pre></div><div id="webpack-scripts" class="step slide" data-x="5500" data-y="-400" data-scale="0.5"><h2>Configure npm scripts</h2><p>Add following scripts inside <strong>package.json</strong></p><pre data-type="js" class="fs-22">
           {
             "scripts": {
               "clear": "npm run clean && rimraf node_modules",
@@ -80,13 +80,13 @@
               "start": "webpack serve --open"
             }
           }
-        </pre><h2>Running scripts using npm or yarn</h2><pre data-type="shell" style="font-size: 22px">
+        </pre><h2>Running scripts using npm or yarn</h2><pre data-type="shell" class="fs-22">
           npm start
           npm run build
 
           yarn start
           yarn build
-        </pre><p class="footnote">Extra: <a href="https://medium.com/geekculture/set-up-webpack-5-for-basic-javascript-projects-8bded066d282" target="_blank">Set up Webpack 5 for Basic Javascript Projects</a><br/>Adding <a href="https://webpack.js.org/guides/typescript/" target="_blank">TypeScript</a> to webpack</p></div><div id="webpack-folder-structure" class="step slide toc-el" data-x="7000" data-y="-1500"><h1><i class="fa fa-folder-open-o"></i> Folder Structure</h1><div class="folder"><ol class="fa-ul git-add"><li class="gitignore"><span class="fa-li"><i class="fa fa-folder-open-o"></i></span>dist<ol class="fa-ul"><li class="gitignore"><span class="fa-li"><i class="fa fa-html5"></i></span>index.html</li><li class="gitignore"><span class="fa-li"><i class="fa fa-file-code-o"></i></span>main.js</li></ol></li><li class="gitignore"><span class="fa-li"><i class="fa fa-folder"></i></span>node_modules</li><li><span class="fa-li"><i class="fa fa-folder-open-o"></i></span>src<ol class="fa-ul"><li><span class="fa-li"><i class="fa fa-html5"></i></span>index.html</li><li><span class="fa-li"><i class="fa fa-file-code-o"></i></span>index.js</li><li><span class="fa-li"><i class="fa fa-css3"></i></span>style.css</li></ol></li><li><span class="fa-li"><i class="fa fa-code-fork"></i></span>.gitignore</li><li><span class="fa-li"><i class="fa fa-file-o"></i></span>.prettierrc</li><li><span class="fa-li"><i class="fa fa-file-o"></i></span>package.json</li><li><span class="fa-li"><i class="fa fa-file-code-o"></i></span>webpack.config.js</li></ol></div></div><div id="remove-script-from-html" class="step slide no-logo" data-x="7000" data-y="-900" data-scale="0.5"><h2><i class="fa fa-html5"></i> src/index.html</h2><br/><p class="practice">As webpack now adds <strong>dist/main.js</strong> script to dist/index.html, we have to remove our initial script to not have it executed 2 times</p><br/><pre data-type="html" style="font-size: 22px">
+        </pre><p class="footnote">Extra: <a href="https://medium.com/geekculture/set-up-webpack-5-for-basic-javascript-projects-8bded066d282" target="_blank">Set up Webpack 5 for Basic Javascript Projects</a><br/>Adding <a href="https://webpack.js.org/guides/typescript/" target="_blank">TypeScript</a> to webpack</p></div><div id="webpack-folder-structure" class="step slide toc-el" data-x="7000" data-y="-1500"><h1><i class="fa fa-folder-open-o"></i> Folder Structure</h1><div class="folder"><ol class="fa-ul git-add"><li class="gitignore"><span class="fa-li"><i class="fa fa-folder-open-o"></i></span>dist<ol class="fa-ul"><li class="gitignore"><span class="fa-li"><i class="fa fa-html5"></i></span>index.html</li><li class="gitignore"><span class="fa-li"><i class="fa fa-file-code-o"></i></span>main.js</li></ol></li><li class="gitignore"><span class="fa-li"><i class="fa fa-folder"></i></span>node_modules</li><li><span class="fa-li"><i class="fa fa-folder-open-o"></i></span>src<ol class="fa-ul"><li><span class="fa-li"><i class="fa fa-html5"></i></span>index.html</li><li><span class="fa-li"><i class="fa fa-file-code-o"></i></span>index.js</li><li><span class="fa-li"><i class="fa fa-css3"></i></span>style.css</li></ol></li><li><span class="fa-li"><i class="fa fa-code-fork"></i></span>.gitignore</li><li><span class="fa-li"><i class="fa fa-file-o"></i></span>.prettierrc</li><li><span class="fa-li"><i class="fa fa-file-o"></i></span>package.json</li><li><span class="fa-li"><i class="fa fa-file-code-o"></i></span>webpack.config.js</li></ol></div></div><div id="remove-script-from-html" class="step slide no-logo" data-x="7000" data-y="-900" data-scale="0.5"><h2><i class="fa fa-html5"></i> src/index.html</h2><br/><p class="practice">As webpack now adds <strong>dist/main.js</strong> script to dist/index.html, we have to remove our initial script to not have it executed 2 times</p><br/><pre data-type="html" class="fs-22">
           &lt;!doctype html>
           &lt;html lang="en">
             &lt;head>
@@ -117,7 +117,7 @@
                &lt;td>${helloText}&lt;/td>
                &lt;td>${new Date().toLocaleString()}&lt;/td>
             &lt;/tr>`;
-        </pre></div><div id="ternary-operator" class="step slide toc-el" data-x="-500" data-y="500"><h1>Conditional (ternary) operator</h1><br/><pre data-type="js" style="font-size: 20px">
+        </pre></div><div id="ternary-operator" class="step slide toc-el" data-x="-500" data-y="500"><h1>Conditional (ternary) operator</h1><br/><pre data-type="js" class="fs-20">
           const condition = true; // false
           condition ? exprIfTrue : exprIfFalse;
 
@@ -134,7 +134,7 @@
           !!"yes";
           !"no";
           // plus other combinations
-        </pre><br/><h2 class="practice">Test yourself => <a href="https://nmatei.github.io/simple-quiz-app/public/?domain=js&level=5" target="_blank">JS Quiz</a></h2></div><div id="array-helpers" class="step slide toc-el" data-x="1000" data-y="500"><h1>Array Helpers</h1><br/><pre data-type="js" style="font-size: 20px">
+        </pre><br/><h2 class="practice">Test yourself => <a href="https://nmatei.github.io/simple-quiz-app/public/?domain=js&level=5" target="_blank">JS Quiz</a></h2></div><div id="array-helpers" class="step slide toc-el" data-x="1000" data-y="500"><h1>Array Helpers</h1><br/><pre data-type="js" class="fs-20">
           const teams = ['a', 'b', 'c'];
 
           // for loop
@@ -153,7 +153,7 @@
 
           [[1, 2], [3, 4]].flatMap(t => t);
           //[{m: [1, 2]}, {m: [3, 4]}].flatMap(t => t.m);
-        </pre><div class="line-space practice">Try them all!</div></div><div id="pure-functions" class="step slide toc-el" data-x="2500" data-y="500"><h1>Pure functions</h1><ol class="fa-ul git-add"><li><span class="fa-li"><i class="fa fa-check-square-o"></i></span> Same inputs <strong>always</strong> return <strong>same outputs</strong></li><li><span class="fa-li"><i class="fa fa-check-square-o"></i></span> No <strong>side-effects</strong></li><li><span class="fa-li"><i class="fa fa-check-square-o"></i></span> Easy to <strong>test</strong></li></ol><br/><pre data-type="js" style="font-size: 22px">
+        </pre><div class="line-space practice">Try them all!</div></div><div id="pure-functions" class="step slide toc-el" data-x="2500" data-y="500"><h1>Pure functions</h1><ol class="fa-ul git-add"><li><span class="fa-li"><i class="fa fa-check-square-o"></i></span> Same inputs <strong>always</strong> return <strong>same outputs</strong></li><li><span class="fa-li"><i class="fa fa-check-square-o"></i></span> No <strong>side-effects</strong></li><li><span class="fa-li"><i class="fa fa-check-square-o"></i></span> Easy to <strong>test</strong></li></ol><br/><pre data-type="js" class="fs-22">
           function getInfo(name) {
             var msg = `Hello ${name}, welcome at FastTrackIT.`;
             return msg;
@@ -181,7 +181,7 @@
             ...person,
             lastName: '😎'
           }
-        </pre></div><div id="destructuring" class="step slide" data-x="2540" data-y="1180" data-scale="0.5"><h2>Destructuring assignment</h2><pre data-type="js" style="font-size: 20px">
+        </pre></div><div id="destructuring" class="step slide" data-x="2540" data-y="1180" data-scale="0.5"><h2>Destructuring assignment</h2><pre data-type="js" class="fs-20">
           const person = {
             firstName: 'Nicolae',
             lastName: 'Matei',
@@ -201,7 +201,7 @@
 
           printInfo(person);
           console.info('firstName', person.firstName);
-        </pre><p class="footnote"><a href="https://flaviocopes.com/how-to-rename-object-destructuring/" target="_blank">rename-object-destructuring</a></p></div><div id="rest-parameter" class="step slide" data-x="2560" data-y="1220" data-scale="0.5"><h2>Rest parameter</h2><pre data-type="js" style="font-size: 20px">
+        </pre><p class="footnote"><a href="https://flaviocopes.com/how-to-rename-object-destructuring/" target="_blank">rename-object-destructuring</a></p></div><div id="rest-parameter" class="step slide" data-x="2560" data-y="1220" data-scale="0.5"><h2>Rest parameter</h2><pre data-type="js" class="fs-20">
           const anonymous1 = {
             ...person // copy first level props
           };
@@ -216,12 +216,12 @@
 
           // both (anonymous1 and anonymous) will be:
           // { firstName: "Nicolae" }
-        </pre><br/><h2>Array ...rest parameter</h2><pre data-type="js" style="font-size: 20px">
+        </pre><br/><h2>Array ...rest parameter</h2><pre data-type="js" class="fs-20">
           const grades = [6, 7, 10, 8, 9];
           const [a, b, ...rest] = grades;
           // a = 6; b = 7;
           // rest = [10, 8, 9];
-        </pre></div><div id="fetch" class="step slide toc-el" data-x="4000" data-y="500"><h1>Fetch and Promises</h1><p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" target="_blank">Fetch</a> responses ( GET/POST/PUT/DELETE ) are <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank">Promises</a></p><br/><pre data-type="js" style="font-size: 20px">
+        </pre></div><div id="fetch" class="step slide toc-el" data-x="4000" data-y="500"><h1>Fetch and Promises</h1><p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" target="_blank">Fetch</a> responses ( GET/POST/PUT/DELETE ) are <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank">Promises</a></p><br/><pre data-type="js" class="fs-20">
           // step by step request using fetch
           const request = fetch("http://localhost:3000/teams-json", {
             method: "GET",
@@ -266,7 +266,7 @@
             });
             console.warn("executed before sleep.then is done");
           })();
-        </pre></div><div id="async-await" class="step slide" data-x="4000" data-y="1600" data-scale="0.5"><h2>async & await</h2><pre data-type="js" style="font-size: 20px">
+        </pre></div><div id="async-await" class="step slide" data-x="4000" data-y="1600" data-scale="0.5"><h2>async & await</h2><pre data-type="js" class="fs-20">
           function sleep(ms) {
             return new Promise(resolve => {
               setTimeout(() => resolve(), ms);
