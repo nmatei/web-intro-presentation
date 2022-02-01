@@ -53,13 +53,6 @@ a:hover {
 .color-white {
   color: white;
 }
-a.disabled-link,
-a.disabled-link:hover {
-  text-decoration: none;
-  text-shadow: none;
-  color: inherit;
-  cursor: text;
-}
 .hidden {
   display: none;
 }
@@ -215,11 +208,11 @@ h1.html {
   padding: 40px 5px;
 }
 
-.fz07 {
-  font-size: 0.7em;
+pre.fs-22 {
+  font-size: 22px;
 }
-.fz08 {
-  font-size: 0.8em;
+pre.fs-20 {
+  font-size: 20px;
 }
 
 .impress-enabled .enable-events {

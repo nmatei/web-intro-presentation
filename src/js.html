@@ -42,7 +42,7 @@
     <div id="impress">
       <!-- ===================================================================  -->
       <div id="start" class="step slide" data-x="-2000" data-y="-1500">
-        <h2 class="js"><a href="http://www.fasttrackit.org/" target="_blank">FastTrackIT</a></h2>
+        <h2 class="js"><a href="https://www.fasttrackit.org/" target="_blank">FastTrackIT</a></h2>
         <p class="align-r">
           <a href="https://nmatei.github.io/web-intro-presentation/js" target="_blank"
             >https://nmatei.github.io/web-intro-presentation/js</a
@@ -165,7 +165,7 @@
       <div id="npm-init" class="step slide toc-el" data-x="4000" data-y="-1500">
         <h1><i class="fa fa-cubes"></i> Initialize project to use NPM</h1>
         <p>inside root folder run</p>
-        <pre data-type="shell" style="font-size: 22px">
+        <pre data-type="shell" class="fs-22">
           npm init -y
         </pre>
 
@@ -275,7 +275,7 @@
       <div id="webpack-scripts" class="step slide" data-x="5500" data-y="-400" data-scale="0.5">
         <h2>Configure npm scripts</h2>
         <p>Add following scripts inside <strong>package.json</strong></p>
-        <pre data-type="js" style="font-size: 22px">
+        <pre data-type="js" class="fs-22">
           {
             "scripts": {
               "clear": "npm run clean && rimraf node_modules",
@@ -287,7 +287,7 @@
         </pre>
 
         <h2>Running scripts using npm or yarn</h2>
-        <pre data-type="shell" style="font-size: 22px">
+        <pre data-type="shell" class="fs-22">
           npm start
           npm run build
 
@@ -365,7 +365,7 @@
           script to not have it executed 2 times
         </p>
         <br />
-        <pre data-type="html" style="font-size: 22px">
+        <pre data-type="html" class="fs-22">
           &lt;!doctype html>
           &lt;html lang="en">
             &lt;head>
@@ -412,7 +412,7 @@
       <div id="ternary-operator" class="step slide toc-el" data-x="-500" data-y="500">
         <h1>Conditional (ternary) operator</h1>
         <br />
-        <pre data-type="js" style="font-size: 20px">
+        <pre data-type="js" class="fs-20">
           const condition = true; // false
           condition ? exprIfTrue : exprIfFalse;
 
@@ -461,7 +461,7 @@
       <div id="array-helpers" class="step slide toc-el" data-x="1000" data-y="500">
         <h1>Array Helpers</h1>
         <br />
-        <pre data-type="js" style="font-size: 20px">
+        <pre data-type="js" class="fs-20">
           const teams = ['a', 'b', 'c'];
 
           // for loop
@@ -503,7 +503,7 @@
         </ol>
 
         <br />
-        <pre data-type="js" style="font-size: 22px">
+        <pre data-type="js" class="fs-22">
           function getInfo(name) {
             var msg = `Hello ${name}, welcome at FastTrackIT.`;
             return msg;
@@ -590,7 +590,7 @@
       <!-- ===================================================================  -->
       <div id="destructuring" class="step slide" data-x="2540" data-y="1180" data-scale="0.5">
         <h2>Destructuring assignment</h2>
-        <pre data-type="js" style="font-size: 20px">
+        <pre data-type="js" class="fs-20">
           const person = {
             firstName: 'Nicolae',
             lastName: 'Matei',
@@ -622,7 +622,7 @@
       <!-- ===================================================================  -->
       <div id="rest-parameter" class="step slide" data-x="2560" data-y="1220" data-scale="0.5">
         <h2>Rest parameter</h2>
-        <pre data-type="js" style="font-size: 20px">
+        <pre data-type="js" class="fs-20">
           const anonymous1 = {
             ...person // copy first level props
           };
@@ -640,7 +640,7 @@
         </pre>
         <br />
         <h2>Array ...rest parameter</h2>
-        <pre data-type="js" style="font-size: 20px">
+        <pre data-type="js" class="fs-20">
           const grades = [6, 7, 10, 8, 9];
           const [a, b, ...rest] = grades;
           // a = 6; b = 7;
@@ -661,7 +661,7 @@
           >
         </p>
         <br />
-        <pre data-type="js" style="font-size: 20px">
+        <pre data-type="js" class="fs-20">
           // step by step request using fetch
           const request = fetch("http://localhost:3000/teams-json", {
             method: "GET",
@@ -719,7 +719,7 @@
       <div id="async-await" class="step slide" data-x="4000" data-y="1600" data-scale="0.5">
         <h2>async & await</h2>
 
-        <pre data-type="js" style="font-size: 20px">
+        <pre data-type="js" class="fs-20">
           function sleep(ms) {
             return new Promise(resolve => {
               setTimeout(() => resolve(), ms);
