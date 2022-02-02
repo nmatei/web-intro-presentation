@@ -4,6 +4,10 @@ import "../../libs/css/impress-demo-min.css";
 import "../css/style.css";
 import "../css/print.css";
 
+function $$(selector) {
+  return document.querySelectorAll(selector);
+}
+
 function getParam(name) {
   const params = window.location.search
     .substring(1)
@@ -16,46 +20,69 @@ function getParam(name) {
   return params[name];
 }
 
+function getChunks(elements, size) {
+  const chunks = [];
+  const arrayLength = elements.length;
+
+  for (let i = 0; i < arrayLength; i += size) {
+    const myChunk = elements.slice(i, i + size);
+    chunks.push(myChunk);
+  }
+  return chunks;
+}
+
+const typeMatch = {
+  js: "ace/mode/javascript",
+  ts: "ace/mode/typescript",
+  jsx: "ace/mode/jsx",
+  html: "ace/mode/html",
+  css: "ace/mode/css",
+  shell: "ace/mode/sh"
+};
+
+async function initAllEditors() {
+  const codeEls = Array.from($$(".step pre"));
+  const chunks = getChunks(codeEls, 5);
+  await chunks.reduce(async (promise, elements) => {
+    await promise;
+    await initEditors(elements);
+  }, 0);
+}
 /**
  * https://ace.c9.io/#nav=api&api=edit_session
  */
-function initEditors() {
-  const typeMatch = {
-    js: "ace/mode/javascript",
-    ts: "ace/mode/typescript",
-    jsx: "ace/mode/jsx",
-    html: "ace/mode/html",
-    css: "ace/mode/css",
-    shell: "ace/mode/sh"
-  };
+function initEditors(codeEls) {
+  return new Promise(resolve => {
+    codeEls.forEach(el => {
+      const type = el.getAttribute("data-type") || "html";
+      const highlight = el.getAttribute("data-highlight") || "";
+      const editor = ace.edit(el);
+      const beautify = ace.require("ace/ext/beautify");
+      const session = editor.getSession();
+      editor.setReadOnly(true);
 
-  const codeEls = Array.from(document.querySelectorAll(".step pre"));
-  codeEls.forEach(el => {
-    const type = el.getAttribute("data-type") || "html";
-    const highlight = el.getAttribute("data-highlight") || "";
-    const editor = ace.edit(el);
-    const beautify = ace.require("ace/ext/beautify");
-    const session = editor.getSession();
-    editor.setReadOnly(true);
+      //editor.setTheme("ace/theme/monokai");
+      session.setTabSize(2);
+      session.setMode(typeMatch[type]);
+      if (highlight) {
+        const highlightLines = highlight.split(/\s*,\s*/i);
+        highlightLines.forEach(line => session.highlightLines(line - 1));
+      }
 
-    //editor.setTheme("ace/theme/monokai");
-    session.setTabSize(2);
-    session.setMode(typeMatch[type]);
-    if (highlight) {
-      const highlightLines = highlight.split(/\s*,\s*/i);
-      highlightLines.forEach(line => session.highlightLines(line - 1));
-    }
+      if (type === "jsx") {
+        // console.warn('not used beautify for jsx yet', editor);
+        // TODO at least remove "left" intend
+      } else {
+        beautify.beautify(session);
+      }
 
-    if (type === "jsx") {
-      // console.warn('not used beautify for jsx yet', editor);
-      // TODO at least remove "left" intend
-    } else {
-      beautify.beautify(session);
-    }
-
-    editor.setOptions({
-      maxLines: Infinity
+      editor.setOptions({
+        maxLines: Infinity
+      });
     });
+
+    // let other operations enter
+    setTimeout(resolve, 5);
   });
 }
 
@@ -69,7 +96,7 @@ function getSlideTitle(page) {
 }
 
 function setTocPageContent(pages) {
-  const slides = Array.from(document.querySelectorAll("div.step.toc-el"));
+  const slides = Array.from($$("div.step.toc-el"));
   const pagesNr = getPageKeys(pages);
   const tocPages = slides.map(page => ({
     id: page.id,
@@ -145,7 +172,7 @@ function getAnimElements(animation) {
 }
 
 // print actions
-export function start() {
+export async function start() {
   if ("ontouchstart" in document.documentElement) {
     document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
   }
@@ -153,7 +180,7 @@ export function start() {
   document.querySelector("body").classList.remove("body-loading");
 
   const animation = getParam("anim");
-  const pages = Array.from(document.querySelectorAll(".step"));
+  const pages = Array.from($$(".step"));
 
   if (animation) {
     setAnimation(pages, animation);
@@ -185,7 +212,7 @@ export function start() {
       document.getElementById("toc-" + page.id).classList.add("present");
 
       // TODO remove when save animations in localstorage
-      const links = Array.from(document.querySelectorAll(".navigation-actions .views a"));
+      const links = Array.from($$(".navigation-actions .views a"));
       links.forEach(link => {
         link.href = link.href.split("#")[0] + "#/" + page.id;
       });
@@ -216,5 +243,6 @@ export function start() {
   );
 
   setTocPageContent(pages);
-  setTimeout(initEditors, 10);
+
+  await initAllEditors();
 }
