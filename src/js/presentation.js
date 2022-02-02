@@ -45,12 +45,13 @@ const typeMatch = {
 
 async function initAllEditors() {
   const codeEls = Array.from($$(".step pre"));
-  const chunks = getChunks(codeEls, 5);
+  const chunks = getChunks(codeEls, 10);
   await chunks.reduce(async (promise, elements) => {
     await promise;
     await initEditors(elements);
   }, 0);
 }
+
 /**
  * https://ace.c9.io/#nav=api&api=edit_session
  */
