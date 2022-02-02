@@ -186,6 +186,14 @@ export async function start() {
     setAnimation(pages, animation);
   }
 
+  document.addEventListener("touchstart", event => {
+    if (event.target.matches(".toc a")) {
+      // console.warn("touchstart", event);
+      //event.preventDefault();
+      event.stopPropagation();
+    }
+  });
+
   impress().init();
 
   const actions = document.createElement("div");
