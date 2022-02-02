@@ -1,6 +1,9 @@
 require("../../libs/impress");
 import "../../libs/css/impress-demo-min.css";
 
+// fix build
+import regeneratorRuntime from "regenerator-runtime";
+
 import "../css/style.css";
 import "../css/print.css";
 

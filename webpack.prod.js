@@ -119,6 +119,7 @@ module.exports = env => {
       environment: {
         arrowFunction: false
       }
-    }
+    },
+    target: ["web", "es5"]
   };
 };
