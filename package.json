@@ -9,7 +9,9 @@
     "clean": "rimraf docs",
     "build": "npm run clean && webpack --config webpack.prod.js --mode production && npm run copy-resources && git add docs/*",
     "copy-resources": "Xcopy /E /C /I \"src/images\" \"docs/images\"",
-    "start": "webpack serve --open --config webpack.dev.js"
+    "start": "webpack serve --open --config webpack.dev.js",
+    "serve": "serve docs",
+    "qa": "yarn build && yarn serve"
   },
   "repository": {
     "type": "git",

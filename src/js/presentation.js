@@ -7,6 +7,9 @@ import regeneratorRuntime from "regenerator-runtime";
 import "../css/style.css";
 import "../css/print.css";
 
+function $(selector) {
+  return document.querySelector(selector);
+}
 function $$(selector) {
   return document.querySelectorAll(selector);
 }
@@ -108,7 +111,7 @@ function setTocPageContent(pages) {
     pageNr: pagesNr[page.id]
   }));
 
-  document.querySelector("#toc ol").innerHTML = tocPages
+  $("#toc ol").innerHTML = tocPages
     .map(page => `<li><a href="#${page.id}" data-page="${page.pageNr}">${page.text}</a></li>`)
     .join("");
 }
@@ -125,7 +128,7 @@ function setPageNumbers(pages) {
     .map((page, i) => {
       page.setAttribute("data-current-page", i + 1);
       page.setAttribute("data-total-pages", pages.length);
-      return `<a id="toc-${page.id}" href="#/${page.id}" title="${page.id}">${i + 1}</a>`;
+      return `<a id="toc-${page.id}" href="#${page.id}" title="${page.id}">${i + 1}</a>`;
     })
     .join("");
 }
@@ -178,10 +181,10 @@ function getAnimElements(animation) {
 // print actions
 export async function start() {
   if ("ontouchstart" in document.documentElement) {
-    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+    $(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
   }
 
-  document.querySelector("body").classList.remove("body-loading");
+  $("body").classList.remove("body-loading");
 
   const animation = getParam("anim");
   const pages = Array.from($$(".step"));
@@ -190,15 +193,13 @@ export async function start() {
     setAnimation(pages, animation);
   }
 
-  document.addEventListener("touchstart", event => {
-    if (event.target.matches(".toc a")) {
-      // console.warn("touchstart", event);
-      //event.preventDefault();
-      event.stopPropagation();
-    }
-  });
-
-  impress().init();
+  const ua = navigator.userAgent.toLowerCase();
+  // const iPad3 = true;
+  const iPad3 = ua.search(/(ipad; cpu os 9_3_5)/) !== -1;
+  // disable impress on old ipad :(
+  if (!iPad3) {
+    impress().init();
+  }
 
   const actions = document.createElement("div");
   const animElements = document.createElement("div");
@@ -256,5 +257,16 @@ export async function start() {
 
   setTocPageContent(pages);
 
-  await initAllEditors();
+  if (iPad3) {
+    const body = document.body;
+    body.classList.remove("impress-supported");
+    body.classList.add("impress-not-supported");
+    pages.forEach(page => {
+      if (page.id !== "toc") {
+        page.classList.add("slide");
+      }
+    });
+  } else {
+    await initAllEditors();
+  }
 }
