@@ -73,16 +73,16 @@
           project
         </p>
         <pre data-type="shell" class="fs-22">
-          # using - npx
-          npx create-react-app teams-networking --template typescript
-          # OR
-          # using - yarn
-          yarn create react-app teams-networking --template typescript
+# using - npx
+npx create-react-app teams-networking --template typescript
+# OR
+# using - yarn
+yarn create react-app teams-networking --template typescript
 
-          # navigate inside your project
-          cd teams-networking
+# navigate inside your project
+cd teams-networking
 
-          npm start
+npm start
         </pre>
 
         <br />
@@ -99,11 +99,11 @@
         <br />
         <p>Change app port from (default is 3000)</p>
         <pre data-type="shell" class="fs-22">
-          # create .env file
-          touch .env
+# create .env file
+touch .env
 
-          echo "PORT=8080" >> .env
-          # npm start
+echo "PORT=8080" >> .env
+# npm start
         </pre>
 
         <p class="footnote">
@@ -122,7 +122,7 @@
           <li>
             <span class="fa-li"><i class="fa fa-check-square-o"></i></span>
             <pre data-type="js" class="fs-20">
-              const element = &lt;h1>Hello, {name}. Welcome!&lt;/h1>;
+const element = &lt;h1>Hello, {name}. Welcome!&lt;/h1>;
             </pre>
           </li>
           <li>
@@ -143,7 +143,7 @@
           <li>
             <span class="fa-li"><i class="fa fa-square-o"></i></span> JSX produces <strong>React elements</strong>
             <pre data-type="js" class="fs-20">
-              React.createElement("h1", null, "Hello, ", name, ". Welcome!");
+React.createElement("h1", null, "Hello, ", name, ". Welcome!");
             </pre>
           </li>
         </ol>
@@ -156,25 +156,25 @@
       <div id="react-render" class="step slide" data-x="1000" data-y="-900" data-scale="0.5">
         <h2>Render React elements</h2>
         <pre data-type="js" data-highlight="1, 16" class="fs-20">
-          const element = &lt;h1>Hello&lt;/h1>; // not a valid expression in browsers!
+const element = &lt;h1>Hello&lt;/h1>; // not a valid expression in browsers!
 
-          // so => transpiled to:
-          const element1 = React.createElement("h1", null, "Hello");
-          // result => a json object
-          const element2 = {
-            type: "h1",
-            key: null,
-            props: {
-              children: "Hello"
-            }
-            //... few more props
-          }
+// so => transpiled to:
+const element1 = React.createElement("h1", null, "Hello");
+// result => a json object
+const element2 = {
+  type: "h1",
+  key: null,
+  props: {
+    children: "Hello"
+  }
+  //... few more props
+}
 
-          // then render it
-          ReactDOM.render(element, document.getElementById("root"));
+// then render it
+ReactDOM.render(element, document.getElementById("root"));
 
-          // vs
-          document.getElementById("root").innerHTML = "&lt;h1>Hello&lt;/h1>";
+// vs
+document.getElementById("root").innerHTML = "&lt;h1>Hello&lt;/h1>";
         </pre>
 
         <p class="practice">
@@ -191,25 +191,25 @@
         <h1>Basic TypeScript intro</h1>
         <h2>Types could be inherited based on value</h2>
         <pre data-type="ts" data-highlight="2, 14, 18" class="fs-20">
-          let firstName = "yes";
-          firstName = false;
-          // Error: Type 'boolean' is not assignable to type 'string'
+let firstName = "yes";
+firstName = false;
+// Error: Type 'boolean' is not assignable to type 'string'
 
-          function getConfig() {
-            return {
-              name: "config",
-              x: 123,
-              ready: true
-            };
-          }
+function getConfig() {
+  return {
+    name: "config",
+    x: 123,
+    ready: true
+  };
+}
 
-          const config = getConfig();
-          console.info(config.nume);
-          // Error: Property 'nume' does not exist on type
-          //   '{ name: string; x: number; ready: boolean; }'
+const config = getConfig();
+console.info(config.nume);
+// Error: Property 'nume' does not exist on type
+//   '{ name: string; x: number; ready: boolean; }'
 
-          config.ready = "not ready";
-          // Error: Type 'string' is not assignable to type 'boolean'
+config.ready = "not ready";
+// Error: Type 'string' is not assignable to type 'boolean'
         </pre>
         <p class="footnote">What is <a href="https://www.typescriptlang.org/" target="_blank">TypeScript</a>?</p>
       </div>
@@ -220,12 +220,12 @@
 
         <p>You can add more configs to make ts less restrictive</p>
         <pre data-type="js" class="fs-22">
-          {
-            "compilerOptions": {
-              "noImplicitAny": false,
-              "noUnusedLocals": false
-            }
-          }
+{
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "noUnusedLocals": false
+  }
+}
         </pre>
         <p>check documentation to see all options</p>
 
@@ -240,30 +240,30 @@
         <h2>Types</h2>
 
         <pre data-type="ts" data-highlight="3, 8, 19, 20, 21" style="font-size: 18px">
-          let color: string;
-          color = "green"
-          color = false; // Type 'boolean' is not assignable to type 'string'
+let color: string;
+color = "green"
+color = false; // Type 'boolean' is not assignable to type 'string'
 
-          let status: string | number; // Types as Sets
-          status = 'OK';
-          status = 200;
-          status = true; // Type 'boolean' is not assignable to type 'string | number'
+let status: string | number; // Types as Sets
+status = 'OK';
+status = 200;
+status = true; // Type 'boolean' is not assignable to type 'string | number'
 
-          type Status = string | number; // custom TYPE
-          let responseStatus: Status;
-          type Config = {
-            name: string;
-            x: number;
-            ready?: boolean; // optional prop
-          }
+type Status = string | number; // custom TYPE
+let responseStatus: Status;
+type Config = {
+  name: string;
+  x: number;
+  ready?: boolean; // optional prop
+}
 
-          function getConfig(): Config {
-            return {
-              name: 'Space'
-            } // Must return a value OR Property 'x' is missing
-          }
-          const conf: Config = getConfig();
-          const config = getConfig(); // if getConfig has return type
+function getConfig(): Config {
+  return {
+    name: 'Space'
+  } // Must return a value OR Property 'x' is missing
+}
+const conf: Config = getConfig();
+const config = getConfig(); // if getConfig has return type
         </pre>
 
         <p class="footnote">

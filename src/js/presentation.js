@@ -178,6 +178,18 @@ function getAnimElements(animation) {
   ].join("");
 }
 
+function canRunImpress(pages) {
+  // TODO maybe consider number of pages or editors to init
+  const ua = navigator.userAgent.toLowerCase();
+  const iPad3 = ua.search(/(ipad; cpu os 9_3_5)/) !== -1;
+  if (iPad3) {
+    // disable impress on old ipad :(
+    return false;
+  }
+  return true;
+  // return false;
+}
+
 // print actions
 export async function start() {
   if ("ontouchstart" in document.documentElement) {
@@ -193,23 +205,20 @@ export async function start() {
     setAnimation(pages, animation);
   }
 
-  const ua = navigator.userAgent.toLowerCase();
-  // const iPad3 = true;
-  const iPad3 = ua.search(/(ipad; cpu os 9_3_5)/) !== -1;
-  // disable impress on old ipad :(
-  if (!iPad3) {
+  const runImpress = canRunImpress(pages);
+  if (runImpress) {
     impress().init();
   }
 
   const actions = document.createElement("div");
-  const animElements = document.createElement("div");
-
   actions.className = "enable-events navigation-actions";
-  animElements.className = "views";
 
-  //'&#9723;','&#9931;','&#8645;','&#8644;'
-  animElements.innerHTML = getAnimElements(animation);
-  actions.appendChild(animElements);
+  if (runImpress && impress.supported) {
+    const animElements = document.createElement("div");
+    animElements.className = "views";
+    animElements.innerHTML = getAnimElements(animation);
+    actions.appendChild(animElements);
+  }
 
   const toc = document.createElement("div");
   toc.className = "toc";
@@ -257,16 +266,11 @@ export async function start() {
 
   setTocPageContent(pages);
 
-  if (iPad3) {
+  if (runImpress) {
+    await initAllEditors();
+  } else {
     const body = document.body;
     body.classList.remove("impress-supported");
     body.classList.add("impress-not-supported");
-    pages.forEach(page => {
-      if (page.id !== "toc") {
-        page.classList.add("slide");
-      }
-    });
-  } else {
-    await initAllEditors();
   }
 }

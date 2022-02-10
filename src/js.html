@@ -114,21 +114,21 @@
         <h1><i class="fa fa-align-left"></i> Initialize project to use Prettier</h1>
 
         <p>We want to format code in the same way:</p>
-        <pre data-type="shell" style="font-size: 24px">
-          # create .prettierrc file
-          touch .prettierrc
+        <pre data-type="shell">
+# create .prettierrc file
+touch .prettierrc
         </pre>
 
         <p>Add following json inside <strong>.prettierrc</strong></p>
-        <pre data-type="js" style="font-size: 24px">
-          {
-            "trailingComma": "none",
-            "semi": true,
-            "tabWidth": 2,
-            "singleQuote": false,
-            "printWidth": 120,
-            "arrowParens": "avoid"
-          }
+        <pre data-type="js">
+{
+  "trailingComma": "none",
+  "semi": true,
+  "tabWidth": 2,
+  "singleQuote": false,
+  "printWidth": 120,
+  "arrowParens": "avoid"
+}
         </pre>
 
         <h2>VSCode Settings</h2>
@@ -144,20 +144,20 @@
         <h1><i class="fa fa-git-square"></i> Initialize project to use GIT</h1>
         <p>inside root folder run:</p>
         <pre data-type="shell" style="font-size: 22px">
-          git init
+git init
 
-          # create .gitignore file
-          touch .gitignore
+# create .gitignore file
+touch .gitignore
 
-          # exclude some files from git
-          echo /.vscode >> .gitignore
-          echo /node_modules >> .gitignore
-          echo /dist >> .gitignore
+# exclude some files from git
+echo /.vscode >> .gitignore
+echo /node_modules >> .gitignore
+echo /dist >> .gitignore
 
-          # checking files to be committed
-          git status
+# checking files to be committed
+git status
 
-          # now you can add commit & push files ;)
+# now you can add commit & push files ;)
         </pre>
       </div>
 
@@ -166,7 +166,7 @@
         <h1><i class="fa fa-cubes"></i> Initialize project to use NPM</h1>
         <p>inside root folder run</p>
         <pre data-type="shell" class="fs-22">
-          npm init -y
+npm init -y
         </pre>
 
         <br />
@@ -216,13 +216,13 @@
         </ol>
         <br />
         <h2>Installing required npm packages</h2>
-        <pre data-type="shell" style="font-size: 24px">
-          npm install --save-dev webpack webpack-cli
-          npm i -D webpack-dev-server
-          npm i -D html-webpack-plugin
+        <pre data-type="shell">
+npm install --save-dev webpack webpack-cli
+npm i -D webpack-dev-server
+npm i -D html-webpack-plugin
 
-          # create webpack.config.js file
-          touch webpack.config.js
+# create webpack.config.js file
+touch webpack.config.js
         </pre>
         <br />
         <p class="practice">Edit <strong>webpack.config.js</strong> and add content from next slide</p>
@@ -242,33 +242,32 @@
         <h2><i class="fa fa-file-code-o"></i> webpack.config.js</h2>
 
         <pre data-type="js" style="font-size: 18px">
-          const path = require("path");
-          const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-          module.exports = env => {
-            const isProduction = !!env.WEBPACK_BUILD;
-            return {
-              mode: isProduction ? "production" : "development",
-              entry: ["./src/index.js"],
-              devtool: isProduction ? false : "inline-source-map",
-              devServer: {
-                static: ["dist", "src"],
-                watchFiles: ["src/**/*.*"]
-              },
-              plugins: [
-                new HtmlWebpackPlugin({
-                  template: "./src/index.html"
-                })
-              ],
-              output: {
-                filename: "main.js",
-                path: path.resolve(__dirname, "dist"),
-                publicPath: "/"
-              }
-            };
-          };
+module.exports = env => {
+  const isProduction = !!env.WEBPACK_BUILD;
+  return {
+    mode: isProduction ? "production" : "development",
+    entry: ["./src/index.js"],
+    devtool: isProduction ? false : "inline-source-map",
+    devServer: {
+      static: ["dist", "src"],
+      watchFiles: ["src/**/*.*"]
+    },
+    plugins: [
+      new HtmlWebpackPlugin({
+        template: "./src/index.html"
+      })
+    ],
+    output: {
+      filename: "main.js",
+      path: path.resolve(__dirname, "dist"),
+      publicPath: "/"
+    }
+  };
+};
         </pre>
-        <!-- TODO build css -->
       </div>
 
       <!-- ===================================================================  -->
@@ -276,23 +275,23 @@
         <h2>Configure npm scripts</h2>
         <p>Add following scripts inside <strong>package.json</strong></p>
         <pre data-type="js" class="fs-22">
-          {
-            "scripts": {
-              "clear": "npm run clean && rimraf node_modules",
-              "clean": "rimraf dist",
-              "build": "webpack --mode production",
-              "start": "webpack serve --open"
-            }
-          }
+{
+  "scripts": {
+    "clear": "npm run clean && rimraf node_modules",
+    "clean": "rimraf dist",
+    "build": "webpack --mode production",
+    "start": "webpack serve --open"
+  }
+}
         </pre>
 
         <h2>Running scripts using npm or yarn</h2>
         <pre data-type="shell" class="fs-22">
-          npm start
-          npm run build
+npm start
+npm run build
 
-          yarn start
-          yarn build
+yarn start
+yarn build
         </pre>
 
         <p class="footnote">
@@ -366,19 +365,19 @@
         </p>
         <br />
         <pre data-type="html" class="fs-22">
-          &lt;!doctype html>
-          &lt;html lang="en">
-            &lt;head>
-              &lt;!-- ... -->
-              &lt;!-- dist/index.html has -->
-              &lt;script defer src="/main.js">&lt;/script>
-            &lt;/head>
-            &lt;body>
-              &lt;!-- ... -->
-              &lt;!-- remove/comment index.js from index.html -->
-              &lt;!-- &lt;script src="index.js">&lt;/script> -->
-            &lt;/body>
-          &lt;/html>
+&lt;!doctype html>
+&lt;html lang="en">
+  &lt;head>
+    &lt;!-- ... -->
+    &lt;!-- dist/index.html has -->
+    &lt;script defer src="/main.js">&lt;/script>
+  &lt;/head>
+  &lt;body>
+    &lt;!-- ... -->
+    &lt;!-- remove/comment index.js from index.html -->
+    &lt;!-- &lt;script src="index.js">&lt;/script> -->
+  &lt;/body>
+&lt;/html>
         </pre>
       </div>
 
@@ -388,23 +387,23 @@
 
         <br />
         <!-- TODO improve tab formatting in string template -->
-        <pre data-type="js" style="font-size: 24px">
-          var message = 'single quote';
-          let name = "Double Quote";
-          const helloText = "Don't you like it?";
-          const replay = 'I like "Bible", is the best Book';
+        <pre data-type="js">
+var message = 'single quote';
+let name = "Double Quote";
+const helloText = "Don't you like it?";
+const replay = 'I like "Bible", is the best Book';
 
-          const firstName = "Nicolae";
-          const lastName = "Matei";
-          const fullName = firstName + " " + lastName;
+const firstName = "Nicolae";
+const lastName = "Matei";
+const fullName = firstName + " " + lastName;
 
-          // string template
-          //  (easy concatenate, +code execution inside)
-          const row = `&lt;tr>
-               &lt;td>${name}&lt;/td>
-               &lt;td>${helloText}&lt;/td>
-               &lt;td>${new Date().toLocaleString()}&lt;/td>
-            &lt;/tr>`;
+// string template
+//  (easy concatenate, +code execution inside)
+const row = `&lt;tr>
+     &lt;td>${name}&lt;/td>
+     &lt;td>${helloText}&lt;/td>
+     &lt;td>${new Date().toLocaleString()}&lt;/td>
+  &lt;/tr>`;
         </pre>
       </div>
 
@@ -413,10 +412,11 @@
         <h1>Conditional (ternary) operator</h1>
         <br />
         <pre data-type="js" class="fs-20">
-          const condition = true; // false
-          condition ? exprIfTrue : exprIfFalse;
+const condition = true; // false
+condition ? exprIfTrue : exprIfFalse;
 
-          const userName = hasLastName ? `${firstName} ${lastName}` : firstName;
+//const hasLastName = ...?
+const userName = hasLastName ? `${firstName} ${lastName}` : firstName;
         </pre>
         <br />
         <p class="practice">
@@ -437,18 +437,18 @@
         <h2><a>true</a> vs <a>false</a></h2>
         <br />
         <p class="line-space practice">Practice in <strong>Console</strong> all this cases:</p>
-        <pre data-type="js" style="font-size: 24px">
-          !!false;
-          !0;
-          !true;
-          !false;
-          !"";
-          !undefined;
-          !null;
+        <pre data-type="js">
+!!false;
+!0;
+!true;
+!false;
+!"";
+!undefined;
+!null;
 
-          !!"yes";
-          !"no";
-          // plus other combinations
+!!"yes";
+!"no";
+// plus other combinations
         </pre>
         <br />
         <h2 class="practice">
@@ -462,24 +462,24 @@
         <h1>Array Helpers</h1>
         <br />
         <pre data-type="js" class="fs-20">
-          const teams = ['a', 'b', 'c'];
+const teams = ['a', 'b', 'c'];
 
-          // for loop
-          for (var i = 0; i &lt; teams.length; i++) {
-              console.info(i, teams[i]);
-          }
+// for loop
+for (var i = 0; i &lt; teams.length; i++) {
+    console.info(i, teams[i]);
+}
 
-          // forEach helper
-          teams.forEach(function(team, i) {
-              console.log(i, team);
-          });
+// forEach helper
+teams.forEach(function(team, i) {
+    console.log(i, team);
+});
 
-          // map, filter, find, every, some, flatMap
+// map, filter, find, every, some, flatMap
 
-          // reduce
+// reduce
 
-          [[1, 2], [3, 4]].flatMap(t => t);
-          //[{m: [1, 2]}, {m: [3, 4]}].flatMap(t => t.m);
+[[1, 2], [3, 4]].flatMap(t => t);
+//[{m: [1, 2]}, {m: [3, 4]}].flatMap(t => t.m);
         </pre>
 
         <div class="line-space practice">Try them all!</div>
@@ -504,10 +504,10 @@
 
         <br />
         <pre data-type="js" class="fs-22">
-          function getInfo(name) {
-            var msg = `Hello ${name}, welcome at FastTrackIT.`;
-            return msg;
-          }
+function getInfo(name) {
+  var msg = `Hello ${name}, welcome at FastTrackIT.`;
+  return msg;
+}
         </pre>
         <br />
       </div>
@@ -559,31 +559,31 @@
       <div id="spread" class="step slide" data-x="2520" data-y="1140" data-scale="0.5">
         <h2>Spread syntax (...)</h2>
         <pre data-type="js" style="font-size: 18px">
-          // Invoking a JavaScript Function
-          Math.max(8, 9, 10);
-          Math.max.call(this, 8, 9, 10);
-          Math.max.apply(this, [8, 9, 10]);
+// Invoking a JavaScript Function
+Math.max(8, 9, 10);
+Math.max.call(this, 8, 9, 10);
+Math.max.apply(this, [8, 9, 10]);
 
-          const grades = [9, 8, 10, 9];
-          Math.max(...grades); // max works with multi parameters
-          Math.max.call(this, ...grades);
-          Math.max.apply(this, grades);
+const grades = [9, 8, 10, 9];
+Math.max(...grades); // max works with multi parameters
+Math.max.call(this, ...grades);
+Math.max.apply(this, grades);
 
-          // create new array and don't mutate old one
-          const newGrades = [...grades, 10];
+// create new array and don't mutate old one
+const newGrades = [...grades, 10];
         </pre>
         <br />
         <h2>Object literals</h2>
         <pre data-type="js" style="font-size: 18px">
-          const person = {
-            firstName: 'Nicolae',
-            lastName: 'Matei',
-            age: 24
-          };
-          const anonymous = {
-            ...person,
-            lastName: '😎'
-          }
+const person = {
+  firstName: 'Nicolae',
+  lastName: 'Matei',
+  age: 24
+};
+const anonymous = {
+  ...person,
+  lastName: '😎'
+}
         </pre>
       </div>
 
@@ -591,25 +591,25 @@
       <div id="destructuring" class="step slide" data-x="2540" data-y="1180" data-scale="0.5">
         <h2>Destructuring assignment</h2>
         <pre data-type="js" class="fs-20">
-          const person = {
-            firstName: 'Nicolae',
-            lastName: 'Matei',
-            age: 24
-          };
+const person = {
+  firstName: 'Nicolae',
+  lastName: 'Matei',
+  age: 24
+};
 
-          // const firstName = person.firstName;
-          // const lastName = person.lastName;
-          const { firstName, lastName } = person;
+// const firstName = person.firstName;
+// const lastName = person.lastName;
+const { firstName, lastName } = person;
 
-          // parameter Destructuring
-          function printInfo({ firstName }){
-            console.info('before', firstName);
-            firstName = 'changed'; // you can safety change it
-            console.warn('after', firstName);
-          }
+// parameter Destructuring
+function printInfo({ firstName }){
+  console.info('before', firstName);
+  firstName = 'changed'; // you can safety change it
+  console.warn('after', firstName);
+}
 
-          printInfo(person);
-          console.info('firstName', person.firstName);
+printInfo(person);
+console.info('firstName', person.firstName);
         </pre>
 
         <p class="footnote">
@@ -623,28 +623,28 @@
       <div id="rest-parameter" class="step slide" data-x="2560" data-y="1220" data-scale="0.5">
         <h2>Rest parameter</h2>
         <pre data-type="js" class="fs-20">
-          const anonymous1 = {
-            ...person // copy first level props
-          };
-          delete anonymous1.age; // remove some properties
-          delete anonymous1.lastName;
+const anonymous1 = {
+  ...person // copy first level props
+};
+delete anonymous1.age; // remove some properties
+delete anonymous1.lastName;
 
-          const {
-            age,
-            lastName,
-            ...anonymous // create new obj and exclude some props
-          } = person;
+const {
+  age,
+  lastName,
+  ...anonymous // create new obj and exclude some props
+} = person;
 
-          // both (anonymous1 and anonymous) will be:
-          // { firstName: "Nicolae" }
+// both (anonymous1 and anonymous) will be:
+// { firstName: "Nicolae" }
         </pre>
         <br />
         <h2>Array ...rest parameter</h2>
         <pre data-type="js" class="fs-20">
-          const grades = [6, 7, 10, 8, 9];
-          const [a, b, ...rest] = grades;
-          // a = 6; b = 7;
-          // rest = [10, 8, 9];
+const grades = [6, 7, 10, 8, 9];
+const [a, b, ...rest] = grades;
+// a = 6; b = 7;
+// rest = [10, 8, 9];
         </pre>
       </div>
 
@@ -662,25 +662,25 @@
         </p>
         <br />
         <pre data-type="js" class="fs-20">
-          // step by step request using fetch
-          const request = fetch("http://localhost:3000/teams-json", {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json"
-            }
-          });
-          console.info(typeof request, request);
-          // object, Promise{&lt;pending>}
+// step by step request using fetch
+const request = fetch("http://localhost:3000/teams-json", {
+  method: "GET",
+  headers: {
+    "Content-Type": "application/json"
+  }
+});
+console.info(typeof request, request);
+// object, Promise{&lt;pending>}
 
-          const response = request.then(function (response) {
-            return response.json();
-          });
-          console.info(typeof response, response);
+const response = request.then(function (response) {
+  return response.json();
+});
+console.info(typeof response, response);
 
-          const promise = response.then(function(teams) {
-              console.info('teams', teams);
-          });
-          console.info(typeof promise, promise);
+const promise = response.then(function(teams) {
+    console.info('teams', teams);
+});
+console.info(typeof promise, promise);
         </pre>
       </div>
 
@@ -688,30 +688,30 @@
       <div id="promises" class="step slide" data-x="4000" data-y="1100" data-scale="0.5">
         <h2>Promises</h2>
         <pre data-type="js" style="font-size: 18px">
-          var promise = new Promise((resolve, reject) => {
-            const status = true; //execute();
-            status ? resolve("🟢") : reject("🔴");
-          });
-          promise
-            .then(status => {
-              console.info("👌", status);
-            })
-            .catch(reason => {
-              console.warn("👎", reason);
-            });
+var promise = new Promise((resolve, reject) => {
+  const status = true; //execute();
+  status ? resolve("🟢") : reject("🔴");
+});
+promise
+  .then(status => {
+    console.info("👌", status);
+  })
+  .catch(reason => {
+    console.warn("👎", reason);
+  });
 
-          function sleep(ms) {
-            return new Promise(resolve => {
-              setTimeout(() => resolve(), ms);
-            });
-          }
+function sleep(ms) {
+  return new Promise(resolve => {
+    setTimeout(() => resolve(), ms);
+  });
+}
 
-          (() => {
-            sleep(2000).then(() => {
-              console.warn("ready to do %o", "next job");
-            });
-            console.warn("executed before sleep.then is done");
-          })();
+(() => {
+  sleep(2000).then(() => {
+    console.warn("ready to do %o", "next job");
+  });
+  console.warn("executed before sleep.then is done");
+})();
         </pre>
       </div>
 
@@ -720,19 +720,18 @@
         <h2>async & await</h2>
 
         <pre data-type="js" class="fs-20">
-          function sleep(ms) {
-            return new Promise(resolve => {
-              setTimeout(() => resolve(), ms);
-            });
-          }
+function sleep(ms) {
+  return new Promise(resolve => {
+    setTimeout(() => resolve(), ms);
+  });
+}
 
-          // functions must be "async"
-          // to be able to use "await"
-          (async () => {
-            await sleep(2000);
-            console.info("this code is bloked by %o", "await sleep");
-          })();
-
+// functions must be "async"
+// to be able to use "await"
+(async () => {
+  await sleep(2000);
+  console.info("this code is bloked by %o", "await sleep");
+})();
         </pre>
       </div>
 
@@ -741,28 +740,28 @@
         <h1>Imports & Exports</h1>
         <h2>Named Exports</h2>
         <pre data-type="js" style="font-size: 18px">
-          export function debounce(fn, delay) {
-            var timer = null;
-            return function () {
-              var context = this,
-                args = arguments;
-              clearTimeout(timer);
-              timer = setTimeout(function () {
-                fn.apply(context, args);
-              }, delay);
-            };
-          }
+export function debounce(fn, delay) {
+  var timer = null;
+  return function () {
+    var context = this,
+      args = arguments;
+    clearTimeout(timer);
+    timer = setTimeout(function () {
+      fn.apply(context, args);
+    }, delay);
+  };
+}
         </pre>
 
         <pre data-type="js" style="font-size: 18px">
-          import { debounce } from "./utilities";
+import { debounce } from "./utilities";
 
-          document.querySelector("#search").addEventListener(
-              "input",
-              debounce(e => {
-                console.info("input changed", e.target.value);
-              }, 400)
-          );
+document.querySelector("#search").addEventListener(
+  "input",
+  debounce(e => {
+    console.info("input changed", e.target.value);
+  }, 400)
+);
         </pre>
 
         <p class="footnote">
@@ -777,57 +776,57 @@
         <div class="cards">
           <div>
             <pre data-type="css" style="font-size: 16px">
-              .loading-mask {
-                  position: relative;
-              }
-              .loading-mask::before {
-                  content: '';
-                  position: absolute;
-                  top: 0;
-                  right: 0;
-                  bottom: 0;
-                  left: 0;
-                  background-color: #00000040;
-                  /* rgba(0, 0, 0, 0.25) */
-              }
-              @keyframes spin {
-                  from {
-                      transform: rotate(0deg);
-                  }
-                  to {
-                      transform: rotate(359deg);
-                  }
-              }
+.loading-mask {
+  position: relative;
+}
+.loading-mask::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #00000040;
+  /* rgba(0, 0, 0, 0.25) */
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
             </pre>
           </div>
           <div style="flex: 1.3">
             <pre data-type="css" style="font-size: 16px">
-              .loading-mask::after {
-                  content: "💠";
-                  text-align: center;
-                  /* content: ""; */
+.loading-mask::after {
+  content: "💠";
+  text-align: center;
+  /* content: ""; */
 
-                  position: absolute;
-                  border-width: 3px;
-                  border-style: solid;
-                  border-color: transparent #fff #fff;
-                  border-radius: 50%;
-                  width: 24px;
-                  height: 24px;
-                  top: calc(50% - 12px);
-                  left: calc(50% - 12px);
-                  animation: 2s linear 0s normal none infinite running spin;
-                  filter: drop-shadow(0 0 2 rgba(0, 0, 0, 0.33));
-              }
+  position: absolute;
+  border-width: 3px;
+  border-style: solid;
+  border-color: transparent #fff #fff;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  top: calc(50% - 12px);
+  left: calc(50% - 12px);
+  animation: 2s linear 0s normal none infinite running spin;
+  filter: drop-shadow(0 0 2 rgba(0, 0, 0, 0.33));
+}
             </pre>
           </div>
         </div>
         <h3>JS Code</h3>
         <pre data-type="js" style="font-size: 16px">
-          var form = document.getElementById("editForm");
-          form.classList.add("loading-mask");
-          // after
-          form.classList.remove("loading-mask");
+var form = document.getElementById("editForm");
+form.classList.add("loading-mask");
+// after
+form.classList.remove("loading-mask");
         </pre>
         <p class="footnote">
           Lets use this example to create

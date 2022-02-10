@@ -1,4 +1,4 @@
-body:before {
+body.impress-supported:before {
   content: "";
   position: absolute;
   left: 5px;
@@ -8,6 +8,9 @@ body:before {
   background-image: url("../images/fastrackit-logo-small.png");
   background-position: bottom 5px left 5px;
   background-repeat: no-repeat;
+}
+body.impress-not-supported {
+  background: #d7d7d7;
 }
 
 .slide {
@@ -182,9 +185,13 @@ h1.html {
 
 .step pre {
   font-size: 24px;
-  line-height: 1.5em;
   text-align: left;
   margin: 0.5em 0 0.5em 0 !important;
+}
+
+.impress-not-supported .step pre {
+  line-height: 1.4em;
+  font-family: monospace;
 }
 
 .impress-not-supported .step {
