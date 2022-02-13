@@ -1,0 +1,479 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=1024"/><meta name="apple-mobile-web-app-capable" content="yes"/><title>Web Programming intro @ FastTrackIT</title><meta name="description" content="introduction to html, css and js"/><meta name="author" content="Matei Nicolae"/><link href="https://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous"/><link rel="shortcut icon" href="images/favicon.png"/><link rel="apple-touch-icon" href="images/apple-touch-icon.png"/><style>html {
+        height: 100%;
+      }
+      body.body-loading {
+        min-height: 100%;
+        overflow: hidden;
+        position: static;
+        background: #d7d7d7 url(images/favicon.png) center 50% no-repeat;
+      }
+      body.body-loading > * {
+        display: none;
+      }</style><script defer="defer" src="js/commons.js"></script><script defer="defer" src="js/index.js"></script><link href="css/styles.css" rel="stylesheet"></head><body class="impress-not-supported pagination body-loading"><div id="impress"><div id="start" class="step slide" data-x="-2000" data-y="-1500"><h2 class="js"><a href="https://www.fasttrackit.org/" target="_blank">FastTrackIT</a></h2><p class="align-r"><a href="https://nmatei.github.io/web-intro-presentation" target="_blank">https://nmatei.github.io/web-intro-presentation</a></p><h1 class="html block middle-h">Intro in <a href="#html-intro">HTML</a>, <a href="#include-css">CSS</a>, <a href="#js">JS</a></h1><h2 class="keyword align-r">by <a href="https://www.linkedin.com/in/nicolaematei" target="_blank">Matei Nicolae</a></h2><a class="align-r small hidden print-only" href="https://www.linkedin.com/in/nicolaematei" target="_blank">https://www.linkedin.com/in/nicolaematei</a></div><div id="toc" class="step" data-x="-2000" data-y="-5000" data-scale="3"><h1>Table of contents</h1><ol></ol></div><div id="lego-intro" class="step slide" data-x="0" data-y="-1500"><h1>Have you played with <strong>LEGO</strong>?</h1><div style="background: url(images/lego-wallpaper-small.jpg); width: 640px; height: 400px"></div></div><div id="lego-arranged" class="step slide" data-x="1000" data-y="-2000"><p>What do we need to make them look like this?</p><div style="background: url(images/lego-examples.jpg); width: 606px; height: 570px"></div></div><div id="title" class="step" data-x="0" data-y="0" data-scale="5"><p>Features, Tips, and Techniques you Must Know about:</p><h1 class="html">HTML, CSS, JS</h1></div><div id="html-intro" class="step slide toc-el" data-x="-10000" data-y="-3000" data-scale="0.5"><h1><i class="fa fa-html5"></i> What is HTML?</h1><p>HTML is a <strong>markup</strong> language for <strong>describing</strong> web documents (web pages).</p><ul><li>HTML stands for <strong>H</strong>yper <strong>T</strong>ext <strong>M</strong>arkup <strong>L</strong>anguage</li><li>A markup language is a set of <strong>markup tags</strong></li><li>HTML documents are described by <strong>HTML tags</strong></li><li>Each HTML tag <strong>describes</strong> different document content</li></ul><p class="align-r line-space">Read more about <a href="http://www.w3schools.com/html/html_intro.asp" target="_blank">HTML</a></p></div><div id="css-intro" class="step slide toc-el" data-x="-9550" data-y="-3150" data-scale="0.5"><h1><i class="fa fa-css3"></i> What is CSS?</h1><ul><li><strong>CSS</strong> stands for <strong>C</strong>ascading <strong>S</strong>tyle <strong>S</strong>heets</li><li>CSS defines <strong>how HTML elements are to be displayed</strong></li><li>Styles were added to HTML 4.0 <strong>to solve a problem</strong></li><li>CSS saves a lot of work</li><li>External Style Sheets are stored in <strong>CSS files</strong></li></ul><p class="align-r line-space">Read more about <a href="http://www.w3schools.com/css/css_intro.asp" target="_blank">CSS</a></p></div><div id="js-intro" class="step slide toc-el" data-x="-9100" data-y="-3300" data-scale="0.5"><h1><i class="fa fa-file-code-o"></i> What is JS?</h1><ul><li><strong>JavaScript</strong> is the most popular <strong>programming language</strong> in the world.</li></ul><p class="align-r line-space">Read more about <a href="http://www.w3schools.com/js/js_intro.asp" target="_blank">JS</a></p></div><div id="no-more-theory" class="step toc-el" data-x="-8750" data-y="-3000" data-scale="0.5" data-rotate="180"><h1>Better let's create our HTML <span class="emoji">😉</span></h1><p>and see <strong>how</strong> and <strong>why</strong> we need this theory!</p><p>Then you will search for theory when you feel you need it, not when I tell you.</p></div><div id="practice-start" class="step slide" data-x="-9000" data-y="-2650" data-scale="0.7" data-rotate="180"><h1 class="practice">Create a new empty file</h1><ol><li>name it <strong>index.html</strong></li><li>Edit it with <strong>notepad++</strong></li><li><strong>Write</strong> some info inside <em>(only text)</em></li><li><strong>Save</strong> the file</li><li>Double click on file name <em>(run it)</em></li><li>It should open it in your default browser. <em>Hope is not IE ;)</em></li></ol></div><div id="need-of-tags" class="step slide" data-x="-9200" data-y="-2650" data-scale="0.7" data-rotate="180"><h1>Now let's organize our info</h1><p>Let's assume we need to expose our info like a document <em>(MS Word / Open Office)</em></p><p>So we need some:</p><ul><li>spaces &nbsp; &nbsp; &nbsp; &nbsp; - or enters</li><li><u>underlines</u></li><li><strong>bold</strong></li><li><em>italic</em></li><li><u><strong><em>mix format</em></strong></u></li><li>tables</li><li>titles</li></ul><p class="align-r"><a href="http://www.w3schools.com/tags/default.asp" target="_blank">more stuff</a></p></div><div id="tags" class="step" data-x="-9000" data-y="0" data-scale="1"><h1>The need of html TAGS</h1><p class="line-space">It is time to read more about <a href="http://www.w3schools.com/html/html_intro.asp" target="_blank">HTML</a>, and understand some items from of html structure</p><h2>Tag example</h2><pre data-type="html" class="fs-22">
+&lt;tagname>
+  content
+&lt;/tagname>
+        </pre>or no content tags:<pre data-type="html" class="fs-22">
+&lt;img />
+        </pre><h2>Types of tags</h2><ul><li>layout elements (not visible by default)</li><li>visible elements</li></ul><p class="align-r line-space">Read more about <a href="http://www.w3schools.com/tags/default.asp" target="_blank">tags</a></p></div><div id="layout-tags" class="step" data-x="-8000" data-y="-400" data-scale="1"><h1>1) The most used layout tags</h1><pre data-type="html" class="fs-20">
+&lt;h1>Headings 1, 2, ... 6&lt;/h1>
+&lt;p>Paragraphs&lt;/p>
+&lt;strong>Strong/Bold&lt;/strong>
+&lt;ul>
+    &lt;li>unordered list item1&lt;/li>
+    &lt;li>unordered list item2&lt;/li>
+&lt;/ul>
+&lt;table>
+    &lt;tr>
+        &lt;td>table cell inside row&lt;/td>
+    &lt;/tr>
+&lt;/table>
+
+&lt;div>section *&lt;/div>
+&lt;span>section *&lt;/span>
+        </pre><div class="practice">Organize your document with this tags</div></div><div id="visible-tags" class="step" data-x="-8000" data-y="400" data-scale="1"><h1>2) The most used visible tags</h1><pre data-type="html" class="fs-20">
+&lt;img src="images/fastrackit-logo-small.png" width="150"/>
+&lt;a href="http://fasttrackit.org">link&lt;/a>
+&lt;form action="http://fasttrackit.org" method="post">
+    &lt;label for="user-email">Email&lt;/label>
+    &lt;input type="email" required id="user-email" name="email"/>
+    &lt;button type="submit" name="submit">
+        Subscribe
+    &lt;/button>
+&lt;/form>
+        </pre><div class="live-example"><img width="150" src="images/fastrackit-logo-small.png"/> <a href="https://fasttrackit.org">link</a><form action="https://fasttrackit.org" method="post" target="_blank"><label for="user-email">Email</label> <input type="email" id="user-email" name="email" required/> <button type="submit" name="submit">Subscribe</button></form></div></div><div id="nested-elements" class="step" data-x="-7000" data-y="0" data-scale="1"><h2>Nested Elements</h2><pre data-type="html">
+&lt;p>
+  You can have images inside a link
+and all that inside a paragraph
+  &lt;a href="https://fasttrackit.org">
+    &lt;img src="images/fastrackit-logo-small.png"/>
+  &lt;/a>
+&lt;/p>
+        </pre><div class="live-example"><p>You can have images inside a link and all that inside a paragraph <a href="https://fasttrackit.org"><img src="images/fastrackit-logo-small.png"/></a></p></div></div><div id="html5-inputs" class="step" data-x="-6000" data-y="0" data-scale="1"><h2>Form example</h2><pre data-type="html" data-highlight="4,5,6">
+&lt;form action="" method="get">
+  &lt;label for="userEmail">Email:&lt;/label>
+  &lt;input id="userEmail" required="required"
+     name="email"
+     type="email"
+     placeholder="contact@fasttrackit.org"
+  />
+
+  &lt;button type="submit">Submit&lt;/button>
+&lt;/form>
+        </pre><div class="live-example"><form action=""><label for="email">Email:</label> <input id="email" name="email" type="email" placeholder="contact@fasttrackit.org" required="required"/> <button type="submit">Submit Form</button></form></div><p>HTML5 New Input Types:<br/>color, date, datetime, datetime-local, email, month, number, range, search, tel, time, url, week</p></div><div id="header-footer" class="step" data-x="-6000" data-y="1500" data-scale="2"><h2>The Semantic Header and Footer</h2><p>Because divs, by nature, have no semantic structure &#8212;</p><div class="cards"><div><pre data-type="html">
+&lt;div id="header">
+  ...
+&lt;/div>
+
+&lt;div id="footer">
+  ...
+&lt;/div>
+            </pre></div><div><pre data-type="html">
+&lt;header>
+  ...
+&lt;/header>
+
+&lt;footer>
+  ...
+&lt;/footer>
+            </pre></div></div></div><div id="audio" class="step" data-x="-8000" data-y="3500" data-rotate="90" data-scale="2"><h1>Audio Support</h1><pre data-type="html" class="fs-22">
+&lt;audio autoplay="autoplay" controls="controls">
+  &lt;source src="resources/file.ogg" />
+  &lt;source src="resources/file.mp3" />
+  <a href="file.mp3">Download.</a>
+&lt;/audio>
+        </pre><audio todo-autoplay="autoplay" controls="controls"><source src="resources/file.ogg"/><source src="resources/file.mp3"/><a href="file.mp3">Download file.</a></audio></div><div id="video" class="step" data-x="-8000" data-y="6000" data-rotate="-90" data-scale="2"><h1>Video Support</h1><pre data-type="html" class="fs-22">
+&lt;video controls preload>
+  &lt;source src="resources/video.ogv"/>
+  &lt;source src="resources/video.mp4"/>
+  &lt;p> Your browser is old.
+    &lt;a href="resources/video.mp4">Download.&lt;/a>
+  &lt;/p>
+&lt;/video>
+        </pre><video id="my-record-video" controls width="500"><source src="resources/video.mp4"/><p>Your browser is old. <a href="video.mov">Download this video instead.</a></p></video></div><div id="attributes" class="step" data-x="-5000" data-y="0" data-scale="1"><h2>Attributes</h2><p>On visible tags we've seen <strong>more info after tag name</strong>, they are called attributes, and look like this:</p><pre data-type="html" data-highlight="2,3,4,5">
+&lt;p
+  id="unique-id"
+  class="css-class"
+  title="info on mouse over"
+  style="color: red; text-align: right"
+>
+  paragraph with attributes
+&lt;/p>
+        </pre><div class="live-example"><p id="unique-id" class="css-class" style="color: red; text-align: right" title="info on mouse over">paragraph with attributes</p></div></div><div id="attributes-details" class="step" data-x="-5000" data-y="0" data-scale="0.2"><h1>More style attributes</h1><pre data-type="css">
+p {
+  text-align: right;
+  font-weight: bold;
+  margin: 5px 6px 7px 8px;
+  padding: 10px;
+  width: 400px;
+  height: 60px;
+
+  border: 4px solid red;
+  background-color: yellow;
+  color: blue;
+}
+        </pre><div class="live-example"><p style="text-align: right;
+              font-weight: bold;
+              margin: 5px 6px 7px 8px;
+              padding: 10px;
+              width: 400px;
+              height: 60px;
+              border: 2px solid red;
+              background-color: yellow;
+              color: blue;">paragraph with style</p></div><div class="line-space practice">Apply some style on your elements</div></div><div id="add-standards" class="step" data-x="-4000" data-y="0" data-scale="1"><h1 class="practice">Making a standard document</h1><h2>Copy following content in your html file</h2><pre data-type="html">
+&lt;!DOCTYPE html>
+&lt;html>
+&lt;head>
+  &lt;title>Page Title&lt;/title>
+&lt;/head>
+&lt;body>
+
+  --- START ---
+  Move all content you wrote here.
+  ---- END ----
+
+&lt;/body>
+&lt;/html>
+        </pre><p>Look at <a href="http://www.w3schools.com/html/html_intro.asp" target="_blank">HTML Page Structure</a></p></div><div id="include-css" class="step toc-el" data-x="-3000" data-y="0" data-scale="1"><h1><i class="fa fa-css3"></i> Understand basic CSS syntax</h1><h2 class="practice">Create a new empty file</h2><ol><li>name it <strong>style.css</strong></li><li>include it in your <strong>*.html</strong> file <strong>after title tag</strong><pre data-type="html" style="font-size: 21px">
+&lt;link type="text/css" rel="stylesheet" href="style.css"/>
+            </pre></li></ol><p class="bold">selecting elements and style them</p><pre data-type="css" data-highlight="1" style="font-size: 21px">
+/* selector     {   styles      }  */
+p               { color: red;   }
+#home-elem-id   { color: blue;  }
+.favorite-class { color: green; }
+        </pre><h2 class="practice">Move all style attributes to css file</h2></div><div id="menu-bar-html" class="step toc-el" data-x="1000" data-y="0" data-scale="0.8"><h1>Css Layout: Menu using list with links</h1><pre data-type="html">
+&lt;ul id="top-menu-bar">
+  &lt;li>&lt;a href="#">HOME&lt;/a>&lt;/li>
+  &lt;li>&lt;a href="#">Projects&lt;/a>&lt;/li>
+  &lt;li>&lt;a href="#">About&lt;/a>&lt;/li>
+  &lt;li>&lt;a href="#">Contact&lt;/a>&lt;/li>
+&lt;/ul>
+        </pre><div class="live-example"><ul id="top-menu-bar1"><li><a href="#">HOME</a></li><li><a href="#">Projects</a></li><li><a href="#">About</a></li><li><a href="#">Contact</a></li></ul></div></div><div id="menu-bar-css" class="step" data-x="2000" data-y="0" data-scale="0.8"><h2>Css Layout: Menu using list with links</h2><pre data-type="css" data-highlight="7, 12" class="fs-20">
+#top-menu-bar {
+  text-align: center;
+  background-color:#334455;
+  color:#fff;
+}
+#top-menu-bar li {
+  display:inline;
+  margin:0;
+  padding:0;
+}
+#top-menu-bar a {
+  text-decoration: none;
+  padding: 0 15px 0 15px;
+  color: #fff;
+}
+#top-menu-bar a:visited {color: #fff;}
+#top-menu-bar a:hover {
+  color: #334455; background: #fff;
+}
+        </pre><div class="live-example"><ul id="top-menu-bar"><li><a href="#">HOME</a></li><li><a href="#">Projects</a></li><li><a href="#">About</a></li><li><a href="#">Contact</a></li></ul></div></div><div id="flexbox-html" class="step toc-el no-pagination layouts-demo" data-x="2000" data-y="-600" data-scale="0.5"><h1>FlexBox Layout HTML</h1><pre data-type="html" class="fs-20">
+&lt;header>
+  Header
+&lt;/header>
+&lt;section id="content">
+  &lt;div id="side-menu">
+    &lt;section>Menu 1&lt;/section>
+    &lt;section>Menu 2&lt;/section>
+  &lt;/div>
+  &lt;div id="main">Main Content&lt;/div>
+&lt;/section>
+&lt;footer>
+  Footer
+&lt;/footer>
+        </pre><div class="live-example"><header>Header</header><section _id="content"><div _id="side-menu"><section>Menu 1</section><section>Menu 2</section></div><div _id="main">Main Content</div></section><footer>Footer</footer></div><p class="align-r line-space practice">A Complete Guide to <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">Flexbox</a></p></div><div id="flexbox-css-borders" class="step layouts-demo" data-x="2000" data-y="-1000" data-scale="0.4"><h2>FlexBox Layout CSS (adding borders)</h2><pre data-type="css" class="fs-22">
+header, footer, #content {
+  padding: 4px;
+  margin: 2px;
+  border: 5px solid #2196F3;
+  background-color: #d3eafd;
+}
+#content div, #side-menu section {
+  padding: 4px;
+  margin: 2px;
+  border: 2px solid red;
+}
+#side-menu section {
+  border: 2px solid green;
+}
+        </pre><div class="live-example body"><header>Header</header><section data-id="content" class="id-content"><div data-id="side-menu" class="id-side-menu"><section>Menu 1</section><section>Menu 2</section></div><div data-id="main" class="id-main">Main Content</div></section><footer>Footer</footer></div></div><div id="flexbox-css-layout" class="step layouts-demo" data-x="2000" data-y="-1300" data-scale="0.3"><h2>FlexBox Layout CSS (adding layout)</h2><div class="cards"><div><pre data-type="css" data-highlight="7, 8" class="fs-20">
+html {
+  height: 100%;
+}
+body {
+  margin: 0;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#content { flex: 1; }
+/* body > section  { flex: 1; } */
+
+/* continue... */
+            </pre></div><div><pre data-type="css" data-highlight="2, 3" class="fs-20">
+#content {
+  display: flex;
+  flex-direction: row;
+}
+#side-menu { flex: 1; }
+#main { flex: 2; }
+#footer {
+  min-height: 24px;
+}
+            </pre></div></div><div class="live-example body"><header>Header</header><section data-id="content" class="id-content"><div data-id="side-menu" class="id-side-menu"><section>Menu 1</section><section>Menu 2</section></div><div data-id="main" class="id-main">Main Content</div></section><footer>Footer</footer></div></div><div id="grid-css-html" class="step toc-el layouts-demo" data-x="2500" data-y="-1300" data-scale="0.3"><h1>Grid CSS Layout</h1><pre data-type="html" class="fs-20">
+&lt;div class="grid-container">
+  &lt;header>Header&lt;/header>
+  &lt;div class="item2">Menu1&lt;/div>
+  &lt;div class="item3">Menu2&lt;/div>
+  &lt;div class="item4">Main&lt;/div>
+  &lt;footer>Footer&lt;/footer>
+&lt;/div>
+        </pre><div class="live-example body"><div class="grid-container"><header>Header</header><div class="item2">Menu1</div><div class="item3">Menu2</div><div class="item4">Main</div><footer>Footer</footer></div></div></div><div id="grid-css-layout" class="step layouts-demo" data-x="2500" data-y="-1000" data-scale="0.4"><h2>Grid CSS Layout</h2><p>display: <a href="https://www.w3schools.com/css/css_grid.asp" target="_blank">grid</a>; <a href="https://www.w3schools.com/cssref/pr_grid-template-areas.asp" target="_blank">grid-template-areas</a>: '...'</p><div class="live-example body"><div class="grid-container"><header>Header</header><div class="item2">Menu1<pre data-type="css" style="font-size: 16px">
+ html { height: 100%; }
+ body {
+   margin: 0;
+   min-height: 100%;
+ }
+              </pre></div><div class="item3">Menu2<pre data-type="css" style="font-size: 16px">
+header {
+  grid-area: header;
+}
+.item2 {
+  grid-area: menu1;
+}
+.item3 {
+  grid-area: menu2;
+}
+.item4 {
+  grid-area: main;
+}
+footer {
+  grid-area: footer;
+}
+              </pre></div><div class="item4">Main<pre data-type="css" style="font-size: 16px">
+.grid-container {
+  min-height: 100%;
+  display: grid;
+  grid-template-areas:
+    'header header header'
+    'menu1  main   main'
+    'menu2  main   main'
+    'footer footer footer';
+  grid-gap: 10px;
+  background-color: #2196F3;
+
+  grid-template-rows: auto auto 1fr auto;
+  height: calc(100vh);
+}
+.grid-container > * {
+  background-color: #d3eafd;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+              </pre></div><footer>Footer</footer></div></div></div><div id="grid-css-cards" class="step layouts-demo" data-x="2500" data-y="-600" data-scale="0.5"><h2>Grid CSS Layout (Cards)</h2><p>Resize screen to cross width limits (800px, 1024px)</p><div class="cards"><div><pre data-type="html" style="font-size: 16px">
+&lt;div class="cards-wrap">
+  &lt;div>*.html&lt;/div>
+  &lt;div>*.css&lt;/div>
+  &lt;div>3&lt;/div>
+  &lt;div>4&lt;/div>
+  &lt;div>5&lt;/div>
+  &lt;div>6&lt;/div>
+&lt;/div>
+            </pre></div><div style="flex: 2"><pre data-type="css" style="font-size: 16px">
+.cards-wrap {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+}
+@media (max-width: 1024px) {
+  .cards-wrap {
+    grid-template-columns: auto auto;
+  }
+}
+@media (max-width: 800px) {
+  .cards-wrap {
+    grid-template-columns: auto;
+  }
+}
+            </pre></div></div><div class="live-example"><div class="cards-wrap"><div>*.html</div><div>*.css</div><div>3</div><div>4</div><div>5</div><div>6</div></div></div></div><div id="html5-effects" class="step" data-x="850" data-y="3000" data-rotate="90" data-scale="5"><p>Are you wonder if this nice effects are a result of html5?<br/></p></div><div id="no-html-effects" class="step" data-x="850" data-y="3200" data-z="-3000" data-rotate="300" data-scale="1"><h2>well.... NO ;)</h2></div><div id="impress-js" class="step" data-x="0" data-y="3000" data-z="-3000" data-scale="1"><p>js just <a href="https://impress.js.org/" target="_blank">impress.js</a><br/>- Based on the <strong>power of <span class="css">CSS3</span> transforms and transitions</strong> in modern browsers.</p></div><div id="big" class="step" data-x="3500" data-y="2100" data-rotate="180" data-scale="6"><p>of course <b>lot</b> of <span class="thoughts js">JavaScript</span></p></div><div id="js" class="step slide" data-x="2825" data-y="2325" data-z="-3000" data-rotate="300" data-scale="1"><h1>DHTML?</h1><p>What we did until now was static html and css</p><p>DHTML stands for <span class="noticed html"><strong>D</strong>ynamic</span> HTML, and is made with JavaScript</p><h2>Web:</h2><ul><li>Site</li><li>Application</li></ul></div><div id="web-applications-examples" class="step slide" data-x="4000" data-y="-850" data-rotate="270" data-scale="3"><h1>Web Application examples</h1><h2>Applications you use</h2><ul><li>emails</li><li>dropbox</li><li>...</li></ul><h2>Libraries & Frameworks</h2><ul><li><a href="https://jquery.com/" target="_blank">JQuery</a></li><li><a href="http://jqueryui.com/demos/" target="_blank">JQuery UI demos</a></li><li><a href="http://getbootstrap.com/" target="_blank">Bootstrap</a></li><li><a href="http://knockoutjs.com/" target="_blank">Knockout</a></li><li><a href="https://angularjs.org/" target="_blank">Angular</a></li><li><a href="http://reactjs.net/" target="_blank">React</a></li><li><a href="https://examples.sencha.com/extjs/6.7.0/" target="_blank">Sencha ExtJs Examples</a></li><li><a href="http://en.wikipedia.org/wiki/Comparison_of_JavaScript_frameworks">other JavaScript frameworks</a></li></ul></div><div id="one-more-thing" class="step" data-x="6000" data-y="4000" data-scale="2"><p>one more thing...</p></div><div id="its-in-3d" class="step" data-x="6200" data-y="4300" data-z="-100" data-rotate-x="-40" data-rotate-y="10" data-scale="2"><h1><span class="have browser">HTML</span> <span class="you">is not</span> a <span class="noticed html">programming</span> <span class="its">language</span>!</h1><br/><em>But you can do a lot of things combining it with<br/><span class="browser">CSS</span> and <span class="browser">JS</span></em></div><div id="script-tag" class="step" data-x="-6000" data-y="5200" data-scale="1"><h1>Script Tag</h1><p class="practice">At the end of the body<br/>(before &lt;/body>), add next tag:</p><pre data-type="html">
+&lt;script>
+  // add your code here
+  console.info("page loaded");
+&lt;/script>
+        </pre><p>Now refresh your page and press F12 (on chrome or firefox), then go to Console tab and see the result.</p></div><div id="js-variables" class="step toc-el" data-x="-6000" data-y="6000" data-scale="1"><h1><i class="fa fa-file-code-o"></i> Learning Pure JS</h1><h2>Variables</h2><pre data-type="js" class="fs-22">
+var employed = false;     // boolean
+var age = 24;             // number
+var name = 'First Last';  // string
+
+// object (array)
+var skills = ['html', 'css', 'js'];
+// object (json)
+var person = {
+  employed: true,
+  age: 29
+};
+// object (DOM, other)
+var el = document.getElementById('el');
+
+console.info(typeof name); // string
+console.info(typeof skills); // object
+console.info(typeof person); // object
+console.info(typeof document.getElementById); // function
+        </pre><p class="align-r line-space practice">Read more about <a href="http://www.w3schools.com/js/js_variables.asp" target="_blank">JavaScript Variables</a></p></div><div id="js-json" class="step" data-x="-6000" data-y="6500" data-scale="0.3"><h2>JSON Objects</h2><pre data-type="js" class="fs-22">
+var person = {
+  employed: true,
+  age: 29,
+  name: 'First Last',
+  skills: [
+    'html', 'css', 'js'
+  ]
+};
+
+console.debug(person);
+console.info(person.name);
+console.debug(person.age);
+console.debug(person.employed);
+        </pre><p>In this case person object is storing all info about one person (like packaging).</p><p class="align-r line-space">Read more about <a href="http://www.w3schools.com/js/js_json.asp" target="_blank">JSON</a></p></div><div id="js-functions" class="step" data-x="-5000" data-y="6000" data-scale="1"><h2>Functions</h2><pre data-type="js">
+// declaration
+function getInfo(name) {
+  var msg = "Hello " + name + ", " +
+      "welcome at FastTrackIT.";
+  return msg;
+}
+
+// call getInfo and store result in variable
+var info = getInfo("Matei");
+
+// print variable value in console
+console.info(info);
+          </pre><p class="align-r line-space practice">Read more about <a href="http://www.w3schools.com/js/js_functions.asp" target="_blank">functions</a></p></div><div id="js-json-fn" class="step" data-x="-5000" data-y="6500" data-scale="0.3"><h2>JSON Objects can have functions inside</h2><pre data-type="js" class="fs-22">
+var person = {
+  age: 29,
+  name: 'Nick',
+  play: function() {
+    console.info("I'm playing. My name is ", this.name);
+  }
+};
+
+person.play();
+        </pre></div><div id="js-src" class="step" data-x="-4000" data-y="6000" data-scale="1"><h1>Is time to improve our document</h1><h2 class="practice">Create a new empty file</h2><ol><li>name it <strong>index.js</strong></li><li>include it in <strong>index.html</strong><pre data-type="html">
+&lt;script src="index.js"
+  type="text/javascript">
+&lt;/script>
+            </pre></li><li>move all your code from preview script tag into <strong>index.js</strong></li></ol><br/><p style="font-style: italic">Don't forget HTML is a markup language for describing web documents (web pages), so keep all it's info clear and organized.</p><p style="font-style: italic">In JS you can write code as you wish, so how you organize your code, will make the difference!</p></div><div id="dom-access" class="step slide toc-el" data-x="-3000" data-y="5500" data-scale="1"><h1>😎 DHTML</h1><h2>Document Object Model (DOM)</h2><pre data-type="js" class="fs-22">
+var motto    = document.getElementById('motto');
+var favorite = document.getElementsByClassName("favorit");
+var links    = document.getElementsByTagName("a");
+        </pre><h2>DHTML (the fun part)</h2><pre data-type="js" class="fs-22">
+// 1. change element content
+motto.innerHTML = 'Hello &lt;strong>World&lt;/strong>!';
+
+// 2. change element style
+favorite[0].style.display = 'none';
+
+// 3. adding events
+links[0].onclick = function () {
+  console.info('click on first link', this);
+};
+links[1].addEventListener("click", function(){
+  console.info('click on second link', this);
+});
+        </pre><p class="align-r line-space practice">Read more about <a href="http://www.w3schools.com/js/js_htmldom.asp" target="_blank">DOM</a></p></div><div id="git" class="step toc-el" data-x="-2000" data-y="6500" data-scale="1"><h1><i class="fa fa-git-square"></i> Git most used commands</h1><pre data-type="shell" class="fs-20">
+# one time
+git clone https://github.com/nmatei/web-programming-tutorial.git
+
+# daily
+git commit -m "details for my commit"
+git push
+git pull
+
+# utils
+git status
+        </pre></div><div id="es5-to-es6" class="step toc-el" data-x="0" data-y="6500" data-scale="1"><h1><i class="fa fa-file-code-o"></i> Basic Es5 vs Es6</h1><pre data-type="js" class="fs-20">
+// var => const & let
+var name = "Nicolae Matei";
+const firstName = "Nicolae";
+const lastName = "Matei";
+let age = 18;
+
+// from functions to arrow functions
+function hoistedFunction() {
+  return firstName + " " + lastName;
+}
+var functionVariable = function() {
+  return firstName + " " + lastName;
+}
+
+// arrow functions: () => {}
+const getUserName = () => {
+  return firstName + " " + lastName;
+};
+const greetings = (name) => {
+  return 'hello ' + name;
+};
+
+// anonymous functions
+function () {}
+() => {}
+        </pre><p class="align-r line-space">Read more about <a href="https://riptutorial.com/javascript/example/716/functions-as-a-variable" target="_blank">functions-as-a-variable</a></p></div><div id="es5-to-es6-arrow-fn" class="step" data-x="1000" data-y="6500" data-scale="1"><h2>Arrow functions =></h2><pre data-type="js">
+const noParam = () => {
+  return "This fn has no parameters";
+};
+const oneParam = (name) => {
+  return 'one parameter ' + name;
+};
+const oneParamSimplified = name => {
+  return 'for one param can omit ()' + name;
+};
+const moreParams = (firstName, lastName) => {
+  return "required () for more params" +
+      firstName + " " + lastName;
+};
+const simplifiedReturn = () => 'returned';
+        </pre><p class="align-r line-space">Read more about <a href="https://medium.com/recraftrelic/es5-vs-es6-with-example-code-9901fa0136fc" target="_blank">ES5 vs ES6</a></p></div><div id="es5-to-es6-arrow-fn-foreach" class="step" data-x="2000" data-y="6500" data-scale="1"><h2>Array forEach Helper</h2><pre data-type="js" class="fs-22">
+const vehicles = [
+  "car", "truck", "van", "bus", "bike"
+];
+
+// for loop
+for(var i = 0; i &lt; vehicles.length; i++) {
+  console.info(i, vehicles[i]);
+}
+
+// forEach helper
+vehicles.forEach(function(vehicle) {
+  console.info(vehicle);
+});
+
+vehicles.forEach(vehicle => {
+  console.info(vehicle);
+});
+vehicles.forEach((vehicle, index) => {
+  console.info(index, vehicle);
+});
+        </pre></div><div id="es5-to-es6-arrow-fn-map" class="step" data-x="2000" data-y="7300" data-scale="1"><h2>Array map Helper</h2><pre data-type="js" class="fs-22">
+const vehicles = [
+  "car", "truck", "van", "bus", "bike"
+];
+
+const upperCaseVehicles1 = vehicles.map(function(vehicle) {
+  return vehicle.toUpperCase();
+});
+
+const upperCaseVehicles2 = vehicles.map((vehicle) => {
+  return vehicle.toUpperCase()
+});
+const upperCaseVehicles3 = vehicles.map(vehicle =>
+  vehicle.toUpperCase()
+);
+// ["CAR", "TRUCK", "VAN", "BUS", "BIKE"]
+
+const upperCaseVehicles4 = vehicles.map((vehicle, index) =>
+  index + ". " + vehicle.toUpperCase()
+);
+// ["0. CAR", "1. TRUCK", "2. VAN", "3. BUS", "4. BIKE"]
+        </pre></div><div id="most-used-shortcuts" class="step toc-el" data-x="2000" data-y="8500" data-scale="0.5"><h1>Shortcuts</h1><ul><li><strong>CTRL + C | X | V</strong> => <i class="fa fa-clone icon" aria-hidden="true"></i> Copy | <i class="fa fa-scissors icon" aria-hidden="true"></i> Cut | <i class="fa fa-clipboard icon" aria-hidden="true"></i> Paste</li><li><strong>CTRL + Left/Right</strong> => <i class="fa fa-angle-double-left icon" aria-hidden="true"></i> Move <i class="fa fa-angle-double-right icon" aria-hidden="true"></i> one word</li><li><strong>Shift + Top/Right/Bottom/Left</strong> => <span class="select">Select text</span></li><li><strong>CTRL + Shift + Left/Right</strong> => <i class="fa fa-angle-double-left icon" aria-hidden="true"></i> <span class="select">Move and Select</span><i class="fa fa-angle-double-right icon" aria-hidden="true"></i></li><li><strong>Shift + Click</strong> => <i class="fa fa-i-cursor blink_me icon" aria-hidden="true"></i> <span class="select">Select</span> <i class="fa fa-mouse-pointer icon" aria-hidden="true"></i> from preview cursor</li><li><strong>CTRL + S</strong> => <i class="fa fa-floppy-o icon" aria-hidden="true"></i> Save</li></ul><h2>IDE (VSCode) common shortcuts</h2><ul><li><strong>STRL + Space</strong> => <i class="fa fa-magic icon" aria-hidden="true"></i> Auto complete</li><li><strong>Shift + Tab</strong> => <i class="fa fa-outdent icon" aria-hidden="true"></i> Back intent</li></ul></div><div id="overview" class="step" data-x="-1000" data-y="3000" data-scale="15"><h1 class="big-text html">Practice</h1><h2 class="align-r">& Homework</h2><br/><p>Play & Try to understand project: <a href="https://github.com/nmatei/web-programming-tutorial" target="_blank">https://github.com/nmatei/web-programming-tutorial</a></p><p>Create <a href="https://github.com/" target="_blank">https://github.com/</a> account</p><br/></div></div><div class="hint"><p>Use a spacebar or arrow keys to navigate</p></div><script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/ace.js" integrity="sha512-OMjy8oWtPbx9rJmoprdaQdS2rRovgTetHjiBf7RL7LvRSouoMLks5aIcgqHb6vGEAduuPdBTDCoztxLR+nv45g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/ext-beautify.min.js" integrity="sha512-sIVPU3/0VPG2jJdl6NTqe8QF9vTE3Y/LAFiH2YPj8iCz5fdWkhOYA26QR6nZVjI3OWCMtbH/BX8YwZddZi8mhg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-javascript.min.js" integrity="sha512-37ta5K4KVYs+MEmIg2xnZxJrdiQmBSKt+JInvyPrq9uz7aF67lMJT/t91EYoYj520jEcGlih41kCce7BRTmE3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-html.min.js" integrity="sha512-vSQkVhmiIt31RHmh8b65o0ap3yoL08VJ6MeuiCGo+92JDdSSWAEWoWELEf3WBk4e2tz/0CvnTe87Y2rFrNjcbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-css.min.js" integrity="sha512-9kFCBhC+SjlU9Mk4n65VZ3yID5cdcql9y/MrrRsDLyD2Dce+diCd+NITdkjHVBaLK6USc1YCZ5cXVPMC8CdJBA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-sh.min.js" integrity="sha512-DCGTxVcs3p6DPSs/NfnxuKE1ej/9KfCdFDfy1qhyriBteSxKkrMja1A0Q+pN2tuvUekTZun1RU2LRM1qybC/VQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script></body></html>
