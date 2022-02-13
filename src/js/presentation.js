@@ -134,6 +134,9 @@ function setPageNumbers(pages) {
 }
 
 function setAnimation(pages, animation) {
+  if (animation === "fade") {
+    document.body.classList.add("anim-fade");
+  }
   pages.forEach((page, i) => {
     let dataX = 0,
       dataY = 0;
@@ -143,8 +146,6 @@ function setAnimation(pages, animation) {
       dataY = (700 + 100 - margins) * i;
     } else if (animation === "slide-left") {
       dataX = 1000 * i;
-    } else {
-      document.body.classList.add("anim-fade");
     }
 
     page.setAttribute("data-x", dataX);
@@ -206,7 +207,10 @@ export async function start() {
   }
 
   const runImpress = canRunImpress(pages);
+
   if (runImpress) {
+    initImpressEvents();
+
     impress().init();
   }
 
@@ -227,11 +231,23 @@ export async function start() {
 
   document.body.appendChild(actions);
 
+  setTocPageContent(pages);
+
+  if (runImpress) {
+    await initAllEditors();
+  } else {
+    const body = document.body;
+    body.classList.remove("impress-supported");
+    body.classList.add("impress-not-supported");
+  }
+}
+
+function initImpressEvents() {
   document.addEventListener(
     "impress:stepenter",
     function (event) {
       const page = event.target;
-      document.getElementById("toc-" + page.id).classList.add("present");
+      $("#toc-" + page.id).classList.add("present");
 
       // TODO remove when save animations in localstorage
       const links = Array.from($$(".navigation-actions .views a"));
@@ -246,7 +262,7 @@ export async function start() {
     "impress:stepleave",
     function (event) {
       const page = event.target;
-      document.getElementById("toc-" + page.id).classList.remove("present");
+      $("#toc-" + page.id).classList.remove("present");
     },
     false
   );
@@ -255,22 +271,17 @@ export async function start() {
   document.addEventListener(
     "keyup",
     function (event) {
+      //console.warn("key up %o", event.keyCode, event);
+      // if (event.metaKey) {
+      //   console.warn("metaKey");
+      // }
       // case 9:  // tab
-      if (event.keyCode === 9) {
+      // metaKey - windows(start)
+      if (event.keyCode === 9 || event.metaKey) {
         event.stopPropagation();
         event.preventDefault();
       }
     },
     true
   );
-
-  setTocPageContent(pages);
-
-  if (runImpress) {
-    await initAllEditors();
-  } else {
-    const body = document.body;
-    body.classList.remove("impress-supported");
-    body.classList.add("impress-not-supported");
-  }
 }
