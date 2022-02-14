@@ -86,7 +86,7 @@ npm start
         </pre>
 
         <br />
-        <h2>Initialize project to use <a href="js.html#/prettier-init" target="_blank">Prettier</a></h2>
+        <h2>Initialize project to use <a href="js#/prettier-init" target="_blank">Prettier</a></h2>
         <br />
         <p class="footnote">
           <a href="https://create-react-app.dev/docs/getting-started" target="_blank">Create React App</a>
@@ -373,14 +373,39 @@ class Welcome extends React.Component &lt;Props, State> {
       <!-- ===================================================================  -->
       <div id="ts-generics" class="step slide toc-el" data-x="5500" data-y="-1500">
         <h1>TypeScript generics</h1>
-        <h2>*keyof</h2>
-        <pre data-type="ts" data-highlight="23, 24" style="font-size: 16px">
+        <h2>Multiple values</h2>
+        <pre data-type="ts" class="fs-20">
 export type Team = {
+  id?: string;
   members: string;
   name: string;
   amount?: number;
-  id?: string;
 };
+
+type TeamKeys = "id" | "members" | "name" | "amount";
+
+function getValue(team: Team, property: TeamKeys) {
+  return team[property];
+}
+
+// improve...
+function setValue(team: Team, property: keyof Team, value: any) {
+  team[property as string] = value;
+}
+        </pre>
+      </div>
+
+      <!-- ===================================================================  -->
+      <div id="ts-type-union" class="step slide" data-x="5500" data-y="-900" data-scale="0.5">
+        <h2>*keyof</h2>
+        <pre data-type="ts" data-highlight="9, 27, 28" style="font-size: 16px">
+function updateValue&lt;T, K extends keyof T>(team: T, property: K, value: T[K]) {
+  team[property] = value;
+}
+
+const point = {x: 1, y: 1};
+updateValue(point, "x", 2); // try other type for values
+
 type Store&lt;T = any> = {
   find&lt;K extends keyof T>(fieldName: K, value: T[K]): T;
 };
@@ -399,8 +424,7 @@ store.find("id", "12345");
 store.find("amount", 20220);
 store.find("not-found", "value");
 //   Argument of type '"not-found"' is not assignable to...
-            </pre
-        >
+        </pre>
         <p class="footnote">
           <a href="https://www.typescriptlang.org/docs/handbook/2/generics.html" target="_blank">Generics</a>
         </p>
