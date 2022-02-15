@@ -46,13 +46,15 @@ const typeMatch = {
   shell: "ace/mode/sh"
 };
 
-async function initAllEditors() {
+async function initAllEditors(runImpress) {
   const codeEls = Array.from($$(".step pre"));
-  const chunks = getChunks(codeEls, 10);
-  await chunks.reduce(async (promise, elements) => {
-    await promise;
-    await initEditors(elements);
-  }, 0);
+  if (runImpress || codeEls.length <= 20) {
+    const chunks = getChunks(codeEls, runImpress ? 30 : 10);
+    await chunks.reduce(async (promise, elements) => {
+      await promise;
+      await initEditors(elements);
+    }, 0);
+  }
 }
 
 /**
@@ -201,16 +203,14 @@ export async function start() {
 
   const animation = getParam("anim");
   const pages = Array.from($$(".step"));
-
-  if (animation) {
-    setAnimation(pages, animation);
-  }
-
   const runImpress = canRunImpress(pages);
 
   if (runImpress) {
-    initImpressEvents();
+    if (animation) {
+      setAnimation(pages, animation);
+    }
 
+    initImpressEvents();
     impress().init();
   }
 
@@ -233,13 +233,7 @@ export async function start() {
 
   setTocPageContent(pages);
 
-  if (runImpress) {
-    await initAllEditors();
-  } else {
-    const body = document.body;
-    body.classList.remove("impress-supported");
-    body.classList.add("impress-not-supported");
-  }
+  await initAllEditors(runImpress);
 }
 
 function initImpressEvents() {
