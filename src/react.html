@@ -106,6 +106,19 @@ echo "PORT=8080" >> .env
 # npm start
         </pre>
 
+        <br />
+        <p>
+          * If this config fails: check
+          <a
+            href="https://stackoverflow.com/questions/40714583/how-to-specify-a-port-to-run-a-create-react-app-based-project#41770848"
+            target="_blank"
+            >troubleshooting</a
+          >
+          page. Or just change in <strong>package.json</strong> start script with:
+        </p>
+        <pre data-type="js" class="fs-22">
+"start": "set PORT=8080 && react-scripts start"
+        </pre>
         <p class="footnote">
           * Custom
           <a href="https://nodejs.dev/learn/how-to-read-environment-variables-from-nodejs" target="_blank"
