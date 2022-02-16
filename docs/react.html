@@ -26,8 +26,10 @@ touch .env
 
 echo "PORT=8080" >> .env
 # npm start
-        </pre><br/><p>* If this config fails: check <a href="https://stackoverflow.com/questions/40714583/how-to-specify-a-port-to-run-a-create-react-app-based-project#41770848" target="_blank">troubleshooting</a> page. Or just change in <strong>package.json</strong> start script with:</p><pre data-type="js" class="fs-22">
-"start": "set PORT=8080 && react-scripts start"
+        </pre><br/><p>* If this config fails: check <a href="https://stackoverflow.com/questions/40714583/how-to-specify-a-port-to-run-a-create-react-app-based-project#41770848" target="_blank">troubleshooting</a> page.<br/>Or just change in <strong>package.json</strong> start script with:</p><pre data-type="js" class="fs-22">
+{
+  "start": "set PORT=8080 && react-scripts start"
+}
         </pre><p class="footnote">* Custom <a href="https://nodejs.dev/learn/how-to-read-environment-variables-from-nodejs" target="_blank">environment variables</a>.</p></div><div id="jsx" class="step slide toc-el" data-x="1000" data-y="-1500"><h1><i class="fa fa-file-code-o"></i> JSX</h1><br/><ol class="fa-ul"><li><span class="fa-li"><i class="fa fa-check-square-o"></i></span><pre data-type="js" class="fs-20">
 const element = &lt;h1>Hello, {name}. Welcome!&lt;/h1>;
             </pre></li><li><span class="fa-li"><i class="fa fa-square-o"></i></span> neither a string nor HTML</li><li><span class="fa-li"><i class="fa fa-square-o"></i></span> <strong>{name}</strong> does not need <strong>$</strong> in front of it</li><li><span class="fa-li"><i class="fa fa-square-o"></i></span> inside <strong>{ ... }</strong> you can use <strong>plain js</strong></li><li><span class="fa-li"><i class="fa fa-square-o"></i></span> You can create <strong>functions</strong> to <strong>return</strong> such <strong>elements</strong></li><li><span class="fa-li"><i class="fa fa-square-o"></i></span> JSX produces <strong>React elements</strong><pre data-type="js" class="fs-20">
