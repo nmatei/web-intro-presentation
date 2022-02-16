@@ -114,10 +114,14 @@ echo "PORT=8080" >> .env
             target="_blank"
             >troubleshooting</a
           >
-          page. Or just change in <strong>package.json</strong> start script with:
+          page.
+          <br>
+          Or just change in <strong>package.json</strong> start script with:
         </p>
         <pre data-type="js" class="fs-22">
-"start": "set PORT=8080 && react-scripts start"
+{
+  "start": "set PORT=8080 && react-scripts start"
+}
         </pre>
         <p class="footnote">
           * Custom
