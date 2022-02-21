@@ -485,7 +485,39 @@ describe("API Middleware calls", () => {
       </div>
 
       <!-- ===================================================================  -->
-      <div id="utilities" class="step slide toc-el" data-x="8500" data-y="-1500">
+      <div id="react-hooks" class="step slide toc-el" data-x="8500" data-y="-1500">
+        <h1>React Hooks (suggestions)</h1>
+
+        <pre data-type="jsx" class="fs-20">
+import { useState } from "react";
+
+export default function ContentWrapper() {
+  const [search, setSearch] = useState("");
+
+  return (
+    &lt;section id="content">
+      &lt;input type="text" placeholder="Search" />
+      &lt;TeamsTableComponent search={search} />
+    &lt;/section>
+  )
+}
+
+// ---- ---- ----
+type Active = "home" | "teams" | "about" | "contact";
+export default function MainMenu() {
+  const [active, setActive] = useState&lt;Active>("teams");
+  return (
+    &lt;div id="top-menu-bar">...&lt;/div>
+  )
+}
+        </pre>
+        <p class="footnote">
+          <a href="https://reactjs.org/docs/hooks-overview.html" target="_blank">React Hooks</a>
+        </p>
+      </div>
+
+      <!-- ===================================================================  -->
+      <div id="utilities" class="step slide toc-el" data-x="10000" data-y="-1500">
         <h1>Read more</h1>
 
         <p>
