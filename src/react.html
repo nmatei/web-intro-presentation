@@ -115,7 +115,7 @@ echo "PORT=8080" >> .env
             >troubleshooting</a
           >
           page.
-          <br>
+          <br />
           Or just change in <strong>package.json</strong> start script with:
         </p>
         <pre data-type="js" class="fs-22">
@@ -212,20 +212,20 @@ let firstName = "yes";
 firstName = false;
 // Error: Type 'boolean' is not assignable to type 'string'
 
-function getConfig() {
+function getConf() {
   return {
-    name: "config",
+    name: "my conf",
     x: 123,
     ready: true
   };
 }
 
-const config = getConfig();
-console.info(config.nume);
+const conf = getConf();
+console.info(conf.nume);
 // Error: Property 'nume' does not exist on type
 //   '{ name: string; x: number; ready: boolean; }'
 
-config.ready = "not ready";
+conf.ready = "not ready";
 // Error: Type 'string' is not assignable to type 'boolean'
         </pre>
         <p class="footnote">What is <a href="https://www.typescriptlang.org/" target="_blank">TypeScript</a>?</p>
@@ -448,7 +448,44 @@ store.find("not-found", "value");
       </div>
 
       <!-- ===================================================================  -->
-      <div id="utilities" class="step slide toc-el" data-x="7000" data-y="-1500">
+      <div id="testing" class="step slide toc-el" data-x="7000" data-y="-1500">
+        <h1>Testing (<u>A</u>rrange, <u>A</u>ct, <u>A</u>ssert)</h1>
+
+        <pre data-type="ts" style="font-size: 20px">
+describe("API Middleware calls", () => {
+  afterEach(() => {
+    global.fetch.mockRestore();
+  });
+
+  it("load teams must return an array", async () => {
+    const apiTeams: Team[] = [];
+    jest.spyOn(global, "fetch").mockImplementation(() =>
+      Promise.resolve({
+        json: () => Promise.resolve(apiTeams)
+      })
+    );
+
+    const teams = await loadTeams();
+
+    expect(teams.length).toBe(1);
+    expect(teams).toStrictEqual(apiTeams); // toEquals
+  });
+
+  it("add team must return status and id", async () => {
+    //...
+  });
+});
+        </pre>
+
+        <p class="footnote">
+          <a href="https://reactjs.org/docs/testing-recipes.html#data-fetching" target="_blank"
+            >Testing ... (Data Fetching)</a
+          >
+        </p>
+      </div>
+
+      <!-- ===================================================================  -->
+      <div id="utilities" class="step slide toc-el" data-x="8500" data-y="-1500">
         <h1>Read more</h1>
 
         <p>
@@ -465,10 +502,8 @@ store.find("not-found", "value");
 
         <ol class="fa-ul">
           <li>
-            <span class="fa-li"><i class="fa fa-square-o"></i></span>
-            <a href="https://reactjs.org/docs/testing-recipes.html#data-fetching" target="_blank"
-              >Testing ... (Data Fetching)</a
-            >
+            <span class="fa-li"><i class="fa fa-check-square-o"></i></span>
+            <a href="https://reactjs.org/docs/hooks-overview.html" target="_blank">React Hooks</a>
           </li>
           <li>
             <span class="fa-li"><i class="fa fa-check-square-o"></i></span>
@@ -485,10 +520,6 @@ store.find("not-found", "value");
             <a href="https://redux.js.org/faq/general#when-should-i-use-redux" target="_blank"
               >When should I use Redux?</a
             >
-          </li>
-          <li>
-            <span class="fa-li"><i class="fa fa-square-o"></i></span>
-            <a href="https://reactjs.org/docs/hooks-overview.html" target="_blank">React Hooks</a>
           </li>
           <li>
             <span class="fa-li"><i class="fa fa-square-o"></i></span>
