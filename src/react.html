@@ -415,35 +415,62 @@ function setValue(team: Team, property: keyof Team, value: any) {
       <!-- ===================================================================  -->
       <div id="ts-type-union" class="step slide" data-x="5500" data-y="-900" data-scale="0.5">
         <h2>*keyof</h2>
-        <pre data-type="ts" data-highlight="9, 27, 28" style="font-size: 16px">
-function updateValue&lt;T, K extends keyof T>(team: T, property: K, value: T[K]) {
-  team[property] = value;
+        <pre data-type="ts" data-highlight="9, 19, 20" style="font-size: 18px">
+function updateValue&lt;T, K extends keyof T>(obj: T, key: K, value: T[K]) {
+  obj[key] = value;
 }
 
-const point = {x: 1, y: 1};
+const point = {
+  x: 1,
+  y: 1
+};
 updateValue(point, "x", 2); // try other type for values
 
+const team: Team = {
+  members: "gr6",
+  name: "ts"
+};
+
+updateValue(team, "members", "Str");
+updateValue(team, "amount", 123);
+
+updateValue(team, "amount", "456");
+//  Argument of type 'string' is not assignable to parameter of type 'number'
+        </pre>
+        <p class="footnote">
+          <a href="https://www.typescriptlang.org/docs/handbook/2/generics.html" target="_blank">Generics</a>
+        </p>
+      </div>
+
+      <!-- ===================================================================  -->
+      <div id="ts-partial" class="step slide" data-x="5500" data-y="-400" data-scale="0.5">
+        <h2>more about Generics + Partial</h2>
+        <pre data-type="ts" data-highlight="19, 20, 21, 24" style="font-size: 18px">
 type Store&lt;T = any> = {
   find&lt;K extends keyof T>(fieldName: K, value: T[K]): T;
+  update(id: string, values: Partial&lt;T>): void;
 };
 
 // const store = getStore(); // ... new CustomStore()
 const store: Store&lt;Team> = {
-  find(fieldName, value) {
+  find(fieldName, values) {
     return {
       name:"y",
       members:"we"
     };
-  }
+  },
+  update(id, value) {}
 };
 
 store.find("id", "12345");
 store.find("amount", 20220);
 store.find("not-found", "value");
-//   Argument of type '"not-found"' is not assignable to...
+// Argument of type '"not-found"' is not assignable to...
+store.update("123", { amount: "1" });
+// Type 'string' is not assignable to type 'number'
         </pre>
         <p class="footnote">
-          <a href="https://www.typescriptlang.org/docs/handbook/2/generics.html" target="_blank">Generics</a>
+          <a href="https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype" target="_blank">Partial</a>
         </p>
       </div>
 
