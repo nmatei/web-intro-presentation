@@ -15,7 +15,8 @@ module.exports = env => {
     entry: {
       index: "./src/js/index.js",
       js: "./src/js/js.js",
-      react: "./src/js/react.js"
+      react: "./src/js/react.js",
+      wordpress: "./src/js/react.js"
     },
     devtool: isProduction ? false : "inline-source-map",
     devServer: {
@@ -63,6 +64,13 @@ module.exports = env => {
         minify: true,
         chunks: ["react"],
         filename: "react.html"
+      }),
+      new HtmlWebpackPlugin({
+        template: "./src/wordpress.html",
+        inject: true,
+        minify: true,
+        chunks: ["react"],
+        filename: "wordpress.html"
       }),
       new MiniCssExtractPlugin({
         filename: "css/[name].css",

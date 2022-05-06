@@ -325,6 +325,9 @@ pre.fs-20 {
 .git-add li.gitignore {
   color: gray;
 }
+.git-add li.git-remove {
+  color: #cf222e;
+}
 
 .cards {
   display: flex;

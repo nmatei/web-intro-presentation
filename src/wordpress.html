@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Wodpress @ FastTrackIT</title>
+
+    <meta name="description" content="continue with js concepts, npm and webpack" />
+    <meta name="author" content="Matei Nicolae" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+      crossorigin="anonymous"
+    />
+
+    <link rel="shortcut icon" href="images/favicon.png" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+    <style>
+      html {
+        height: 100%;
+      }
+      body.body-loading {
+        min-height: 100%;
+        overflow: hidden;
+        position: static;
+        background: #d7d7d7 url(images/favicon.png) center 50% no-repeat;
+      }
+      body.body-loading > * {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body class="impress-not-supported pagination body-loading">
+    <div id="impress">
+      <!-- ===================================================================  -->
+      <div id="start" class="step slide" data-x="-2000" data-y="-1500">
+        <h2 class="js"><a href="https://www.fasttrackit.org/" target="_blank">FastTrackIT</a></h2>
+        <p class="align-r">
+          <a href="https://nmatei.github.io/web-intro-presentation/wordpress" target="_blank"
+            >https://nmatei.github.io/web-intro-presentation/wordpress
+          </a>
+        </p>
+        <h1 class="html block middle-h">Install <a href="#toc">WordPress</a></h1>
+        <h2 class="keyword align-r">
+          by <a href="https://www.linkedin.com/in/nicolaematei" target="_blank">Matei Nicolae</a>
+        </h2>
+        <a class="align-r small hidden print-only" href="https://www.linkedin.com/in/nicolaematei" target="_blank">
+          https://www.linkedin.com/in/nicolaematei
+        </a>
+      </div>
+
+      <!-- ===================================================================  -->
+      <div id="toc" class="step" data-x="-1000" data-y="-5000" data-scale="3">
+        <h1>Table of contents</h1>
+        <ol></ol>
+      </div>
+
+      <!-- ===================================================================  -->
+      <div id="quick-start" class="step slide toc-el" data-x="-500" data-y="-1500">
+        <h1><i class="fa fa-folder-open-o"></i> Virtual Host</h1>
+
+        <p>install <a href="https://www.apachefriends.org/download.html" target="_blank">XAMPP</a> and configure it</p>
+        <br />
+        <div class="folder">
+          <ol class="fa-ul">
+            <li>
+              <span class="fa-li"><i class="fa fa-folder-open"></i></span>C:/Windows/System32/drivers/<strong
+                >etc</strong
+              >
+              <ol class="fa-ul">
+                <li>
+                  <span class="fa-li"><i class="fa fa-file-code-o"></i></span>hosts
+                  <pre data-type="shell" class="fs-22">
+# add this line at the end
+127.0.0.1 fasttrackit.ro
+                  </pre>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fa fa-folder-open"></i></span>C:/Products/<strong>fasttrackit.ro</strong>
+              <ol class="fa-ul">
+                <li>
+                  <span class="fa-li"><i class="fa fa-html5"></i></span>index.html
+                  <pre data-type="shell" class="fs-22">
+fasttrackit.ro is comming soon
+                  </pre>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fa fa-folder-open"></i></span>C:/xampp/apache/<strong>conf</strong>
+              <ol class="fa-ul">
+                <li>
+                  <span class="fa-li"><i class="fa fa-file-code-o"></i></span>httpd.conf
+                  <pre data-type="shell" class="fs-22">
+# add this line at the end
+Include conf/extra/vhosts.d/*.conf
+                  </pre>
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- ===================================================================  -->
+      <div id="env-config" class="step slide" data-x="-500" data-y="-900" data-scale="0.5">
+        <h2><i class="fa fa-file-code-o"></i> fasttrackit.ro.conf</h2>
+        <div class="folder">
+          <ol class="fa-ul">
+            <li>
+              <span class="fa-li"><i class="fa fa-folder-open"></i></span>C:/xampp/apache/conf/extra/vhosts.d
+              <ol class="fa-ul">
+                <li>
+                  <span class="fa-li"><i class="fa fa-file-code-o"></i></span>fasttrackit.ro.conf
+                  <pre data-type="html" style="font-size: 16px">
+&lt;VirtualHost fasttrackit.ro:80>
+  ServerAdmin webmaster@dummy-host.example.com
+  ServerName fasttrackit.ro
+  ServerAlias www.fasttrackit.ro
+
+  ErrorLog logs/fasttrackit.ro.ro-error_log
+  CustomLog logs/fasttrackit.ro-access_log combined_forwarded
+
+  DocumentRoot "C:/Products/fasttrackit.ro"
+
+  &lt;IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE application/javascript
+  &lt;/IfModule>
+
+  &lt;Directory "C:/Products/fasttrackit.ro">
+  AllowOverride All
+  Require all granted
+  &lt;/Directory>
+&lt;/VirtualHost>
+                  </pre>
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- ===================================================================  -->
+      <div id="jsx" class="step slide toc-el" data-x="1000" data-y="-1500">
+        <h1><i class="fa fa-file-code-o"></i> Start XAMPP (Web Server)</h1>
+        <br />
+        <ol class="fa-ul">
+          <li>
+            <span class="fa-li"><i class="fa fa-check-square-o"></i></span>
+            start apache: C:/xampp/<strong>xampp-control.exe</strong>
+          </li>
+          <li>
+            <span class="fa-li"><i class="fa fa-check-square-o"></i></span>
+            Navigate to <a href="http://fasttrackit.ro" target="_blank">http://fasttrackit.ro</a>
+          </li>
+        </ol>
+      </div>
+
+      <!-- ===================================================================  -->
+      <div id="ts" class="step slide toc-el" data-x="2500" data-y="-1500">
+        <h1>Download WordPress</h1>
+        <p>download and unzip content</p>
+        <div class="folder">
+          <ol class="fa-ul git-add">
+            <li>
+              <span class="fa-li"><i class="fa fa-folder-open"></i></span>C:/Products/<strong>fasttrackit.ro</strong>
+              <ol class="fa-ul">
+                <li>
+                  <span class="fa-li"><i class="fa fa-folder"></i></span>wp-admin
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fa fa-folder"></i></span>wp-content
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fa fa-folder"></i></span>wp-includes
+                </li>
+                <li class="gitignore git-remove">
+                  <span class="fa-li"><i class="fa fa-html5"></i></span>index.html
+                </li>
+                <li>
+                  <span class="fa-li"><i class="fa fa-file-code-o"></i></span>index.php
+                </li>
+                <li>...</li>
+                <li>
+                  <span class="fa-li"><i class="fa fa-file-code-o"></i></span>wp-config-sample.php
+                </li>
+                <li>...</li>
+              </ol>
+            </li>
+          </ol>
+        </div>
+
+        <ol class="fa-ul">
+          <li>
+            <span class="fa-li"><i class="fa fa-check-square-o"></i></span>
+            Navigate to <a href="http://fasttrackit.ro" target="_blank">http://fasttrackit.ro</a>
+          </li>
+          <li>
+            <span class="fa-li"><i class="fa fa-square-o"></i></span>follow the instructions from WordPress
+          </li>
+        </ol>
+
+        <p class="footnote">
+          How to
+          <a href="https://wordpress.org/support/article/how-to-install-wordpress/" target="_blank"
+            >install WordPress</a
+          >
+        </p>
+      </div>
+
+      <!-- ===================================================================  -->
+      <div id="resources" class="step slide toc-el" data-x="4000" data-y="-1500">
+        <h1>Resources</h1>
+
+        <br />
+        <ol class="fa-ul">
+          <li>
+            <span class="fa-li"><i class="fa fa-check-square-o"></i></span>
+            <a href="https://wordpress.org/support/article/how-to-install-wordpress/" target="_blank"
+              >How to install WordPress
+            </a>
+          </li>
+          <li>
+            <span class="fa-li"><i class="fa fa-square-o"></i></span>
+            <a href="https://www.apachefriends.org/download.html" target="_blank">Download XAMPP</a>
+          </li>
+        </ol>
+      </div>
+
+      <!-- ===================================================================  -->
+    </div>
+
+    <div class="hint">
+      <p>Use a spacebar or arrow keys to navigate</p>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/ace.js"
+      integrity="sha512-OMjy8oWtPbx9rJmoprdaQdS2rRovgTetHjiBf7RL7LvRSouoMLks5aIcgqHb6vGEAduuPdBTDCoztxLR+nv45g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/ext-beautify.min.js"
+      integrity="sha512-sIVPU3/0VPG2jJdl6NTqe8QF9vTE3Y/LAFiH2YPj8iCz5fdWkhOYA26QR6nZVjI3OWCMtbH/BX8YwZddZi8mhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-javascript.min.js"
+      integrity="sha512-37ta5K4KVYs+MEmIg2xnZxJrdiQmBSKt+JInvyPrq9uz7aF67lMJT/t91EYoYj520jEcGlih41kCce7BRTmE3Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-html.min.js"
+      integrity="sha512-vSQkVhmiIt31RHmh8b65o0ap3yoL08VJ6MeuiCGo+92JDdSSWAEWoWELEf3WBk4e2tz/0CvnTe87Y2rFrNjcbg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-css.min.js"
+      integrity="sha512-9kFCBhC+SjlU9Mk4n65VZ3yID5cdcql9y/MrrRsDLyD2Dce+diCd+NITdkjHVBaLK6USc1YCZ5cXVPMC8CdJBA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-sh.min.js"
+      integrity="sha512-DCGTxVcs3p6DPSs/NfnxuKE1ej/9KfCdFDfy1qhyriBteSxKkrMja1A0Q+pN2tuvUekTZun1RU2LRM1qybC/VQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </body>
+</html>
