@@ -37,6 +37,7 @@ If you wish to use this project directly on your PC you can use:
 ```sh
 git clone https://github.com/nmatei/web-intro-presentation.git
 cd web-intro-presentation
+npm i
 npm run start
 ```
 
