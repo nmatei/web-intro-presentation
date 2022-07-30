@@ -108,11 +108,25 @@ a:hover {
   line-height: 1.5;
 }
 
+#my-picture {
+  flex: 0;
+  padding: 5px;
+  width: 188px;
+  height: 188px;
+}
+#my-picture img {
+  border-radius: 50%;
+  border: 4px solid #2196f399;
+}
+hr {
+  border-color: #2196f399;
+}
+
 #start h1.size-sm {
   font-size: 1.5em;
 }
 .middle-h {
-  margin: 150px 0;
+  margin: 120px 0 80px 0;
 }
 .middle-2 {
   margin: 100px 0 50px 0;
