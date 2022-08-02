@@ -306,7 +306,7 @@ pre.fs-20 {
   font-weight: bold;
 }
 
-.pagination .step:after {
+.pagination .step:not(.hide-page):after {
   content: " (" attr(data-current-page) " / " attr(data-total-pages) ")";
   position: absolute;
   right: 0;
