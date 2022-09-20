@@ -135,7 +135,7 @@ function setPageNumbers(pages) {
     .join("");
 }
 
-function setAnimation(pages, animation) {
+function applyAnimations(pages, animation) {
   if (animation === "fade") {
     document.body.classList.add("anim-fade");
   }
@@ -143,11 +143,21 @@ function setAnimation(pages, animation) {
     let dataX = 0,
       dataY = 0;
 
-    if (animation === "slide-up") {
+    if (animation === "slideUp") {
       const margins = 8;
       dataY = (700 + 100 - margins) * i;
-    } else if (animation === "slide-left") {
+    } else if (animation === "slideLeft") {
       dataX = 1000 * i;
+    } else if (animation === "clock") {
+      // 0 is first page (we leave it in the middle)
+      if (i) {
+        // https://purecalculators.com/ro/triangle-hypotenuse-calculator
+        const L = 500 + pages.length * 140; // TODO calc..
+        const degree = (360 / (pages.length - 1)) * (i - 1);
+        const radians = (degree * Math.PI) / 180;
+        dataX = Math.sin(radians) * L;
+        dataY = -Math.cos(radians) * L;
+      }
     }
 
     page.setAttribute("data-x", dataX);
@@ -162,23 +172,38 @@ function setAnimation(pages, animation) {
 }
 
 function getAnimElements(animation) {
-  return [
-    '<a href="?" title="Animations Slides" class="btn' + (animation || " present") + '">',
-    '<i class="fa fa-object-group" aria-hidden="true"></i>',
-    "</a>",
-    '<a href="?anim=slide-up" title="Slide Up/Down" class="btn' + (animation === "slide-up" ? " present" : "") + '">',
-    '<i class="fa fa-film" aria-hidden="true"></i>',
-    "</a>",
-    '<a href="?anim=slide-left" title="Slide Right/Left" class="btn' +
-      (animation === "slide-left" ? " present" : "") +
-      '">',
-    '<i class="fa fa-film fa-rotate-90" aria-hidden="true"></i>',
-    "</a>",
-    '<a href="?anim=fade" title="Fade" class="btn' + (animation === "fade" ? " present" : "") + '">',
-    '<i class="fa fa-gg" aria-hidden="true"></i>',
-    "</a>",
-    "<hr>"
-  ].join("");
+  const animationTypes = {
+    animations: {
+      title: "Animations Slides",
+      icon: "fa fa-object-group"
+    },
+    slideUp: {
+      title: "Slide Up/Down",
+      icon: "fa fa-film"
+    },
+    slideLeft: {
+      title: "Slide Right/Left",
+      icon: "fa fa-film fa-rotate-90"
+    },
+    fade: {
+      title: "Fade",
+      icon: "fa fa-gg"
+    },
+    clock: {
+      title: "Clock",
+      icon: "fa fa-clock-o"
+    }
+  };
+  animation = animation || "animations";
+  return Object.entries(animationTypes)
+    .map(([key, value]) => {
+      return `<a href="?anim=${key}" data-anim="${key}" title="${value.title}" class="btn ${
+        key === animation ? " present" : ""
+      }">
+        <i class="fa ${value.icon}" aria-hidden="true"></i>
+      </a>`;
+    })
+    .join("");
 }
 
 function canRunImpress(pages) {
@@ -201,13 +226,16 @@ export async function start() {
 
   $("body").classList.remove("body-loading");
 
-  const animation = getParam("anim");
+  const animation = getParam("anim") || localStorage.getItem("anim");
   const pages = Array.from($$(".step"));
   const runImpress = canRunImpress(pages);
 
   if (runImpress) {
-    if (animation) {
-      setAnimation(pages, animation);
+    if (animation && animation !== "animations") {
+      applyAnimations(pages, animation);
+      localStorage.setItem("anim", animation);
+    } else {
+      localStorage.removeItem("anim");
     }
 
     initImpressEvents();

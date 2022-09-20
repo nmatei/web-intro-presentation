@@ -17,7 +17,7 @@ Web Intro [Presentation](https://nmatei.github.io/web-intro-presentation/)
 - [x] [Slide Up/Down](https://nmatei.github.io/web-intro-presentation/?anim=slide-up)
 - [x] [Slide Right/Left](https://nmatei.github.io/web-intro-presentation/?anim=slide-left)
 - [x] [Fade](https://nmatei.github.io/web-intro-presentation/?anim=fade)
-- [ ] Circle (Arrange all slides in circle like a clock)
+- [x] [Clock](https://nmatei.github.io/web-intro-presentation/?anim=clock)
 - [ ] Slide Headings (every h1 -> down, every h2 -> right)
 - [ ] Book Style (Simulate 2 pages and move left - right)
 
