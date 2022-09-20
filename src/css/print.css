@@ -80,4 +80,8 @@
   .navigation-actions {
     display: none;
   }
+
+  .delayed {
+    opacity: 1;
+  }
 }

@@ -379,3 +379,22 @@ pre.fs-20 {
     opacity: 0;
   }
 }
+
+.delayed {
+  opacity: 0;
+}
+.active .delayed {
+  animation: fadeIn ease-in 1;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-delay: 2s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
