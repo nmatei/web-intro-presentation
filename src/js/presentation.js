@@ -195,15 +195,17 @@ function getAnimElements(animation) {
     }
   };
   animation = animation || "animations";
-  return Object.entries(animationTypes)
-    .map(([key, value]) => {
-      return `<a href="?anim=${key}" data-anim="${key}" title="${value.title}" class="btn ${
-        key === animation ? " present" : ""
-      }">
+  return (
+    Object.entries(animationTypes)
+      .map(([key, value]) => {
+        return `<a href="?anim=${key}" data-anim="${key}" title="${value.title}" class="btn ${
+          key === animation ? " present" : ""
+        }">
         <i class="fa ${value.icon}" aria-hidden="true"></i>
       </a>`;
-    })
-    .join("");
+      })
+      .join("") + "<hr>"
+  );
 }
 
 function canRunImpress(pages) {
