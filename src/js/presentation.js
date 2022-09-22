@@ -141,7 +141,8 @@ function applyAnimations(pages, animation) {
   }
   pages.forEach((page, i) => {
     let dataX = 0,
-      dataY = 0;
+      dataY = 0,
+      rotate = "0";
 
     if (animation === "slideUp") {
       const margins = 8;
@@ -157,6 +158,7 @@ function applyAnimations(pages, animation) {
         const radians = (degree * Math.PI) / 180;
         dataX = Math.sin(radians) * L;
         dataY = -Math.cos(radians) * L;
+        // rotate = `${degree}`;
       }
     }
 
@@ -164,7 +166,7 @@ function applyAnimations(pages, animation) {
     page.setAttribute("data-y", dataY);
 
     page.setAttribute("data-scale", "1");
-    page.setAttribute("data-rotate", "0");
+    page.setAttribute("data-rotate", rotate);
     page.setAttribute("data-z", "0");
     page.setAttribute("data-rotate-x", "0");
     page.setAttribute("data-rotate-y", "0");
