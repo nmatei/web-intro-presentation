@@ -197,17 +197,15 @@ function getAnimElements(animation) {
     }
   };
   animation = animation || "animations";
-  return (
-    Object.entries(animationTypes)
-      .map(([key, value]) => {
-        return `<a href="?anim=${key}" data-anim="${key}" title="${value.title}" class="btn ${
-          key === animation ? " present" : ""
-        }">
+  return Object.entries(animationTypes)
+    .map(([key, value]) => {
+      return `<a href="?anim=${key}" data-anim="${key}" title="${value.title}" class="btn ${
+        key === animation ? " present" : ""
+      }">
         <i class="fa ${value.icon}" aria-hidden="true"></i>
       </a>`;
-      })
-      .join("") + "<hr>"
-  );
+    })
+    .join("");
 }
 
 function canRunImpress(pages) {
@@ -252,7 +250,7 @@ export async function start() {
   if (runImpress && impress.supported) {
     const animElements = document.createElement("div");
     animElements.className = "views";
-    animElements.innerHTML = getAnimElements(animation);
+    animElements.innerHTML = getAnimElements(animation) + "<hr />";
     actions.appendChild(animElements);
   }
 
@@ -269,10 +267,14 @@ export async function start() {
 }
 
 function initImpressEvents() {
+  let currentStepId;
   document.addEventListener(
     "impress:stepenter",
     function (event) {
       const page = event.target;
+      if (currentStepId) {
+        $("#toc-" + currentStepId).classList.remove("present");
+      }
       $("#toc-" + page.id).classList.add("present");
 
       // TODO remove when save animations in localstorage
@@ -288,7 +290,7 @@ function initImpressEvents() {
     "impress:stepleave",
     function (event) {
       const page = event.target;
-      $("#toc-" + page.id).classList.remove("present");
+      currentStepId = page.id;
     },
     false
   );

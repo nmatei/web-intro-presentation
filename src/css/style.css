@@ -284,11 +284,40 @@ pre.fs-20 {
   display: inline-block;
   text-decoration: none;
 }
-.navigation-actions div {
+.navigation-actions div:not(:first-of-type) {
   margin-top: 10px;
 }
 .navigation-actions .toc {
   width: 65px;
+  /* display: none; */
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  line-height: 0;
+}
+.navigation-actions .toc a {
+  /* https://dzone.com/articles/pure-css-slide-down-animation-1 */
+  margin: 0 2px 0 0;
+  padding: 0 5px;
+  opacity: 0;
+  color: transparent;
+  transition: unset;
+  text-shadow: none;
+}
+.navigation-actions:hover .toc a,
+.navigation-actions .toc a.present {
+  opacity: 1;
+  margin: 2px 2px 0 0;
+  padding: 3px 5px;
+  color: inherit;
+  transition: unset;
+  text-shadow: -1px -1px 2px rgb(100 100 100 / 90%);
+}
+.navigation-actions .toc a.present {
+  line-height: 1;
+}
+.navigation-actions:hover .toc {
+  /* display: block; */
+  line-height: 1;
 }
 .navigation-actions .btn {
   /*min-height: 20px;*/
