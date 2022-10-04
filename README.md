@@ -30,6 +30,28 @@ Web Intro [Presentation](https://nmatei.github.io/web-intro-presentation/)
 - [x] **CTRL+P** and select **Save as PDF** (Margins: None)
   - (Make sure all slides are on each page)
 
+## English Signs (chars)
+
+You have to know how to type this characters :) on your keyboard
+
+```
+ () brackets (parenthesis)
+ {} curly brackets
+ [] square brackets
+ #  hash
+ :  colon
+ ;  semicolon
+ `  backquote (left quote, grave accent)
+ /  slash
+ \  backslash
+ |  pipe
+ -  dash
+ ,  comma
+ _  underscore
+ ?  question mark
+ %  percent
+```
+
 ## Developer
 
 If you wish to use this project directly on your PC you can use:
