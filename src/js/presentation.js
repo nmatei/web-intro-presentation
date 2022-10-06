@@ -7,6 +7,9 @@ import regeneratorRuntime from "regenerator-runtime";
 import "../css/style.css";
 import "../css/print.css";
 
+const storageAnimKey = "impress-anim";
+const storagePageKey = "impress-page";
+
 function $(selector) {
   return document.querySelector(selector);
 }
@@ -228,19 +231,24 @@ export async function start() {
 
   $("body").classList.remove("body-loading");
 
-  const animation = getParam("anim") || localStorage.getItem("anim");
+  const animation = getParam("anim") || localStorage.getItem(storageAnimKey);
   const pages = Array.from($$(".step"));
   const runImpress = canRunImpress(pages);
+
+  const initialId = localStorage.getItem(storagePageKey);
+  if (initialId) {
+    window.location.hash = "/" + initialId;
+  }
 
   if (runImpress) {
     if (animation && animation !== "animations") {
       applyAnimations(pages, animation);
-      localStorage.setItem("anim", animation);
+      localStorage.setItem(storageAnimKey, animation);
     } else {
-      localStorage.removeItem("anim");
+      localStorage.removeItem(storageAnimKey);
     }
 
-    initImpressEvents();
+    initImpressEvents(initialId);
     impress().init();
   }
 
@@ -266,8 +274,8 @@ export async function start() {
   await initAllEditors(runImpress);
 }
 
-function initImpressEvents() {
-  let currentStepId;
+function initImpressEvents(id) {
+  let currentStepId = id;
   document.addEventListener(
     "impress:stepenter",
     function (event) {
@@ -276,6 +284,7 @@ function initImpressEvents() {
         $("#toc-" + currentStepId).classList.remove("present");
       }
       $("#toc-" + page.id).classList.add("present");
+      localStorage.setItem(storagePageKey, page.id);
 
       // TODO remove when save animations in localstorage
       const links = Array.from($$(".navigation-actions .views a"));
