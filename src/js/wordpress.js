@@ -1,3 +1,3 @@
 import { start } from "./presentation";
 
-start("react");
+start("wordpress");

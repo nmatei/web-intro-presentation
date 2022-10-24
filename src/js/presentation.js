@@ -29,6 +29,17 @@ function getParam(name) {
   return params[name];
 }
 
+function getStorageKey(slidesName, key) {
+  return localStorage.getItem(`${key}-${slidesName}`);
+}
+function setStorageKey(slidesName, key, value) {
+  if (value) {
+    localStorage.setItem(`${key}-${slidesName}`, value);
+  } else {
+    localStorage.removeItem(`${key}-${slidesName}`);
+  }
+}
+
 function getChunks(elements, size) {
   const chunks = [];
   const arrayLength = elements.length;
@@ -224,18 +235,21 @@ function canRunImpress(pages) {
 }
 
 // print actions
-export async function start() {
+export async function start(slidesName) {
   if ("ontouchstart" in document.documentElement) {
     $(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
   }
 
   $("body").classList.remove("body-loading");
 
-  const animation = getParam("anim") || localStorage.getItem(storageAnimKey);
+  const animation = getParam("anim") || getStorageKey(slidesName, storageAnimKey);
   const pages = Array.from($$(".step"));
   const runImpress = canRunImpress(pages);
 
-  const initialId = localStorage.getItem(storagePageKey);
+  // TODO leave hash as first prioprity (then check localStorage)
+  const urlId = window.location.hash;
+  console.warn('urlId', urlId, animation);
+  const initialId = getStorageKey(slidesName, storagePageKey);
   if (initialId) {
     window.location.hash = "/" + initialId;
   }
@@ -243,12 +257,12 @@ export async function start() {
   if (runImpress) {
     if (animation && animation !== "animations") {
       applyAnimations(pages, animation);
-      localStorage.setItem(storageAnimKey, animation);
+      setStorageKey(slidesName, storageAnimKey, animation);
     } else {
-      localStorage.removeItem(storageAnimKey);
+      setStorageKey(slidesName, storageAnimKey, null);
     }
 
-    initImpressEvents(initialId);
+    initImpressEvents(slidesName, initialId);
     impress().init();
   }
 
@@ -274,23 +288,20 @@ export async function start() {
   await initAllEditors(runImpress);
 }
 
-function initImpressEvents(id) {
+function initImpressEvents(slidesName, id) {
   let currentStepId = id;
   document.addEventListener(
     "impress:stepenter",
     function (event) {
       const page = event.target;
       if (currentStepId) {
-        $("#toc-" + currentStepId).classList.remove("present");
+        const step = $("#toc-" + currentStepId);
+        if (step) {
+          step.classList.remove("present");
+        }
       }
       $("#toc-" + page.id).classList.add("present");
-      localStorage.setItem(storagePageKey, page.id);
-
-      // TODO remove when save animations in localstorage
-      const links = Array.from($$(".navigation-actions .views a"));
-      links.forEach(link => {
-        link.href = link.href.split("#")[0] + "#/" + page.id;
-      });
+      setStorageKey(slidesName, storagePageKey, page.id);
     },
     false
   );

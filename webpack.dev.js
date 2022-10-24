@@ -44,7 +44,7 @@ module.exports = env => {
         template: "./src/wordpress.html",
         inject: true,
         minify: true,
-        chunks: ["react"],
+        chunks: ["wordpress"],
         filename: "wordpress.html"
       })
     ],
