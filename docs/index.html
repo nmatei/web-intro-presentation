@@ -91,14 +91,13 @@ and all that inside a paragraph
   <a href="file.mp3">Download.</a>
 &lt;/audio>
         </pre><audio todo-autoplay="autoplay" controls="controls"><source src="resources/file.ogg"/><source src="resources/file.mp3"/><a href="file.mp3">Download file.</a></audio></div><div id="video" class="step" data-x="-8000" data-y="6000" data-rotate="-90" data-scale="2"><h1>Video</h1><pre data-type="html" class="fs-22">
-&lt;video controls preload>
-  &lt;source src="resources/video.ogv"/>
+&lt;video controls loop autoplay muted preload>
   &lt;source src="resources/video.mp4"/>
   &lt;p> Your browser is old.
     &lt;a href="resources/video.mp4">Download.&lt;/a>
   &lt;/p>
 &lt;/video>
-        </pre><video id="my-record-video" controls width="500"><source src="resources/video.mp4"/><p>Your browser is old. <a href="video.mov">Download this video instead.</a></p></video></div><div id="attributes" class="step" data-x="-5000" data-y="0" data-scale="1"><h2>Attributes</h2><p>On visible tags we've seen <strong>more info after tag name</strong>, they are called attributes, and look like this:</p><pre data-type="html" data-highlight="2,3,4,5">
+        </pre><video id="my-record-video" controls loop autoplay muted width="500"><source src="resources/video.mp4"/><p>Your browser is old. <a href="resources/video.mp4">Download this video instead.</a></p></video></div><div id="attributes" class="step" data-x="-5000" data-y="0" data-scale="1"><h2>Attributes</h2><p>On visible tags we've seen <strong>more info after tag name</strong>, they are called attributes, and look like this:</p><pre data-type="html" data-highlight="2,3,4,5">
 &lt;p
   id="unique-id"
   class="css-class"
@@ -337,7 +336,7 @@ var person = {
   age: 29,
   name: 'First Last',
   skills: [
-    'html', 'css', 'js'
+    'html', "css", `js`
   ]
 };
 
@@ -351,6 +350,10 @@ function getInfo(name) {
   var msg = "Hello " + name + ", " +
       "welcome at FastTrackIT.";
   return msg;
+}
+
+function getMsg(name) {
+  return `Hey ${name}, I'm glad to help you learn js.`;
 }
 
 // call getInfo and store result in variable
