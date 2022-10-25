@@ -463,17 +463,16 @@ and all that inside a paragraph
       <div id="video" class="step" data-x="-8000" data-y="6000" data-rotate="-90" data-scale="2">
         <h1>Video</h1>
         <pre data-type="html" class="fs-22">
-&lt;video controls preload>
-  &lt;source src="resources/video.ogv"/>
+&lt;video controls loop autoplay muted preload>
   &lt;source src="resources/video.mp4"/>
   &lt;p> Your browser is old.
     &lt;a href="resources/video.mp4">Download.&lt;/a>
   &lt;/p>
 &lt;/video>
         </pre>
-        <video id="my-record-video" controls width="500">
+        <video id="my-record-video" controls loop autoplay muted width="500">
           <source src="resources/video.mp4" />
-          <p>Your browser is old. <a href="video.mov">Download this video instead.</a></p>
+          <p>Your browser is old. <a href="resources/video.mp4">Download this video instead.</a></p>
         </video>
       </div>
 
@@ -1056,7 +1055,7 @@ var person = {
   age: 29,
   name: 'First Last',
   skills: [
-    'html', 'css', 'js'
+    'html', "css", `js`
   ]
 };
 
@@ -1080,6 +1079,10 @@ function getInfo(name) {
   var msg = "Hello " + name + ", " +
       "welcome at FastTrackIT.";
   return msg;
+}
+
+function getMsg(name) {
+  return `Hey ${name}, I'm glad to help you learn js.`;
 }
 
 // call getInfo and store result in variable
