@@ -246,12 +246,12 @@ export async function start(slidesName) {
   const pages = Array.from($$(".step"));
   const runImpress = canRunImpress(pages);
 
-  // TODO leave hash as first prioprity (then check localStorage)
-  const urlId = window.location.hash;
-  console.warn('urlId', urlId, animation);
-  const initialId = getStorageKey(slidesName, storagePageKey);
-  if (initialId) {
-    window.location.hash = "/" + initialId;
+  const initialId = window.location.hash.substring(2);
+  if (!initialId) {
+    const storageId = getStorageKey(slidesName, storagePageKey);
+    if (storageId) {
+      window.location.hash = "/" + storageId;
+    }
   }
 
   if (runImpress) {
