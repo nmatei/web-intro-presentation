@@ -139,6 +139,21 @@ hr {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
+#start-overview {
+  border-radius: 50%;
+  /*height: 900px;*/
+  /* smaller so we can select outside */
+  height: 750px;
+  width: 750px;
+  background: rgba(255, 255, 255, 0.5);
+  border-color: #2196f399;
+  box-shadow: 0 4px 10px #2196f399;
+  transition: opacity 3s !important;
+}
+#start-overview.active {
+  background: rgba(255, 255, 255, 0.1);
+}
+
 .anim-fade .step {
   opacity: 0;
 }

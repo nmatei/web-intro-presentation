@@ -447,15 +447,13 @@ and all that inside a paragraph
         <h1>Audio</h1>
         <pre data-type="html" class="fs-22">
 &lt;audio autoplay="autoplay" controls="controls">
-  &lt;source src="resources/file.ogg" />
   &lt;source src="resources/file.mp3" />
-  <a href="file.mp3">Download.</a>
+  &lt;a href="resources/file.mp3">Download.&lt;/a>
 &lt;/audio>
         </pre>
-        <audio todo-autoplay="autoplay" controls="controls">
-          <source src="resources/file.ogg" />
-          <source src="resources/file.mp3" />
-          <a href="file.mp3">Download file.</a>
+        <audio controls>
+          <source src="resources/file.mp3" type="audio/mpeg"/>
+          <a href="resources/file.mp3">Download file.</a>
         </audio>
       </div>
 

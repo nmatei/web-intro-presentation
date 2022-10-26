@@ -153,9 +153,12 @@ function applyAnimations(pages, animation) {
   if (animation === "fade") {
     document.body.classList.add("anim-fade");
   }
+  // TODO calc..
+  const L = Math.max(2000, 500 + pages.length * 140);
   pages.forEach((page, i) => {
     let dataX = 0,
       dataY = 0,
+      scale = 1,
       rotate = "0";
 
     if (animation === "slideUp") {
@@ -167,24 +170,51 @@ function applyAnimations(pages, animation) {
       // 0 is first page (we leave it in the middle)
       if (i) {
         // https://purecalculators.com/ro/triangle-hypotenuse-calculator
-        const L = 500 + pages.length * 140; // TODO calc..
         const degree = (360 / (pages.length - 1)) * (i - 1);
         const radians = (degree * Math.PI) / 180;
         dataX = Math.sin(radians) * L;
         dataY = -Math.cos(radians) * L;
         // rotate = `${degree}`;
+      } else {
+        // TODO calculate
+        scale = (pages.length + 15) / 10;
       }
     }
 
     page.setAttribute("data-x", dataX);
     page.setAttribute("data-y", dataY);
 
-    page.setAttribute("data-scale", "1");
+    page.setAttribute("data-scale", scale);
     page.setAttribute("data-rotate", rotate);
     page.setAttribute("data-z", "0");
     page.setAttribute("data-rotate-x", "0");
     page.setAttribute("data-rotate-y", "0");
   });
+
+  if (animation === "clock") {
+    addOverviewPage(pages.length);
+    // we just added a new page
+    pages = Array.from($$(".step"));
+  }
+  return pages;
+}
+
+function addOverviewPage(pageCount) {
+  const overview = document.createElement("div");
+  overview.id = "start-overview";
+  overview.classList.add("step", "hide-page");
+  let scale = 4.5;
+  if (pageCount > 15) {
+    scale = 7;
+  }
+  if (pageCount > 25) {
+    scale = 10;
+  }
+  if (pageCount > 50) {
+    scale = 20.5;
+  }
+  overview.setAttribute("data-scale", scale);
+  document.getElementById("impress").prepend(overview);
 }
 
 function getAnimElements(animation) {
@@ -243,7 +273,7 @@ export async function start(slidesName) {
   $("body").classList.remove("body-loading");
 
   const animation = getParam("anim") || getStorageKey(slidesName, storageAnimKey);
-  const pages = Array.from($$(".step"));
+  let pages = Array.from($$(".step"));
   const runImpress = canRunImpress(pages);
 
   const initialId = window.location.hash.substring(2);
@@ -256,7 +286,7 @@ export async function start(slidesName) {
 
   if (runImpress) {
     if (animation && animation !== "animations") {
-      applyAnimations(pages, animation);
+      pages = applyAnimations(pages, animation);
       setStorageKey(slidesName, storageAnimKey, animation);
     } else {
       setStorageKey(slidesName, storageAnimKey, null);
