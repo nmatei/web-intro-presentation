@@ -364,6 +364,13 @@ pre.fs-20 {
   display: none;
 }
 
+a.no-toc {
+  display: none;
+}
+a.no-toc.present {
+  display: inline-block;
+}
+
 .folder {
   border: 2px solid #2196f3;
   background: #f5f5f5;

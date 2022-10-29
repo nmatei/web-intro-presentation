@@ -144,7 +144,8 @@ function setPageNumbers(pages) {
     .map((page, i) => {
       page.setAttribute("data-current-page", i + 1);
       page.setAttribute("data-total-pages", pages.length);
-      return `<a id="toc-${page.id}" href="#${page.id}" title="${page.id}">${i + 1}</a>`;
+      const cls = page.classList.contains("no-toc") ? "no-toc" : "";
+      return `<a id="toc-${page.id}" class="${cls}" href="#${page.id}" title="${page.id}">${i + 1}</a>`;
     })
     .join("");
 }
