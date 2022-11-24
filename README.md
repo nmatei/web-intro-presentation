@@ -13,20 +13,17 @@ Web Intro [Presentation](https://nmatei.github.io/web-intro-presentation/)
 
 ### Transitions mode
 
-- [x] [Animations](https://nmatei.github.io/web-intro-presentation/) (default)
-- [x] [Slide Up/Down](https://nmatei.github.io/web-intro-presentation/?anim=slide-up)
-- [x] [Slide Right/Left](https://nmatei.github.io/web-intro-presentation/?anim=slide-left)
+- [x] [Animations](https://nmatei.github.io/web-intro-presentation/?anim=animations) (default)
+- [x] [Slide Up/Down](https://nmatei.github.io/web-intro-presentation/?anim=slideUp)
+- [x] [Slide Right/Left](https://nmatei.github.io/web-intro-presentation/?anim=slideLeft)
 - [x] [Fade](https://nmatei.github.io/web-intro-presentation/?anim=fade)
 - [x] [Clock](https://nmatei.github.io/web-intro-presentation/?anim=clock)
 - [ ] Slide Headings (every h1 -> down, every h2 -> right)
 - [ ] Book Style (Simulate 2 pages and move left - right)
 
-- [ ] Store transition mode in localstorage and remove link param
-- [ ] When browser does not support impress (animations) (convert them all to "slide" style)
-
 ### Save as PDF
 
-- [x] Change Transitions mode to [Up/Down](https://nmatei.github.io/web-intro-presentation/?anim=slide-up#/start) Slides
+- [x] Change Transitions mode to [Up/Down](https://nmatei.github.io/web-intro-presentation/?anim=slideUp#/start) Slides
 - [x] **CTRL+P** and select **Save as PDF** (Margins: None)
   - (Make sure all slides are on each page)
 
@@ -62,6 +59,11 @@ cd web-intro-presentation
 npm i
 npm run start
 ```
+
+### TODOs
+
+- [ ] Store transition mode in localstorage and remove link param
+- [ ] When browser does not support impress (animations) (convert them all to "slide" style)
 
 ## Thanks
 

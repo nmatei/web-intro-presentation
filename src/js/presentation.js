@@ -10,6 +10,29 @@ import "../css/print.css";
 const storageAnimKey = "impress-anim";
 const storagePageKey = "impress-page";
 
+const animationTypes = {
+  animations: {
+    title: "Animations Slides",
+    icon: "fa fa-object-group"
+  },
+  slideUp: {
+    title: "Slide Up/Down",
+    icon: "fa fa-film"
+  },
+  slideLeft: {
+    title: "Slide Right/Left",
+    icon: "fa fa-film fa-rotate-90"
+  },
+  fade: {
+    title: "Fade",
+    icon: "fa fa-gg"
+  },
+  clock: {
+    title: "Clock",
+    icon: "fa fa-clock-o"
+  }
+};
+
 function $(selector) {
   return document.querySelector(selector);
 }
@@ -219,29 +242,6 @@ function addOverviewPage(pageCount) {
 }
 
 function getAnimElements(animation) {
-  const animationTypes = {
-    animations: {
-      title: "Animations Slides",
-      icon: "fa fa-object-group"
-    },
-    slideUp: {
-      title: "Slide Up/Down",
-      icon: "fa fa-film"
-    },
-    slideLeft: {
-      title: "Slide Right/Left",
-      icon: "fa fa-film fa-rotate-90"
-    },
-    fade: {
-      title: "Fade",
-      icon: "fa fa-gg"
-    },
-    clock: {
-      title: "Clock",
-      icon: "fa fa-clock-o"
-    }
-  };
-  animation = animation || "animations";
   return Object.entries(animationTypes)
     .map(([key, value]) => {
       return `<a href="?anim=${key}" data-anim="${key}" title="${value.title}" class="btn ${
@@ -273,7 +273,11 @@ export async function start(slidesName) {
 
   $("body").classList.remove("body-loading");
 
-  const animation = getParam("anim") || getStorageKey(slidesName, storageAnimKey);
+  let animation = getParam("anim") || getStorageKey(slidesName, storageAnimKey);
+  if (!animation || !animationTypes[animation]) {
+    animation = Object.keys(animationTypes)[0];
+  }
+
   let pages = Array.from($$(".step"));
   const runImpress = canRunImpress(pages);
 
