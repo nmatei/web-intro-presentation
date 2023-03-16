@@ -1086,9 +1086,11 @@ console.debug(person.employed);
       <!-- ===================================================================  -->
       <div id="js-functions" class="step" data-x="-5000" data-y="6000" data-scale="1">
         <h2>Functions</h2>
-        <pre data-type="js">
-// declaration
-function getInfo(name) {
+        <pre data-type="js" class="fs-22">
+// function, name, parameters, code block
+function emptyFn() {}
+
+function getWelcomeMsg(name) {
   var msg = "Hello " + name + ", " +
       "welcome at FastTrackIT.";
   return msg;
@@ -1098,11 +1100,12 @@ function getMsg(name) {
   return `Hey ${name}, I'm glad to help you learn js.`;
 }
 
-// call getInfo and store result in variable
-var info = getInfo("Matei");
+// call getWelcomeMsg and store result in variable
+var welcomeNick = getWelcomeMsg("Nick");
+var welcomeJohn = getWelcomeMsg("John");
 
 // print variable value in console
-console.info(info);
+console.info(welcomeNick);
           </pre
         >
         <p class="align-r line-space practice">
