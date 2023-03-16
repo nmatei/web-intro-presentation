@@ -343,9 +343,11 @@ console.debug(person);
 console.info(person.name);
 console.debug(person.age);
 console.debug(person.employed);
-        </pre><p>In this case person object is storing all info about one person (like packaging).</p><p class="align-r line-space">Read more about <a href="http://www.w3schools.com/js/js_json.asp" target="_blank">JSON</a></p></div><div id="js-functions" class="step" data-x="-5000" data-y="6000" data-scale="1"><h2>Functions</h2><pre data-type="js">
-// declaration
-function getInfo(name) {
+        </pre><p>In this case person object is storing all info about one person (like packaging).</p><p class="align-r line-space">Read more about <a href="http://www.w3schools.com/js/js_json.asp" target="_blank">JSON</a></p></div><div id="js-functions" class="step" data-x="-5000" data-y="6000" data-scale="1"><h2>Functions</h2><pre data-type="js" class="fs-22">
+// function, name, parameters, code block
+function emptyFn() {}
+
+function getWelcomeMsg(name) {
   var msg = "Hello " + name + ", " +
       "welcome at FastTrackIT.";
   return msg;
@@ -355,11 +357,12 @@ function getMsg(name) {
   return `Hey ${name}, I'm glad to help you learn js.`;
 }
 
-// call getInfo and store result in variable
-var info = getInfo("Matei");
+// call getWelcomeMsg and store result in variable
+var welcomeNick = getWelcomeMsg("Nick");
+var welcomeJohn = getWelcomeMsg("John");
 
 // print variable value in console
-console.info(info);
+console.info(welcomeNick);
           </pre><p class="align-r line-space practice">Read more about <a href="http://www.w3schools.com/js/js_functions.asp" target="_blank">functions</a></p></div><div id="js-json-fn" class="step" data-x="-5000" data-y="6500" data-scale="0.3"><h2>JSON Objects can have functions inside</h2><pre data-type="js" class="fs-22">
 var person = {
   age: 29,
