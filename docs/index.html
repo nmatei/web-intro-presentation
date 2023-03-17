@@ -367,13 +367,21 @@ console.info(welcomeNick);
 var person = {
   age: 29,
   name: 'Nick',
+  learn: function() {
+    console.info("I'm learning JS, I love it!");
+  },
   play: function() {
     console.info("I'm playing. My name is ", this.name);
   }
 };
 
+person.learn();
 person.play();
-        </pre></div><div id="js-src" class="step" data-x="-4000" data-y="6000" data-scale="1"><h1>Is time to improve our document</h1><h2 class="practice">Create a new empty file</h2><ol><li>name it <strong>index.js</strong></li><li>include it in <strong>index.html</strong><pre data-type="html">
+
+//typeof document
+//typeof document.getElementById
+//typeof console
+        </pre><p class="practice">expand the console to see details</p></div><div id="js-src" class="step" data-x="-4000" data-y="6000" data-scale="1"><h1>Is time to improve our document</h1><h2 class="practice">Create a new empty file</h2><ol><li>name it <strong>index.js</strong></li><li>include it in <strong>index.html</strong><pre data-type="html">
 &lt;script src="index.js"
   type="text/javascript">
 &lt;/script>
