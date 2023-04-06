@@ -778,17 +778,17 @@ function sleep(ms) {
 
       <!-- ===================================================================  -->
       <div id="import-export" class="step slide toc-el" data-x="5500" data-y="500">
-        <h1>Imports & Exports</h1>
-        <h2>Named Exports</h2>
+        <h1>debounce (imports & exports)</h1>
         <pre data-type="js" style="font-size: 18px">
 export function debounce(fn, delay) {
-  var timer = null;
+  var timer = null; // 2️⃣ Closures
   return function () {
+    // 3️⃣ context (this)
     var context = this,
       args = arguments;
     clearTimeout(timer);
     timer = setTimeout(function () {
-      fn.apply(context, args);
+      fn.apply(context, args); // 1️⃣ Callback function
     }, delay);
   };
 }
@@ -808,6 +808,10 @@ document.querySelector("#search").addEventListener(
         <p class="footnote">
           👆 <strong>vs</strong> lodash
           <a href="https://github.com/lodash/lodash/blob/master/debounce.js" target="_blank">debounce</a>
+          { <a href="https://www.w3schools.com/js/js_callback.asp" target="_blank">callback</a>,
+          <a href="https://www.w3schools.com/js/js_function_closures.asp" target="_blank">closures</a>,
+          <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this" target="_blank">this</a>
+          }
         </p>
       </div>
 
