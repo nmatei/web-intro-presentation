@@ -280,15 +280,16 @@ function sleep(ms) {
   await sleep(2000);
   console.info("this code is bloked by %o", "await sleep");
 })();
-        </pre></div><div id="import-export" class="step slide toc-el" data-x="5500" data-y="500"><h1>Imports & Exports</h1><h2>Named Exports</h2><pre data-type="js" style="font-size: 18px">
+        </pre></div><div id="import-export" class="step slide toc-el" data-x="5500" data-y="500"><h1>debounce (imports & exports)</h1><pre data-type="js" style="font-size: 18px">
 export function debounce(fn, delay) {
-  var timer = null;
+  var timer = null; // 2️⃣ Closures
   return function () {
+    // 3️⃣ context (this)
     var context = this,
       args = arguments;
     clearTimeout(timer);
     timer = setTimeout(function () {
-      fn.apply(context, args);
+      fn.apply(context, args); // 1️⃣ Callback function
     }, delay);
   };
 }
@@ -301,7 +302,7 @@ document.querySelector("#search").addEventListener(
     console.info("input changed", e.target.value);
   }, 400)
 );
-        </pre><p class="footnote">👆 <strong>vs</strong> lodash <a href="https://github.com/lodash/lodash/blob/master/debounce.js" target="_blank">debounce</a></p></div><div id="loading-mask" class="step slide" data-x="5500" data-y="1100" data-scale="0.5"><h2>CSS Loading Mask</h2><div class="cards"><div><pre data-type="css" style="font-size: 16px">
+        </pre><p class="footnote">👆 <strong>vs</strong> lodash <a href="https://github.com/lodash/lodash/blob/master/debounce.js" target="_blank">debounce</a> { <a href="https://www.w3schools.com/js/js_callback.asp" target="_blank">callback</a>, <a href="https://www.w3schools.com/js/js_function_closures.asp" target="_blank">closures</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this" target="_blank">this</a> }</p></div><div id="loading-mask" class="step slide" data-x="5500" data-y="1100" data-scale="0.5"><h2>CSS Loading Mask</h2><div class="cards"><div><pre data-type="css" style="font-size: 16px">
 .loading-mask {
   position: relative;
 }
