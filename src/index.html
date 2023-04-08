@@ -1076,6 +1076,7 @@ console.debug(person);
 console.info(person.name);
 console.debug(person.age);
 console.debug(person.employed);
+console.debug(person["employed"]); // same as above
         </pre>
         <p>In this case person object is storing all info about one person (like packaging).</p>
         <p class="align-r line-space">
@@ -1117,7 +1118,7 @@ console.info(welcomeNick);
       <div id="js-json-fn" class="step" data-x="-5000" data-y="6500" data-scale="0.3">
         <h2>JSON Objects can have functions inside *</h2>
         <h3 class="align-r">* only in JavaScript❗</h3>
-        <pre data-type="js" class="fs-22">
+        <pre data-type="js" class="fs-20">
 var person = {
   age: 29,
   name: 'Nick',
@@ -1135,6 +1136,9 @@ person.play();
 //typeof document
 //typeof document.getElementById
 //typeof console
+console.info(person["name"]); // => Nick
+var action = "learn"; // or play
+person[action]();
         </pre>
 
         <p class="practice">expand the console to see details</p>
