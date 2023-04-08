@@ -343,6 +343,7 @@ console.debug(person);
 console.info(person.name);
 console.debug(person.age);
 console.debug(person.employed);
+console.debug(person["employed"]); // same as above
         </pre><p>In this case person object is storing all info about one person (like packaging).</p><p class="align-r line-space">Read more about <a href="http://www.w3schools.com/js/js_json.asp" target="_blank">JSON</a></p></div><div id="js-functions" class="step" data-x="-5000" data-y="6000" data-scale="1"><h2>Functions</h2><pre data-type="js" class="fs-22">
 // function, name, parameters, code block
 function emptyFn() {}
@@ -363,7 +364,7 @@ var welcomeJohn = getWelcomeMsg("John");
 
 // print variable value in console
 console.info(welcomeNick);
-          </pre><p class="align-r line-space practice">Read more about <a href="http://www.w3schools.com/js/js_functions.asp" target="_blank">functions</a></p></div><div id="js-json-fn" class="step" data-x="-5000" data-y="6500" data-scale="0.3"><h2>JSON Objects can have functions inside *</h2><h3 class="align-r">* only in JavaScript❗</h3><pre data-type="js" class="fs-22">
+          </pre><p class="align-r line-space practice">Read more about <a href="http://www.w3schools.com/js/js_functions.asp" target="_blank">functions</a></p></div><div id="js-json-fn" class="step" data-x="-5000" data-y="6500" data-scale="0.3"><h2>JSON Objects can have functions inside *</h2><h3 class="align-r">* only in JavaScript❗</h3><pre data-type="js" class="fs-20">
 var person = {
   age: 29,
   name: 'Nick',
@@ -381,6 +382,9 @@ person.play();
 //typeof document
 //typeof document.getElementById
 //typeof console
+console.info(person["name"]); // => Nick
+var action = "learn"; // or play
+person[action]();
         </pre><p class="practice">expand the console to see details</p></div><div id="js-src" class="step" data-x="-4000" data-y="6000" data-scale="1"><h1>Is time to improve our document</h1><h2 class="practice">Create a new empty file</h2><ol><li>name it <strong>index.js</strong></li><li>include it in <strong>index.html</strong><pre data-type="html">
 &lt;script src="index.js"
   type="text/javascript">
