@@ -315,7 +315,7 @@ module.exports = env => {
       <div id="webpack-scripts" class="step slide" data-x="5500" data-y="-400" data-scale="0.5">
         <h2>Configure npm scripts</h2>
         <p>Add following scripts inside <strong>package.json</strong></p>
-        <pre data-type="js" class="fs-22">
+        <pre data-type="js" class="fs-20">
 {
   "scripts": {
     "clear": "npm run clean && rimraf node_modules",
@@ -327,12 +327,18 @@ module.exports = env => {
         </pre>
 
         <h2>Running scripts using npm or yarn</h2>
-        <pre data-type="shell" class="fs-22">
+        <pre data-type="shell" class="fs-20">
 npm start
 npm run build
 
 yarn start
 yarn build
+        </pre>
+
+        <h2>Global packages</h2>
+        <pre data-type="shell" class="fs-20">
+npm install --global serve
+npm i -g rimraf
         </pre>
 
         <p class="footnote">
