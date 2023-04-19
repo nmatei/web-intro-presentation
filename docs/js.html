@@ -71,7 +71,7 @@ module.exports = env => {
     }
   };
 };
-        </pre></div><div id="webpack-scripts" class="step slide" data-x="5500" data-y="-400" data-scale="0.5"><h2>Configure npm scripts</h2><p>Add following scripts inside <strong>package.json</strong></p><pre data-type="js" class="fs-22">
+        </pre></div><div id="webpack-scripts" class="step slide" data-x="5500" data-y="-400" data-scale="0.5"><h2>Configure npm scripts</h2><p>Add following scripts inside <strong>package.json</strong></p><pre data-type="js" class="fs-20">
 {
   "scripts": {
     "clear": "npm run clean && rimraf node_modules",
@@ -80,12 +80,15 @@ module.exports = env => {
     "start": "webpack serve --open"
   }
 }
-        </pre><h2>Running scripts using npm or yarn</h2><pre data-type="shell" class="fs-22">
+        </pre><h2>Running scripts using npm or yarn</h2><pre data-type="shell" class="fs-20">
 npm start
 npm run build
 
 yarn start
 yarn build
+        </pre><h2>Global packages</h2><pre data-type="shell" class="fs-20">
+npm install --global serve
+npm i -g rimraf
         </pre><p class="footnote">Extra: <a href="https://medium.com/geekculture/set-up-webpack-5-for-basic-javascript-projects-8bded066d282" target="_blank">Set up Webpack 5 for Basic Javascript Projects</a><br/>Adding <a href="https://webpack.js.org/guides/typescript/" target="_blank">TypeScript</a> to webpack</p></div><div id="webpack-folder-structure" class="step slide toc-el" data-x="7000" data-y="-1500"><h1><i class="fa fa-folder-open-o"></i> Folder Structure</h1><div class="folder"><ol class="fa-ul git-add"><li class="gitignore"><span class="fa-li"><i class="fa fa-folder-open-o"></i></span>dist<ol class="fa-ul"><li class="gitignore"><span class="fa-li"><i class="fa fa-html5"></i></span>index.html</li><li class="gitignore"><span class="fa-li"><i class="fa fa-file-code-o"></i></span>main.js</li></ol></li><li class="gitignore"><span class="fa-li"><i class="fa fa-folder"></i></span>node_modules</li><li><span class="fa-li"><i class="fa fa-folder-open-o"></i></span>src<ol class="fa-ul"><li><span class="fa-li"><i class="fa fa-html5"></i></span>index.html</li><li><span class="fa-li"><i class="fa fa-file-code-o"></i></span>index.js</li><li><span class="fa-li"><i class="fa fa-css3"></i></span>style.css</li></ol></li><li><span class="fa-li"><i class="fa fa-code-fork"></i></span>.gitignore</li><li><span class="fa-li"><i class="fa fa-file-o"></i></span>.prettierrc</li><li><span class="fa-li"><i class="fa fa-file-o"></i></span>package.json</li><li><span class="fa-li"><i class="fa fa-file-code-o"></i></span>webpack.config.js</li></ol></div></div><div id="remove-script-from-html" class="step slide no-logo" data-x="7000" data-y="-900" data-scale="0.5"><h2><i class="fa fa-html5"></i> src/index.html</h2><br/><p class="practice">As webpack now adds <strong>dist/main.js</strong> script to dist/index.html, we have to remove our initial script to not have it executed 2 times</p><br/><pre data-type="html" class="fs-22">
 &lt;!doctype html>
 &lt;html lang="en">
