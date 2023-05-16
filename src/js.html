@@ -419,17 +419,20 @@ npm i -g rimraf
           script to not have it executed 2 times
         </p>
         <br />
-        <pre data-type="html" class="fs-22">
+        <pre data-type="html" class="fs-18">
 &lt;!doctype html>
 &lt;html lang="en">
   &lt;head>
     &lt;!-- ... -->
     &lt;!-- dist/index.html has -->
     &lt;script defer src="/main.js">&lt;/script>
+
+    &lt;!-- remove &lt;link rel="stylesheet" href="style.css" /> -->
+    &lt;!-- and import in from js: import "./style.css"; -->
   &lt;/head>
   &lt;body>
     &lt;!-- ... -->
-    &lt;!-- remove/comment index.js from index.html -->
+    &lt;!-- remove script with index.js from index.html -->
     &lt;!-- &lt;script src="index.js">&lt;/script> -->
   &lt;/body>
 &lt;/html>
