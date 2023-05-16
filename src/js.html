@@ -261,6 +261,7 @@ npm init -y
 npm install --save-dev webpack webpack-cli
 npm i -D webpack-dev-server
 npm i -D html-webpack-plugin
+npm i -D style-loader css-loader
 
 # create webpack.config.js file
 touch webpack.config.js
@@ -269,12 +270,11 @@ touch webpack.config.js
         <p class="practice">Edit <strong>webpack.config.js</strong> and add content from next slide</p>
 
         <p class="footnote">
-          Read more about
           <a href="https://webpack.js.org/guides/development/#using-webpack-dev-server" target="_blank"
             >webpack-dev-server</a
-          >
-          and
-          <a href="https://webpack.js.org/guides/production/" target="_blank">webpack for production</a>
+          >,
+          <a href="https://webpack.js.org/guides/production/" target="_blank">webpack for production</a>,
+          <a href="https://webpack.js.org/loaders/style-loader/" target="_blank">style-loader</a>
         </p>
       </div>
 
@@ -282,7 +282,7 @@ touch webpack.config.js
       <div id="webpack-config" class="step slide no-logo" data-x="5500" data-y="-900" data-scale="0.5">
         <h2><i class="fa fa-file-code-o"></i> webpack.config.js</h2>
 
-        <pre data-type="js" style="font-size: 18px">
+        <pre data-type="js" class="fs-14">
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
@@ -293,7 +293,7 @@ module.exports = env => {
     entry: ["./src/index.js"],
     devtool: isProduction ? false : "inline-source-map",
     devServer: {
-      static: ["dist", "src"],
+      static: ["src"],
       watchFiles: ["src/**/*.*"]
     },
     plugins: [
@@ -301,9 +301,17 @@ module.exports = env => {
         template: "./src/index.html"
       })
     ],
+    module: {
+      rules: [
+        {
+          test: /\.css$/i,
+          use: ["style-loader", "css-loader"]
+        }
+      ]
+    },
     output: {
       filename: "main.js",
-      path: path.resolve(__dirname, "dist"),
+      path: path.resolve(__dirname, "docs"),
       publicPath: "/"
     }
   };

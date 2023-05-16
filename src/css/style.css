@@ -253,6 +253,9 @@ pre.fs-20 {
 pre.fs-18 {
   font-size: 18px;
 }
+pre.fs-14 {
+  font-size: 14px;
+}
 
 .impress-enabled .enable-events {
   pointer-events: all;
