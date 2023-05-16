@@ -463,6 +463,7 @@ a.no-toc.present {
   /* https://css-tricks.com/making-css-animations-feel-natural/ */
   z-index: 0;
   position: relative;
+  border-radius: 50%;
   animation-duration: 8s;
   animation-iteration-count: infinite;
   animation-name: bounce-1;
