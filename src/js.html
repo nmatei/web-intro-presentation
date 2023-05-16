@@ -442,10 +442,7 @@ npm i -g rimraf
       <!-- ===================================================================  -->
       <div id="fundamentals" class="step slide toc-el" data-x="-2000" data-y="500">
         <h1>String vs String Templates</h1>
-
-        <br />
-        <!-- TODO improve tab formatting in string template -->
-        <pre data-type="js">
+        <pre data-type="js" data-disable-beautify="true" class="fs-18">
 var message = 'single quote';
 let name = "Double Quote";
 const helloText = "Don't you like it?";
@@ -455,14 +452,25 @@ const firstName = "Nicolae";
 const lastName = "Matei";
 const fullName = firstName + " " + lastName;
 
-// string template
-//  (easy concatenate, +code execution inside)
-const row = `&lt;tr>
-     &lt;td>${name}&lt;/td>
-     &lt;td>${helloText}&lt;/td>
-     &lt;td>${new Date().toLocaleString()}&lt;/td>
-  &lt;/tr>`;
-        </pre>
+// string template (easy concatenate, +code execution inside)
+const row = `
+  &lt;tr>
+    &lt;td>${name}&lt;/td>
+    &lt;td>${helloText}&lt;/td>
+    &lt;td>${new Date().toLocaleString()}&lt;/td>
+  &lt;/tr>`;</pre>
+
+        <div style="position: relative;">
+          <img src="images/seflie.jpg" width="60" alt="Nicolae" class="move-to-faces"/>
+          <img src="images/empty-faces.png" height="200" alt="empty-faces" class="empty-faces"/>
+        </div>
+
+        <p class="footnote">
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals"
+            target="_blank"
+          >Template literals</a>
+        </p>
       </div>
 
       <!-- ===================================================================  -->

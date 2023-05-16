@@ -455,3 +455,34 @@ a.no-toc.present {
     opacity: 1;
   }
 }
+
+.empty-faces {
+  position: relative;
+}
+.move-to-faces {
+  /* https://css-tricks.com/making-css-animations-feel-natural/ */
+  z-index: 0;
+  position: relative;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-name: bounce-1;
+  animation-timing-function: linear;
+}
+@keyframes bounce-1 {
+  0%   { transform: translate(70px, -75px) }
+  20%   { transform: translate(75px, -70px); }
+
+  25%   { transform: translate(150px, -50px); }
+  45%   { transform: translate(155px, -50px); }
+
+  50%   { transform: translate(302px, -60px); }
+  70%   { transform: translate(300px, -60px); }
+
+  75%   { transform: translate(234px, -130px); }
+  80%   { transform: translate(233px, -120px) rotate(-10deg); }
+  85%   { transform: translate(234px, -130px); }
+  90%   { transform: translate(235px, -120px) rotate(-10deg); }
+  95%   { transform: translate(234px, -125px); }
+
+  100%   { transform: translate(70px, -75px); }
+}

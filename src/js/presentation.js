@@ -100,8 +100,9 @@ async function initAllEditors(runImpress) {
 function initEditors(codeEls) {
   return new Promise(resolve => {
     codeEls.forEach(el => {
-      const type = el.getAttribute("data-type") || "html";
-      const highlight = el.getAttribute("data-highlight") || "";
+      const type = el.dataset.type || "html";
+      const highlight = el.dataset.highlight || "";
+      const disableBeautify = el.dataset.disableBeautify === 'true';
       const editor = ace.edit(el);
       const beautify = ace.require("ace/ext/beautify");
       const session = editor.getSession();
@@ -115,7 +116,7 @@ function initEditors(codeEls) {
         highlightLines.forEach(line => session.highlightLines(line - 1));
       }
 
-      if (type === "jsx") {
+      if (type === "jsx" || disableBeautify) {
         // console.warn('not used beautify for jsx yet', editor);
         // TODO at least remove "left" intend
       } else {
