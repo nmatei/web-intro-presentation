@@ -193,7 +193,6 @@ touch .gitignore
 # exclude some files from git
 echo /.vscode >> .gitignore
 echo /node_modules >> .gitignore
-echo /dist >> .gitignore
 
 # checking files to be committed
 git status
@@ -323,19 +322,20 @@ module.exports = env => {
       <div id="webpack-scripts" class="step slide" data-x="5500" data-y="-400" data-scale="0.5">
         <h2>Configure npm scripts</h2>
         <p>Add following scripts inside <strong>package.json</strong></p>
-        <pre data-type="js" class="fs-20">
+        <pre data-type="js" class="fs-18">
 {
   "scripts": {
     "clear": "npm run clean && rimraf node_modules",
-    "clean": "rimraf dist",
+    "clean": "rimraf docs",
     "build": "webpack --mode production",
-    "start": "webpack serve --open"
+    "start": "webpack serve --open",
+    "demo": "set PORT=8080 && serve docs"
   }
 }
         </pre>
 
         <h2>Running scripts using npm or yarn</h2>
-        <pre data-type="shell" class="fs-20">
+        <pre data-type="shell" class="fs-18">
 npm start
 npm run build
 
@@ -344,7 +344,7 @@ yarn build
         </pre>
 
         <h2>Global packages</h2>
-        <pre data-type="shell" class="fs-20">
+        <pre data-type="shell" class="fs-18">
 npm install --global serve
 npm i -g rimraf
         </pre>
@@ -366,13 +366,13 @@ npm i -g rimraf
         <h1><i class="fa fa-folder-open-o"></i> Folder Structure</h1>
         <div class="folder">
           <ol class="fa-ul git-add">
-            <li class="gitignore">
-              <span class="fa-li"><i class="fa fa-folder-open-o"></i></span>dist
+            <li>
+              <span class="fa-li"><i class="fa fa-folder-open-o"></i></span>docs
               <ol class="fa-ul">
-                <li class="gitignore">
+                <li>
                   <span class="fa-li"><i class="fa fa-html5"></i></span>index.html
                 </li>
-                <li class="gitignore">
+                <li>
                   <span class="fa-li"><i class="fa fa-file-code-o"></i></span>main.js
                 </li>
               </ol>
@@ -415,7 +415,7 @@ npm i -g rimraf
         <h2><i class="fa fa-html5"></i> src/index.html</h2>
         <br />
         <p class="practice">
-          As webpack now adds <strong>dist/main.js</strong> script to dist/index.html, we have to remove our initial
+          As webpack now adds <strong>docs/main.js</strong> script to docs/index.html, we have to remove our initial
           script to not have it executed 2 times
         </p>
         <br />
@@ -424,7 +424,7 @@ npm i -g rimraf
 &lt;html lang="en">
   &lt;head>
     &lt;!-- ... -->
-    &lt;!-- dist/index.html has -->
+    &lt;!-- docs/index.html has -->
     &lt;script defer src="/main.js">&lt;/script>
 
     &lt;!-- remove &lt;link rel="stylesheet" href="style.css" /> -->
