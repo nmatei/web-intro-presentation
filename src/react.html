@@ -138,15 +138,17 @@ npm start
       <div id="env-config" class="step slide" data-x="-500" data-y="-900" data-scale="0.5">
         <h2><i class="fa fa-file-code-o"></i> .env</h2>
         <br />
-        <p>Change app port from (default is 3000)</p>
+        <p>Change defaults</p>
         <pre data-type="shell" class="fs-22">
 # create .env file
 touch .env
 
 echo "PORT=8080" >> .env
+echo "BUILD_PATH='./docs'" >> .env
 # npm start
         </pre>
 
+        <br />
         <br />
         <p>
           * If this config fails: check
@@ -159,7 +161,7 @@ echo "PORT=8080" >> .env
           <br />
           Or just change in <strong>package.json</strong> start script with:
         </p>
-        <pre data-type="js" class="fs-22">
+        <pre data-type="js" class="fs-18">
 {
   "start": "set PORT=8080 && react-scripts start"
 }
