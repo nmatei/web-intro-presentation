@@ -115,7 +115,7 @@ npm i -g rimraf
     &lt;!-- &lt;script src="index.js">&lt;/script> -->
   &lt;/body>
 &lt;/html>
-        </pre></div><div id="string-templates" class="step slide toc-el" data-x="-2000" data-y="500"><h1>String vs String Templates</h1><pre data-type="js" data-disable-beautify="true" class="fs-18">
+        </pre></div><div id="string-templates" class="step slide toc-el" data-x="-2000" data-y="500"><h1><i class="fa fa-puzzle-piece" aria-hidden="true"></i> String vs String Templates</h1><pre data-type="js" data-disable-beautify="true" class="fs-18">
 var message = 'single quote';
 let name = "Double Quote";
 const helloText = "Don't you like it?";
@@ -131,7 +131,7 @@ const row = `
     &lt;td>${name}&lt;/td>
     &lt;td>${helloText}&lt;/td>
     &lt;td>${new Date().toLocaleString()}&lt;/td>
-  &lt;/tr>`;</pre><div style="position: relative;"><img src="images/seflie.jpg" width="60" alt="Nicolae" class="move-to-faces"/> <img src="images/empty-faces.png" height="200" alt="empty-faces" class="empty-faces"/></div><p class="footnote"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals" target="_blank">Template literals</a></p></div><div id="ternary-operator" class="step slide toc-el" data-x="-500" data-y="500"><h1>Conditional (ternary) operator</h1><br/><pre data-type="js" class="fs-20">
+  &lt;/tr>`;</pre><div style="position: relative;"><img src="images/seflie.jpg" width="60" alt="Nicolae" class="move-to-faces"/> <img src="images/empty-faces.png" height="200" alt="empty-faces" class="empty-faces"/></div><p class="footnote"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals" target="_blank">Template literals</a></p></div><div id="ternary-operator" class="step slide toc-el" data-x="-500" data-y="500"><h1><i class="fa fa-code-fork" aria-hidden="true"></i> Conditional (ternary) operator</h1><br/><pre data-type="js" class="fs-20">
 const condition = true; // false
 condition ? exprIfTrue : exprIfFalse;
 
@@ -151,7 +151,7 @@ const userName = hasLastName ? `${firstName} ${lastName}` : firstName;
 !!"yes";
 !"no";
 // plus other combinations
-        </pre><br/><h2 class="practice">Test yourself => <a href="https://nmatei.github.io/simple-quiz-app/?domain=js&level=5" target="_blank">JS Quiz</a></h2></div><div id="array-helpers" class="step slide toc-el" data-x="1000" data-y="500"><h1>Array Helpers</h1><br/><pre data-type="js" class="fs-20">
+        </pre><br/><h2 class="practice">Test yourself => <a href="https://nmatei.github.io/simple-quiz-app/?domain=js&level=5" target="_blank">JS Quiz</a></h2></div><div id="array-helpers" class="step slide toc-el" data-x="1000" data-y="500"><h1><i class="fa fa-database" aria-hidden="true"></i> Array Helpers</h1><br/><pre data-type="js" class="fs-20">
 const teams = ['a', 'b', 'c'];
 
 // for loop
@@ -164,13 +164,14 @@ teams.forEach(function(team, i) {
     console.log(i, team);
 });
 
-// map, filter, find, every, some, flatMap
+['🌲', '🌴', '🌳'].map(() => '📄')
 
+// map, filter, find, every, some
 // reduce
 
-[[1, 2], [3, 4]].flatMap(t => t);
-//[{m: [1, 2]}, {m: [3, 4]}].flatMap(t => t.m);
-        </pre><div class="line-space practice">Try them all!</div></div><div id="pure-functions" class="step slide toc-el" data-x="2500" data-y="500"><h1>Pure functions</h1><ol class="fa-ul git-add"><li><span class="fa-li"><i class="fa fa-check-square-o"></i></span> Same inputs <strong>always</strong> return <strong>same outputs</strong></li><li><span class="fa-li"><i class="fa fa-check-square-o"></i></span> No <strong>side-effects</strong></li><li><span class="fa-li"><i class="fa fa-check-square-o"></i></span> Easy to <strong>test</strong></li></ol><br/><pre data-type="js" class="fs-22">
+// [[1, 2], [3, 4]].flatMap(t => t);
+// [{m: [1, 2]}, {m: [3, 4]}].flatMap(t => t.m);
+        </pre><div class="line-space practice">Try them all!</div></div><div id="pure-functions" class="step slide toc-el" data-x="2500" data-y="500"><h1><i class="fa fa-check-square-o" aria-hidden="true"></i> Pure functions</h1><ol class="fa-ul git-add"><li><span class="fa-li"><i class="fa fa-check-square-o"></i></span> Same inputs <strong>always</strong> return <strong>same outputs</strong></li><li><span class="fa-li"><i class="fa fa-check-square-o"></i></span> No <strong>side-effects</strong></li><li><span class="fa-li"><i class="fa fa-check-square-o"></i></span> Easy to <strong>test</strong></li></ol><br/><pre data-type="js" class="fs-22">
 function getInfo(name) {
   var msg = `Hello ${name}, welcome at FastTrackIT.`;
   return msg;
@@ -238,7 +239,7 @@ const grades = [6, 7, 10, 8, 9];
 const [a, b, ...rest] = grades;
 // a = 6; b = 7;
 // rest = [10, 8, 9];
-        </pre></div><div id="fetch" class="step slide toc-el" data-x="4000" data-y="500"><h1>Fetch and Promises</h1><p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" target="_blank">Fetch</a> responses ( GET/POST/PUT/DELETE ) are <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank">Promises</a></p><br/><pre data-type="js" class="fs-20">
+        </pre></div><div id="fetch" class="step slide toc-el" data-x="4000" data-y="500"><h1><i class="fa fa-spinner fa-spin" aria-hidden="true"></i> Fetch and Promises</h1><p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" target="_blank">Fetch</a> responses ( GET/POST/PUT/DELETE ) are <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank">Promises</a></p><br/><pre data-type="js" class="fs-20">
 // step by step request using fetch
 const request = fetch("http://localhost:3000/teams-json", {
   method: "GET",
@@ -296,7 +297,7 @@ function sleep(ms) {
   await sleep(2000);
   console.info("this code is bloked by %o", "await sleep");
 })();
-        </pre></div><div id="import-export" class="step slide toc-el" data-x="5500" data-y="500"><h1>debounce (imports & exports)</h1><pre data-type="js" style="font-size: 18px">
+        </pre></div><div id="import-export" class="step slide toc-el" data-x="5500" data-y="500"><h1><i class="fa fa-clock-o" aria-hidden="true"></i> debounce (imports & exports)</h1><pre data-type="js" style="font-size: 18px">
 export function debounce(fn, delay) {
   var timer = null; // 2️⃣ Closures
   return function () {
@@ -309,7 +310,7 @@ export function debounce(fn, delay) {
     }, delay);
   };
 }
-        </pre><pre data-type="js" style="font-size: 18px">
+        </pre><h2>exports & imports</h2><pre data-type="js" style="font-size: 18px">
 import { debounce } from "./utilities";
 
 document.querySelector("#search").addEventListener(
