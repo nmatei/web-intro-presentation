@@ -280,6 +280,12 @@ pre.fs-14 {
   font-size: 0.6em;
   color: gray;
 }
+#toc a i.fa {
+  min-width: 30px;
+  text-align: center;
+  animation-duration: 6s;
+  color: #045ea5;
+}
 
 .navigation-actions {
   width: 65px;

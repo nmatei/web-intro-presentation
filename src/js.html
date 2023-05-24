@@ -441,7 +441,7 @@ npm i -g rimraf
 
       <!-- ===================================================================  -->
       <div id="string-templates" class="step slide toc-el" data-x="-2000" data-y="500">
-        <h1>String vs String Templates</h1>
+        <h1><i class="fa fa-puzzle-piece" aria-hidden="true"></i> String vs String Templates</h1>
         <pre data-type="js" data-disable-beautify="true" class="fs-18">
 var message = 'single quote';
 let name = "Double Quote";
@@ -475,7 +475,7 @@ const row = `
 
       <!-- ===================================================================  -->
       <div id="ternary-operator" class="step slide toc-el" data-x="-500" data-y="500">
-        <h1>Conditional (ternary) operator</h1>
+        <h1><i class="fa fa-code-fork" aria-hidden="true"></i> Conditional (ternary) operator</h1>
         <br />
         <pre data-type="js" class="fs-20">
 const condition = true; // false
@@ -527,7 +527,7 @@ const userName = hasLastName ? `${firstName} ${lastName}` : firstName;
 
       <!-- ===================================================================  -->
       <div id="array-helpers" class="step slide toc-el" data-x="1000" data-y="500">
-        <h1>Array Helpers</h1>
+        <h1><i class="fa fa-database" aria-hidden="true"></i> Array Helpers</h1>
         <br />
         <pre data-type="js" class="fs-20">
 const teams = ['a', 'b', 'c'];
@@ -542,12 +542,13 @@ teams.forEach(function(team, i) {
     console.log(i, team);
 });
 
-// map, filter, find, every, some, flatMap
+['🌲', '🌴', '🌳'].map(() => '📄')
 
+// map, filter, find, every, some
 // reduce
 
-[[1, 2], [3, 4]].flatMap(t => t);
-//[{m: [1, 2]}, {m: [3, 4]}].flatMap(t => t.m);
+// [[1, 2], [3, 4]].flatMap(t => t);
+// [{m: [1, 2]}, {m: [3, 4]}].flatMap(t => t.m);
         </pre>
 
         <div class="line-space practice">Try them all!</div>
@@ -555,7 +556,7 @@ teams.forEach(function(team, i) {
 
       <!-- ===================================================================  -->
       <div id="pure-functions" class="step slide toc-el" data-x="2500" data-y="500">
-        <h1>Pure functions</h1>
+        <h1><i class="fa fa-check-square-o" aria-hidden="true"></i> Pure functions</h1>
 
         <ol class="fa-ul git-add">
           <li>
@@ -718,7 +719,7 @@ const [a, b, ...rest] = grades;
 
       <!-- ===================================================================  -->
       <div id="fetch" class="step slide toc-el" data-x="4000" data-y="500">
-        <h1>Fetch and Promises</h1>
+        <h1><i class="fa fa-spinner fa-spin" aria-hidden="true"></i> Fetch and Promises</h1>
         <p>
           <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" target="_blank">Fetch</a>
           responses ( GET/POST/PUT/DELETE ) are
@@ -805,7 +806,7 @@ function sleep(ms) {
 
       <!-- ===================================================================  -->
       <div id="import-export" class="step slide toc-el" data-x="5500" data-y="500">
-        <h1>debounce (imports & exports)</h1>
+        <h1><i class="fa fa-clock-o" aria-hidden="true"></i> debounce (imports & exports)</h1>
         <pre data-type="js" style="font-size: 18px">
 export function debounce(fn, delay) {
   var timer = null; // 2️⃣ Closures
@@ -821,6 +822,7 @@ export function debounce(fn, delay) {
 }
         </pre>
 
+        <h2>exports & imports</h2>
         <pre data-type="js" style="font-size: 18px">
 import { debounce } from "./utilities";
 
