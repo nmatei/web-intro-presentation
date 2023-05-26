@@ -326,9 +326,10 @@ module.exports = env => {
         <pre data-type="js" class="fs-18">
 {
   "scripts": {
-    "clear": "npm run clean && rimraf node_modules",
     "clean": "rimraf docs",
-    "build": "npm run clean && webpack --mode production",
+    "clear": "npm run clean && rimraf node_modules",
+    "prebuild": "npm run clean",
+    "build": "webpack --mode production",
     "start": "webpack serve --open",
     "demo": "set PORT=8080 && serve docs"
   }
@@ -340,7 +341,6 @@ module.exports = env => {
 npm install --global serve
 npm i -g rimraf
         </pre>
-        <br />
 
         <h2><i class="fa fa-play-circle" aria-hidden="true"></i> Running scripts</h2>
         <pre data-type="shell" class="fs-18">
