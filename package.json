@@ -4,10 +4,10 @@
   "description": "Intro Presentation to Web Development for students that want to learn basics of HTML/CSS/JS",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "clear": "npm run clean && rimraf node_modules",
     "clean": "rimraf docs",
-    "build": "npm run clean && webpack --config webpack.prod.js --mode production && npm run copy-resources && git add docs/*",
+    "clear": "npm run clean && rimraf node_modules",
+    "prebuild": "npm run clean",
+    "build": "webpack --config webpack.prod.js --mode production && npm run copy-resources && git add docs/*",
     "deploy": "npm run build && git commit -m \"[build] new docs\" && git push",
     "copy-resources": "Xcopy /E /C /I \"src/images\" \"docs/images\" && Xcopy /E /C /I \"src/resources\" \"docs/resources\"",
     "start": "webpack serve --open --config webpack.dev.js",
