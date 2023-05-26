@@ -82,9 +82,10 @@ module.exports = env => {
 };</pre></div><div id="webpack-scripts" class="step slide" data-x="5500" data-y="-400" data-scale="0.5"><h2>Configure npm scripts</h2><p>Add following scripts inside <strong>package.json</strong></p><pre data-type="js" class="fs-18">
 {
   "scripts": {
-    "clear": "npm run clean && rimraf node_modules",
     "clean": "rimraf docs",
-    "build": "npm run clean && webpack --mode production",
+    "clear": "npm run clean && rimraf node_modules",
+    "prebuild": "npm run clean",
+    "build": "webpack --mode production",
     "start": "webpack serve --open",
     "demo": "set PORT=8080 && serve docs"
   }
@@ -92,7 +93,7 @@ module.exports = env => {
         </pre><h2><i class="fa fa-download" aria-hidden="true"></i> install Global packages</h2><pre data-type="shell" class="fs-18">
 npm install --global serve
 npm i -g rimraf
-        </pre><br/><h2><i class="fa fa-play-circle" aria-hidden="true"></i> Running scripts</h2><pre data-type="shell" class="fs-18">
+        </pre><h2><i class="fa fa-play-circle" aria-hidden="true"></i> Running scripts</h2><pre data-type="shell" class="fs-18">
 npm start
 npm run build
 npm run demo
