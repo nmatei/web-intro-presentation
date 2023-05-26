@@ -261,7 +261,7 @@ npm init -y
 npm install --save-dev webpack webpack-cli
 npm i -D webpack-dev-server
 npm i -D html-webpack-plugin
-npm i -D style-loader css-loader
+npm i -D html-loader style-loader css-loader
 
 # create webpack.config.js file
 touch webpack.config.js
@@ -282,7 +282,7 @@ touch webpack.config.js
       <div id="webpack-config" class="step slide no-logo" data-x="5500" data-y="-900" data-scale="0.5">
         <h2><i class="fa fa-file-code-o"></i> webpack.config.js</h2>
 
-        <pre data-type="js" class="fs-14">
+        <pre data-type="js" data-disable-beautify="true" class="fs-14">
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
@@ -302,12 +302,13 @@ module.exports = env => {
       })
     ],
     module: {
-      rules: [
-        {
-          test: /\.css$/i,
-          use: ["style-loader", "css-loader"]
-        }
-      ]
+      rules: [{
+        test: /\.html$/i,
+        loader: "html-loader"
+      }, {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"]
+      }]
     },
     output: {
       filename: "main.js",
@@ -315,8 +316,7 @@ module.exports = env => {
       publicPath: ""
     }
   };
-};
-        </pre>
+};</pre>
       </div>
 
       <!-- ===================================================================  -->
@@ -328,26 +328,25 @@ module.exports = env => {
   "scripts": {
     "clear": "npm run clean && rimraf node_modules",
     "clean": "rimraf docs",
-    "build": "webpack --mode production",
+    "build": "npm run clean && webpack --mode production",
     "start": "webpack serve --open",
     "demo": "set PORT=8080 && serve docs"
   }
 }
         </pre>
 
-        <h2>Running scripts using npm or yarn</h2>
-        <pre data-type="shell" class="fs-18">
-npm start
-npm run build
-
-yarn start
-yarn build
-        </pre>
-
-        <h2>Global packages</h2>
+        <h2><i class="fa fa-download" aria-hidden="true"></i> install Global packages</h2>
         <pre data-type="shell" class="fs-18">
 npm install --global serve
 npm i -g rimraf
+        </pre>
+        <br>
+
+        <h2><i class="fa fa-play-circle" aria-hidden="true"></i> Running scripts</h2>
+        <pre data-type="shell" class="fs-18">
+npm start
+npm run build
+npm run demo
         </pre>
 
         <p class="footnote">
