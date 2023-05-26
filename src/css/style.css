@@ -18,6 +18,10 @@ body.impress-not-supported {
   background-position: bottom 5px left 5px;
   background-repeat: no-repeat;
 }
+.slide pre {
+  /* TODO check all slides */
+  /*  letter-spacing: normal; */
+}
 .slide.no-logo {
   background-image: none;
 }
@@ -476,20 +480,86 @@ a.no-toc.present {
   animation-timing-function: linear;
 }
 @keyframes bounce-1 {
-  0%   { transform: translate(70px, -75px) }
-  20%   { transform: translate(75px, -70px); }
+  0% {
+    transform: translate(70px, -75px);
+  }
+  20% {
+    transform: translate(75px, -70px);
+  }
 
-  25%   { transform: translate(150px, -50px); }
-  45%   { transform: translate(155px, -50px); }
+  25% {
+    transform: translate(150px, -50px);
+  }
+  45% {
+    transform: translate(155px, -50px);
+  }
 
-  50%   { transform: translate(302px, -60px); }
-  70%   { transform: translate(300px, -60px); }
+  50% {
+    transform: translate(302px, -60px);
+  }
+  70% {
+    transform: translate(300px, -60px);
+  }
 
-  75%   { transform: translate(234px, -130px); }
-  80%   { transform: translate(233px, -120px) rotate(-10deg); }
-  85%   { transform: translate(234px, -130px); }
-  90%   { transform: translate(235px, -120px) rotate(-10deg); }
-  95%   { transform: translate(234px, -125px); }
+  75% {
+    transform: translate(234px, -130px);
+  }
+  80% {
+    transform: translate(233px, -120px) rotate(-10deg);
+  }
+  85% {
+    transform: translate(234px, -130px);
+  }
+  90% {
+    transform: translate(235px, -120px) rotate(-10deg);
+  }
+  95% {
+    transform: translate(234px, -125px);
+  }
 
-  100%   { transform: translate(70px, -75px); }
+  100% {
+    transform: translate(70px, -75px);
+  }
+}
+
+.loading-mask {
+  position: relative;
+}
+.loading-mask::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #00000040;
+  /* rgba(0, 0, 0, 0.25) */
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.loading-mask::after {
+  content: "💠";
+  text-align: center;
+  /* content: ""; */
+
+  position: absolute;
+  border-width: 3px;
+  border-style: solid;
+  border-color: transparent #0082df #ffff00 #ff2c0a;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  top: calc(50% - 12px);
+  left: calc(50% - 12px);
+  animation: 2s linear 0s normal none infinite running spin;
+  filter: drop-shadow(0 0 2 rgba(0, 0, 0, 0.33));
+  line-height: initial;
+  font-size: initial;
 }

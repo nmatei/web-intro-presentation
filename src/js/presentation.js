@@ -102,7 +102,7 @@ function initEditors(codeEls) {
     codeEls.forEach(el => {
       const type = el.dataset.type || "html";
       const highlight = el.dataset.highlight || "";
-      const disableBeautify = el.dataset.disableBeautify === 'true';
+      const disableBeautify = el.dataset.disableBeautify === "true";
       const editor = ace.edit(el);
       const beautify = ace.require("ace/ext/beautify");
       const session = editor.getSession();
