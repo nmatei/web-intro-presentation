@@ -21,7 +21,7 @@ touch .prettierrc
   "printWidth": 120,
   "arrowParens": "avoid"
 }
-        </pre><br><h2>VSCode: <i class="fa fa-cog"></i> Manage > <i class="fa fa-tasks" aria-hidden="true"></i> Settings</h2><ul style="font-size: 0.9em"><li>Search: "<strong>Default</strong> Formatter" -> Select: "<strong>Prettier</strong> - Code..."</li><li>Search: "Format On <strong>Save</strong>" -> Check it</li><li>Right Click - Format Document With... (configure...)</li></ul></div><div id="git-init" class="step slide toc-el" data-x="2500" data-y="-1500"><h1><i class="fa fa-git-square"></i> Initialize project to use GIT</h1><p>inside root folder run:</p><pre data-type="shell" style="font-size: 22px">
+        </pre><br/><h2>VSCode: <i class="fa fa-cog"></i> Manage > <i class="fa fa-tasks" aria-hidden="true"></i> Settings</h2><ul style="font-size: 0.9em"><li>Search: "<strong>Default</strong> Formatter" -> Select: "<strong>Prettier</strong> - Code..."</li><li>Search: "Format On <strong>Save</strong>" -> Check it</li><li>Right Click - Format Document With... (configure...)</li></ul></div><div id="git-init" class="step slide toc-el" data-x="2500" data-y="-1500"><h1><i class="fa fa-git-square"></i> Initialize project to use GIT</h1><p>inside root folder run:</p><pre data-type="shell" style="font-size: 22px">
 git init
 
 # create .gitignore file
@@ -41,11 +41,11 @@ npm init -y
 npm install --save-dev webpack webpack-cli
 npm i -D webpack-dev-server
 npm i -D html-webpack-plugin
-npm i -D style-loader css-loader
+npm i -D html-loader style-loader css-loader
 
 # create webpack.config.js file
 touch webpack.config.js
-        </pre><br/><p class="practice">Edit <strong>webpack.config.js</strong> and add content from next slide</p><p class="footnote"><a href="https://webpack.js.org/guides/development/#using-webpack-dev-server" target="_blank">webpack-dev-server</a>, <a href="https://webpack.js.org/guides/production/" target="_blank">webpack for production</a>, <a href="https://webpack.js.org/loaders/style-loader/" target="_blank">style-loader</a></p></div><div id="webpack-config" class="step slide no-logo" data-x="5500" data-y="-900" data-scale="0.5"><h2><i class="fa fa-file-code-o"></i> webpack.config.js</h2><pre data-type="js" class="fs-14">
+        </pre><br/><p class="practice">Edit <strong>webpack.config.js</strong> and add content from next slide</p><p class="footnote"><a href="https://webpack.js.org/guides/development/#using-webpack-dev-server" target="_blank">webpack-dev-server</a>, <a href="https://webpack.js.org/guides/production/" target="_blank">webpack for production</a>, <a href="https://webpack.js.org/loaders/style-loader/" target="_blank">style-loader</a></p></div><div id="webpack-config" class="step slide no-logo" data-x="5500" data-y="-900" data-scale="0.5"><h2><i class="fa fa-file-code-o"></i> webpack.config.js</h2><pre data-type="js" data-disable-beautify="true" class="fs-14">
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
@@ -65,12 +65,13 @@ module.exports = env => {
       })
     ],
     module: {
-      rules: [
-        {
-          test: /\.css$/i,
-          use: ["style-loader", "css-loader"]
-        }
-      ]
+      rules: [{
+        test: /\.html$/i,
+        loader: "html-loader"
+      }, {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"]
+      }]
     },
     output: {
       filename: "main.js",
@@ -78,26 +79,23 @@ module.exports = env => {
       publicPath: ""
     }
   };
-};
-        </pre></div><div id="webpack-scripts" class="step slide" data-x="5500" data-y="-400" data-scale="0.5"><h2>Configure npm scripts</h2><p>Add following scripts inside <strong>package.json</strong></p><pre data-type="js" class="fs-18">
+};</pre></div><div id="webpack-scripts" class="step slide" data-x="5500" data-y="-400" data-scale="0.5"><h2>Configure npm scripts</h2><p>Add following scripts inside <strong>package.json</strong></p><pre data-type="js" class="fs-18">
 {
   "scripts": {
     "clear": "npm run clean && rimraf node_modules",
     "clean": "rimraf docs",
-    "build": "webpack --mode production",
+    "build": "npm run clean && webpack --mode production",
     "start": "webpack serve --open",
     "demo": "set PORT=8080 && serve docs"
   }
 }
-        </pre><h2>Running scripts using npm or yarn</h2><pre data-type="shell" class="fs-18">
-npm start
-npm run build
-
-yarn start
-yarn build
-        </pre><h2>Global packages</h2><pre data-type="shell" class="fs-18">
+        </pre><h2><i class="fa fa-download" aria-hidden="true"></i> install Global packages</h2><pre data-type="shell" class="fs-18">
 npm install --global serve
 npm i -g rimraf
+        </pre><br/><h2><i class="fa fa-play-circle" aria-hidden="true"></i> Running scripts</h2><pre data-type="shell" class="fs-18">
+npm start
+npm run build
+npm run demo
         </pre><p class="footnote">Extra: <a href="https://medium.com/geekculture/set-up-webpack-5-for-basic-javascript-projects-8bded066d282" target="_blank">Set up Webpack 5 for Basic Javascript Projects</a><br/>Adding <a href="https://webpack.js.org/guides/typescript/" target="_blank">TypeScript</a> to webpack</p></div><div id="webpack-folder-structure" class="step slide toc-el" data-x="7000" data-y="-1500"><h1><i class="fa fa-folder-open-o"></i> Folder Structure</h1><div class="folder"><ol class="fa-ul git-add"><li><span class="fa-li"><i class="fa fa-folder-open-o"></i></span>docs<ol class="fa-ul"><li><span class="fa-li"><i class="fa fa-html5"></i></span>index.html</li><li><span class="fa-li"><i class="fa fa-file-code-o"></i></span>main.js</li></ol></li><li class="gitignore"><span class="fa-li"><i class="fa fa-folder"></i></span>node_modules</li><li><span class="fa-li"><i class="fa fa-folder-open-o"></i></span>src<ol class="fa-ul"><li><span class="fa-li"><i class="fa fa-html5"></i></span>index.html</li><li><span class="fa-li"><i class="fa fa-file-code-o"></i></span>index.js</li><li><span class="fa-li"><i class="fa fa-css3"></i></span>style.css</li></ol></li><li><span class="fa-li"><i class="fa fa-code-fork"></i></span>.gitignore</li><li><span class="fa-li"><i class="fa fa-file-o"></i></span>.prettierrc</li><li><span class="fa-li"><i class="fa fa-file-o"></i></span>package.json</li><li><span class="fa-li"><i class="fa fa-file-code-o"></i></span>webpack.config.js</li></ol></div></div><div id="remove-script-from-html" class="step slide no-logo" data-x="7000" data-y="-900" data-scale="0.5"><h2><i class="fa fa-html5"></i> src/index.html</h2><br/><p class="practice">As webpack now adds <strong>docs/main.js</strong> script to docs/index.html, we have to remove our initial script to not have it executed 2 times</p><br/><pre data-type="html" class="fs-18">
 &lt;!doctype html>
 &lt;html lang="en">
@@ -117,7 +115,7 @@ npm i -g rimraf
 &lt;/html>
         </pre></div><div id="string-templates" class="step slide toc-el" data-x="-2000" data-y="500"><h1><i class="fa fa-puzzle-piece" aria-hidden="true"></i> String vs String Templates</h1><pre data-type="js" data-disable-beautify="true" class="fs-18">
 var message = 'single quote';
-let name = "Double Quote";
+let userName = "Double Quote";
 const helloText = "Don't you like it?";
 const replay = 'I like "Bible", is the best Book';
 
@@ -125,19 +123,23 @@ const firstName = "Nicolae";
 const lastName = "Matei";
 const fullName = firstName + " " + lastName;
 
-// string template (easy concatenate, +code execution inside)
+// string template (easy concatenate, +code execution inside ${ } )
 const row = `
   &lt;tr>
-    &lt;td>${name}&lt;/td>
+    &lt;td>${userName}&lt;/td>
     &lt;td>${helloText}&lt;/td>
     &lt;td>${new Date().toLocaleString()}&lt;/td>
-  &lt;/tr>`;</pre><div style="position: relative;"><img src="images/seflie.jpg" width="60" alt="Nicolae" class="move-to-faces"/> <img src="images/empty-faces.png" height="200" alt="empty-faces" class="empty-faces"/></div><p class="footnote"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals" target="_blank">Template literals</a></p></div><div id="ternary-operator" class="step slide toc-el" data-x="-500" data-y="500"><h1><i class="fa fa-code-fork" aria-hidden="true"></i> Conditional (ternary) operator</h1><br/><pre data-type="js" class="fs-20">
+  &lt;/tr>`;</pre><div style="position: relative"><img src="images/seflie.jpg" width="60" alt="Nicolae" class="move-to-faces"/> <img src="images/empty-faces.png" height="200" alt="empty-faces" class="empty-faces"/></div><p class="footnote"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals" target="_blank">Template literals</a></p></div><div id="ternary-operator" class="step slide toc-el" data-x="-500" data-y="500"><h1><i class="fa fa-code-fork" aria-hidden="true"></i> Conditional (ternary) operator</h1><br/><pre data-type="js" class="fs-20">
 const condition = true; // false
 condition ? exprIfTrue : exprIfFalse;
 
 //const hasLastName = ...?
 const userName = hasLastName ? `${firstName} ${lastName}` : firstName;
-        </pre><br/><p class="practice">- What values can we use for <strong>hasLastName</strong>, to return <strong>full user name</strong>?</p><p class="footnote"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator" target="_blank">read more</a></p></div><div id="true-vs-false" class="step slide" data-x="-500" data-y="1100" data-scale="0.5"><h2><a>true</a> vs <a>false</a></h2><br/><p class="line-space practice">Practice in <strong>Console</strong> all this cases:</p><pre data-type="js">
+
+// try
+true ? console.info("true") : console.info("false");
+false ? console.info("true") : console.info("false");
+        </pre><br/><p class="practice">What values can we use for <strong>hasLastName</strong>,<br/>to return <strong>full user name</strong>?</p><p class="footnote"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator" target="_blank">Conditional Operator</a></p></div><div id="true-vs-false" class="step slide" data-x="-500" data-y="1100" data-scale="0.5"><h2><a>true</a> vs <a>false</a></h2><br/><p class="line-space practice">Practice in <strong>Console</strong> all this cases:</p><pre data-type="js">
 !!false;
 !0;
 !true;
@@ -187,7 +189,7 @@ Math.max(...grades); // max works with multi parameters
 Math.max.call(this, ...grades);
 Math.max.apply(this, grades);
 
-// create new array and don't mutate old one
+// create new array (don't mutate old one)
 const newGrades = [...grades, 10];
         </pre><br/><h2>Object literals</h2><pre data-type="js" style="font-size: 18px">
 const person = {
@@ -197,9 +199,9 @@ const person = {
 };
 const anonymous = {
   ...person,
-  lastName: '😎'
+  lastName: "😎 "
 }
-        </pre></div><div id="destructuring" class="step slide" data-x="2540" data-y="1180" data-scale="0.5"><h2>Destructuring assignment</h2><pre data-type="js" class="fs-20">
+        </pre></div><div id="destructuring" class="step slide" data-x="2540" data-y="1180" data-scale="0.5"><h2>Destructuring assignment</h2><pre data-type="js" class="fs-20" data-disable-beautify="true">
 const person = {
   firstName: 'Nicolae',
   lastName: 'Matei',
@@ -319,7 +321,7 @@ document.querySelector("#search").addEventListener(
     console.info("input changed", e.target.value);
   }, 400)
 );
-        </pre><p class="footnote">👆 <strong>vs</strong> lodash <a href="https://github.com/lodash/lodash/blob/master/debounce.js" target="_blank">debounce</a> { <a href="https://www.w3schools.com/js/js_callback.asp" target="_blank">callback</a>, <a href="https://www.w3schools.com/js/js_function_closures.asp" target="_blank">closures</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this" target="_blank">this</a> }</p></div><div id="loading-mask" class="step slide" data-x="5500" data-y="1100" data-scale="0.5"><h2>CSS Loading Mask</h2><div class="cards"><div><pre data-type="css" style="font-size: 16px">
+        </pre><p class="footnote">👆 <strong>vs</strong> lodash <a href="https://github.com/lodash/lodash/blob/master/debounce.js" target="_blank">debounce</a> { <a href="https://www.w3schools.com/js/js_callback.asp" target="_blank">callback</a>, <a href="https://www.w3schools.com/js/js_function_closures.asp" target="_blank">closures</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this" target="_blank">this</a> }</p></div><div id="loading-mask" class="step slide toc-el" data-x="5500" data-y="1100" data-scale="0.5"><h1><i class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i> CSS Loading Mask</h1><div class="cards" style="margin: 0 -40px; gap: 4px"><div><pre data-type="css" style="font-size: 16px">
 .loading-mask {
   position: relative;
 }
@@ -341,7 +343,7 @@ document.querySelector("#search").addEventListener(
     transform: rotate(359deg);
   }
 }
-            </pre></div><div style="flex: 1.3"><pre data-type="css" style="font-size: 16px">
+            </pre><div class="loading-mask" style="padding: 30px"><h2>Result</h2><div>...</div></div></div><div style="flex: 1.6"><pre data-type="css" style="font-size: 16px">
 .loading-mask::after {
   content: "💠";
   text-align: center;
@@ -358,13 +360,15 @@ document.querySelector("#search").addEventListener(
   left: calc(50% - 12px);
   animation: 2s linear 0s normal none infinite running spin;
   filter: drop-shadow(0 0 2 rgba(0, 0, 0, 0.33));
+  line-height: initial;
+  font-size: initial;
 }
-            </pre></div></div><h3>JS Code</h3><pre data-type="js" style="font-size: 16px">
+            </pre><h3><i class="fa fa-file-code-o"></i> JS Code</h3><pre data-type="js" style="font-size: 16px">
 var form = document.getElementById("editForm");
 form.classList.add("loading-mask");
 // after
 form.classList.remove("loading-mask");
-        </pre><p class="footnote">Lets use this example to create <a href="https://topaxi.codes/css-only-loading-mask/" target="_blank">CSS Only Loading Mask</a></p></div><div id="promise-all" class="step slide" data-x="5500" data-y="1600" data-scale="0.5"><h2>Promise.all & Promise.allSettled</h2><br/><p>Let's implement <strong>remove all selected</strong> items from list:</p><br/><ol class="fa-ul"><li><span class="fa-li"><i class="fa fa-check-square-o"></i></span> Add <strong>checkboxes</strong> for each rows in table</li><li><span class="fa-li"><i class="fa fa-check-square-o"></i></span> Add <strong>Remove Selected</strong> button on top</li><li><span class="fa-li"><i class="fa fa-square-o"></i></span> When press "Remove Selected" - remove all items</li><li><span class="fa-li"><i class="fa fa-square-o"></i></span> While remove is in progress add <strong>loading mask</strong></li><li><span class="fa-li"><i class="fa fa-square-o"></i></span> After all remove requests are done hide loading mask</li></ol><pre data-type="js" class="fs-20">
+        </pre></div></div><p class="footnote">Lets use this example to create <a href="https://topaxi.codes/css-only-loading-mask/" target="_blank">CSS Only Loading Mask</a></p></div><div id="promise-all" class="step slide" data-x="5500" data-y="1600" data-scale="0.5"><h2>Promise.all & Promise.allSettled</h2><br/><p>Let's implement <strong>remove all selected</strong> items from list:</p><br/><ol class="fa-ul"><li><span class="fa-li"><i class="fa fa-check-square-o"></i></span> Add <strong>checkboxes</strong> for each rows in table</li><li><span class="fa-li"><i class="fa fa-check-square-o"></i></span> Add <strong>Remove Selected</strong> button on top</li><li><span class="fa-li"><i class="fa fa-square-o"></i></span> When press "Remove Selected" - remove all items</li><li><span class="fa-li"><i class="fa fa-square-o"></i></span> While remove is in progress add <strong>loading mask</strong></li><li><span class="fa-li"><i class="fa fa-square-o"></i></span> After all remove requests are done hide loading mask</li></ol><br/><pre data-type="js" class="fs-20">
 // hints:
 document.querySelectorAll("input[type=checkbox]:checked")
         </pre><p class="footnote"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all" target="_blank">Promise.all</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled" target="_blank">Promise.allSettled</a></p></div></div><div class="hint"><p>Use a spacebar or arrow keys to navigate</p></div><script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/ace.js" integrity="sha512-OMjy8oWtPbx9rJmoprdaQdS2rRovgTetHjiBf7RL7LvRSouoMLks5aIcgqHb6vGEAduuPdBTDCoztxLR+nv45g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/ext-beautify.min.js" integrity="sha512-sIVPU3/0VPG2jJdl6NTqe8QF9vTE3Y/LAFiH2YPj8iCz5fdWkhOYA26QR6nZVjI3OWCMtbH/BX8YwZddZi8mhg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-javascript.min.js" integrity="sha512-37ta5K4KVYs+MEmIg2xnZxJrdiQmBSKt+JInvyPrq9uz7aF67lMJT/t91EYoYj520jEcGlih41kCce7BRTmE3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-html.min.js" integrity="sha512-vSQkVhmiIt31RHmh8b65o0ap3yoL08VJ6MeuiCGo+92JDdSSWAEWoWELEf3WBk4e2tz/0CvnTe87Y2rFrNjcbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-css.min.js" integrity="sha512-9kFCBhC+SjlU9Mk4n65VZ3yID5cdcql9y/MrrRsDLyD2Dce+diCd+NITdkjHVBaLK6USc1YCZ5cXVPMC8CdJBA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.13/mode-sh.min.js" integrity="sha512-DCGTxVcs3p6DPSs/NfnxuKE1ej/9KfCdFDfy1qhyriBteSxKkrMja1A0Q+pN2tuvUekTZun1RU2LRM1qybC/VQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script></body></html>
