@@ -1,35 +1,40 @@
 /* ==== page ==== */
 
 #lego-intro {
-    background-image: url("../images/lego-pile-1081687477.jpg");
-    background-position: bottom center;
-    background-repeat: no-repeat;
+  background-image: url("../images/lego-pieces-unsorted.jpg");
+  background-position: bottom center;
+  background-repeat: no-repeat;
+}
+
+#lego-arranged .img-bg {
+  background: url("../images/lego-examples.jpg") no-repeat;
+  height: 570px;
 }
 
 #title {
-    padding: 40px 60px;
+  padding: 40px 60px;
 }
 
 /* ==== page ==== */
 
 #top-menu-bar {
-    background-color: #334455;
-    color: #ffffff;
-    text-align: center;
+  background-color: #334455;
+  color: #ffffff;
+  text-align: center;
 }
 #top-menu-bar li {
-    display: inline;
-    margin: 0;
-    padding: 0;
+  display: inline;
+  margin: 0;
+  padding: 0;
 }
 #top-menu-bar a {
-    text-decoration: none;
-    background: none;
-    padding: 0 15px 0 15px;
+  text-decoration: none;
+  background: none;
+  padding: 0 15px 0 15px;
 }
 #top-menu-bar a:hover {
-    color: #334455;
-    background: #ffffff;
+  color: #334455;
+  background: #ffffff;
 }
 
 /* ==== page ==== */
@@ -39,110 +44,110 @@
 #flexbox-css-layout header,
 #flexbox-css-layout footer,
 #flexbox-css-layout .id-content {
-    padding: 4px;
-    margin: 2px;
-    border: 5px solid #2196F3;
-    background-color: #d3eafd;
+  padding: 4px;
+  margin: 2px;
+  border: 5px solid #2196f3;
+  background-color: #d3eafd;
 }
 #flexbox-css-borders .id-content > div,
 #flexbox-css-borders .id-side-menu > section,
 #flexbox-css-layout .id-content > div,
 #flexbox-css-layout .id-side-menu > section {
-    padding: 4px;
-    margin: 2px;
-    border: 2px solid red;
+  padding: 4px;
+  margin: 2px;
+  border: 2px solid red;
 }
 #flexbox-css-borders .id-side-menu > section,
 #flexbox-css-layout .id-side-menu > section {
-    border: 2px solid green;
+  border: 2px solid green;
 }
 
 /* ==== page ==== */
 #flexbox-css-layout.body {
-    margin: 0;
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
+  margin: 0;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 #flexbox-css-layout.body > section {
-    flex: 1;
+  flex: 1;
 }
 #flexbox-css-layout .id-content {
-    flex: 4;
-    display: flex;
-    flex-direction: row;
+  flex: 4;
+  display: flex;
+  flex-direction: row;
 }
 #flexbox-css-layout .id-side-menu {
-    flex: 1;
+  flex: 1;
 }
 #flexbox-css-layout .id-main {
-    flex: 2;
+  flex: 2;
 }
 #flexbox-css-layout footer {
-    min-height: 24px;
+  min-height: 24px;
 }
 /* ==== page ==== */
 #grid-css-layout .body {
-    margin: 0;
-    min-height: 100%;
+  margin: 0;
+  min-height: 100%;
 }
 #grid-css-layout header {
-    grid-area: header;
+  grid-area: header;
 }
 #grid-css-layout .item2 {
-    grid-area: menu1;
+  grid-area: menu1;
 }
 #grid-css-layout .item3 {
-    grid-area: menu2;
+  grid-area: menu2;
 }
 #grid-css-layout .item4 {
-    grid-area: main;
+  grid-area: main;
 }
 #grid-css-layout footer {
-    grid-area: footer;
+  grid-area: footer;
 }
 #grid-css-layout .grid-container {
-    min-height: 100%;
-    display: grid;
-    grid-template-areas:
-    'header header header'
-    'menu1  main   main'
-    'menu2  main   main'
-    'footer footer footer';
-    grid-gap: 5px;
-    background-color: #2196F3;
+  min-height: 100%;
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "menu1  main   main"
+    "menu2  main   main"
+    "footer footer footer";
+  grid-gap: 5px;
+  background-color: #2196f3;
 
-    grid-template-rows: auto auto 1fr auto;
-    --height: calc(100vh);
+  grid-template-rows: auto auto 1fr auto;
+  --height: calc(100vh);
 }
 #grid-css-layout .grid-container > * {
-    background-color: #d3eafd;
-    text-align: center;
-    padding: 5px;
+  background-color: #d3eafd;
+  text-align: center;
+  padding: 5px;
 }
 /* ==== page ==== */
 
 #grid-css-cards .cards-wrap {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-gap: 5px;
-    background-color: #2196F3;
-    padding: 5px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 5px;
+  background-color: #2196f3;
+  padding: 5px;
 }
 #grid-css-cards .cards-wrap > div {
-    background-color: rgba(255, 255, 255, 0.8);
-    text-align: center;
-    padding: 10px 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 10px 0;
 }
 @media (max-width: 1024px) {
-    #grid-css-cards .cards-wrap {
-        grid-template-columns: auto auto;
-    }
+  #grid-css-cards .cards-wrap {
+    grid-template-columns: auto auto;
+  }
 }
 @media (max-width: 800px) {
-    #grid-css-cards .cards-wrap {
-        grid-template-columns: auto;
-    }
+  #grid-css-cards .cards-wrap {
+    grid-template-columns: auto;
+  }
 }
 
 /* ==== page ==== */

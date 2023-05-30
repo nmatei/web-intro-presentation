@@ -110,13 +110,13 @@
       <!-- ===================================================================  -->
       <div id="lego-intro" class="step slide no-pagination no-toc" data-x="0" data-y="-1500">
         <h1>Have you played with <strong>LEGO</strong>?</h1>
-        <div style="background: url(images/lego-wallpaper-small.jpg); width: 640px; height: 400px"></div>
+        <img alt="lego-wallpaper" src="images/lego-wallpaper-small.jpg" style="width: 640px; height: 400px" />
       </div>
 
       <!-- ===================================================================  -->
       <div id="lego-arranged" class="step slide no-pagination no-toc" data-x="1000" data-y="-2000">
         <p>What do we need to make them look like this?</p>
-        <div style="background: url(images/lego-examples.jpg) no-repeat; height: 570px">
+        <div class="img-bg">
           <ul class="delayed" style="animation-delay: 2s; padding: 30px 0 0 580px; font-size: 0.8em">
             <li><i class="fa fa-sort-alpha-desc" aria-hidden="true"></i> sort</li>
             <li><i class="fa fa-object-group" aria-hidden="true"></i> group</li>
@@ -198,7 +198,10 @@
 
       <!-- ===================================================================  -->
       <div id="no-more-theory" class="step toc-el" data-x="-8750" data-y="-3000" data-scale="0.5" data-rotate="180">
-        <h1><i class="fa fa-play-circle" aria-hidden="true"></i> Better let's create our HTML <span class="emoji">😉</span></h1>
+        <h1>
+          <i class="fa fa-play-circle" aria-hidden="true"></i> Better let's create our HTML
+          <span class="emoji">😉</span>
+        </h1>
         <p>and see <strong>how</strong> and <strong>why</strong> we need this theory!</p>
         <p>Then you will search for theory when you feel you need it, not when I tell you.</p>
       </div>
@@ -1206,9 +1209,7 @@ links[1].addEventListener("click", function(){
         <h1><i class="fa fa-git-square"></i> Git Version Control System</h1>
 
         <h2>1️⃣ <a href="https://git-scm.com/downloads" target="_blank">Download</a> and install git</h2>
-        <p>
-          ... follow wizard ...
-        </p>
+        <p>... follow wizard ...</p>
 
         <h2>2️⃣ Global configs</h2>
         <pre data-type="shell" class="fs-22">
@@ -1309,7 +1310,11 @@ const simplifiedReturn = () => 'returned';
             >ES5 vs ES6</a
           >
           &amp;
-          <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions" target="_blank">Arrow Functions</a>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions"
+            target="_blank"
+            >Arrow Functions</a
+          >
         </p>
       </div>
 

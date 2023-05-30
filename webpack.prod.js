@@ -20,7 +20,7 @@ module.exports = env => {
     },
     devtool: isProduction ? false : "inline-source-map",
     devServer: {
-      static: ["docs", "src"],
+      static: ["src"],
       watchFiles: ["src/**/*.*"]
     },
     optimization: {
@@ -73,12 +73,16 @@ module.exports = env => {
         filename: "wordpress.html"
       }),
       new MiniCssExtractPlugin({
-        filename: "css/[name].css",
-        chunkFilename: "css/[id].css"
+        filename: "[name].css",
+        chunkFilename: "[id].css"
       })
     ],
     module: {
       rules: [
+        {
+          test: /\.html$/i,
+          loader: "html-loader"
+        },
         {
           test: /\.js$/,
           exclude: /node_modules/,
@@ -97,31 +101,14 @@ module.exports = env => {
           ]
         },
         {
-          test: /\.(png|svg|jpg|jpeg|gif)$/i,
-          type: "asset/resource",
-          generator: {
-            outputPath: "css",
-            filename: "images/[name][ext][query]"
-          }
-        },
-        {
-          test: /\.(mp3|ogg|mp4)$/i,
-          use: [
-            {
-              loader: "file-loader",
-              options: {
-                name: "[name].[ext]",
-                outputPath: "resources/"
-              }
-            }
-          ]
+          test: /\.(png|svg|jpg|jpeg|gif|mp3|ogg|mp4)$/i,
+          type: "asset/resource"
         }
       ]
     },
     output: {
-      // filename: "docs/js/[name].js",
-      // path: path.resolve(__dirname, ""),
       filename: "js/[name].js",
+      assetModuleFilename: "images/[name].[hash:8][ext][query]",
       path: path.resolve(__dirname, "docs"),
       publicPath: "",
       environment: {

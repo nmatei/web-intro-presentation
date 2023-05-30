@@ -15,7 +15,7 @@ module.exports = env => {
     },
     devtool: isProduction ? false : "inline-source-map",
     devServer: {
-      static: ["docs", "src"],
+      static: ["src"],
       watchFiles: ["src/**/*.*"]
     },
     plugins: [
@@ -51,41 +51,24 @@ module.exports = env => {
     module: {
       rules: [
         {
+          test: /\.html$/i,
+          loader: "html-loader"
+        },
+        {
           test: /\.css$/,
           use: ["style-loader", "css-loader"]
         },
         {
-          test: /\.(png|svg|jpg|jpeg|gif)$/i,
+          test: /\.(png|svg|jpg|jpeg|gif|mp3|ogg|mp4)$/i,
           type: "asset/resource"
-          // use: [
-          //   {
-          //     loader: "file-loader",
-          //     options: {
-          //       name: "[name].[ext]",
-          //       outputPath: "images/"
-          //     }
-          //   }
-          // ]
-        },
-        {
-          test: /\.(mp3|ogg|mp4)$/i,
-          use: [
-            {
-              loader: "file-loader",
-              options: {
-                name: "[name].[ext]",
-                outputPath: "resources/"
-              }
-            }
-          ]
         }
       ]
     },
     output: {
-      //filename: "[name].[hash:8].js",
-      filename: "[name].js",
+      filename: "js/[name].js",
+      assetModuleFilename: "images/[name].[hash:8][ext][query]",
       path: path.resolve(__dirname, "docs"),
-      publicPath: "/"
+      publicPath: ""
     }
   };
 };
