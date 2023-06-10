@@ -3,11 +3,6 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
-// TODO find better solution for `yarn copy-resources`
-//   => copy images used in html
-
-// https://www.ivarprudnikov.com/static-website-multiple-html-pages-using-webpack-plus-github-example/
-
 module.exports = env => {
   const isProduction = !!env.WEBPACK_BUILD;
   return {

@@ -1,8 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-// https://www.ivarprudnikov.com/static-website-multiple-html-pages-using-webpack-plus-github-example/
-
 module.exports = env => {
   const isProduction = !!env.WEBPACK_BUILD;
   return {
