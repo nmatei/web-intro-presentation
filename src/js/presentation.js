@@ -41,7 +41,7 @@ function $(selector) {
   return document.querySelector(selector);
 }
 function $$(selector) {
-  return document.querySelectorAll(selector);
+  return Array.from(document.querySelectorAll(selector));
 }
 
 function getParam(name) {
@@ -88,7 +88,7 @@ const typeMatch = {
 };
 
 async function initAllEditors(runImpress) {
-  const codeEls = Array.from($$(".step pre"));
+  const codeEls = $$(".step pre");
   if (runImpress || codeEls.length <= 20) {
     const chunks = getChunks(codeEls, runImpress ? 30 : 10);
     await chunks.reduce(async (promise, elements) => {
@@ -147,7 +147,7 @@ function getSlideTitle(page) {
 }
 
 function setTocPageContent(pages) {
-  const slides = Array.from($$("div.step.toc-el"));
+  const slides = $$("div.step.toc-el");
   const pagesNr = getPageKeys(pages);
   const tocPages = slides.map(page => ({
     id: page.id,
@@ -228,7 +228,7 @@ function applyAnimations(pages, animation) {
   if (animation === "clock") {
     addOverviewPage(pages.length);
     // we just added a new page
-    pages = Array.from($$(".step"));
+    pages = $$(".step");
   }
   return pages;
 }
@@ -294,7 +294,7 @@ export async function start(slidesName) {
       page.remove(page);
     });
   }
-  let pages = Array.from($$(".step"));
+  let pages = $$(".step");
   if (isPrintView) {
     pages.forEach(page => {
       page.classList.add("slide");
