@@ -89,7 +89,7 @@
 /* ==== page ==== */
 #grid-css-layout .body {
   margin: 0;
-  min-height: 100%;
+  /*min-height: 100%;*/
 }
 #grid-css-layout header {
   grid-area: header;

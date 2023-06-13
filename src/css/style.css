@@ -136,6 +136,9 @@ hr {
   margin: 100px 0 50px 0;
 }
 
+.step a {
+  text-decoration-color: #2196f3;
+}
 .step.active {
   z-index: 1;
   border: 1px solid rgba(0, 0, 0, 0.3);
@@ -562,4 +565,8 @@ a.no-toc.present {
   filter: drop-shadow(0 0 2 rgba(0, 0, 0, 0.33));
   line-height: initial;
   font-size: initial;
+}
+
+.improve-render * {
+  text-shadow: none !important;
 }

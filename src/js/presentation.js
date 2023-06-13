@@ -277,6 +277,8 @@ function canRunImpress(pages) {
 
 // print actions
 export async function start(slidesName) {
+  const body = $("body");
+
   if ("ontouchstart" in document.documentElement) {
     $(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
   }
@@ -287,7 +289,17 @@ export async function start(slidesName) {
   }
 
   const isPrintView = animation === "print";
+  if (isPrintView) {
+    $$(".step.no-print").forEach(page => {
+      page.remove(page);
+    });
+  }
   let pages = Array.from($$(".step"));
+  if (isPrintView) {
+    pages.forEach(page => {
+      page.classList.add("slide");
+    });
+  }
   const runImpress = canRunImpress(pages);
 
   const initialId = window.location.hash.substring(2);
@@ -296,6 +308,13 @@ export async function start(slidesName) {
     if (storageId) {
       window.location.hash = "/" + storageId;
     }
+  }
+
+  if (!runImpress || isPrintView) {
+    body.classList.add("improve-render");
+  }
+  if (isPrintView) {
+    body.classList.add("print");
   }
 
   if (runImpress && !isPrintView) {
@@ -310,11 +329,7 @@ export async function start(slidesName) {
     impress().init();
   }
 
-  const body = $("body");
   body.classList.remove("body-loading");
-  if (isPrintView) {
-    body.classList.add("print");
-  }
 
   applyPageNumbers(pages);
 
@@ -330,8 +345,6 @@ export async function start(slidesName) {
   toc.className = "toc";
   toc.innerHTML = getPageLinks(pages);
   actions.appendChild(toc);
-
-  // runImpress && impress.supported
 
   document.body.appendChild(actions);
 
