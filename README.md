@@ -11,21 +11,18 @@ Web Intro [Presentation](https://nmatei.github.io/web-intro-presentation/)
 - left/right/up/down arrows, page down/up keys
 - click on sidebar pages
 
-### 💠 Transitions mode
+### 💠 Transitions modes
 
-- [x] [Animations](https://nmatei.github.io/web-intro-presentation/?anim=animations) (default)
+- [x] [Animations](https://nmatei.github.io/web-intro-presentation/?anim=animations)
 - [x] [Slide Up/Down](https://nmatei.github.io/web-intro-presentation/?anim=slideUp)
 - [x] [Slide Right/Left](https://nmatei.github.io/web-intro-presentation/?anim=slideLeft)
 - [x] [Fade](https://nmatei.github.io/web-intro-presentation/?anim=fade)
 - [x] [Clock](https://nmatei.github.io/web-intro-presentation/?anim=clock)
+- [x] [Print](https://nmatei.github.io/web-intro-presentation/?anim=print)
+  - [x] Then press `CTRL + P` and select **Save as PDF** & **Margins: None**
+    - (Make sure all slides are on each page)
 - [ ] Slide Headings (every h1 -> down, every h2 -> right)
 - [ ] Book Style (Simulate 2 pages and move left - right)
-
-### 💾 Save as PDF
-
-- [x] Change Transitions mode to [Up/Down](https://nmatei.github.io/web-intro-presentation/?anim=slideUp#/start) Slides
-- [x] **CTRL+P** and select **Save as PDF** (Margins: None)
-  - (Make sure all slides are on each page)
 
 ## ⌨ English Signs (chars)
 
@@ -63,6 +60,10 @@ npm start
 ### TODOs
 
 - [ ] When browser does not support impress (animations) (convert them all to "slide" style)
+- [ ] Test print preview
+  - [x] Chrome -> Dev tools -> "..." -> More tools -> Rendering -> Emulate CSS media type `print`
+- [ ] Check how to display video with gray bg on print version (not black)
+
 
 ## 👋 Thanks
 

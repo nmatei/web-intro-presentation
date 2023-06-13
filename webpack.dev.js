@@ -66,7 +66,10 @@ module.exports = env => {
       filename: "js/[name].js",
       assetModuleFilename: "images/[name].[hash:8][ext][query]",
       path: path.resolve(__dirname, "docs"),
-      publicPath: ""
+      publicPath: "",
+      environment: {
+        arrowFunction: false
+      }
     }
   };
 };

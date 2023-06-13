@@ -4,7 +4,9 @@
 
     /* A4 Size */
     width: 29.7cm;
-    min-height: 21cm;
+    /* make a bit smaller than 21px to leave some space after */
+    /*min-height: 21cm;*/
+    min-height: 20.9cm;
 
     margin: 0;
     padding: 40px 60px;
@@ -84,4 +86,28 @@
   .delayed {
     opacity: 1;
   }
+}
+
+body.print {
+  background: transparent;
+}
+body.print:before {
+  display: none;
+}
+.print .step {
+  background-color: transparent;
+  /* A4 Size */
+  width: 29.7cm;
+  /* make a bit smaller than 21px to leave some space after */
+  /*min-height: 21cm;*/
+  min-height: 20.9cm;
+  margin: 0 auto;
+  padding: 40px 60px;
+  border: 0;
+  box-shadow: none;
+  page-break-after: always;
+  border-radius: 0;
+}
+.print .step pre {
+  line-height: 1.2em;
 }

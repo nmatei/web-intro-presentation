@@ -30,6 +30,10 @@ const animationTypes = {
   clock: {
     title: "Clock",
     icon: "fa fa-clock-o"
+  },
+  print: {
+    title: "Print Preview",
+    icon: "fa fa-print"
   }
 };
 
@@ -163,11 +167,16 @@ function getPageKeys(pages) {
   }, {});
 }
 
-function setPageNumbers(pages) {
+function applyPageNumbers(pages) {
+  return pages.forEach((page, i) => {
+    page.setAttribute("data-current-page", i + 1);
+    page.setAttribute("data-total-pages", pages.length);
+  });
+}
+
+function getPageLinks(pages) {
   return pages
     .map((page, i) => {
-      page.setAttribute("data-current-page", i + 1);
-      page.setAttribute("data-total-pages", pages.length);
       const cls = page.classList.contains("no-toc") ? "no-toc" : "";
       return `<a id="toc-${page.id}" class="${cls}" href="#${page.id}" title="${page.id}">${i + 1}</a>`;
     })
@@ -272,13 +281,12 @@ export async function start(slidesName) {
     $(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
   }
 
-  $("body").classList.remove("body-loading");
-
   let animation = getParam("anim") || getStorageKey(slidesName, storageAnimKey);
   if (!animation || !animationTypes[animation]) {
     animation = Object.keys(animationTypes)[0];
   }
 
+  const isPrintView = animation === "print";
   let pages = Array.from($$(".step"));
   const runImpress = canRunImpress(pages);
 
@@ -290,7 +298,7 @@ export async function start(slidesName) {
     }
   }
 
-  if (runImpress) {
+  if (runImpress && !isPrintView) {
     if (animation && animation !== "animations") {
       pages = applyAnimations(pages, animation);
       setStorageKey(slidesName, storageAnimKey, animation);
@@ -302,20 +310,28 @@ export async function start(slidesName) {
     impress().init();
   }
 
+  const body = $("body");
+  body.classList.remove("body-loading");
+  if (isPrintView) {
+    body.classList.add("print");
+  }
+
+  applyPageNumbers(pages);
+
   const actions = document.createElement("div");
   actions.className = "enable-events navigation-actions";
 
-  if (runImpress && impress.supported) {
-    const animElements = document.createElement("div");
-    animElements.className = "views";
-    animElements.innerHTML = getAnimElements(animation) + "<hr />";
-    actions.appendChild(animElements);
-  }
+  const animElements = document.createElement("div");
+  animElements.className = "views";
+  animElements.innerHTML = getAnimElements(animation) + "<hr />";
+  actions.appendChild(animElements);
 
   const toc = document.createElement("div");
   toc.className = "toc";
-  toc.innerHTML = setPageNumbers(pages);
+  toc.innerHTML = getPageLinks(pages);
   actions.appendChild(toc);
+
+  // runImpress && impress.supported
 
   document.body.appendChild(actions);
 

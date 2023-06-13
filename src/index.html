@@ -648,7 +648,7 @@ p               { color: red;   }
         data-scale="0.5"
       >
         <h1><i class="fa fa-columns" aria-hidden="true"></i> FlexBox Layout HTML</h1>
-        <pre data-type="html" class="fs-20">
+        <pre data-type="html" class="fs-18">
 &lt;header>
   Header
 &lt;/header>
@@ -683,7 +683,7 @@ p               { color: red;   }
       <!-- ===================================================================  -->
       <div id="flexbox-css-borders" class="step layouts-demo" data-x="2000" data-y="-1000" data-scale="0.4">
         <h2>FlexBox Layout CSS (adding borders)</h2>
-        <pre data-type="css" class="fs-22">
+        <pre data-type="css" class="fs-20">
 header, footer, #content {
   padding: 4px;
   margin: 2px;
@@ -728,9 +728,6 @@ body {
   flex-direction: column;
 }
 #content { flex: 1; }
-/* body > section  { flex: 1; } */
-
-/* continue... */
             </pre>
           </div>
           <div>
@@ -786,11 +783,6 @@ body {
       <!-- ===================================================================  -->
       <div id="grid-css-layout" class="step layouts-demo" data-x="2500" data-y="-1000" data-scale="0.4">
         <h2>Grid CSS Layout</h2>
-        <p>
-          display: <a href="https://www.w3schools.com/css/css_grid.asp" target="_blank">grid</a>;
-          <a href="https://www.w3schools.com/cssref/pr_grid-template-areas.asp" target="_blank">grid-template-areas</a>:
-          '...'
-        </p>
         <div class="live-example body">
           <div class="grid-container">
             <header>Header</header>
@@ -806,7 +798,7 @@ body {
             </div>
             <div class="item3">
               Menu2
-              <pre data-type="css" style="font-size: 16px">
+              <pre data-type="css" data-highlight="2" style="font-size: 16px">
 header {
   grid-area: header;
 }
@@ -826,7 +818,7 @@ footer {
             </div>
             <div class="item4">
               Main
-              <pre data-type="css" style="font-size: 16px">
+              <pre data-type="css" data-highlight="3, 4" style="font-size: 16px">
 .grid-container {
   min-height: 100%;
   display: grid;
@@ -849,7 +841,14 @@ footer {
 }
               </pre>
             </div>
-            <footer>Footer</footer>
+            <footer>
+              <p class="align-r">
+                Read more about display: <a href="https://www.w3schools.com/css/css_grid.asp" target="_blank">grid</a>;
+                <a href="https://www.w3schools.com/cssref/pr_grid-template-areas.asp" target="_blank"
+                  >grid-template-areas</a
+                >: '...'
+              </p>
+            </footer>
           </div>
         </div>
       </div>
@@ -1249,7 +1248,7 @@ git status
       <!-- ===================================================================  -->
       <div id="es5-to-es6" class="step toc-el" data-x="0" data-y="6500" data-scale="1">
         <h1><i class="fa fa-file-code-o"></i> Basic Es5 vs Es6</h1>
-        <pre data-type="js" class="fs-20">
+        <pre data-type="js" class="fs-18">
 // var => const & let
 var name = "Nicolae Matei";
 const firstName = "Nicolae";
