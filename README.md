@@ -11,7 +11,7 @@ Web Intro [Presentation](https://nmatei.github.io/web-intro-presentation/)
 - left/right/up/down arrows, page down/up keys
 - click on sidebar pages
 
-### 💠 Transitions modes`
+### 💠 Transitions modes
 
 - [x] [Animations](https://nmatei.github.io/web-intro-presentation/?anim=animations)
 - [x] [Slide Up/Down](https://nmatei.github.io/web-intro-presentation/?anim=slideUp)
