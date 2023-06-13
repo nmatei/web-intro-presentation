@@ -155,7 +155,7 @@ p               { color: red;   }
 #top-menu-bar a:hover {
   color: #334455; background: #fff;
 }
-        </pre><div class="live-example"><ul id="top-menu-bar"><li><a href="#">HOME</a></li><li><a href="#">Projects</a></li><li><a href="#">About</a></li><li><a href="#">Contact</a></li></ul></div></div><div id="flexbox-html" class="step toc-el no-pagination layouts-demo" data-x="2000" data-y="-600" data-scale="0.5"><h1><i class="fa fa-columns" aria-hidden="true"></i> FlexBox Layout HTML</h1><pre data-type="html" class="fs-20">
+        </pre><div class="live-example"><ul id="top-menu-bar"><li><a href="#">HOME</a></li><li><a href="#">Projects</a></li><li><a href="#">About</a></li><li><a href="#">Contact</a></li></ul></div></div><div id="flexbox-html" class="step toc-el no-pagination layouts-demo" data-x="2000" data-y="-600" data-scale="0.5"><h1><i class="fa fa-columns" aria-hidden="true"></i> FlexBox Layout HTML</h1><pre data-type="html" class="fs-18">
 &lt;header>
   Header
 &lt;/header>
@@ -169,7 +169,7 @@ p               { color: red;   }
 &lt;footer>
   Footer
 &lt;/footer>
-        </pre><div class="live-example"><header>Header</header><section _id="content"><div _id="side-menu"><section>Menu 1</section><section>Menu 2</section></div><div _id="main">Main Content</div></section><footer>Footer</footer></div><p class="align-r line-space practice">A Complete Guide to <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">Flexbox</a></p></div><div id="flexbox-css-borders" class="step layouts-demo" data-x="2000" data-y="-1000" data-scale="0.4"><h2>FlexBox Layout CSS (adding borders)</h2><pre data-type="css" class="fs-22">
+        </pre><div class="live-example"><header>Header</header><section _id="content"><div _id="side-menu"><section>Menu 1</section><section>Menu 2</section></div><div _id="main">Main Content</div></section><footer>Footer</footer></div><p class="align-r line-space practice">A Complete Guide to <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">Flexbox</a></p></div><div id="flexbox-css-borders" class="step layouts-demo" data-x="2000" data-y="-1000" data-scale="0.4"><h2>FlexBox Layout CSS (adding borders)</h2><pre data-type="css" class="fs-20">
 header, footer, #content {
   padding: 4px;
   margin: 2px;
@@ -195,9 +195,6 @@ body {
   flex-direction: column;
 }
 #content { flex: 1; }
-/* body > section  { flex: 1; } */
-
-/* continue... */
             </pre></div><div><pre data-type="css" data-highlight="2, 3" class="fs-20">
 #content {
   display: flex;
@@ -216,13 +213,13 @@ body {
   &lt;div class="item4">Main&lt;/div>
   &lt;footer>Footer&lt;/footer>
 &lt;/div>
-        </pre><div class="live-example body"><div class="grid-container"><header>Header</header><div class="item2">Menu1</div><div class="item3">Menu2</div><div class="item4">Main</div><footer>Footer</footer></div></div></div><div id="grid-css-layout" class="step layouts-demo" data-x="2500" data-y="-1000" data-scale="0.4"><h2>Grid CSS Layout</h2><p>display: <a href="https://www.w3schools.com/css/css_grid.asp" target="_blank">grid</a>; <a href="https://www.w3schools.com/cssref/pr_grid-template-areas.asp" target="_blank">grid-template-areas</a>: '...'</p><div class="live-example body"><div class="grid-container"><header>Header</header><div class="item2">Menu1<pre data-type="css" style="font-size:16px">
+        </pre><div class="live-example body"><div class="grid-container"><header>Header</header><div class="item2">Menu1</div><div class="item3">Menu2</div><div class="item4">Main</div><footer>Footer</footer></div></div></div><div id="grid-css-layout" class="step layouts-demo" data-x="2500" data-y="-1000" data-scale="0.4"><h2>Grid CSS Layout</h2><div class="live-example body"><div class="grid-container"><header>Header</header><div class="item2">Menu1<pre data-type="css" style="font-size:16px">
  html { height: 100%; }
  body {
    margin: 0;
    min-height: 100%;
  }
-              </pre></div><div class="item3">Menu2<pre data-type="css" style="font-size:16px">
+              </pre></div><div class="item3">Menu2<pre data-type="css" data-highlight="2" style="font-size:16px">
 header {
   grid-area: header;
 }
@@ -238,7 +235,7 @@ header {
 footer {
   grid-area: footer;
 }
-              </pre></div><div class="item4">Main<pre data-type="css" style="font-size:16px">
+              </pre></div><div class="item4">Main<pre data-type="css" data-highlight="3, 4" style="font-size:16px">
 .grid-container {
   min-height: 100%;
   display: grid;
@@ -259,7 +256,7 @@ footer {
   padding: 20px 0;
   font-size: 30px;
 }
-              </pre></div><footer>Footer</footer></div></div></div><div id="grid-css-cards" class="step layouts-demo" data-x="2500" data-y="-600" data-scale="0.5"><h2>Grid CSS Layout (Cards)</h2><p>Resize screen to cross width limits (800px, 1024px)</p><div class="cards"><div><pre data-type="html" style="font-size:16px">
+              </pre></div><footer><p class="align-r">Read more about display: <a href="https://www.w3schools.com/css/css_grid.asp" target="_blank">grid</a>; <a href="https://www.w3schools.com/cssref/pr_grid-template-areas.asp" target="_blank">grid-template-areas</a>: '...'</p></footer></div></div></div><div id="grid-css-cards" class="step layouts-demo" data-x="2500" data-y="-600" data-scale="0.5"><h2>Grid CSS Layout (Cards)</h2><p>Resize screen to cross width limits (800px, 1024px)</p><div class="cards"><div><pre data-type="html" style="font-size:16px">
 &lt;div class="cards-wrap">
   &lt;div>*.html&lt;/div>
   &lt;div>*.css&lt;/div>
@@ -409,7 +406,7 @@ git pull
 
 # utils
 git status
-        </pre></div><div id="es5-to-es6" class="step toc-el" data-x="0" data-y="6500" data-scale="1"><h1><i class="fa fa-file-code-o"></i> Basic Es5 vs Es6</h1><pre data-type="js" class="fs-20">
+        </pre></div><div id="es5-to-es6" class="step toc-el" data-x="0" data-y="6500" data-scale="1"><h1><i class="fa fa-file-code-o"></i> Basic Es5 vs Es6</h1><pre data-type="js" class="fs-18">
 // var => const & let
 var name = "Nicolae Matei";
 const firstName = "Nicolae";
