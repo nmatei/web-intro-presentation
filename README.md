@@ -11,16 +11,14 @@ Web Intro [Presentation](https://nmatei.github.io/web-intro-presentation/)
 - left/right/up/down arrows, page down/up keys
 - click on sidebar pages
 
-### 💠 Transitions modes
+### 💠 Transitions modes`
 
 - [x] [Animations](https://nmatei.github.io/web-intro-presentation/?anim=animations)
 - [x] [Slide Up/Down](https://nmatei.github.io/web-intro-presentation/?anim=slideUp)
 - [x] [Slide Right/Left](https://nmatei.github.io/web-intro-presentation/?anim=slideLeft)
 - [x] [Fade](https://nmatei.github.io/web-intro-presentation/?anim=fade)
 - [x] [Clock](https://nmatei.github.io/web-intro-presentation/?anim=clock)
-- [x] [Print](https://nmatei.github.io/web-intro-presentation/?anim=print)
-  - [x] Then press `CTRL + P` and select **Save as PDF** & **Margins: None**
-    - (Make sure all slides are on each page)
+- [x] [Print](https://nmatei.github.io/web-intro-presentation/?anim=print) (`CTRL + P` - **Save as PDF** & **Margins: None**)
 - [ ] Slide Headings (every h1 -> down, every h2 -> right)
 - [ ] Book Style (Simulate 2 pages and move left - right)
 
