@@ -7,10 +7,10 @@
     "clean": "rimraf docs",
     "clear": "npm run clean && rimraf node_modules",
     "prebuild": "npm run clean",
-    "build": "webpack --config webpack.prod.js --mode production",
+    "build": "webpack --mode production",
     "postbuild": "git add docs/*",
     "deploy": "npm run build && git commit -m \"[build] new docs\" && git push",
-    "start": "webpack serve --open --config webpack.dev.js",
+    "start": "webpack serve --open",
     "serve": "serve docs",
     "qa": "yarn build && yarn serve"
   },

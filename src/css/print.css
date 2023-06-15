@@ -29,8 +29,8 @@
 
   body {
     -webkit-print-color-adjust: exact;
-    margin: 0;
-    padding: 0;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   body:before {
@@ -90,6 +90,7 @@
 
 body.print {
   background: transparent;
+  padding: 10px;
 }
 body.print:before {
   display: none;
