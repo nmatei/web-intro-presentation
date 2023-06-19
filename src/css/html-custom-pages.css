@@ -1,5 +1,10 @@
 /* ==== page ==== */
 
+/*.print #start {*/
+/*  background-image: url("../resources/signature.jpg");*/
+/*  background-position: 67% 66%;*/
+/*}*/
+
 #lego-intro {
   background-image: url("../images/lego-pieces-unsorted.jpg");
   background-position: bottom center;
