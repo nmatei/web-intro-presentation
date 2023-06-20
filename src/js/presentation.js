@@ -168,7 +168,7 @@ function getPageKeys(pages) {
 }
 
 function applyPageNumbers(pages) {
-  return pages.forEach((page, i) => {
+  pages.forEach((page, i) => {
     page.setAttribute("data-current-page", i + 1);
     page.setAttribute("data-total-pages", pages.length);
   });
@@ -333,6 +333,8 @@ export async function start(slidesName) {
 
   applyPageNumbers(pages);
 
+  setTocPageContent(pages);
+
   const actions = document.createElement("div");
   actions.className = "enable-events navigation-actions";
 
@@ -347,8 +349,6 @@ export async function start(slidesName) {
   actions.appendChild(toc);
 
   document.body.appendChild(actions);
-
-  setTocPageContent(pages);
 
   await initAllEditors(runImpress);
 }

@@ -117,6 +117,7 @@ a:hover {
   padding: 5px;
   width: 188px;
   height: 188px;
+  z-index: 1; /* for old browsers iOs 9 */
 }
 #my-picture img {
   border-radius: 50%;
