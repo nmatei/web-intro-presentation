@@ -52,8 +52,40 @@ If you wish to use this project directly on your PC you can use:
 git clone https://github.com/nmatei/web-intro-presentation.git
 cd web-intro-presentation
 npm i
+```
+
+### 🚀 Run in dev mode (watch changes in real time)
+
+Start the webpack dev server. It compiles in memory, opens the presentation in
+your browser and **live-reloads on every change** to files under `src/` (JS, CSS
+and HTML):
+
+```sh
 npm start
 ```
+
+The app is served at [http://localhost:8080](http://localhost:8080). Edit any
+file in `src/` and the browser refreshes automatically — no manual rebuild needed.
+
+### 📦 Production build & preview
+
+```sh
+npm run build   # bundles into ./docs (minified, production mode)
+npm run serve   # serves the already-built ./docs locally
+npm run qa      # build + serve in one step
+```
+
+When to use which:
+
+- **`npm start`** — day-to-day development. Live-reload, source maps, no
+  minification. Use this while editing.
+- **`npm run build`** — generate the final minified bundle in `./docs` (the
+  folder published to GitHub Pages). Run before deploying.
+- **`npm run serve`** — preview an existing `./docs` build exactly as it will be
+  served in production (static files, no dev server). Assumes you already ran
+  `npm run build`.
+- **`npm run qa`** — one-shot QA check: rebuilds and then serves `./docs`. Use
+  this to verify the production output before pushing/deploying.
 
 ### TODOs
 

@@ -261,8 +261,17 @@ pre.fs-20 {
 pre.fs-18 {
   font-size: 18px;
 }
+pre.fs-16 {
+  font-size: 16px;
+}
 pre.fs-14 {
   font-size: 14px;
+}
+pre.fs-13 {
+  font-size: 13px;
+}
+pre.fs-12 {
+  font-size: 12px;
 }
 
 .impress-enabled .enable-events {

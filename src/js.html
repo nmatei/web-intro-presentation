@@ -161,7 +161,7 @@ touch .prettierrc
         </pre>
 
         <p>Add following json inside <strong>.prettierrc</strong></p>
-        <pre data-type="js" class="fs-20">
+        <pre data-type="js" class="fs-18">
 {
   "trailingComma": "none",
   "semi": true,
@@ -265,7 +265,6 @@ npm install --save-dev webpack webpack-cli
 npm i -D webpack-dev-server
 npm i -D html-webpack-plugin
 npm i -D html-loader style-loader css-loader
-
 # create webpack.config.js file
 touch webpack.config.js
         </pre>
@@ -284,7 +283,7 @@ touch webpack.config.js
       <div id="webpack-config" class="step slide no-logo" data-x="5500" data-y="-900" data-scale="0.5">
         <h2><i class="fa fa-file-code-o"></i> webpack.config.js</h2>
 
-        <pre data-type="js" data-disable-beautify="true" class="fs-14">
+        <pre data-type="js" data-disable-beautify="true" class="fs-13">
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
@@ -480,7 +479,7 @@ const row = `
       <div id="ternary-operator" class="step slide toc-el" data-x="-500" data-y="500">
         <h1><i class="fa fa-code-fork" aria-hidden="true"></i> Conditional (ternary) operator</h1>
         <br />
-        <pre data-type="js" class="fs-20">
+        <pre data-type="js" class="fs-18">
 const condition = true; // false
 condition ? exprIfTrue : exprIfFalse;
 
@@ -535,8 +534,7 @@ false ? console.info("true") : console.info("false");
       <!-- ===================================================================  -->
       <div id="array-helpers" class="step slide toc-el" data-x="1000" data-y="500">
         <h1><i class="fa fa-database" aria-hidden="true"></i> Array Helpers</h1>
-        <br />
-        <pre data-type="js" class="fs-20">
+        <pre data-type="js" class="fs-18">
 const teams = ['a', 'b', 'c'];
 
 // for loop
@@ -737,7 +735,7 @@ const [a, b, ...rest] = grades;
           >
         </p>
         <br />
-        <pre data-type="js" class="fs-20">
+        <pre data-type="js" class="fs-18">
 // step by step request using fetch
 const request = fetch("http://localhost:3000/teams-json", {
   method: "GET",
@@ -814,7 +812,7 @@ function sleep(ms) {
       <!-- ===================================================================  -->
       <div id="import-export" class="step slide toc-el" data-x="5500" data-y="500">
         <h1><i class="fa fa-clock-o" aria-hidden="true"></i> debounce (imports & exports)</h1>
-        <pre data-type="js" style="font-size: 18px">
+        <pre data-type="js" class="fs-16">
 export function debounce(fn, delay) {
   var timer = null; // 2️⃣ Closures
   return function () {
@@ -830,7 +828,7 @@ export function debounce(fn, delay) {
         </pre>
 
         <h2>exports & imports</h2>
-        <pre data-type="js" style="font-size: 18px">
+        <pre data-type="js" class="fs-16">
 import { debounce } from "./utilities";
 
 document.querySelector("#search").addEventListener(
@@ -858,7 +856,7 @@ document.querySelector("#search").addEventListener(
         <h1><i class="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i> CSS Loading Mask</h1>
         <div class="cards" style="margin: 0 -40px; gap: 4px">
           <div>
-            <pre data-type="css" style="font-size: 16px">
+            <pre data-type="css" class="fs-14">
 .loading-mask {
   position: relative;
 }
@@ -889,7 +887,7 @@ document.querySelector("#search").addEventListener(
           </div>
 
           <div style="flex: 1.6">
-            <pre data-type="css" style="font-size: 16px">
+            <pre data-type="css" class="fs-14">
 .loading-mask::after {
   content: "💠";
   text-align: center;
@@ -912,7 +910,7 @@ document.querySelector("#search").addEventListener(
             </pre>
 
             <h3><i class="fa fa-file-code-o"></i> JS Code</h3>
-            <pre data-type="js" style="font-size: 16px">
+            <pre data-type="js" class="fs-14">
 var form = document.getElementById("editForm");
 form.classList.add("loading-mask");
 // after
