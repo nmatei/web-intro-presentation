@@ -8,7 +8,7 @@
     "clear": "npm run clean && rimraf node_modules",
     "prebuild": "npm run clean",
     "build": "webpack --mode production",
-    "postbuild": "git add docs/*",
+    "postbuild": "cp -R docs-external/. docs/ && git add docs/*",
     "deploy": "npm run build && git commit -m \"[build] new docs\" && git push",
     "start": "webpack serve --open",
     "serve": "serve docs",
