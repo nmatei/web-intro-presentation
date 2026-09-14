@@ -6,6 +6,8 @@ Intro Presentation to Web Development for students that want to learn basics of 
 
 Web Intro [Presentation](https://nmatei.github.io/web-intro-presentation/)
 
+- [React Basics](https://nmatei.github.io/web-intro-presentation/react-basics) with AI Prompts
+
 ### ↔ Navigation
 
 - left/right/up/down arrows, page down/up keys
